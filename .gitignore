@@ -1,4 +1,5 @@
 main-blx.bib
+main.pdf
 *.aux
 *.bbl
 *.blg
@@ -6,9 +7,7 @@ main-blx.bib
 *.log
 *.lot
 *.out
-*.pdf
 *.xml
 *.toc
-*.cls
 Literature/
 Toy-SSCHA/
