@@ -1,0 +1,216 @@
+% Chapter 1
+
+\chapter{Bulk SnSe} % Main chapter title
+
+\label{Chapter5} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+
+%----------------------------------------------------------------------------------------
+
+% Define some commands to keep the formatting separated from the content 
+%\newcommand{\keyword}[1]{\textbf{#1}}
+%\newcommand{\tabhead}[1]{\textbf{#1}}
+%\newcommand{\code}[1]{\texttt{#1}}
+%\newcommand{\file}[1]{\texttt{\bfseries#1}}
+%\newcommand{\option}[1]{\texttt{\itshape#1}}
+
+%----------------------------------------------------------------------------------------
+
+\section{introduction}
+
+Thermoelectricity is a technologically interesting material property that allows to transform residual heat into useful electricity\cite{goldsmid2010introduction,behnia2015fundamentals}. The efficiency of this energy 
+transformation is controlled by the dimensionless figure of merit
+\begin{equation}
+ZT=\frac{S^{2}\sigma T}{\kappa},
+\end{equation}
+where $S$ is the Seebeck coefficient, $\sigma$ the electrical conductivity, $T$ the temperature, and $\kappa=\kappa_{e}+\kappa_{l}$ the sum of electronic $\kappa_{e}$ and lattice $\kappa_{l}$ thermal conductivities. Therefore, a 
+good thermoelectric performance requires a high power factor $P_{F}=S^{2}\sigma$ together with a low thermal conductivity. \\
+
+Monochalcogenides have proven to be efficient thermoelectric materials\cite{heremans2008enhancement,zhang2013high,yang2008nanostructures,cho2011thermoelectric} mainly due to their strongly anharmonic lattice that implies a low 
+lattice thermal conductivity\cite{delaire2011giant,li2014phonon,iizumi1975phase,o2017inelastic,ribeiro2018strong}. PbTe is an appropiate example of potential technological relevance of thermoelectric monochalcogenides: it shows 
+a high $ZT$ in the $600-800$ K temperature range\cite{ravich2013semiconducting}, as high as $2.2$ when nanostructures\cite{hsu2004cubic}, and has been successfully applied in spacecrafts\cite{rowe2018thermoelectrics}. In the last 
+years SnSe has attracted a great deal of attention since it was measured to be the most efficient intrinsic thermoelectric material\cite{zhao2014ultralow}. Its figure of merit soars to $2.6$ after a structural phase 
+transition\cite{zhao2014ultralow,adouby1998structure,chattopadhyay1986neutron,von1981high} at around $800$ K from the low-symmetry $Pnma$ phase to the high-symmetry $Cmcm$. See Fig. \ref{pnma-cmcm} for the crystal 
+structure in the two phases.
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.8\linewidth]{Figures/pnma-cmcm.pdf}
+\caption{SnSe crystal structure in the a) $Pnma$ and b) $Cmcm$ phases.}
+\label{pnma-cmcm}
+\end{center}
+\end{figure}
+In the high-symmetry phase the band gap is reduced without affecting the ultralow thermal conductivity, providing the record $ZT$. \\
+
+The phase transition takes the system from the orthorhombic $Pnma$ phase to a more symmetric base-centered orthorhombic $Cmcm$ structure. The order of the phase transition is not clear: some works\cite{zhao2014ultralow,
+adouby1998structure,chattopadhyay1986neutron} claim it is a second-order phase transition and others\cite{von1981high} it has a first-order character. A recent work\cite{dewandre2016two} argues that the transition occurs in 
+two steps, where increasing temperature induces first a change in the lattice parameters that induces after a lattice instability. There is no inelastic scattering experiment so far for the high-temperature phase, which should 
+show a prominent phonon collapse at the transition temperature if it belonged to the displacive second-order type\cite{holt2001x,weber2011extended,o2017inelastic}. \\
+
+The most interesting thermoelectric properties appear in the high-temperature phase, where the reduction of the electronic band gap increases the number of carriers providing a higher $P_{F}$, while the thermal conductivity 
+remains very low. The value of the intrinsic $\kappa_{l}$ of SnSe remains controversial, as the extremely low isotropic $0.3$ W/mK values at $800$ K reported by Zhao et al.\cite{zhao2014ultralow} could not be reproduced in 
+other experiments, where a clear anisotropy is shown and the in-plane thermal conductivity is considerably larger\cite{ibrahim2017reinvestigation,sassi2014assessment,chen2014thermoelectric}. The lattice thermal conductivity 
+of the $Pnma$ phase has been calculated\cite{carrete2014low,skelton2016anharmonicity} from first principles solving the BTE using harmonic phonons and 3BFC obtained perturbatively as derivatives of the BOES. The $Cmcm$ phase 
+has imaginary phonons in the harmonic approximation\cite{dewandre2016two,skelton2016anharmonicity,yu2016enhanced}, as expected for the high-symmetry phase in a second-order phase transition, hindering the 
+calculation of $\kappa_{l}$. \\
+
+In this chapter we study the vibrational and thermal properties of $Cmcm$ SnSe by including anharmonicity at a non-pertubative level by using the SCHA. We show that the phonon mode that drives the instability collapses at the 
+transition temperature $T_{c}$ demonstrating that the transition is second-order. Anharmonic effects are so large that the spectral function for some in-plane modes deviates from the Lorentzian-like shape and show broad peaks, 
+shoulders and satellilte peaks, as in other monochalcogenides\cite{ribeiro2018strong,li2014phonon}. We calculate the lattice thermal conductivity of $Cmcm$ SnSe by combining the anharmonic phonon spectra with perturbative and 
+nonperturbative 3BFC. We show that nonperturbative anharmonic effects are not only crucial in the phonon spectra, but also in high-order force-constants, which have a huge impact on the calculated thermal conductivity. 
+$\kappa_{l}$ agrees with experiments\cite{ibrahim2017reinvestigation} only with nonperturbative 3BFC.
+
+\section{Calculation details}
+
+Our calculations are based on DFT using the QUANTUM-ESPRESSO\cite{giannozzi2009quantum} software package. Harmonic phonons were calculated within DFPT and perturbative 3BFC were calculated within DFPT or finite 
+differences\cite{li2014shengbte}. Anharmonic phonons and nonperturbative 3BFC were calculated using the SCHA. For the exchange-correlation interaction we use the Perdew-Burke-Ernzerhof (PBE) generalized gradient 
+approximation and the local density approximation (LDA) with ultrasoft (US) and Projector Augmented Wave method (PAW) pseudopotentials respectively. Due to limitations in the implementation of perturbative 3BFC 
+within DFPT we use norm-conserving (NC) pseudopotentials. We use a cutoff energy of 70 Ry and a grid of $16\times16\times16$ $\boldsymbol{k}$ points to sample the first Brillouin zone. For the harmonic phonon calculations 
+we use a $6\times6\times6$ supercell and a $2\times2\times2$ one for the 3BFC. For the SSCHA calculation we use a $2\times2\times2$ supercell. Then, for the anharmonic phonon dispersion, we interpolate the difference between the 
+harmonic and anharmonic force-constants in the $2\times2\times2$ supercell to the $6\times6\times6$ and we add it to the $6\times6\times6$ harmonic force-constants. For the linewidth calculations we use a $20\times20\times20$ 
+$\boldsymbol{q}$ points grid obtained by Fourier interpolation with a smearing of $1$ cm$^{-1}$. For the thermal conductivity calculation we use a $10\times10\times10$ grid of $\boldsymbol{q}$ points to sample the first 
+Brillouin zone. We have done calculations in denser grids to test these parameters.
+
+\section{Phase transition}
+
+The group/subgroup index of the $Cmcm$/$Pnma$ transition is $2$, making a displacive second-order transition posible\cite{toledano1987landau}. In this scenario, the transition temperature $T_{c}$ is defined as the temperature 
+at which the second derivative of the free energy $F$ with respect to the order parameter $Q$ that transforms the structure continuously from the $Cmcm$ phase $(Q=0)$ into the $Pnma$ $(Q\ne0)$ vanishes. As it was already 
+pointed out\cite{chattopadhyay1986neutron}, symmetry\cite{orobengoa2009amplimodes,perez2010mode} dictates that the amplitude of the transition is dominated by the distortion pattern associated to a non-degenerate mode $(Y_{1})$
+at the zone border $Y$ point with irreducible representation $Y_{2}^{+}$ (see Fig. \ref{patterns} for the distortion pattern).
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.8\linewidth]{Figures/normal-modes.pdf}
+\caption[Phonon eigenvector patterns.]{a) Atomic displacements of mode $\Gamma_{1}$. b) Atomic displacements of mode $Y_{2}$. c) Atomic displacements of mode $Y_{1}$.}
+\label{patterns}
+\end{center}
+\end{figure}
+This means that $\partial^{2}F/\partial Q^{2}$ is proportional to the eigenvalue of the free energy Hessian matrix associated to this irreducible representation: $\omega_{Y_{1}}^{2}$. This frequency can be calculated within the 
+SCHA using Eq. \ref{free-energy-hessian}. \\
+
+The calculated temperature dependence of $\omega_{Y_{1}}^{2}$ is shown in Fig. \ref{freq-y1-snse} for LDA and PBE for two different lattice volumes in each case.
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.9\linewidth]{Figures/freq-main-snse.eps}
+\caption[Phonon collapse in SnSe.]{$\omega_{Y_{1}}^{2}$ as a function of temperature within LDA and PBE approximations for different lattice volumes (circles). In the LDA we compare the results obtained with the theoretical and 
+experimental\cite{zhao2014ultralow} lattice parameters. In the PBE calculation we present the results for the experimental lattice parameters and a stretched unit cell (see Table \ref{cell-parameters} for the lattice
+parameters). The solid lines correspond to a polynomial fit.}
+\label{freq-y1-snse}
+\end{center}
+\end{figure}
+\begin{table}
+\begin{center}
+\begin{tabular*}{0.65\textwidth}{l c c c c c c}
+ \hline
+ \hline
+            & $a$  & $b$  & $c$  & $P_{xx}$ & $P_{yy}$ & $P_{zz}$ \\
+ \hline
+ LDA theory                  &  21.58  &  7.90  & 7.90  &  0.4  &  0.6  &  0.7  \\
+ LDA Exp.                    &  22.13  &  8.13  & 8.13  & -1.1  & -2.0  & -2.2  \\
+ PBE theory                  &  22.77  &  8.13  & 8.13  &  0.5  &  1.1  &  1.0  \\
+ PBE Exp.                    &  22.13  &  8.13  & 8.13  &  1.8  &  1.3  &  1.2  \\
+ PBE Stretched               &  23.48  &  8.27  & 8.27  & -0.3  & -0.7  & -0.7  \\
+ \hline
+ \hline
+\end{tabular*}
+\end{center}
+\caption{Experimental\cite{zhao2014ultralow} and theoretical (DFT at static level) LDA and PBE lattice parameters used in this work. The stretched cell used in some calculations is also given. $a$, $b$, and $c$ lattice 
+parameters are given in Bohr length units ($a_0$) and the three components of the stress tensor in GPa units. The pressure is calculated including vibrational terms at an anharmonic level at the following temperatures for 
+each case: $200$ K (LDA theory), $600$ K (LDA Exp.), $400$ K (PBE Exp.), $400$ K (PBE theory), and $400$ K (PBE stretched).}
+\label{cell-parameters}
+\end{table}
+In all cases $\omega_{Y_{1}}^{2}$ is positive at high temperatures, but it rapidly decreases with lowering the temperature, vanishing at $T_{c}$. This phonon collapse is consistent with a second-order phase transition between
+the $Pnma$ and $Cmcm$. We check that a SCHA calculation at $T>T_{c}$ ($T=800$ K) starting from the relaxed low-symmetry $Pnma$ phase (relaxed at DFT static level) yields the high-symmetry $Cmcm$ atomix positions for the 
+$\boldsymbol{\mathcal{R}}$ centroids. Thus, the $Pnma$ is not a local minimum of the free energy above $T_{c}$, ruling out the first-order transition. Our result disagrees with the conclusions drawn in Ref. \cite{dewandre2016two}.
+First, because at the $T_{c}$ calculated in that reference, which is estimated by comparing the free energies of the two structures, the $Y_{1}$ mode of the $Cmcm$ phase is stable, which implies this phase is a local minimum 
+at $T_{c}$, and, thus, the transition is of first-order type. And second, because it is argued that the instability at $Y$ is produced by a slight change in the in-plane lattice parameters induced by temperature
+(from $c/b>1$ to $c/b<1$), which makes the transition a two-step process. We do not see this sudden appearance of the instability. \\
+
+The obtained transition temperature strongly depends on the exchange-correlation functional and volume, as it occurs in similar monochalcogenides\cite{ribeiro2018strong}. Within LDA $T_{c}$ ranges between $168$ K with 
+theoretical lattice parameters and $616$ K with experimental lattice parameters. Within PBE $T_{c}$ barely changes between the experimental and theoretical lattice parameters. We attribute this result to the fact that 
+the in-plane lattice parameters $b$ and $c$ are in good agreement with the experimental results within PBE, while LDA clearly underestimates them. The theoretical lattice parameters are estimated neglecting vibrational 
+contributions to the free energy. In order to estimate the role of the thermal expansion, we calculate the stress tensor including vibrational contributions at the anharmonic level as explained in 
+section \ref{scha-stress-section}. The in-plane contribution of the stress tensor calculated at the temperature closest to $T_{c}$, $P_{zz}$, shows that both theoretical LDA and PBE lattices should be stretched. Within LDA it 
+is clear that stretching the lattice increases $T_{c}$. Within PBE, when we take a stretched lattice to resuce $P_{zz}$, $T_{c}$ increases from $299$ K to $387$ K. In all cases the other in-plane component of the stress tensor, 
+$P_{yy}$, is very similar to $P_{zz}$. The LDA transition temperature with the experimental lattice parameters yields the transtion temperature in closes agreement with experiments ($T_{c}\simeq800$ K). The underestimation of the 
+transition temperature may be due to the approximated exchange-correlation or the finite supercell size taken for the SCHA. \\
+
+\section{Phonons in $Cmcm$ SnSe}
+
+The predicted phonon collapse should be measurable by inelastic neutron scattering experiments (INS). INS experiments\cite{li2015orbitally} show a softening of a zone-center optical mode of the $Pnma$ phase upon heating, which
+is consistent with the condensation of the $Y_{1}$ mode after the transition. \\
+
+First of all, in Fig. \ref{spectrum-phonon-snse}, we compare the harmonic phonon spectrum with the anharmonic one in the Lorentzian (see Eqs. \ref{lineshift} and \ref{linewidth}) approximation obtained at $800$ K within LDA in 
+the experimental lattice (the results below are also obtained within LDA in the experimental lattice).
+\begin{figure}[h]
+\includegraphics[width=\linewidth]{Figures/spectrum-snse.eps}
+\caption[Phonons in the Lorentzian approximation in SnSe.]{Harmonic and anharmonic phonons in the Lorentzian approximation ($\Omega_{\mu}(\mathbf{q})$). The length of the bars corresponds to the linewidth (full length of the line 
+is the full width at half maximum). The calculations are done within LDA in the experimental structure using SCHA 3BFC at $800$ K and $\tilde{\Omega}_{\mu}(\mathbf{q})$ at $800$ K.}
+\label{spectrum-phonon-snse}
+\end{figure}
+The anharmonic lineshift is large for most of the modes across the 1BZ. Within the harmonic approximation there are five unstable modes: two ($\Gamma_{1}$, $\Gamma_{2}$) at $\Gamma$, two ($Y_{1}$, $Y_{3}$) at $Y$ and one 
+($R_{1}$) at $R$. The instabilities at $\Gamma$ would cause ferroelectric transitions\cite{skelton2016anharmonicity,hong2016electronic}, but they suffer an anharmonic renormalization that prevents it. $Y_{3}$ and $R_{1}$ are also 
+stabilized by anharmonic effects. The $Y_{1}$ mode however remains unstable at $600$ K and it is stabilized after the transition (see Fig. \ref{spectral-snse}). \\
+
+In highly anharmonic materials\cite{ribeiro2018strong,li2014phonon,bianco2018high,delaire2011giant,paulatto2015first}, the spectral functions show broad peak, shoulders and satellite peaks, strongly deviating from the Lorentzian 
+picture. In Fig. \ref{spectral-snse} we show the spectral function keeping the full frequency dependence (see Eq. \ref{cross-section-new}) on the self-energy, without assuming the Lorentzian lineshape.
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.80\linewidth]{Figures/full-ins-snse.pdf}
+\includegraphics[width=0.80\linewidth]{Figures/ins-snse.eps}
+\caption[Nonperturbative spectral function in SnSe.]{Spectral function of SnSe in the $Cmcm$ phase calculated at a) $600$ K and b) $800$ K using the SCHA 3BFC at the corresponding temperature. The spectral function at the c) $\Gamma$ 
+and d) Y points at $600$ and $800$ K. The contribution of each mode to the spectral function is also shown at the $\Gamma$ point e) and the Y point f) at $800$ K. Different colors correspond to different modes. All the calculations are 
+performed within LDA in the experimental structure. In each case we use $\tilde{\Omega}_{\mu}(\mathbf{q})$ calculated at the same temperature as the SCHA 3BFC.}
+\label{spectral-snse}
+\end{center}
+\end{figure}
+The spectral function clearly reproduces the collapse of the $Y_{1}$ mode at the transition temperature. The calculated spectral functions show that the strong anharmonicity present on the phonon frequency renormalization is also 
+reflected on the spectral function. The anharmonic features specially affect the in-plane modes in the $25-75$ cm$^{-1}$ energy range. For instance, at the $\Gamma$ point the $\Gamma_{1}$ mode, who describes a vibration along 
+the in-plane $y$ axis in opposite direction for the Sn and Se atoms (see Fig. \ref{patterns}) and is stabilized by anharmonicity, shows a double peak structure and a broad shoulder (see Fig. \ref{spectral-snse}). The mode that 
+describes the same vibration ($\Gamma_{2}$) but in the other in-plane $z$ direction also shows a complex non-Lorentzian shape. The overall $\tilde{\sigma}(\boldsymbol{q}=\Gamma,\omega)$ consequently has a broad shoulder 
+at $\simeq25$ cm$^{-1}$ as marked in Fig. \ref{spectral-snse} (c), which is less acute as temperature increases. At the $Y$ point there are also two modes, $Y_{2}$, whose eigenvector is plotted in Fig. \ref{patterns}, and 
+$Y_{3}$, which describes the same displacement but in the other $y$ in-plane direction, that show a strongly anharmonic non-Lorentzian shape. The modes with complex lineshapes are those that show the largest linewidth in the 
+Lorentzian limit (see Fig. \ref{spectrum-phonon-snse}). These modes have strongly anomalous spectral function and large linewidths because they can easily scatter with an optical mode close in energy and an acoustic mode 
+close to $\Gamma$. We identify this by directly analyzing which phonon triplets contribute more to the linewidth. It is interesting to remark that if the phonon self-energy is calculated by substituting 
+$\overset{(3)}{\boldsymbol{\Phi}}$ by $\overset{(3)}{\boldsymbol{\phi}}$, substituting the nonperturbative 3BFC by the perturbative ones, the anomalies of these modes become weaker. We show the spectral function at the points $\Gamma$ 
+and $Y$ calculated with the perturbative and nonperturbatibe 3BFC in Fig. \ref{spf-p-np}.
+\begin{figure}[th]
+\begin{center}
+\includegraphics[width=0.75\linewidth]{Figures/spectrum-lorentzian-snse.eps}
+\includegraphics[width=0.75\linewidth]{Figures/spf-p-np-snse.eps}
+\caption[Perturbative and nonperturbative spectral functions in SnSe.]{a) Nonperturbative spectral functions calculated in the Lorentzian approximation at the $\Gamma$ point. b) The same as a) at the point
+$Y$. Dashed vertical lines correspond to $\tilde{\Omega}_{\mu}$ frequencies. c) Nonperturbative (solid lines) and perturbative (dashed lines)
+spectral functions calculated at the $\Gamma$ point. d) The same as c) at the point $Y$. The calculations are done using $\tilde{\Omega}_{\mu}$
+SSCHA frequencies at $800$ K within LDA in the experimental structure. Nonperturbative calculations are done with 3BFC at $800$ K.}
+\label{spf-p-np}
+\end{center}
+\end{figure}
+This underlines that in the $Cmcm$ phase the third-order derivative of the BOES are not sufficient to calculate the phonon linewidths and that higher order terms are important, which are effectively 
+captured by $\overset{(3)}{\boldsymbol{\Phi}}$. \\
+
+\section{Lattice thermal conductivity of $Cmcm$ SnSe}
+
+In Fig. \ref{thermal-snse} we present the lattice thermal conductivity calculated with the SSCHA frequencies ($\tilde{\Omega}_{\mu}(\boldsymbol{q})$) and nonperturbative 3BFC ($\overset{(3)}{\boldsymbol{\Phi}}$). For comparison 
+we also calculate $\kappa_{l}$ substituting $\overset{(3)}{\boldsymbol{\Phi}}$ by $\overset{(3)}{\boldsymbol{\phi}}$. The calculation is performed solving the BTE assuming the single-mode relaxation times approximation (SMA) (see 
+chapter \ref{Chapter4}).
+\begin{figure}[h]
+\includegraphics[width=\linewidth]{Figures/tk-snse.eps}
+\caption[Lattice thermla conductivity of SnSe]{Lattice thermal conductivity of SnSe calculated with perturbative (P) and nonperturbative (NP) at $800$ K compared to the experiments by Ibrahim et al.\cite{ibrahim2017reinvestigation} 
+and Zhao et al.\cite{zhao2014ultralow}. We use the $\tilde{\Omega}_{\mu}(\mathbf{q})$ phonon frequencies calculated at $800$ K at all temperatures. Calculations are performed within LDA using the experimental structure.}
+\label{thermal-snse}
+\end{figure}
+The thermal conductivity of SnSe is very low, mainly because the contribution of optical modes is strongly suppressed by the large anharmonicity and the contribution of acoustic modes is also reduced due to the large 
+scattering among themselves and with the $\Gamma_1$ mode. We compare our results with the values obtained by Zhao et al.\cite{zhao2014ultralow} above the transition at $800$ K. We also include in the figure the results 
+obtained by Ibrahim et al.\cite{ibrahim2017reinvestigation} above $600$ K (only the in-plane $\kappa_l$ is reported at these temperatures) in the $Pnma$ phase. Even if the results belong to different phases, comparing our 
+calculations for the $Cmcm$ phase with those obtained in the latter work is insightful because the thermal conductivity of these two phases is very similar close to the transition, as expected in a second-order phase 
+transition. Though direct comparison should be taken carefully for this reason, the lattice thermal conductivity is in better agreement with experimental results using $\overset{(3)}{\boldsymbol{\Phi}}$ instead 
+of $\overset{(3)}{\boldsymbol{\phi}}$, which overestimates the lattice thermal conductivity along the in-plane directions. This is consistent with the larger phonon linewidths obtained with the nonperturbative 3BFCs. The 
+agreement for the in-plane $\kappa_{yy} \sim \kappa_{zz}$ with the measurements by Ibrahim et al.\cite{ibrahim2017reinvestigation} is good in the nonperturbative limit, contrary to previous calculations that 
+underestimate it\cite{skelton2016anharmonicity}. The calculated out-of-plane $\kappa_{xx}$ is also in good agreement with the results by Zhao et al.\cite{zhao2014ultralow}, but we find that their ultralow results for the 
+in-plane $\kappa_l$, in contradiction with the values in Ref. \cite{ibrahim2017reinvestigation} obtained for the low-symmetry phase close to the transition, are underestimated. These results suggest that the thermal 
+conductivity measured by Zhao et al. may have non-intrinsic effects as it has already been pointed out\cite{wei2016intrinsic}.
+
+\section{Conclusions}
+
+In conclusion, we show that the vibrational properties of SnSe in the $Cmcm$ phase are dominated by huge nonperturbative anharmonic effects. We show how the collapse of the $Y_1$ mode is responsible for the second-order 
+phase transition. The calculated transition temperature is volume and functional dependent. The spectral functions of in-plane modes are characterized by anomalous features deviating from the Lorentzian-like shape. These 
+results will be crucial to interpret future INS experiments for the high-temperature phase. The calculated in-plane thermal conductivity is in good agreement with the experiments by Ibrahim et 
+al.\cite{ibrahim2017reinvestigation}, but not with those by Zhao et al.\cite{zhao2014ultralow} which show low anisotropy. These results suggest that the isotropic ultralow values by Zhao et al. could be the observation of a 
+non-intrinsic property. Our results show for the first time that the inclusion of nonperturbative effects is crucial for obtaining third-order force-constants that yield a lattice thermal conductivity in agreement with experiments.

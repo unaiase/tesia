@@ -1,0 +1,178 @@
+% Chapter 1
+
+\chapter{Bulk SnS} % Main chapter title
+
+\label{Chapter6} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+
+%----------------------------------------------------------------------------------------
+
+% Define some commands to keep the formatting separated from the content 
+%\newcommand{\keyword}[1]{\textbf{#1}}
+%\newcommand{\tabhead}[1]{\textbf{#1}}
+%\newcommand{\code}[1]{\texttt{#1}}
+%\newcommand{\file}[1]{\texttt{\bfseries#1}}
+%\newcommand{\option}[1]{\texttt{\itshape#1}}
+
+%----------------------------------------------------------------------------------------
+
+\section{introduction}
+
+SnS is isoelectronic to SnSe and shows very similar electronic and vibrational properties\cite{guo2015first} at low temperatures. Experimentally it also shows a phase transition\cite{chattopadhyay1986neutron,von1981high} from 
+the $Pnma$ to the $Cmcm$ structure and a very low thermal conductivity in the former\cite{he2018remarkable,tan2014thermoelectrics} phase. Therefore, it is expected to be a very efficient thermoelectric material in the high 
+temperature phase, which together with the fact that S is a much more earth abundant element than Se, makes it a very interesting candidate for technological applications. Actually, in 
+Refs. \cite{he2018remarkable,tan2014thermoelectrics} it is shown how the $ZT$ of undoped SnS increases very fast before the phase transition as in the case of SnSe. However, as far as we are aware, there are no experimental 
+transport measurements for the high temperature phase of SnS. First-principles calculations of the thermoelectric properties are also absent in the literature, hindered by the unstable modes obtained within the harmonic 
+approximation as in the case of SnSe\cite{skelton2016anharmonicity,dewandre2016two}. \\
+
+In this chaper, we propose that $Cmcm$ SnS is expected to be a very efficient intrinsic thermoelectric material, as good as SnSe in this phase. We show that the $P_{F}$ of SnSe and SnS are expected to be very similar in this 
+phase, as long as the electronic relaxation time is similar in both materials. By including anharmonicity int he phonon calculation at a nonperturbative level within the SCHA we show that the phonon spectrum of SnS suffers 
+a strong anharmonic renormalization. The phase transition is driven by the collapse of a zone-border phonon. Anharmonicity is so large that the spectral function of some vibrational modes deviates from the Lorentzian-like 
+shape as it happens in other monochalcogenides\cite{ribeiro2018strong,li2014phonon}. Finally, we calculate the lattice thermal conductivity of $Cmcm$ SnS obtaining ultralow values below $\simeq 1.0$ W/mK. Nonperturbative 
+anharmonic corrections to the 3BFC are important in this calculation as it happens in SnSe\cite{aseginolaza2019phonon}. There is a clear anisotropy between in-plane and out-of-plane thermal conductivities. The similarity
+of the power factors and the lattice thermal conductivities of SnSe and SnS suggest that the latter may be an earth abundant efficient thermoelectric materials and motivate more experimental effort to measure its $ZT$ 
+in the high temperature phase.
+
+\section{Calculation details} 
+
+We calculate the electronic bands using {\it ab initio} DFT calculations within the local density approximation (LDA)\cite{perdew1981self} and the generalized gradient approximation in the Perdew Burke
+Ernzerhof (PBE) parametrization\cite{perdew1996generalized} as implemented in the {\sc Quantum ESPRESSO}\cite{giannozzi2009quantum} software package. Harmonic phonons and perturbative 3BFC $\overset{(3)}{\boldsymbol{\phi}}$ 
+are calculated  using Density Functional Perturbation Theory\cite{baroni2001phonons,paulatto2013anharmonic}. We use projector augmented wave\cite{blochl1994projector} (PAW) pseudopotentials that 
+include $5s^{2}$ $5p^{2}$ $4d^{10}$ electrons in the case of Sn and $3s^{2}$ $3p^{4}$ in the case of S or Se. For the perturbative third-order force-constants we use norm-conserving pseudopotentials which were 
+shown\cite{aseginolaza2019phonon} to provide very similar third-order force-constants compared to the PAW result. A $16\times16\times16$ sampling of the first Brillouin zone of the primitive cell and an energy
+cutoff of $70$ Ry are employed for the DFT self-consistent calculation. For the electronic transport calculations we use the Boltztrap software package\cite{madsen2006boltztrap}. For the self-consistent DFT calculation we 
+use a $30\times30\times30$ sampling of the first Brillouin zone. We use experimental lattice parameters at the transition temperature as we got better agreement with experiments for SnSe in a previous
+work\cite{aseginolaza2019phonon}. The experimental lattice parameters taken from Refs.\cite{adouby1998structure,chattopadhyay1986neutron} are $a=22.13$ a$_{0}$, $b=8.13$ a$_{0}$, $c=8.13$ a$_{0}$ for SnSe
+and $a=21.69$ a$_{0}$, $b=7.84$ a$_{0}$, $c=7.84$ a$_{0}$ (a$_{0}$ is the Bohr length) for SnS. The structures of the high temperature $Cmcm$ and low temperature $Pnma$ phases are shown in Figure \ref{pnma-cmcm}.
+Anharmonic phonons and nonperturbative third-order force-constants are calculated within the SSCHA using a $2\times2\times2$ supercell. For the SSCHA calculation we use forces calculated within DFT. Once we get the anharmonic
+force-constants, we substract the harmonic ones and interpolate the difference to a $6\times6\times6$ grid. Then, we add this interpolated difference to the harmonic dynamical matrices in a $6\times6\times6$ grid, which yields
+anharmonic force-constants in a fine grid. By Fourier interpolating the latter we can calculate phonon frequencies at any point in the Brillouin zone. We impose the acoustic sum rule to the third-order force-constants with an
+iterative method prior to their Fourier interpolation\cite{paulatto2013anharmonic,aseginolaza2019phonon}. The lattice thermal conductivity is calculated a $10\times10\times10$ grid. For the calculation of the phonon linewidths 
+we use a $20\times20\times20$ mesh with a Gaussian smearing of $1$ cm$^{-1}$ for the Dirac deltas.
+
+\section{Electronic transport}
+
+Within the semiclassical Boltzmann transport theory\cite{scheidemantel2003transport} the electrical conductivity and the Seebeck coefficient can be calculated respectively as
+\begin{eqnarray}
+ \sigma(T,\mu) & = & e^2 \int_{-\infty}^{\infty} d\varepsilon \left[-\frac{\partial f(T,\mu,\varepsilon)}{\partial\epsilon}\right] \Sigma(\varepsilon) 
+ \label{eq-sigma}\\
+ S(T,\mu) & = & \frac{e}{T\sigma(T,\mu)} \int_{-\infty}^{\infty} d\varepsilon \left[-\frac{\partial f(T,\mu,\varepsilon)}{\partial\epsilon}\right] \Sigma(\varepsilon) (\varepsilon - \mu), \nonumber \\
+\label{eq-s}
+\end{eqnarray}
+where $e$ is the electron charge,  $\mu$ the chemical potential, $ f(T,\mu,\varepsilon)$ the Fermi-Dirac distribution function, and $\Sigma(\varepsilon)$ the transport distribution function. The latter is defined as
+\begin{equation}
+\Sigma(\varepsilon) = \frac{1}{\Omega N_{\mathbf{k}}} \sum_{n\mathbf{k}} \tau^e_{n\mathbf{k}}  |\mathbf{v}_{n\mathbf{k}}|^{2} \delta( \varepsilon-\varepsilon_{n\mathbf{k}} ), 
+\label{eq-tdf}
+\end{equation}
+where $\Omega$ is the unit cell volume, $N_{\mathbf{k}}$ the number of $\mathbf{k}$ points in the sum, and $\varepsilon_{n\mathbf{k}} $, $\mathbf{v}_{n\mathbf{k}} $ and  $\tau^e_{n\mathbf{k}}$ are, respectively, the energy, Fermi
+velocity and relaxation time of the electronic state with band index $n$ and crystal momentum $\mathbf{k}$. Our goal here is to compare the power factors $P_{F}(T,\mu)=\sigma(T,\mu) S^2(T,\mu)$ of SnSe and SnS coming from
+their different band structure without explicitly calculating the electronic relaxation times. We thus assume that $\tau^e_{n\mathbf{k}}=\tau^e$ is just the same constant for both compounds. In these conditions it is easy to see
+from Eqs. \eqref{eq-sigma}-\eqref{eq-tdf} that the power factor is proportional to $\tau^e$.  In the following we will limit ourselves to the analysis of $P_{F}(T,\mu)/\tau^e$, which only depends on the band
+structure of the compounds. \\
+
+Figure \ref{bands} (a) shows the electronic band structures of SnS and SnSe in the high symmetry phase.
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.7\linewidth]{Figures/bands.eps}
+\includegraphics[width=0.7\linewidth]{Figures/PF.eps}
+\caption[Band structure and $P_{F}$ of SnS and SnSe.]{(a) Electronic band structure of $Cmcm$ SnS and SnSe using experimental lattice parameters. (b) $PF/\tau^{e}$ of $Cmcm$ SnS and SnSe for different temperatures as a function of the 
+chemical potential. The $0$ value corresponds to the middle of the gap in both figures.}
+\label{bands}
+\end{center}
+\end{figure}
+It shows that the electronic properties of these materials are very similar because their electronic band structures are basically the same as expected for isoelectronic compounds with the same atomic structure. The major
+difference is that the indirect (the conduction and valence bands that constitute the gap are denoted with an arrow in Figure \ref{bands} (a)) energy gap ($0.45$ eV for SnSe and $0.7$ eV for SnS) is bigger in the case of SnS, in
+agreement with experiments\cite{vidal2012band,zhao2014ultralow} and previous calculations\cite{guo2015first}. As expected, the calculated electronic gaps within LDA underestimate the experimental values ($0.86-0.948$ eV for SnSe
+and $0.9-1.142$ eV for SnS). Using these band structures we have calculated the Seebeck coefficient, which within the approximation of a constant electronic relaxation time it is independent of it, and the electrical conductivity 
+over the electronic relaxation time $\sigma/\tau^{e}$. The Seebeck coefficient is very similar for both materials, but $\sigma/\tau^{e}$ is slightly larger in the case of SnSe due to the smaller electronic gap. Using these two
+quantities we have calculated  $P_{F}/\tau^{e}$, shown in Figure \ref{bands} (b). As we can see, $P_{F}/\tau^{e}$ is very similar for both materials, but slightly higher in the case of SnSe.
+This is in qualitative agreement with the calculations in the low temperature phases of SnS and SnSe\cite{guo2015first}, where the electrical conductivities and Seebeck coefficients of both materials are similar
+in the low temperature phase. This justifies, in qualitative terms, the same constant relaxation time for both materials in the high temperature phase. As we can see,  $P_{F}/\tau^{e}$ increases with temperature and the
+difference between the maxima of SnSe and SnS is less than $5\%$ at $1000$ K. The application of a scissor operator to match the band gaps with the experimental ones just slightly changes the doping level needed to reach the
+maximum power factor.
+These results make clear that regarding the electronic transport properties these two materials are very similar in the high temperature phase provided that the relaxation time for the electrons is similar for both
+materials, which is expected for isoelectronic and isostructural compounds.
+
+\section{Phase transition}
+
+As it was already pointed out\cite{chattopadhyay1986neutron,aseginolaza2019phonon}, symmetry\cite{orobengoa2009amplimodes,perez2010mode} dictates that it is possible to have a second-order phase transition between
+the $Cmcm$ and $Pnma$ phases. The transition is dominated by the distortion pattern associated to a non-degenerate mode ($Y_{1}$) at the zone border $Y$ point. This means\cite{aseginolaza2019phonon} that, in a second-order
+displacive phase transition scenario, the transition temperature $T_{c}$ is defined as $\partial^{2}F/\partial Q^{2}(T=T_{c})=0$ where $Q$ is the order parameter that transforms the system continuously from the $Pnma$ ($Q\ne0$) to
+the $Cmcm$ ($Q=0$) phase. As the distortion is dominated by the $Y_{1}$ phonon,  $\partial^{2}F/\partial Q^{2}(T)$ is proportional to $\omega_{Y_{1}}^{2}(T)$, which we can be calculated using Eq. \ref{free-energy-hessian}. \\
+
+Figure \ref{transition-sns} shows $\omega_{Y_{1}}^{2}(T)$ within the LDA and PBE approximations.
+\begin{figure}[h]
+\includegraphics[width=\linewidth]{Figures/freq-sns.eps}
+\caption[Phonon collapse in SnS.]{$\omega_{Y_{1}}^{2}$ as a function of temperature within LDA and PBE approximations using the experimental lattice parameters (circles). The solid lines correspond to a polynomial fit. We include the pressure component
+$P_{zz}$, which is the pressure in the direction where the atoms move in the transition.  This pressure is calculated including the anharmonic vibrational energy within the SSCHA.}
+\label{transition-sns}
+\end{figure}
+As in the case of SnSe\cite{aseginolaza2019phonon}, the second derivative of the free energy is positive at high temperatures and decreases lowering the temperature. For both approximations, it becomes negative at the critical
+temperature $T_c$, which means that the $Pnma$ phase is not any longer a minimum of the free energy and the structure distorts adopting the $Pnma$ phase. $T_{c}$ strongly depends on the approximation of the exchange-correlation
+functional: it is $600$ K for LDA and $465$ K for PBE. Our LDA calculation agrees better with the experimental value, around $900$ K\cite{chattopadhyay1986neutron}. We associate the discrepancy between LDA and PBE  to the different
+pressures obtained in the transition direction, $P_{zz}$. In fact, as shown in the case of SnSe\cite{aseginolaza2019phonon}, $T_{c}$ depends strongly on the pressure in this $z$ direction. The pressure in
+Figure \ref{transition} includes anharmonic vibrational effects on the energy following the procedure outlined in section \ref{scha-stress-section}. For the same lattice parameter LDA displays a much smaller pressure, as
+generally LDA predicts smaller lattice volumes than PBE. The underestimation with respect to experiments may be attributed to the small supercell size used for the SSCHA calculations ($2\times2\times2$). Even if
+experimentally $T_{c}$ is around $100$ K higher in SnS than in SnSe, our LDA calculations give basically the same transition temperature for both materials as $T_{c}=616$ K in SnSe according to our previous
+calculations\cite{aseginolaza2019phonon}. However, within PBE SnSe does show a lower transition temperature since $T_c=299$ K for SnSe\cite{aseginolaza2019phonon}.
+
+\section{Phonons in $Cmcm$ SnS}
+
+Figure \ref{lw-sns} (a) compares the harmonic phonon spectrum with the anharmonic one calculated within the Lorentzian approximation at $800$ K within the LDA. In the anharmonic spectrum shown the phonon energies correspond to
+the $\Omega_{\mu}(\mathbf{q})$ values of Eq. \ref{lineshift}. The linewidth (Eq. \ref{linewidth}) obtained in the Lorentzian approximation is also shown.
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.7\linewidth]{Figures/phonon-sns.eps}
+\includegraphics[width=0.7\linewidth]{Figures/spf-sns.eps}
+\caption[Phonons within the Lorentzian approximation in SnS.]{(a) Harmonic and anharmonic $[\Omega_{\mu}(\mathbf{q})]$ phonon spectra within the Lorentzian approximation. The length of the bars corresponds to the linewidth (full 
+length of the line is the full width at half maximum). The calculations are done within the LDA using SCHA 3BFCs at $800$ K and $\tilde{\Omega}_{\mu}(\mathbf{q})$ at $800$ K. (b) and (c) $\tilde{\sigma}(\omega)$ spectral functions at 
+the points $\Gamma$ and $Y$, respectively. Solid lines correspond to individual modes and dashed lines are the total spectral functions.}
+\label{lw-sns}
+\end{center}
+\end{figure}
+The phonon spectrum suffers from a huge anharmonic renormalization. The harmonic spectrum shows broad instabilities, which are stabilized by anharmonicity.
+The harmonic phonons of SnS in the relaxed structure show only two instabilities, $\Gamma_{2}$ and $Y_{1}$. The volume increase in the experimental cell is responsible for the
+appearance of additional instabilities that are stabilized by anharmonic effects.
+The $Y_{1}$ mode is unstable below the transition temperature, but it is
+stabilized after the transition. By having a look at the the phonon linewidths, we can see that two modes at the $\Gamma$ point ($\Gamma_{1}$ and $\Gamma_{2}$) not only suffer a strong anharmonic renormalization, but they also
+have a  large linewidth compared to the rest of the modes in the first Brillouin zone. These modes describe optical in-plane atomic displacements (see Figure \ref{patterns}, $\Gamma_{2}$ has the same atomic displacements
+as $\Gamma_{1}$ but in the other in-plane direction), which are the same atomic displacements of $Y_{2}$ and $Y_{3}$ at the point $Y$ with a different periodicity due to the different momentum. The $Y_2$ and $Y_3$ in-plane modes
+also show a very large linewidth. On the contrary, the linewidth of mode $Y_{1}$ is not so large even if it is responsible for the phase transition (see Figure \ref{patterns}). \\
+
+In Figure \ref{lw-sns} (b) and (c) we show the spectral function keeping the full frequency
+dependence on the self-energy. The calculation is done for the $\Gamma$ and $Y$ points. The great majority of the modes describe a Lorentzian shape. However, the modes with a large linewidth within
+the Lorentzian approximation (see Figure \ref{lw-sns} (a)) are those that clearly deviate from the  Lorentzian profile ($\Gamma_{1}$, $\Gamma_{2}$, $Y_{2}$, $Y_{3}$). This non-Lorentzian shape makes clear that these modes are 
+strongly anharmonic and the frequency dependence of the self-energy is crucial to account for their spectral function. In this case, as we can see in in Figures \ref{lw-sns} (b) and (c), the non-Lorentzian shapes of the 
+strongly anharmonic modes do not create appreciable shoulders or satellite peaks in the total spectral function, however, their contribution is far from trivial.
+
+\section{Lattice thermal conductivity of $Cmcm$ SnS}
+
+In Figure \ref{tk-sns} (a) we show the lattice thermal conductivity of $Cmcm$ SnS as a function of temperature calculated using $\overset{(3)}{\boldsymbol{\Phi}}$ and $\overset{(3)}{\boldsymbol{\phi}}$ for solving the BTE within
+the SMA (see chapter \ref{Chapter4}). In Figure \ref{tk-sns} (b) we show the lattice thermal conductivities of $Cmcm$ SnS and SnSe using $\overset{(3)}{\boldsymbol{\Phi}}$.
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=0.8\linewidth]{Figures/tk-paper1.eps}
+\includegraphics[width=0.8\linewidth]{Figures/tk-paper2.eps}
+\caption[Lattice thermal conductivity of SnS and SnSe.]{a) Lattice thermal conductivity of $Cmcm$ SnS calculated within nonperturbative (NP) and perturbative (P) approaches. We have used $\tilde{\Omega}_{\mu}(\mathbf{q})$ at $800$ K 
+for both and SCHA 3BFCs at $800$ K for the calculation in both cases. Calculations are within the LDA. b) Lattice thermal conductivity of $Cmcm$ SnS and SnSe calculated within the nonperturbative (NP) approach.}
+\label{tk-sns}
+\end{center}
+\end{figure}
+We can see that the nonperturbative calculation using $\overset{(3)}{\boldsymbol{\Phi}}$ is lower than the perturbative one using $\overset{(3)}{\boldsymbol{\phi}}$ for the three Cartesian directions. This result makes clear that
+the nonperturbative anharmonicity is very important to calculate the thermal conductivity in this kind of thermoelectric materials. By looking at the values of the lattice thermal conductivity we can see that both materials show
+very similar ultralow values, below $\approx 1.0$ Wm$^{-1}$K$^{-1}$. In-plane results are slightly higher for SnSe and out-of-plane calculations higher for SnS.
+In-plane results are against physical intuition as materials with heavier elements are supposed to have lower thermal conductivity. However, the same counterintuitive effect has been calculated for the low-temperature $Pnma$ phase 
+as well \cite{skelton2017lattice,guo2015first}.
+Experimentally the situation for the the $Pnma$ phase is not so clear as, even if there is a work \cite{wasscher1963simple} where it is shown that the thermal conductivity of SnSe is higher than the one of SnS, more recent experiments do not agree in the value of the thermal conductivity  \cite{he2018remarkable,tan2014thermoelectrics}.
+In our calculations both materials show a clear anisotropy between in-plane and out-of-plane calculations in agreement
+with experimental results\cite{ibrahim2017reinvestigation} for the low-temperature phase close to the phase transition. Our calculations show that SnS and SnSe have very similar thermal conductivities in the three Cartesian
+directions
+
+\section{Conclusions}
+
+In conclusion, we have calculated the electronic and vibrational transport properties of $Cmcm$ SnS using first-principles calculations. We have seen that the electronic transport properties of SnS and SnSe are comparable and that a
+similar power factor is expected for these isoelectronic and isostructural compounds. As in the case of SnSe, SnS suffers a second-order phase transition from the $Cmcm$ to the $Pnma$ phase driven by the collapse of a zone border
+phonon. We have also seen that SnS shows a strongly anharmonic phonon spectrum. Many phonon modes have a very large linewidth and show non-Lorentzian profiles in the spectral function. Finally, we have calculated the lattice thermal
+conductivity of $Cmcm$ SnS and we have seen that nonperturbative anharmonicity substantially corrects the third order force-constants. The thermal conductivity of both materials is very similar and
+ultralow. Therefore, by comparing the electronic and vibrational transport properties of SnS and SnSe in the $Cmcm$ high-temperature phase, we conclude both should be good thermoelectrics. Thus, we suggest that SnS may be an
+earth-abundant very efficient high-temperature thermoelectric material. Experimentally, the figure of merit of SnSe is higher than the one SnS, however, the SnSe samples are known to be porous, therefore, our work motivates more
+experimental effort in the figure of merit of fully dense SnSe. This work also motivates experimental effort in the high temperature regime of SnS for its characterization.

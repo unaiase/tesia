@@ -1,0 +1,711 @@
+% Chapter 1
+
+\chapter{The ionic problem} % Main chapter title
+
+\label{Chapter3} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+
+%----------------------------------------------------------------------------------------
+
+The adiabatic Born-Oppenheimer approximation allowed us to separate the electronic and ionic problems. So far, we have shown how to solve the electronic part. Electronic degrees of freedom are responsible for many properties 
+of solids, nevertheless, many other, such us, thermal and electrical resistivity arise due to ionic degrees of freedom. \\
+
+In order study the dynamics of ions we have to solve the nuclear Schr\"odinger equation Eq. \ref{schrodinger-nuclei}. As we saw in Eq. \ref{nuclei}, the ions move in a potential given by the previously calculated 
+electronic total ground state energy which is usually named Born-Oppenheimer Energy Surface (BOES). \\
+
+The BOES has around $10^{23}$ degrees of freedom and it is an extremely complex energy landscape, therefore, the nuclear Hamiltonian is unsolvable unless the problem is simplified by applying approximations. The first non-trivial 
+approximation we can adopt to solve this problem is the harmonic approximation, which is a low-order expansion of the BOES in the atomic displacements and is justified by the fact that in many solids the atomic displacements are 
+much smaller than the interatomic distances\cite{ashcroft1976solid}.
+
+\section{The harmonic approximation}
+\label{harmonic-approximation}
+
+From now on the ions are not frozen and are allowed to move. The harmonic approximations departs from the classical picture where the atoms oscillate around their equilibrium positions. These equilibrium positions are defined as 
+the minimum of the BOES. In this framework the position of the $s^{th}$ atom in the $m^{th}$ unit cell can be described as
+\begin{equation}
+ \mathbf{R}_{s}(\mathbf{T}_{m})=\mathbf{T}_{m}+\boldsymbol{\tau}_{s}+\mathbf{u}_{s}(\mathbf{T}_{m})=\mathbf{R}_{s}^{0}(\mathbf{T}_{m})+\mathbf{u}_{s}(\mathbf{T}_{m}),
+\end{equation}  
+where $\mathbf{u}_{s}(\mathbf{T}_{m})$ is the displacement of the atom from its equilibrium position $\mathbf{R}_{s}^{0}(\mathbf{T}_{m})$, $\mathbf{T}_{m}$ is the lattice vector from the origin to the origin of the $m^{th}$ 
+cell, and $\boldsymbol{\tau}_{s}$ is the basis vector that denotes the equilibrium position of the atom inside the unit cell. Once we have set the equilibrium atomic positions we can Taylor expand the BOES in the atomic displacements
+\begin{multline}
+ \label{taylor-expansion}
+ U(\mathbf{R})=U(\mathbf{R}^{0})+\sum_{n=2}^{\infty}U_{n}, \\ U_{n}=\frac{1}{n!}\sum\limits_{\substack{s_{1}\dots s_{n} \\ \alpha_{1}\dots\alpha_{n} \\ \mathbf{T}_{1},\dots,\mathbf{T}_{n}}} 
+ \phi_{s_{1}\dots s_{n}}^{\alpha_{1}\dots\alpha_{n}}(\mathbf{T}_{1},\dots,\mathbf{T}_{n})u_{s_{1}}^{\alpha_{1}}(\mathbf{T}_{1})\dots u_{s_{n}}^{\alpha_{n}}(\mathbf{T}_{n}),
+\end{multline}
+with
+\begin{equation}
+ \label{perturbative-nbfc}
+ \phi_{s_{1}\dots s_{n}}^{\alpha_{1}\dots\alpha_{n}}(\mathbf{T}_{1},\dots,\mathbf{T}_{n})=\frac{\partial^{n}U}{\partial u_{s_{1}}^{\alpha_{1}}(\mathbf{T}_{1})\dots\partial u_{s_{n}}^{
+ \alpha_{n}}(\mathbf{T}_{n})}\vline_{_{_{_{_{_{_{_{_{\mathbf{R}^{0}}}}}}}}}}.
+\end{equation}
+The number of possible $\mathbf{T}$ lattice vectors is equal to the number of unit cells. The atom index $s$ goes from $1$ to $N_{s}$, the number of atoms per unit cell, and $\alpha$ runs on the Cartesian coordinates $x$, $y$, and 
+$z$. $\phi_{s_{1},\dots,s_{n}}^{\alpha_{1},\dots,\alpha_{n}}(\mathbf{T}_{1},\dots,\mathbf{T}_{n})$ are the $n$ body force-constants ($n$BFC). \\
+
+In principle, the ionic configuration $\mathbf{R}$ depends on the three lattice vectors of the system $\mathbf{R}\equiv\mathbf{R}(\{\mathbf{a}_{i}\})$ $i=1,2,3$ and, therefore, the BOES also depends on them. The Born-Oppenheimer stress 
+tensor can be defined as
+\begin{equation}
+\label{bo-stress}
+ P_{\alpha\beta}^{BO}(\mathbf{R})=-\frac{1}{\Omega}\frac{\partial U(\mathbf{R})}{\partial\epsilon_{\alpha\beta}}\vline_{_{_{_{_{_{_{_{\boldsymbol{\epsilon}=0}}}}}}}},
+\end{equation} 
+where $\epsilon_{\alpha\beta}$ is the strain tensor. From now on we will suppose that the BOES is defined for a given stress tensor and $\mathbf{R}^{0}$ is the atomic configuration that minimizes that BOES. It is important to note 
+that the stress tensor in Eq. \ref{bo-stress} does not include any effect from the thermal or quantum fluctuations of the ions, it is just the derivative of the total electronic energy with respect to the strain tensor. \\
+ 
+Since we are at a local minimum of the BOES, the first-order term $U_{1}$ is zero by definition, thus, the lowest-order approximation we can do for the nuclear motion is to keep the terms up to second-order in the atomic 
+displacements. The lowest-order approximation is named harmonic approximation and the harmonic Hamiltonian reads
+\begin{equation}
+ H^{I}(\mathbf{R})\simeq\sum_{\mathbf{T}s\alpha}\frac{(P_{s}^{\alpha}(\mathbf{T}))^{2}}{2m_{s}}+U(\mathbf{R}^{0})+U_{2}(\mathbf{R}).
+\end{equation}
+We will name higher-order terms ($n>2$) anharmonic terms. It is convenient to Fourier transform the 2BFC  with the following general Fourier transform for any $n$BFC
+\begin{equation}
+ \label{2bfc-fourier}
+ \phi_{s_{1}\dots s_{n}}^{\alpha_{1}\dots\alpha_{n}}(\mathbf{T}_{1},\dots,\mathbf{T}_{n})=\frac{1}{N_{\mathbf{q}}^{n}}\sum_{\mathbf{q}_{1}\dots\mathbf{q}_{n}}e^{i(\mathbf{q}_{1}\cdot\mathbf{T}_{1}+\dots+\mathbf{q}_{
+ n}\cdot\mathbf{T}_{n})}\times\phi_{s_{1}\dots s_{n}}^{\alpha_{1}\dots\alpha_{n}}(\mathbf{q}_{1},\dots,\mathbf{q}_{n}),
+\end{equation}
+where $N_{\mathbf{q}}$ is the number of $\mathbf{q}$ points in the 1BZ or equivalently the number of allowed $\mathbf{T}$ lattice vectors. Due to the translational symmetry of the crystal, 2BFC have also translational invariance and only 
+depend on $\mathbf{T}=\mathbf{T}_{1}-\mathbf{T}_{2}$. Therefore, only the terms with $\mathbf{q}_{1}=-\mathbf{q}_{2}$ are non-zero in 
+Eq. \ref{2bfc-fourier} and the equation can be rewritten
+\begin{equation}
+ \phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{q})=\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{q},-\mathbf{q})=N_{\mathbf{q}}\sum_{\mathbf{T}}\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T},0)e^{-i\mathbf{
+ q}\cdot\mathbf{T}},
+\end{equation} 
+where $\mathbf{q}=\mathbf{q}_{1}=-\mathbf{q}_{2}$. In the same way we can define the Fourier transforms of the displacement and momentum operators
+\begin{equation}
+ \label{displacement-fourier}
+ u_{s}^{\alpha}(\mathbf{q})=\frac{1}{\sqrt{N_{\mathbf{q}}}}\sum_{\mathbf{T}}e^{i\mathbf{q}\cdot\mathbf{T}}u_{s}^{\alpha}(\mathbf{T}),
+\end{equation}
+\begin{equation}
+ \label{momentum-fourier}
+ P_{s}^{\alpha}(\mathbf{q})=\frac{1}{\sqrt{N_{\mathbf{q}}}}\sum_{\mathbf{T}}e^{-i\mathbf{q}\cdot\mathbf{T}}P_{s}^{\alpha}(\mathbf{T}).
+\end{equation}
+We will see that these definitions will allow us to diagonalize the ionic Hamiltonian. First of all we assume the following transformations with the bosonic ladder operators
+\begin{equation}
+ \label{displacement-quantization}
+ u_{s}^{\alpha}(\mathbf{q})=\sum_{\mu}\frac{1}{\sqrt{2m_{s}\omega_{\mu}(\mathbf{q})}}\epsilon_{s\mu}^{\alpha}(\mathbf{q})(b_{\mu\mathbf{q}}+b_{\mu-\mathbf{q}}^{\dagger}),
+\end{equation}
+\begin{equation}
+ \label{momentum-quantization}
+ P_{s}^{\alpha}(\mathbf{q})=-i\sum_{\mu}\sqrt{\frac{m_{s}\omega_{\mu}(\mathbf{q})}{2}}\epsilon_{s\mu}^{\alpha}(\mathbf{q})(b_{\mu\mathbf{q}}-b_{\mu-\mathbf{q}}^{\dagger}),
+\end{equation}
+that satisfy the following commutation algebra
+\begin{equation}
+ [b_{\mu\mathbf{q}},b^{\dagger}_{\mu'\mathbf{q}'}]=\delta_{\mu\mu'}\delta_{\mathbf{q}\mathbf{q}'}, \hspace{0.2cm} [b_{\mu\mathbf{q}},b_{\mu'\mathbf{q}'}]=0, \hspace{0.2cm} 
+ [b^{\dagger}_{\mu\mathbf{q}},b^{\dagger}_{\mu'\mathbf{q}'}]=0.
+\end{equation}
+The polarization vectors and phonon frequencies are calculated solving the eigenvalue problem of the dynamical matrix $D_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{q})=\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{
+2}}(\mathbf{q})/\sqrt{m_{s_{1}}m_{s_{2}}}$
+\begin{equation}
+ \omega_{\mu}^{2}(\mathbf{q})\epsilon_{s_{1}\mu}^{\alpha_{1}}(\mathbf{q})=\sum_{s_{2}}\sum_{\alpha_{2}}D_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{q})\epsilon_{s_{2}\mu}^{\alpha_{2}}(\mathbf{q}).
+\end{equation}
+By using these definitions, the ionic Hamiltonian in the harmonic approximation can be written as a sum of independent harmonic oscillators\cite{ashcroft1976solid,mahan2013many,born1954dynamical}
+\begin{equation}
+ \label{diagonal-ionic-hamiltonian}
+ H^{I}=U(\mathbf{R}^{0})+\sum_{\mu}\sum_{\mathbf{q}}^{1BZ}\omega_{\mu}(\mathbf{q})\left(b_{\mu\mathbf{q}}^{\dagger}b_{\mu\mathbf{q}}+\frac{1}{2}\right),
+\end{equation}
+with the following eigenenergies
+\begin{equation}
+ \label{ionic-eigenvalues}
+ E^{mode}_{\mu}(\mathbf{q})=U(\mathbf{R}^{0})+\omega_{\mu}(\mathbf{q})\left(n_{\mu\mathbf{q}}+\frac{1}{2}\right).
+\end{equation}
+$\boldsymbol{\epsilon}_{s\mu}(\mathbf{q})$ and $\omega_{\mu}(\mathbf{q})$ are the polarization vector (of atom $s$ in the unit cell) and the frequency of mode $\mu$ with 
+momentum $\mathbf{q}$, respectively. $n_{\mu\mathbf{q}}$ denotes the occupation level of a mode, when a given mode is excited to the $n^{th}_{\mu\mathbf{q}}$ level, we would say that we have $n_{\mu\mathbf{q}}$ 
+phonons of that mode. We will name $\omega_{\mu}(\mathbf{q})$ $phonon$ $frequencies$ and their dispersion with respect to momentum $phonon$ $spectrum$. \\
+
+Finally, the energy of a total ionic state $|\beta\rangle=|n_{1\mathbf{q}_{1}}\dots n_{3N_{s}\mathbf{q}_{1}}\dots n_{3N_{s}\mathbf{q}_{N_{\mathbf{q}}}}\rangle$, is given by
+\begin{equation}
+ E_{\beta}=U(\mathbf{R}^{0})+\sum_{\mu}\sum_{\mathbf{q}}^{1BZ}\omega_{\mu}(\mathbf{q})\left(n_{\mu\mathbf{q}}+\frac{1}{2}\right).
+\end{equation}
+As phonons are bosons, they follow Bose-Einstein statistics and the total energy at a given temperature can be calculated as
+\begin{equation}
+ E(T)=U(\mathbf{R}^{0})+\sum_{\mu}\sum_{\mathbf{q}}^{1BZ}\omega_{\mu}(\mathbf{q})\left(n_{B}(\omega_{\mu}(\mathbf{q}))+\frac{1}{2}\right),
+\end{equation}
+where 
+\begin{equation}
+ n_{B}(\omega_{\mu}(\mathbf{q}))=(e^{\beta\omega_{\mu}(\mathbf{q})}-1)^{-1}
+\end{equation}
+is the Bose-Einstein distribution function. The zero point energy (ZPE) is defined as
+\begin{equation}
+ E_{ZPE}=E(T=0)=U(\mathbf{R}^{0})+\frac{1}{2}\sum_{\mu}\sum_{\mathbf{q}}^{1BZ}\omega_{\mu}(\mathbf{q})
+\end{equation}
+and arises from the quantum fluctuations of the atoms at $T=0$ K.
+
+\section{Phonons from Density Functional Perturbation Theory}
+\label{dfpt-2bfc}
+
+We have seen that within the simplest approximation to study the motion of nuclei we need to calculate second derivatives of $U(\mathbf{R})$ at the minimum of the BOES or the 2BFC. We can start by calculating the 
+first-order derivatives of $U(\mathbf{R})$. By using the Hellmann-Feynman theorem \cite{hellmann1937forces,feynman1939forces} we get
+\begin{equation}
+ \frac{\partial U}{\partial u_{s_{1}}^{\alpha_{1}}(\mathbf{T}_{1})}=\langle\psi_{0}^{e}|\frac{\partial H^{e}}{\partial u_{s_{1}}^{\alpha_{1}}(\mathbf{T}_{1})}|\psi_{0}^{e}\rangle=\frac{\partial V_{I,I}}{\partial u_{s_{1}}^{
+ \alpha_{1}}(\mathbf{T}_{1})}+\int{d\mathbf{x}n(\mathbf{x})\frac{\partial V_{ext}(\mathbf{x})}{\partial u_{s_{1}}^{\alpha_{1}}(\mathbf{T}_{1})}},
+\end{equation} 
+since the only explicit dependence on the nuclear coordinates of $H^{e}$ comes from the external potential $V_{ext}$ and the nuclei-nuclei Coulomb interaction $V_{I,I}$. Now if we compute the 
+second derivative with respect to the atomic displacements we get
+\begin{multline}
+ \phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2})=\frac{\partial^{2}U}{\partial u_{s_{1}}^{\alpha_{1}}(\mathbf{T}_{1})\partial u_{s_{2}}^{\alpha_{2}}(\mathbf{T}_{2})}\vline_{_{_{_{_{_{_{_{_{\mathbf{R}^{
+ 0}}}}}}}}}} = \int{d\mathbf{x}\frac{\partial n(\mathbf{x})}{\partial u_{s_{1}}^{\alpha_{1}}(\mathbf{T}_{1})}\vline_{_{_{_{_{_{_{_{_{\mathbf{R}^{0}}}}}}}}}}}\frac{\partial V_{ext}(\mathbf{x})}{\partial u_{s_{2}}^{\alpha_{2}}(\mathbf{
+ T}_{2})}\vline_{_{_{_{_{_{_{_{_{\mathbf{R}^{0}}}}}}}}}} + \\ + \int{d\mathbf{x}n(\mathbf{x})}\frac{\partial^{2}V_{ext}(\mathbf{x})}{\partial u_{s_{1}}^{\alpha_{1}}(\mathbf{T}_{1})\partial u_{s_{2}}^{\alpha_{2}}(\mathbf{T}_{
+ 2})}\vline_{_{_{_{_{_{_{_{_{\mathbf{R}^{0}}}}}}}}}} +  \frac{\partial^{2}V_{I,I}}{\partial u_{s_{1}}^{\alpha_{1}}(\mathbf{T}_{1})\partial u_{s_{2}}^{\alpha_{2}}(\mathbf{T}_{2})}\vline_{_{_{_{_{_{_{_{_{\mathbf{R}^{0}}}}}}}}}}. 
+\end{multline}
+The last equation shows that the second derivatives of the BOES not only require the knowledge of the density $n(\mathbf{x})$ but also of its derivatives with respect to nuclear 
+displacements $\frac{\partial n(\mathbf{x})}{\partial u_{s}^{\alpha}(\mathbf{T})}$. We already know how to calculate the electronic density by solving the electronic problem using DFT, now we will see how to 
+calculate $\frac{\partial n(\mathbf{x})}{\partial u_{s}^{\alpha}(\mathbf{T})}$ using Density Functional Perturbation Theory (DFPT)\cite{baroni1987green,gonze1995adiabatic,baroni2001phonons}. \\
+
+The main idea behind DFPT is to apply first-order perturbation theory to calculate the change on the Kohn-Sham orbitals when the ions displace from their equilibrium positions. With the change on these 
+orbitals one is able to calculate the variation of the electronic density and, consequently, the 2BFC. The first step is to make a first-order expansion of the electronic Hamiltonian, the eigenvalues, 
+the eigenfunctions and, the density (see Eqs. \ref{kohn-sham} and \ref{electronic-density} for the Kohn-Sham problem and the density)
+\begin{itemize}
+ \item $H^{KS} \rightarrow H^{KS}+\Delta H^{KS}$
+ \item $\epsilon_{n\mathbf{k}} \rightarrow \epsilon_{n\mathbf{k}} + \Delta\epsilon_{n\mathbf{k}}$
+ \item $|\phi_{n\mathbf{k}}\rangle \rightarrow |\phi_{n\mathbf{k}}\rangle + |\Delta\phi_{n\mathbf{k}}\rangle$ 
+ \item $n(\mathbf{x}) \rightarrow n(\mathbf{x}) + \Delta n(\mathbf{X})$,
+\end{itemize}
+where $\langle\mathbf{x}|\Delta\phi_{n\mathbf{k}}\rangle=\Delta\phi_{n\mathbf{k}}(\mathbf{x})$. With these ingredients we obtain another eigenvalue problem at linear order 
+\begin{equation}
+ \label{sternheimer1}
+ (H^{KS}-\epsilon_{n\mathbf{k}})|\Delta\phi_{n\mathbf{k}}\rangle=-(\Delta H^{KS}-\Delta\epsilon_{n\mathbf{k}})|\phi_{n\mathbf{k}}\rangle,
+\end{equation} 
+and by deriving Eq. \ref{ground-state-density} we get
+\begin{equation}
+ \label{sternheimer2}
+ \Delta n(\mathbf{x})=2Re\sum_{n}\sum_{\mathbf{k}}^{1BZ}2[\theta(\epsilon_{F}-\epsilon_{n\mathbf{k}})]\phi_{n\mathbf{k}}^{*}(\mathbf{x})\Delta\phi_{n\mathbf{k}}(\mathbf{x}),
+\end{equation}
+where $\theta(\epsilon)$ is the zero temperature Fermi-Dirac distribution function. Eq. \ref{sternheimer1} is known as the Sternheimer equation\cite{sternheimer1954electronic}. Finally, the linear change of 
+the Hamiltonian can be derived using functional derivatives
+\begin{equation}
+ \label{sternheimer3}
+ \Delta H^{KS}(\mathbf{x})=\Delta V_{ext}(\mathbf{x})+\int{d\mathbf{x}'K(\mathbf{x},\mathbf{x}')\Delta n(\mathbf{x}')},
+\end{equation} 
+where $K(\mathbf{x},\mathbf{x}')$ is the functional derivative of the electron-electron interaction potential with respect to the density
+\begin{equation}
+ K(\mathbf{x},\mathbf{x}')=\frac{\delta V_{H}(\mathbf{x})}{\delta n(\mathbf{x}')}+\frac{\delta V_{xc}(\mathbf{x})}{\delta n(\mathbf{x}')}.
+\end{equation}
+Equivalently, as the kinetic energy has no first-order contribution,
+\begin{equation}
+ \Delta H^{KS}(\mathbf{x})=\Delta V^{KS}(\mathbf{x})=\Delta V_{ext}(\mathbf{x})+\Delta V_{H}(\mathbf{x})+\Delta V_{xc}(\mathbf{x}.)
+\end{equation}
+The combination of Eqs. \ref{sternheimer1}, \ref{sternheimer2}, and \ref{sternheimer3} forms a set of equations for the perturbed system that can be solved in a self-consistent way. The formalism we have 
+described can give the derivatives of the density that we need to calculate the dynamical matrices and it is implemented in the $Quantum$ $Espresso$ software package\cite{giannozzi2009quantum}.
+
+\section{Long-wavelength vibrations in polar materials}
+
+The formalism we have described so far is general for metals and insulators and allows the calculation of phonon frequencies and polarization vectors at any $\mathbf{q}$ point of the 1BZ. However, in polar 
+semiconductors and insulators, the long-range character of the Coulomb forces gives rise to macroscopic electric fields for longitudinal optic (LO) phonons in the long-wavelength limit. In this limit, phonons 
+are coupled to these macroscopic electric fields and their energy is shifted. \\
+
+The physics of the system can be understood within the Huang's phenomenological model\cite{born1954dynamical} for a cubic lattice with two atoms per unit cell and easily generalized for any kind of lattice. This is 
+just a simple model to understand the physics behind this effect. The most general quadratic expression of the energy as a function of the phonon optic coordinates $\mathbf{u}$ and the electric field $\boldsymbol{\mathsf{E}}$ is
+\begin{equation}
+ E(\mathbf{u},\boldsymbol{\mathsf{E}})=\frac{1}{2}m\omega_{0}^{2}u^{2}-\frac{\Omega_{cell}}{8\pi}\epsilon_{\infty}-Z^{*}\mathbf{u}\cdot\boldsymbol{\mathsf{E}},
+\end{equation}  
+where $m$ is the nuclear reduced mass (defined as $m=m_{1}m_{2}/(m_{1}+m_{2})$ for two masses $m_{1}$ and $m_{2}$), $\epsilon_{\infty}$ the electronic dielectric constant of the crystal (the static dielectric constant 
+with $\mathbf{u}=0$), $\omega_{0}$ the frequency of the mode without taking into account the coupling to the electric field, $\Omega_{cell}$ is the volume of the unit cell, and the coupling $Z^{*}$, between the atomic 
+displacements and the electric field, is known as the Born effective charge of the ions. The conjugate variables to $\mathbf{u}$ and $\boldsymbol{\mathsf{E}}$ are the force $\mathbf{f}$ acting on the ions and the electrical 
+induction $\boldsymbol{\mathsf{D}}$
+\begin{equation}
+ \label{conjugate-force}
+ \mathbf{f}\equiv -\frac{\partial E}{\partial\mathbf{u}}=-m\omega_{0}^{2}\mathbf{u}+Z^{*}\boldsymbol{\mathsf{E}},
+\end{equation}
+\begin{equation}
+ \label{conjugate-field}
+ \boldsymbol{\mathsf{D}}\equiv -\frac{4\pi}{\Omega}\frac{\partial E}{\partial \boldsymbol{\mathsf{E}}}=\frac{4\pi}{\Omega}Z^{*}\mathbf{u}+\epsilon_{\infty}\boldsymbol{\mathsf{E}}.
+\end{equation}
+
+In the absence of free external charges, the Maxwell equations give
+\begin{equation}
+ \label{rotational}
+ rot\boldsymbol{\mathsf{E}}\sim i\mathbf{q}\times\boldsymbol{\mathsf{E}}=0,
+\end{equation}
+\begin{equation}
+ \label{divergency}
+ div\boldsymbol{\mathsf{D}}\sim i\mathbf{q}\cdot\boldsymbol{\mathsf{D}}=0.
+\end{equation}
+For transverse modes, where the electric field is perpendicular to the phonon momentum, Eq. \ref{rotational} gives $\boldsymbol{\mathsf{E}}_{T}=0$ ($\boldsymbol{\mathsf{E}}_{T}$ is the transversal component of the electric 
+field), and Eq. \ref{conjugate-force} $\mathbf{f}_{T}=-m\omega_{0}^{2}\mathbf{u}$. Therefore the transverse frequency is $\omega_{T}=\omega_{0}$. For longitudinal modes, where the electric field is parallel to the phonon 
+momentum, Eq. \ref{divergency} gives $\boldsymbol{\mathsf{D}}_{L}=0$ and Eq. \ref{conjugate-field} gives $\boldsymbol{\mathsf{E}}_{L}=-4\pi Z^{*}/(\Omega\epsilon_{\infty})\mathbf{u}$ ($\boldsymbol{\mathsf{E}}_{L}$ is the 
+longitudinal component of the electric field). Eq. \ref{conjugate-force} gives $\mathbf{f}_{L}=-(m\omega_{0}^{2}+4\pi Z^{*2}/(\Omega\epsilon_{\infty}))\mathbf{u}$. Therefore, the longitudinal frequency 
+is $\omega_{L}=\sqrt{\omega_{0}^{2}+4\pi Z^{*2}/(\Omega\epsilon_{\infty}m)}$. These results clearly show that the frequency of longitudinal modes in the long-wavelength limit have an extra term that arises due to the 
+coupling with the electric field. The formalism can be generalized for crystals with any symmetry and in these cases the Born effective charges and the electronic dielectric constant will be tensors. \\
+
+The first-principles calculation of $\epsilon_{\infty}^{\alpha\beta}$ and $Z_{s}^{*\alpha\beta}$ can be started from the definition of the macroscopic electric polarization of the medium, 
+\begin{equation}
+ \mathsf{P}_{\alpha}=\frac{1}{\Omega_{cell}}\sum_{s\beta}\left[Z^{*\alpha\beta}_{s}u_{s}^{\beta}+\frac{\epsilon_{\infty}^{\alpha\beta}-\delta_{\alpha\beta}}{4\pi}\mathsf{E}_{\beta}\right],
+\end{equation}
+$\delta_{\alpha\beta}$ being the Dirac's delta. The macroscopic polarization definition must be read as a tensor equation stating that the Born effective charge tensor of the $s$th ion with respect to a periodic displacement of 
+all the ions of the s species at zero macroscopic electric field
+\begin{equation}
+ Z^{*\alpha\beta}_{s}=\Omega_{cell}\frac{\partial \mathsf{P}_{\alpha}}{\partial u_{s}^{\beta}(\mathbf{q}=0)}\vline_{_{_{_{_{_{_{_{\boldsymbol{\mathsf{E}}=0}}}}}}}},
+\end{equation}
+while the electronic dielectric constant tensor is the derivative of the polarization with respect to the macroscopic electric field at clamped ions
+\begin{equation}
+ \epsilon_{\infty}^{\alpha\beta}=\delta_{\alpha\beta}+4\pi\frac{\partial\mathsf{P}_{\alpha}}{\partial\mathsf{E}_{\beta}}\vline_{_{_{_{_{_{_{_{\mathbf{u}_{s}(\mathbf{q}=0)=0}}}}}}}}.
+\end{equation}
+If we want to define the 2BFC in the long-wavelength limit, they can be split into the sum of an analytic and a nonanalytic contributions
+\begin{equation}
+ \phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}=\overset{an}{\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}}+\overset{na}{\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}},
+\end{equation}
+where the analytic part is the matrix obtained from DFPT, for instance, the perturbation being a zone-center phonon displacement at zero macroscopic electric field. The nonanalytic part has the general form
+\begin{equation}
+\label{nonanalytic}
+\overset{na}{\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}}=\frac{4\pi}{\Omega}\frac{(\mathbf{q}\cdot\mathbf{Z}^{*}_{s_{1}})_{\alpha_{1}}(\mathbf{q}\cdot\mathbf{Z}^{*}_{s_{2}})_{\alpha_{2}}}{\mathbf{q}\cdot\boldsymbol{
+\epsilon}_{\infty}\cdot\mathbf{q}}.
+\end{equation}
+From Eq. \ref{nonanalytic} we can see that for the nonanalytic part of the 2BFC at $\mathbf{q}=0$ we need the macroscopic dielectric constant of the system and the Born effective charges, which can be calculated within 
+the DFPT formalism explained in section \ref{dfpt-2bfc}\cite{gonze1997dynamical}. \\
+
+For a better understanding, in Fig. \ref{LOTOsplitting} we show the ab initio phonon spectrum of $SnS$.
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.8\linewidth]{Figures/charges.eps}
+\caption[$SnS$ phonon spectrum with efective charges]{Ab initio phonon dispersion of $SnS$ including the coupling of the longitudinal optic modes with the macroscopic electric field (black circles) and without 
+including it (red lines).}
+\label{LOTOsplitting}
+\end{center}
+\end{figure}
+As we can see, in practice, the correction for the longitudinal optic modes in the long-wavelentgh limit translates into a different gap between the longitudinal and transverse modes for different directions in the 1BZ. The reason 
+is that for different directions in the 1BZ the frequency of the modes is different.
+
+\section{Anharmonic effects in solids}
+The harmonic approximation allows to write the ionic Hamiltonian in a diagonal basis and, therefore, provides well defined quasiparticles named phonons which do not interact among themselves. For that purpose 
+we have seen that we need to truncate the Taylor expansion of the external potential at the second-order within the small atomic displacements assumption. This assumption seems to be valid in most solids 
+for temperatures below the melting point, specially for obtaining phonon frequencies and its associated physical properties\cite{born1954dynamical}. However, the non-interacting picture has limitations and it 
+is not able to explain many physical phenomena that arise due to the anharmonic terms in Eq. \ref{taylor-expansion}. Probably, one of the most representative examples of anharmonicity is the non-zero thermal 
+resistivity of materials which is translated into a finite thermal conductivity. Within the harmonic approximation the phonon basis diagonalizes the Hamiltonian and, therefore, if the system is in a eigenstate 
+it will stay there forever. This means that the lifetime of these states is infinite and they can carry thermal energy without any resistance. In reality, obviously, solids have a finite thermal conductivity. 
+It is also well known that the peaks observed in neutron scattering experiments have a measurable width, which is inversely proportional to the lifetime of a phonon. The harmonic approximation is also unable 
+to describe more basic properties such as the temperature dependence of phonon frequencies and the thermal expansion of solids. \\ 
+
+Anharmonicity can be treated within perturbation theory by calculating higher-order terms of the Taylor expansion of the BOES. This approximation holds when the anharmonic coefficients of the Taylor expansion 
+are much smaller than the harmonic one. This means that the potential can be described with the second-order term of the Taylor expansion of the BOES in the range defined by the ionic fluctuations and anharmonic 
+terms are just a small correction. It can be the case that ionic displacements cannot be considered small anymore and higher-order terms become as important as, or even more than, the second-order 
+ones. The origin of such big displacements can be temperature when a solid is close to melting. It can also happen that at low temperatures or even at $0$ K the harmonic and perturbative regimes break down in the 
+presence of very light atoms\cite{borinaga2017anharmonicity} or when the crystal is close to dynamical instabilities, as it happens in 
+ferroelectrics\cite{ribeiro2018strong,zhang2011anomalous} or in materials that show charge density wave transitions\cite{kidd2002electron,leroux2015strong}. \\
+
+When perturbation theory breaks down one needs to apply non-pertubative methods. One way of including anharmonic effects at a non-pertubative level is to use molecular dynamics 
+simulations\cite{hellman2013temperature,hellman2013temperature1,hellman2011lattice,ljungberg2013temperature,magduau2013identification,wang1990tight,zhang2014phonon,de2009thermal}, which usually require long simulation
+times and, as they follow Newtonian dynamics, their applications are limited to temperatures above the Debye temperature. The Newtonian limitation can be overcome by applying path integral molecular 
+dynamics\cite{ceperley1995path} which are even more computationally expensive as they require to simulate the quantum fluctuations. There is another family of 
+methods\cite{errea2014anharmonic,errea2013first,errea2011anharmonic,monserrat2013anharmonic,tadano2015self,georgescu2012self,brown2013self,patrick2015anharmonic,} that have been developed mainly inspired by the 
+self-consistent harmonic approximation (SCHA) formulated by Hooton\cite{hooton1955li}. The SCHA uses the variational Gibbs-Bogoliubov (GB) principle to approximate the free energy of the ionic Hamiltonian with 
+the free energy calculated with a trial harmonic density matrix for the same system, which does not necessarily coincide with the harmonic density matrix obtained from the harmonic approximation. \\
+
+In this thesis we have applied the perturbative method\cite{paulatto2013anharmonic} and a stochastic implementation of the SCHA, the so called stochastic self-consistent 
+harmonic approximation (SSCHA)\cite{errea2014anharmonic,errea2013first}. In the following sections we will discuss both of them.
+
+\section{Perturbation theory of the phonon-phonon interaction}
+\label{perturbation-theory-third}
+
+In this section we will see what is the correction that the lowest-order perturbation theory makes to the harmonic result. We will see that this approximation not only gives an anharmonic lineshift to the harmonic 
+frequencies, but also an anharmonic linewidth, which makes clear that the non-interacting phonons do not diagonalize the anharmonic Hamiltonian and they will no longer have an infinite lifetime. Therefore, this 
+theory will allow us to calculate properties, such as, the lattice thermal conductivity and the phonon spectral function measured in inelastic scattering experiments. \\
+
+By using Eqs. \ref{2bfc-fourier}, \ref{displacement-fourier}, and \ref{momentum-fourier} one can rewrite the BOES\cite{paulatto2015first}
+\begin{equation}
+ U = U_{0}+\sum_{n=2}^{\infty}\frac{N_{\mathbf{q}}^{1-n/2}}{n!}\sum\limits_{\substack{s_{1}\dots s_{n} \\ \alpha_{1}\dots\alpha_{n} \\ \mathbf{q}_{1},\dots,\mathbf{q}_{n}}}\phi_{s_{1}\dots s_{n}}^{
+ \alpha_{1}\dots\alpha_{n}}(\mathbf{q}_{1},\dots,\mathbf{q}_{n})u_{s_{1}}^{\alpha_{1}}(\mathbf{q}_{1})\dots u_{s_{n}}^{\alpha_{n}}(\mathbf{q}_{n}),
+\end{equation}
+and by applying Eqs. \ref{displacement-quantization}, and \ref{momentum-quantization} together with the following transformation
+\begin{multline}
+ \phi_{\mu_{1}\dots\mu_{n}}(\mathbf{q}_{1},\dots,\mathbf{q}_{n})=\sum\limits_{\substack{s_{1}\dots s_{n} \\ \alpha_{1}\dots\alpha_{n}}}\phi_{s_{1}\dots s_{n}}^{\alpha_{1}\dots\alpha_{n}}(\mathbf{q}_{1},\dots,\mathbf{q}_{
+ n}) \\ \times\sqrt{\frac{1}{2m_{s_{1}}\omega_{\mu_{1}}(\mathbf{q}_{1})}}\dots\sqrt{\frac{1}{2m_{s_{n}}\omega_{\mu_{n}}(\mathbf{q}_{n})}}\epsilon_{\mu_{1}s_{1}}^{\alpha_{1}}(\mathbf{q}_{1})\dots\epsilon_{\mu_{n}s_{n}}^{\alpha_{
+ n}}(\mathbf{q}_{n}),
+\end{multline}
+it can be rewritten as
+\begin{multline}
+ \label{second-quantization}
+ U=U_{0}+\sum_{n=2}^{\infty}\frac{N_{\mathbf{q}}^{1-n/2}}{n!}\sum\limits_{\substack{\mu_{1}\dots \mu_{n} \\ \mathbf{q}_{1}\dots\mathbf{q}_{n}}}\phi_{\mu_{1}\dots\mu_{n}}(\mathbf{q}_{1},\dots,\mathbf{
+ q}_{n}) \\ \times(b_{\mu_{1}\mathbf{q}_{1}}+b^{\dagger}_{\mu_{1}\mathbf{q}_{1}})\times\dots\times(b_{\mu_{n}\mathbf{q}_{n}}+b^{\dagger}_{\mu_{n}\mathbf{q}_{n}}).
+\end{multline}
+We can see in Eq. \ref{second-quantization} that the anharmonic part of the BOES can be written as a sum of the anharmonic coefficients $\phi_{\mu_{1}\dots\mu_{n}}(\mathbf{q}_{1},\dots,\mathbf{ q}_{n})$ times the sum of 
+creation and annihilation operators $b_{\mu\mathbf{q}}+b^{\dagger}_{\mu\mathbf{q}}$ of all the modes. Due to translational symmetry, for each anharmonic coefficient $\phi_{\mu_{1}\dots\mu_{n}}(\mathbf{q}_{1},\dots,\mathbf{ q}_{n})$
+crystal momentum is conserved so that $\mathbf{q}_{1}+\dots+\mathbf{q}_{n}=\mathbf{G}$, where $\mathbf{G}$ is a reciprocal lattice vector\cite{rousseau2010giant}. \\
+
+By applying perturbation theory in Eq. \ref{second-quantization}, it can be shown that the lowest-order energy corrections to the harmonic non-interacting phonon propagator are given by the loop (L), bubble (B), and tadpole (T) 
+self-energy diagrams\cite{rousseau2010giant,calandra2007anharmonic} shown in Fig. \ref{diagram}.
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=\linewidth]{Figures/diagrams.png}
+\caption{The loop (L), bubble (B), and tadpole (T) diagrams contribute to the phonon self-energy $\Pi_{\mu(0)}(\mathbf{q},\omega)$ at lowest order in perturbation theory. The tadpole diagram is split into the optical (T$_{O}$) and 
+acoustic (T$_{A}$) contributions, see the text for further explanations. The dot denotes a fourth-order vertex and the square a third-order one.}
+\label{diagram}
+\end{center}
+\end{figure}
+Their contributions to the phonon self-energy $\Pi_{\mu(0)}(\mathbf{q},\omega)$ of phonon $\mu\mathbf{q}$ are given by
+\begin{equation}
+ \label{loop-diagram}
+ \overset{(L)}{\Pi}_{\mu(0)}(\mathbf{q})=\frac{1}{2N_{\mathbf{q}}}\sum_{\mathbf{q}_{1}\mu_{1}}\phi_{\mu\mu\mu_{1}\mu_{1}}(-\mathbf{q},\mathbf{q},\mathbf{q}_{1},-\mathbf{q}_{1})[2n_{B}(\omega_{\mu_{1}}(\mathbf{q}_{1}))+1],
+\end{equation}
+\begin{equation}
+ \label{bubble-diagram}
+ \overset{(B)}{\Pi}_{\mu(0)}(\mathbf{q},\omega)=\frac{1}{2N_{\mathbf{q}}}\sum\limits_{\substack{\mathbf{q}_{1}\mathbf{q}_{2} \\ \mu_{1}\mu_{2}}}\sum_{\mathbf{G}}\delta_{-\mathbf{q}+\mathbf{q}_{1}+\mathbf{q}_{2},\mathbf{
+ G}}|\phi_{\mu\mu_{1}\mu_{2}}(-\mathbf{q},\mathbf{q}_{1},\mathbf{q}_{2})|^{2}\tilde{F}(\omega,\omega_{\mu_{1}}(\mathbf{q}_{1}),\omega_{\mu_{2}}(\mathbf{q}_{2})),
+\end{equation}
+\begin{equation}
+ \label{tadpole-diagram}
+ \overset{(T)}{\Pi}_{\mu(0)}(\mathbf{q})=\frac{1}{N_{\mathbf{q}}}\sum\limits_{\substack{\mathbf{q}_{1} \\ \mu_{1}\mu_{2}}}\phi_{\mu\mu\mu_{2}}(-\mathbf{q},\mathbf{q},0)\phi_{\mu_{1}\mu_{1}\mu_{2}}(-\mathbf{q}_{1},\mathbf{q}_{1},
+ 0)\frac{2n_{B}(\omega_{\mu_{1}}(\mathbf{q}_{1})+1)}{\omega_{\mu_{2}}(0)},
+\end{equation}
+where
+\begin{multline}
+ \label{ftilde}
+ \tilde{F}(\omega,\omega_{1},\omega_{2})=\left[\frac{2(\omega_{1}+\omega_{2})[1+n_{B}(\omega_{1})+n_{B}(\omega_{2})]}{(\omega_{1}+\omega_{2})^{2}-(\omega+i\delta)^{2}}\right]+ \\ 
+ + \left[\frac{2(\omega_{1}-\omega_{2})[n_{B}(\omega_{2})-n_{B}(\omega_{1})]}{(\omega_{2}-\omega_{1})^{2}-(\omega+i\delta)^{2}}\right].
+\end{multline}
+Thus, the total self-energy of phonon $\mu\mathbf{q}$ can be written as
+\begin{equation}
+ \label{total-self-energy}
+ \Pi_{\mu(0)}(\mathbf{q},\omega) = \overset{(L)}{\Pi}_{\mu(0)}(\mathbf{q}) + \overset{(B)}{\Pi}_{\mu(0)}(\mathbf{q},\omega) + \overset{(T)}{\Pi}_{\mu(0)}(\mathbf{q}).
+\end{equation}
+We include the subindex $(0)$ to point out that the self-energy is a harmonic self-energy, we will see that we can define another self-energy within the SSCHA. 
+Note that the loop and tadpole self-energy terms do not depend on the frequency $\omega$ and they are real. 
+The tadpole optical $T_{O}$ diagram includes the effect of an optical phonon at the $\Gamma$ point ($\omega_{\mu_{2}}(0)$) and it accounts for the relaxation of internal coordinates due to anharmonic effects. If internal atomic 
+coordinates are fixed by symmetry, the $T_{O}$ diagram vanishes and does not contribute\cite{calandra2007anharmonic}. On the contrary, if Wyckoff positions have free parameters\cite{aroyo2011crystallography}, the $T_{O}$ diagram 
+accounts for the effect of quantum and thermal fluctuations in the internal coordinates. An alternative way of accounting for the $T_{O}$ diagram is to minimize the free energy within the quasiharmonic approximation 
+(QHA)\cite{bonini2007phonon}. For the internal coordinates that minimize the free energy within the QHA the $T_{O}$ diagram vanishes. These equilibrium atomic positions might be different from $\mathbf{R}^{0}$ obtained from the 
+minimum of the BOES. The $T_{A}$ diagram includes the effect of an acoustic phonon in the limit of $\mathbf{q}\rightarrow\Gamma$ and accounts for the cell parameters relaxation. It can also be calculated within the 
+QHA\cite{bonini2007phonon}. \\
+
+The real part of the self-energy contributes to the lineshift and the imaginary part to the linewidth. Within lowest-order perturbation theory, the bubble contribution is the only term with a non-zero imaginary part. Thus, it 
+is the only one contributing to the phonon linewidth. As long as $|\Pi_{\mu(0)}(\mathbf{q},\omega)|\ll\omega_{\mu}(\mathbf{q})$, the half-width at half-maximum (HWHM) of phonon $\mu\mathbf{q}$ is given by the imaginary part of the 
+bubble self-energy at the harmonic frequency,
+\begin{equation}
+ \label{linewidth}
+ \Gamma_{\mu}^{ph-ph}(\mathbf{q})=-Im\overset{(B)}{\Pi}_{\mu(0)}(\mathbf{q},\omega_{\mu}(\mathbf{q})).
+\end{equation}
+The shift of the harmonic frequency due to phonon-phonon interaction is given by both loop and bubble diagrams
+\begin{equation}
+ \label{lineshift}
+ \Delta_{\mu}(\mathbf{q})=Re[\overset{(L)}{\Pi}_{\mu(0)}(\mathbf{q})+\overset{(B)}{\Pi}_{\mu(0)}(\mathbf{q},\omega_{\mu}(\mathbf{q}))].
+\end{equation}
+Therefore, the frequency shifted by anharmonicity is $\omega_{\mu}(\mathbf{q})+\Delta_{\mu}(\mathbf{q})$. \\
+
+As we can see from Eqs. \ref{loop-diagram}, \ref{bubble-diagram}, and \ref{tadpole-diagram} in order to account for the phonon-phonon interactions at the lowest-order in perturbation theory we need to calculate 
+the $\phi_{\mu_{1},\mu_{2},\mu_{3}}(\mathbf{q}_{1},\mathbf{q}_{2},\mathbf{q}_{3})$ and $\phi_{\mu_{1}\mu_{1},\,\mu_{2}\mu_{2}}(-\mathbf{q}_{1},\mathbf{q}_{1},\mathbf{q}_{2},-\mathbf{q}_{2})$ anharmonic coefficients.   
+The straightforward way of calculating these coefficients is to apply finite differences in the BOES\cite{li2014shengbte}. However, this method requires calculation in supercells that are commensurate with the 
+phonons that interact, therefore, they require calculations in big supercells in order to achieve convergence. An alternative, and more elegant, procedure for the third-order anharmonic coefficients is to apply 
+the $2n+1$ theorem\cite{gonze1989density} which allows to get the $(2n+1)^{th}$ derivatives of the BOES with the knowledge of the $n^{th}$ derivatives of the electronic density. The latter method is more complicated 
+to implement\cite{paulatto2013anharmonic} but allows to make the calculations in the unit cell independently of the modes that are considered.  
+
+\section{The stochastic self-consistent harmonic approximation}
+\label{sscha-basics}
+
+The perturbative formalism we have described in section \ref{perturbation-theory-third} assumes that phonons can be described as distinct particles. This assumption is only valid when the anharmonic self-energy is 
+small compared to the separation between harmonic frequencies, otherwise the phonon picture gets lost and Eqs. \ref{linewidth} and \ref{lineshift} are not valid anymore. There is one extreme case in which perturbation 
+theory cannot be even applied, it is when there are imaginary frequencies within the harmonic approximation, which means that the system is unstable within this approximation. \\
+
+A formalism that can be applied in the cases where the perturbation theory fails, even in the cases where there are harmonic instabilities, is the variational approach defined by the self-consistent harmonic 
+approximation (SCHA)\cite{hooton1955li} which has been implemented in a stochastic framework in the so called stochastic self-consistent harmonic approximation (SSCHA)\cite{errea2014anharmonic,errea2013first}. \\ 
+
+The exact vibrational free energy of a solid is given by the sum of the total energy and entropic contributions
+\begin{equation}
+ F_{H}=tr(\rho_{H}H)+\frac{1}{\beta}tr(\rho_{H}ln\rho_{H}),
+\end{equation}
+where $\rho_{H}=e^{-\beta H}/tr(e^{-\beta H})$ is the density matrix defined by the Hamiltonian $H$ of the system. In the SSCHA $\rho_{H}$ is substituted by a trial density matrix $\rho_{\mathcal{H}}$ defined by a trial 
+Hamiltonian $\mathcal{H}=T_{I}+\mathcal{U}$ where $T_{I}$ is the true kinetic energy of the ions and $\mathcal{U}$ a trial potential. Then, we can define
+\begin{equation}
+ \mathcal{F}_{H}[\mathcal{H}]=tr(\rho_{\mathcal{H}}H)+\frac{1}{\beta}tr(\rho_{\mathcal{H}}ln\rho_{\mathcal{H}}),
+\end{equation}
+and by the GB principle we know that
+\begin{equation}
+ F_{H}\le\mathcal{F}_{H}[\mathcal{H}].
+\end{equation} 
+By adding and substracting $tr(\rho_{\mathcal{H}}\mathcal{H})$ we can rewrite $\mathcal{F}_{H}[\mathcal{H}]$ as
+\begin{equation}
+ \mathcal{F}_{H}[\mathcal{H}]=F_{\mathcal{H}}+tr[\rho_{\mathcal{H}}(U-\mathcal{U})],
+\end{equation}
+where $\mathcal{F}_{H}[\mathcal{H}]$ is the function we need to minimize with respect to $\mathcal{H}$ in order to get a good approximation for the free energy of the system. The equations we have written so far are valid 
+for any trial potential $\mathcal{U}$, the main idea behind the SSCHA is that $\mathcal{U}$ is taken to be a harmonic potential and can be parametrized as
+\begin{equation}
+ \mathcal{U}=\frac{1}{2}\sum\limits_{\substack{s_{1}s_{2} \\ \alpha_{1}\alpha_{2} \\ \mathbf{T}_{1}\mathbf{T}_{2}}}\Phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2})\mathsf{u}_{s_{1}}^{
+ \alpha_{1}}(\mathbf{T}_{1})\mathsf{u}_{s_{2}}^{\alpha_{2}}(\mathbf{T}_{2}).
+\end{equation}
+The $\mathsf{u}_{s}^{\alpha}(\mathbf{T})$ atomic displacements are different from the $u_{s}^{\alpha}(\mathbf{T})$. $u_{s}^{\alpha}(\mathbf{T})$ measure the displacements from the minimum of the BOES $R_{s}^{0\alpha}(\mathbf{T})$
+while $\mathsf{u}_{s}^{\alpha}(\mathbf{T})$ measure the displacements from trial equilibrium positions $\mathcal{R}_{s}^{\alpha}(\mathbf{T})$. The same applies to 
+$\Phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2})$ which are trial 2BFC and not the harmonic ones $\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2})$. The advantage of choosing a 
+trial potential which is harmonic is that $\rho_{\mathcal{H}}$ and $F_{\mathcal{H}}$ have closed analytical forms. \\
+
+The only parameters that contains the trial harmonic potential are $\mathcal{R}_{s}^{\alpha}(\mathbf{T})$ and $\Phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2})$ with respect to 
+which $\mathcal{F}_{H}[\mathcal{H}]$ needs to be minimized. For the minimization we can apply a conjugate gradient (CG) algorithm and at the end of the minimization, which is done in a subspace that 
+preserves the crystal symmetries, we will get the $\boldsymbol{\mathcal{R}}$ positions or centroids and $\Phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2})$ 2BFC that minimize 
+the free energy including anharmonic effects. \\
+
+For the minimization we need the expressions of the function and its derivatives with respect to $\boldsymbol{\mathcal{R}}$ and $\Phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2})$
+\begin{equation}
+ \label{minim1}
+ \mathcal{F}_{H}[\mathcal{H}]=F_{\mathcal{H}}+\int{d\mathbf{R}[U(\mathbf{R})-\mathcal{U}(\mathbf{R})]\rho_{\mathcal{H}}(\mathbf{R})},
+\end{equation}
+\begin{equation}
+ \label{minim2}
+ \boldsymbol{\nabla}_{\boldsymbol{\mathcal{R}}}\mathcal{F}_{H}[\mathcal{H}]=-\int{d\mathbf{R}[\mathbf{f}(\mathbf{R})-\mathbf{f}_{\mathcal{H}}(\mathbf{R})]\rho_{\mathcal{H}}(\mathbf{R})},
+\end{equation}
+\begin{multline}
+ \label{minim3}
+ \boldsymbol{\nabla}_{\Phi}\mathcal{F}_{H}[\mathcal{H}]=-\sum\limits_{\substack{s_{1}s_{2} \\ \alpha_{1}\alpha_{2} \\ \mathbf{T}_{1}\mathbf{T}_{2} \\ \mu}}\sqrt{\frac{m_{s_{1}}}{m_{s_{
+ 2}}}}(\tilde{\epsilon}_{s_{1}\mu\mathcal{H}}^{\alpha_{1}}(\mathbf{T}_{1})\boldsymbol{\nabla}_{\Phi}lna_{\mu\mathcal{H}}+\boldsymbol{\nabla}_{\Phi}\tilde{\epsilon}_{s_{1}\mu\mathcal{H}}^{\alpha_{1}}(\mathbf{T}_{1}))
+ \tilde{\epsilon}_{s_{2}\mu\mathcal{H}}^{\alpha_{2}}(\mathbf{T}_{2}) \\ \times\int{d\mathbf{R}[f_{s_{1}}^{\alpha_{1}}[\mathbf{T}_{1}](\mathbf{R})-f_{s_{1}\mathcal{H}}^{\alpha_{1}}[\mathbf{T}_{1}](\mathbf{
+ R})](R_{s_{2}}^{\alpha_{2}}(\mathbf{T}_{2})-\mathcal{R}_{s_{2}}^{\alpha_{2}}(\mathbf{T}_{2}))\rho_{\mathcal{H}}(\mathbf{R})}.
+\end{multline}
+In these expressions $\mathbf{R}\equiv\{\mathbf{R}_{1},\dots,\mathbf{R}_{M}\}$ is a general ionic configuration. $\rho_{\mathcal{H}}$ is the probability to find the system described by $\mathcal{H}$ in that 
+general nuclear configuration $\mathbf{R}$, which in normal coordinates is a product of Gaussians. $a_{\mu\mathcal{H}}=\sqrt{coth(\beta\tilde{\Omega}_{\mu\mathcal{H}}/2)(2\tilde{\Omega}_{\mu\mathcal{H}})}$ is called the normal 
+length of mode $\mu$ and is the standard deviation of the Gaussians. $\tilde{\Omega}_{\mu\mathcal{H}}$ and $\tilde{\boldsymbol{\epsilon}}_{s\mu\mathcal{H}}(\mathbf{T})$ are the phonon frequencies and polarization vectors that 
+diagonalize the trial 2BFC $\Phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2})$ divided by the masses. Finally, $\mathbf{f}(\mathbf{R})$ is the vector formed by all the atomic forces for the nuclear 
+configuration $\mathbf{R}$ and $\mathbf{f}_{\mathcal{H}}(\mathbf{R})$ are the forces defined by $\mathcal{H}$. The only non-analytic terms in these equations are the integrals and the actual forces $\mathbf{f}(\mathbf{R})$. \\
+
+A possible procedure for evaluating the integrals is to get higher order coefficients in the Taylor expansion, which is a difficult and time-consuming task. Within the SSCHA framework, these integrals are evaluated 
+stochastically by using the relationship
+\begin{equation}
+ \label{stochastic}
+ \int{\mathbf{O}(\mathbf{R})\rho(\mathbf{R})d\mathbf{R}}\simeq\frac{1}{N_{c}}\sum_{I=1}^{N_{c}}\mathbf{O}(\mathbf{R}_{I})\equiv\langle\mathbf{O}\rangle_{\rho}.
+\end{equation}
+The set of $\mathbf{R}_{I}$ ionic configurations is created according to the distribution $\rho(\mathbf{R})$. $\mathbf{O}$ is any operator and $N_{c}$ is the number of configurations we have created. The equality 
+in Eq. \ref{stochastic} is hold when $N_{c}\rightarrow\infty$. As we are dealing with a stochastic framework, the statistical error scales as $1/\sqrt{N_{c}}$. The advantage is that it reduces the problem to 
+calculating forces acting on atoms in supercells, which are easily extracted from electronic ground state calculations thanks to the Hellmann-Feynman theorem. \\
+
+The flowchart of the method is the following. An initial guess $\mathcal{H}_{0}$ (in the first step $j=0$) is made for the trial Hamiltonian. This guess can be the harmonic Hamiltonian, however, it needs to be stable
+so we need to find another guess for materials with imaginary frequencies in the harmonic approximation. This trial Hamiltonian $\mathcal{H}_{0}$ is used to create $N_{c}$ nuclear configurations according to 
+$\rho_{\mathcal{H}_{0}}(\mathbf{R})$. We calculate the energies and atomic forces in each configuration and finally we are able to evaluate the integrals in Eq. \ref{minim1}, \ref{minim2}, and \ref{minim3}. This way 
+we are able to perform a CG step and a new $\mathcal{H}_{j}$ is obtained. \\
+
+At this point we would need to created new configurations by using the new $\rho_{\mathcal{H}_{j}}(\mathbf{R})$. However, this would be very inefficient as we would need to calculate energies and forces again. 
+Instead, one can use a reweighting  importance sampling technique by changing Eq. \ref{stochastic} by
+\begin{equation}
+ \int{\mathbf{O}(\mathbf{R})\rho(\mathbf{R})d\mathbf{R}}\simeq\frac{1}{N_{c}}\sum_{I=1}^{N_{c}}\mathbf{O}(\mathbf{R}_{I})\frac{\rho_{\mathcal{H}_{j}}}{\rho_{\mathcal{H}_{j_{0}}}},
+\end{equation} 
+where $j_{0}$ is the latest iteration at which configurations were created. As long as $\left\langle\frac{\rho_{\mathcal{H}_{j}}}{\rho_{\mathcal{H}_{j_{0}}}}\right\rangle_{\rho_{\mathcal{H}_{j_{0}}}}$ is not 
+far from unity the configurations created with $\mathcal{H}_{j_{0}}$ can be reused. We can control this deviation from unity to get the statistical convergence or precision that we want. In 
+Fig. \ref{sscha-workflow}
+\begin{figure}[h]
+\begin{center}
+\begin{tikzpicture}[node distance = 2cm, auto]
+    % Place nodes
+    \node [block] (init) {Initial trial Hamiltonian $\mathcal{H}_{0}$};
+    \node [block, below of=init, node distance=3cm] (createconf) {Create ionic configurations $\{\mathbf{R}_{I}\}$with $\mathcal{H}_{j_{0}}$};
+    \node [decision, below of=createconf] (calculate) {Calculate forces on supercells $\mathbf{f}(\mathbf{R}_{I})$};
+    \node [block, below of=calculate, node distance=3cm] (calc-gradient) {Calculate the gradient of the free energy $\boldsymbol{\nabla}\mathcal{F}_{H}[\mathcal{H}_{j}]$};
+    \node [block, left of=calc-gradient, node distance=6cm] (update) {$j_{0}=j$};
+    \node [block, below of=calc-gradient] (gradient-step) {Conjugate gradient step $\mathcal{R}_{eqj+1}$, $\Phi(j+1)$, and $j=j+1$}; 
+    \node [cloud, below of=gradient-step, node distance=2cm] (check-rho) {$|\langle\rho_{\mathcal{H}_{j}}/\rho_{\mathcal{H}_{j_{0}}}\rangle-1|\le\eta$};
+    \node [cloud, below of=check-rho, node distance=2cm] (precision) {Increase precision?};
+    \node [block, right of=precision, node distance=6cm] (new-conf) {Create extra configurations $\{\mathbf{R}_{I}\}$};
+    \node [block, below of=precision, node distance=3cm] (output) {Output quantities $\mathcal{H}=\mathcal{H}_{j}$, $\mathcal{F}_{H}[\mathcal{H}]$, $\boldsymbol{\mathcal{R}}_{eq\mathcal{H}}$, $\tilde{\Omega}_{\mu\mathcal{H}}$, and $\boldsymbol{\tilde{\epsilon}}_{\mu\mathcal{H}}^{s}$};
+    % Draw edges
+    \path [line] (init) -- node {$j=0$ and $j_{0}=0$}(createconf);
+    \path [line] (createconf) -- (calculate);
+    \path [line] (calculate) -- (calc-gradient);
+    \path [line] (calc-gradient) -- (gradient-step);
+    \path [line] (gradient-step) -- (check-rho);
+    \path [line] (check-rho) -| node {yes} (update);
+    \path [line] (update) |- (createconf);
+    \path [line] (check-rho) -- (precision);
+    \path [line] (precision) -- node {yes} (new-conf);
+    \path [line] (new-conf) |- (calculate);
+    \path [line] (precision) -- node {No}(output);
+\end{tikzpicture}
+\end{center}
+\caption{Flowchart of the SSCHA minimization process.}
+\label{sscha-workflow}
+\end{figure}
+we can see a scheme of the SSCHA minimization. \\
+
+In Fig. \ref{1dimsscha} we show the application of the SSCHA in a one dimensional BOES at zero temperature.
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.8\linewidth]{Figures/result.eps}
+\caption{One dimensional example of the SSCHA with atomic units for energy and displacement. The actual potential and the harmonic one are the black and red solid curves, respectively. The ground 
+state SSCHA at zero temperature and exact wave functions are shown with dashed curves. Dotted lines show the energy of each ground state wave function.}
+\label{1dimsscha}
+\end{center}
+\end{figure}
+The potential we have chosen is $U(x)=-0.5x^{2}+0.5x^{4}$ and it is represented with a solid black line. The second deribative of this potential at the equilibrium position is negative, therefore, the harmonic approximation 
+completely breaks down and perturbation theory cannot be applied in this case. We show the harmonic part of the potential with a solid red line. We have solved the problem exactly by solving the Schr\"odinger equation for 
+a particle with unitary mass. We show the ground state wave function with a dashed black line and the ground state energy with a pointed black line. The SSCHA results at zero temperature are shown in blue. As we can 
+see, the SSCHA is able to find a very good approximation for the ground state energy and wave functions even if perturbation theory cannot be applied in this case.  
+
+\subsection{The stress tensor in the self-consistent harmonic approximation}
+
+In Eq. \ref{bo-stress} we saw how to calculate the Born-Oppenheimer stress tensor which does not include any effect from the thermal and quantum fluctuations of the ions. In this section we will see how to calculate 
+the SSCHA stress tensor $P_{\alpha\beta}^{SCHA}$ which will include these effects at an anharmonic level. \\
+
+In this section, the parameters of the trial Hamiltonian are $\boldsymbol{\mathcal{R}}$, $\Phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{2},\mathbf{T}_{2})$ and $\{\mathbf{a}_{i}\}$. Within the SCHA, the stress 
+tensor is defined as the deribative of the free energy with respect to the strain tensor
+\begin{equation}
+\label{scha-stress}
+ P_{\alpha\beta}^{SCHA}(\boldsymbol{\mathcal{R}},\{\mathbf{a}_{i}\})=-\frac{1}{\Omega}\frac{\partial\mathcal{F}_{H}[\boldsymbol{\mathcal{R}},\{\mathbf{a}_{i}\}]}{\partial\epsilon_{\alpha\beta}}\vline_{_{_{_{_{_{_{_{
+\boldsymbol{\epsilon}=0}}}}}}}}, 
+\end{equation}  
+where now we explicitly include the dependence on $\boldsymbol{\mathcal{R}},\{\mathbf{a}_{i}\}$ instead of $\mathcal{H}$ and we assume that the trial 2BFC are the ones that minimize the trial free energy for the given centroids and 
+lattice vectors. Due the strain, both lattice parameters and average central positions are affected
+\begin{equation}
+a_{i}^{'\alpha}=a_{i}^{\alpha}+\sum_{\beta=1}^{3}\epsilon_{\alpha\beta}a_{i}^{\beta},
+\end{equation}
+\begin{equation}
+\mathcal{R}_{n}^{'\alpha}=\mathcal{R}_{n}^{\alpha}+\sum_{\beta=1}^{3}\epsilon_{\alpha\beta}\mathcal{R}_{n}^{\beta}.
+\end{equation}
+This is equivalent to performing a strain keeping fixed the internal crystal coordinates of the system. In order to compare the SCHA stress tensor with the BO one, the SCHA tensor can be divided into three 
+parts\cite{monacelli2018pressure}
+\begin{equation}
+ P_{\alpha\beta}^{SCHA}(\boldsymbol{\mathcal{R}},\{\mathbf{a}_{i}\})=P_{\alpha\beta}^{BO}(\boldsymbol{\mathcal{R}},\{\mathbf{a}_{i}\})+P_{\alpha\beta}^{FLC}(\boldsymbol{\mathcal{R}},\{\mathbf{a}_{i}\})+
+ P_{\alpha\beta}^{FRC}(\boldsymbol{\mathcal{R}},\{\mathbf{a}_{i}\}),
+\end{equation}
+where $P_{\alpha\beta}^{BO}$ is the static contribution from the BO stress in Eq. \ref{bo-stress}, $P_{\alpha\beta}^{FLC}$ is the contribution of the fluctuations to the stress, and $P_{\alpha\beta}^{FRC}$ is an extra 
+term that takes into account the work necessary to move the centroids according to the applied strain. The expressions for these stress tensors are
+\begin{multline}
+ \label{stress-fluctuations}
+ P_{\alpha\beta}^{FLC}(\boldsymbol{\mathcal{R}},\{\mathbf{a}_{i}\})=\langle P_{\alpha\beta}^{H}(\boldsymbol{\mathcal{R}},\{\mathbf{a}_{i}\})\rangle_{\rho_{\mathcal{H}}}-
+ P_{\alpha\beta}^{H}(\boldsymbol{\mathcal{R}},\{\mathbf{a}_{i}\})- \\ -\frac{1}{2\Omega}\sum_{s\mathbf{T}}\langle(f_{s\mathcal{H}}^{\alpha}(\mathbf{T})\mathsf{u}_{s}^{\beta}(\mathbf{T})+
+ f_{s\mathcal{H}}^{\beta}[\mathbf{T}]\mathsf{u}_{s}^{\alpha}(\mathbf{T}))\rangle_{\rho_{\mathcal{H}}},
+\end{multline}
+\begin{equation}
+ P_{\alpha\beta}^{FRC}(\boldsymbol{\mathcal{R}},\{\mathbf{a}_{i}\})=\frac{1}{2\Omega}\sum_{s\mathbf{T}}(\mathcal{R}_{s}^{\beta}(\mathbf{T})\langle f_{s}^{\alpha}(\mathbf{T})-f_{s\mathcal{H}}^{\alpha}(\mathbf{
+ T})\rangle_{\rho_{\mathcal{H}}}+\mathcal{R}_{s}^{\alpha}(\mathbf{T})\langle f_{s}^{\beta}(\mathbf{T})-f_{s\mathcal{H}}^{\beta}[\mathbf{T}]\rangle_{\rho_{\mathcal{H}}}).
+\end{equation}
+The last term in Eq. \ref{stress-fluctuations} makes fluctuations on pressure disappear in pure harmonic crystals\cite{monacelli2018pressure}, that is why we say that $P_{\alpha\beta}^{BO}$ does not include the effect
+of fluctuations. \\
+
+The SCHA stress tensor can be calculated with the knowledge of the BOES, the atomic forces and the BO stress tensor and the stochastic framework in Eq. \ref{stochastic} is also valid for the stress calculation. 
+
+\subsection{The free energy Hessian and second-order phase transitions within the SSCHA}
+
+In section \ref{sscha-basics} we have seen how to get an approximation for the vibrational free energy. For that purpose, the SSCHA uses trial centroids and 2BFC and will provide us with the $\boldsymbol{\mathcal{R}}$ 
+and $\overset{(2)}{\boldsymbol{\Phi}}$ (we will use bold symbols to denote tensors without indexes and write its order $n$ explicitly above it) that minimize the free energy of the system. In this section we will see 
+how to calculate the free energy Hessian within the SSCHA and use it to predict second-order phase transitions where the order parameters are the centroids $\boldsymbol{\mathcal{R}}$. \\
+
+Displacive transitions occurs, for instance, in materials with ferroelectric or charge density wave transitions. In this kind of phase transitions, according to the Landau theory of second-order phase 
+transitions\cite{lifshitz1980landau}, at high temperature the free energy has a minimum in a high symmetry configuration $\boldsymbol{\mathcal{R}}_{hs}$, but, on lowering the temperature, $\boldsymbol{\mathcal{R}}_{hs}$ 
+becomes a saddle point at the transition temperature $T_{c}$. Therefore, the free energy Hessian evaluated at $\boldsymbol{\mathcal{R}}_{hs}$, $\partial^{2}F/\partial\boldsymbol{\mathcal{R\partial\boldsymbol{\mathcal{
+R}}}}|_{\boldsymbol{\mathcal{R}}_{hs}}$, at high temperature is positive definite but it develops one or multiple negative eigendirections at $T_{c}$. \\
+
+In Fig. \ref{transition} we can see a schematic representation of the free energy with respect to the order parameter $Q$ (the centroids in this case) for different temperatures for a system with a second-order phase transition.
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.8\linewidth]{Figures/data.eps}
+\caption{Free energy as a function of the order parameter for three different temperatures in a system with a second-order phase transition. The blue line corresponds to a temperature below the critical temperature, the red 
+line to the critical temperature and the black line to a temperature above the critical temperature.}
+\label{transition}
+\end{center}
+\end{figure}
+As we can see, at $T>T_{c}$, the second derivative of the free energy with respect to $Q$ is positive and the system stays in the high symmetry phase. As temperature decreases, at $T=T_{c}$, $\partial^{2}F/\partial Q^{2}$ equals 
+$0$ and once the temperature gets below the transition temperature the free energy develops some minima and the system goes to the low symmetry phase. In second-order phase transitions the process is reversible and the critical 
+temperature does not change by approaching $T_{c}$ from below or above. \\
+
+The SSCHA free energy Hessian can be computed by using the analytic formula\cite{bianco2017second}
+\begin{equation}
+ \label{free-energy-hessian}
+ \frac{\partial^{2}F}{\partial\boldsymbol{\mathcal{R}}\partial\boldsymbol{\mathcal{R}}}=\overset{(2)}{\boldsymbol{\Phi}}+\overset{(3)}{\boldsymbol{\Phi}}\boldsymbol{\Lambda}(0)[\mathbf{1}-\overset{(4)}{\boldsymbol{
+\Phi}}\boldsymbol{\Lambda}(0)]^{-1}\overset{(3)}{\boldsymbol{\Phi}},
+\end{equation}
+where 
+\begin{equation}
+ \overset{(n)}{\boldsymbol{\Phi}}=\left\langle\frac{\partial^{n}U}{\partial\mathbf{R}^{n}}\right\rangle_{\rho_{\mathcal{H}}}
+\end{equation}
+are the non-perturbative nBFC which should not be confused with the perturbative nBFC in Eq. \ref{perturbative-nbfc} that are calculated as $n^{th}$ derivatives of the BOES at the equilibrium atomic positions. In
+Eq. \ref{free-energy-hessian} the value $z=0$ of the fourth-order tensor $\boldsymbol{\Lambda}(z)$ is used. For a generic complex number $z$ $\boldsymbol{\Lambda}(z)$ is defined as
+\begin{equation}
+ \Lambda^{abcd}(z)=-\frac{1}{2}\sum_{\mu\nu}\tilde{F}(z,\tilde{\Omega}_{\mu},\tilde{\Omega}_{\nu})\sqrt{\frac{1}{2m_{a}\tilde{\Omega}_{\mu}}}\tilde{\epsilon}_{\mu}^{a}\sqrt{\frac{1}{2m_{b}\tilde{\Omega}_{\nu}}}\tilde{
+ \epsilon}_{\nu}^{b}\sqrt{\frac{1}{2m_{c}\tilde{\Omega}_{\mu}}}\tilde{\epsilon}_{\mu}^{c}\sqrt{\frac{1}{2m_{d}\tilde{\Omega}_{\nu}}}\tilde{\epsilon}_{\nu}^{d},
+\end{equation}
+where the index $a$ denotes all atom, Cartesian and lattice vector indexes and $\tilde{F}$ is the function defined in Eq. \ref{ftilde}. $\tilde{\Omega}_{\mu}^{2}$ and $\tilde{\epsilon}_{\mu}^{a}$ are the eigenvalues 
+and corresponding eigenvectors of
+\begin{equation}
+ D_{ab}^{(S)}=\Phi_{ab}/\sqrt{m_{a}m_{b}}.
+\end{equation}
+In all the systems considered in this thesis, $\overset{(4)}{\boldsymbol{\Phi}}\boldsymbol{\Lambda}(0)$ is negligible compared to the unity, therefore, we can rewrite Eq. \ref{free-energy-hessian} as
+\begin{equation}
+ \frac{\partial^{2}F}{\partial\boldsymbol{\mathcal{R}}\partial\boldsymbol{\mathcal{R}}}=\overset{(2)}{\boldsymbol{\Phi}}+\overset{(3)}{\boldsymbol{\Phi}}\boldsymbol{\Lambda}(0)\overset{(3)}{\boldsymbol{\Phi}}.
+\end{equation}
+We will define the phonons defined from the free energy as the eigenvalues of
+\begin{equation}
+ \label{free-energy-dynamical-matrix}
+ D_{ab}^{(F)}=\frac{1}{\sqrt{m_{a}m_{b}}}\frac{\partial^{2}F}{\partial\mathcal{R}_{a}\partial\mathcal{R}_{b}}.
+\end{equation} 
+Evaluating through Eq. \ref{free-energy-hessian} the free energy Hessian at $\boldsymbol{\mathcal{R}}_{hs}$ and studying its spectrum as a function of temperature, we can predict the occurrence of a displacive phase transition 
+and estimate $T_{c}$. 
+
+\subsection{Perturbative limit of the SSCHA}
+\label{pertubative-limit-sscha}
+
+In this part we will analyze the perturbative limit of the SSCHA in order to make an analogy with perturbation theory and understand better the anharmonic phonons within the SSCHA. \\
+
+From the SCHA equations, retaining only the lowest-order correction to the harmonic values $\mathcal{R}_{(0)}^{a}$ (with the subindex $(0)$ we mark that these centroid positions are the minimum of the BOES) and 
+$\phi_{ab}$, the following can be obtained\cite{bianco2017second}
+\begin{equation}
+ \mathbf{D}^{(S)}\simeq\mathbf{D}+\overset{(T)}{\boldsymbol{\Pi}}_{(0)}+\overset{(L)}{\boldsymbol{\Pi}}_{(0)},
+\end{equation}
+where $\overset{(T)}{\boldsymbol{\Pi}}_{(0)}$ and $\overset{(L)}{\boldsymbol{\Pi}}_{(0)}$ are the tadpole and loop contributions to the harmonic self-energy and $\mathbf{D}$ is the harmonic dynamical matrix. From 
+this equation it is clear that, in the perturbative limit, the anharmonic lineshift of the auxiliary $\mathbf{D}^{(S)}$ dynamical matrix with respect to the harmonic one is given by the tadpole and loop 
+contributions to the self-energy. It is extremely interesting to note that the SSCHA could be used to include the loop and tadpole diagrams to the self-energy in materials where the perturbation theory works but 
+the calculation of the 4BFC is too cumbersome. Then, the remaining bubble self-energy could be added on top of the SSCHA by using perturbation theory. \\
+
+In order to obtain the dynamical matrix that comes from the free energy defined in Eq. \ref{free-energy-dynamical-matrix} and be able to predict second-order phase transitions, we need also the harmonic static bubble
+\begin{equation}
+ \label{lowest-perturbative-order}
+ \mathbf{D}^{(F)}\simeq\mathbf{D}+\overset{(T)}{\boldsymbol{\Pi}}_{(0)}+\overset{(L)}{\boldsymbol{\Pi}}_{(0)}+\overset{(B)}{\boldsymbol{\Pi}}_{(0)}(0)\simeq\mathbf{D}^{(S)}+\overset{(B)}{\boldsymbol{\Pi}}_{(0)}(0).
+\end{equation}  
+It is interesting to observe that, at the lowest perturbative order, the free energy curvature takes into account only the static harmonic bubble, whereas within perturbation theory (see Eq. \ref{total-self-energy} 
+in section \ref{perturbation-theory-third}) the equation is exactly the same but it depends on the frequency. This is consistent with the fact that the SSCHA is a static theory. It is also interesting to note 
+that Eq. \ref{lowest-perturbative-order} shows that $\overset{(4)}{\boldsymbol{\Phi}}\boldsymbol{\Lambda}(0)$ is neglected in the curvature formula, which means that it is discarded at lowest perturbative order. 
+In the next section we describe a possible dynamic extension for the SSCHA studied in Ref. \cite{bianco2017second}.
+ 
+\subsection{Dynamical properties of solids and phonon frequencies within the SSCHA}
+\label{dynamical-sscha}
+
+So far we have seen that the SSCHA is a static theory, which means that we cannot access dynamical properties, such as, the linewidth of a phonon which makes impossible the calculation of spectral functions or 
+the thermal conductivity of a solid. \\
+
+Within the SSCHA it is possible to formulate a valid ansatz in order to calculate dynamical properties of crystals. The main idea behind this ansatz is to take the non-perturbative 
+version of Eq. \ref{lowest-perturbative-order} and assume the frequency dependence of the bubble self-energy. This ansatz is justified by the fact that in the lowest-order perturbative limit it gives the same result 
+as the perturbation theory in section \ref{perturbation-theory-third}. Within this assumptions, the SSCHA self-energy can be written as\cite{bianco2017second}
+\begin{equation}
+ \boldsymbol{\Pi}_{(S)}(z)=\overset{(B)}{\boldsymbol{\Pi}}_{(S)}=\boldsymbol{M}^{-\frac{1}{2}}\overset{(3)}{\boldsymbol{\Phi}}\boldsymbol{\Lambda}(z)\overset{(3)}{\boldsymbol{\Phi}}\boldsymbol{M}^{-\frac{1}{2}},
+\end{equation} 
+where $M_{ab}=\delta_{ab}m_{a}$ is the mass matrix. With this self-energy, the dynamical SSCHA phonon frequencies $\Omega_{\mu}(\mathbf{q})$ shifted by anharmonicity are given by
+\begin{equation}
+ \Omega_{\mu}(\mathbf{q})=\tilde{\Omega}_{\mu}(\mathbf{q})+Re\Pi_{\mu(S)}(\mathbf{q},\tilde{\Omega}_{\mu}(\mathbf{q})),
+\end{equation}
+and the linewidth of these phonons is proportional to $Im[\Pi_{\mu(S)}(\mathbf{q},\tilde{\Omega}_{\mu}(\mathbf{q}))]$. \\
+
+Within this formalism we can calculate another dynamical property of solids, the spectral function $\tilde{\sigma}(\omega)$ which can be used to calculate the cross section in an 
+inelastic, e.g. neutron, experiment. The spectral function is defined as\cite{cowley1968anharmonic}
+\begin{equation}
+ \tilde{\sigma}(\omega)=-\omega trIm\mathbf{G}(\omega+i0^{+})/\pi,
+\end{equation}
+where $\mathbf{G}(\omega)$ is the phonon Green function defined as
+\begin{equation}
+ \mathbf{G}^{-1}(z)=z^{2}\boldsymbol{1}-\boldsymbol{M}^{\frac{1}{2}}\overset{(2)}{\boldsymbol{\Phi}}\mathbf{M}^{\frac{1}{2}}-\boldsymbol{\Pi}(z).
+\end{equation}
+Its peaks signal the presence of collective vibrational excitations (phonons) having certain energies and linewidth. In order to recognize the contribution of each phonon mode to this spectral function, we first take 
+advantage of the lattice periodicity and Fourier transform the spectral function and self-energy, and second we neglect the mixing between phonon modes and assume $\boldsymbol{\Pi}(z)$ is diagonal in the basis of 
+the eigenvectors
+\begin{equation}
+ \Pi_{\mu}(\mathbf{q},\omega)=\sum_{ab}\epsilon_{\mu}^{a}\Pi_{ab}(\mathbf{q},\omega+i0^{+})\epsilon_{\mu}^{b}.
+\end{equation}
+The cross section is then given by
+\begin{equation}
+ \label{cross-section}
+ \tilde{\sigma}(\mathbf{q},\omega)=\frac{1}{\pi}\sum_{\mu}\frac{-\tilde{\Omega}_{\mu}(\mathbf{q}) Im\Pi_{\mu}(\mathbf{q},\omega)}{[\omega^{2}-\tilde{\Omega}_{\mu}^{2}(\mathbf{q})-\tilde{\Omega}_{\mu}(
+ \mathbf{q})Re\Pi_{\mu}(\mathbf{q},\omega)]^{2}+[Im\Pi_{\mu}(\mathbf{q},\omega)]^{2}}.
+\end{equation}
+The cross section calculated in Eq. \ref{cross-section} does not have any given lineshape. Depending on the lineshape of the cross section we can divide the materials into three groups: harmonic, weakly anharmonic and 
+strongly or full anharmonic materials. In Fig. \ref{instoy} we qualitatively describe the cross section of the three groups.
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.8\linewidth]{Figures/ins-toy.eps}
+\caption{The spectral function is shown for three different situations. The harmonic case is represented with a Dirac's delta, the weakly anharmonic one with a Lorentzian and the strongly anharmonic one with a shoulder added to 
+a Lorentzian.}
+\label{instoy}
+\end{center}
+\end{figure}
+The first group is the harmonic group where the anharmonic self-energy is zero. In this case the cross section is just a sum of Dirac's deltas that are centered in the harmonic frequencies. The second group is the weakly 
+anharmonic group. In this case $\Pi_{\mu}(\mathbf{q},\omega)$ is small compared to $\tilde{\Omega}_{\mu}(\mathbf{q})$ and it is justified to 
+approximate $\Pi_{\mu}(\mathbf{q},\omega)\sim\Pi_{\mu}(\mathbf{q},\tilde{\Omega}_{\mu}(\mathbf{q}))$, which turns $\tilde{\sigma}(\mathbf{q},\omega)$ into a sum of Lorentzian functions. This group has well defined phonons 
+with their frequencies and linewidths, these Lorentzians are centered in the dynamical phonon frequencies $\Omega_{\mu}(\mathbf{q})$ and the width of the Lorentzian is given 
+by $Im[\Pi_{\mu}(\mathbf{q},\tilde{\Omega}_{\mu}(\mathbf{q}))]$. The third group is the strongly or full anharmonic group where the self-energy is not small compared to the dynamical frequencies. In this case the spectral 
+functions are not Lorentzians and they can show strongly anharmonic features such as: shoulders, satellite peaks$\dots$ The spectral function of these kind of materials can be very difficult to study from an experimental 
+point of view, since more peaks than modes can appear or two modes can appear as only one. \\
+
+In this section we have seen how making a comparison between perturbation theory and the SSCHA, by using a dynamical ansatz, a dynamical extension can be defined for the SSCHA. Basically, we get an analogous theory 
+of the perturbation theory, but instead of having harmonic frequencies $\omega_{\mu}(\mathbf{q})$ we have the auxiliary phonon frequencies $\tilde{\Omega}_{\mu}(\mathbf{q})$ and instead of having the perturbative 
+3BFC $\phi_{s_{1}s_{2}s_{2}}^{\alpha_{1}\alpha_{2}\alpha_{3}}(\mathbf{T}_{1},\mathbf{T}_{2},\mathbf{T}_{3})$ we have the non-perturbative ones $\Phi_{s_{1}s_{2}s_{2}}^{\alpha_{1}\alpha_{2}\alpha_{3}}(\mathbf{
+T}_{1},\mathbf{T}_{2},\mathbf{T}_{3})$.  \\
+
+The SSCHA has proven to be an extremely powerful method for including anharmonic effects at a non-perturbative level. It has been successfully applied in bulk and monolayer materials including 
+superconductors\cite{errea2013first,errea2016quantum}, materials undergoing charge density wave\cite{leroux2015strong,bianco2019quantum} and ferroelectric\cite{ribeiro2018strong} transitions, thermoelectric 
+materials\cite{aseginolaza2019phonon}\dots

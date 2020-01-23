@@ -1,0 +1,205 @@
+% Chapter 1
+
+\chapter{Lattice thermal conductivity} % Main chapter title
+
+\label{Chapter4} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+
+%----------------------------------------------------------------------------------------
+
+The thermal conductivity of solids is mainly constituted by the electronic and lattice thermal conductivities\cite{tritt2005thermal}. The electronic thermal conductivity accounts for the heat conducted by the free 
+electrons and the lattice thermal conductivity accounts for the heat conduction of phonons. In metallic materials with free electrons, the thermal conductivity to electrical conductivity ratio at low temperature is given by the 
+Wiedemann-Franz law and it states that it is proportional to the Lorenz number multiplied by the temperature\cite{ashcroft1976solid}. In these kind of materials the two contributions, electronic and lattice thermal conductivities, are 
+of the same order of magnitude and both need to be calculated in order to get a good approximation of the total thermal conductivity. Instead, in insulators and semiconductors there are no free electrons and the 
+heat is mainly transported by phonons. As in this thesis we have studied semiconductor materials, we will only describe how to calculate the lattice thermal conductivity. \\
+ 
+When a gradient of temperature $\boldsymbol{\nabla}T$ is applied to a crystal, there will be a heat flux propagating in the material from the hot to the cold side (see Fig. \ref{heatflow}). 
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.8\linewidth]{Figures/heat-flow.png}
+\caption[Heat flow from the hot to the cold side]{Setup where the heat ($Q$) is flowing from the hot ($T_{2}$) to the cold side ($T_{1}$). The figure is taken from \color{blue}$khanacademy.org$.}
+\label{heatflow}
+\end{center}
+\end{figure}
+\color{black}
+We will assume for simplicity, without loss of generality, that the gradient 
+is along the $x$ Cartesian direction. The phonon heat flux density parallel to the temperature gradient can be written\cite{fugallo2013ab}
+\begin{equation}
+ \label{heat-flux}
+ \frac{1}{N_{\mathbf{q}}\Omega_{cell}}\sum_{\mathbf{q}\mu}\omega_{\mu}(\mathbf{q})v_{\mu}(\mathbf{q})n_{\mathbf{q}\mu}=-\kappa_{l}^{xx}\frac{\partial T}{\partial x},
+\end{equation}   
+where $\omega_{\mu}(\mathbf{q})$ is the frequency of phonon $\mu\mathbf{q}$, $v_{\mu}^{\alpha}(\mathbf{q})=\frac{\partial\omega_{\mu}(\mathbf{q})}{\partial q_{\alpha}}$ is the phonon group velocity 
+of phonon $\mu\mathbf{q}$, $n_{\mathbf{q}\mu}$ is the perturbed phonon population by the temperature gradient, $\kappa_{l}^{xx}$ is the diagonal component of the lattice thermal conductivity in the temperature 
+gradient direction, and $N_{\mathbf{q}}$ is the number of $\mathbf{q}$ points taken in the 1BZ. Eq. \ref{heat-flux} is known as the Fourier law of the phonon heat conduction and we can see that the knowledge of 
+the perturbed phonon population $n_{\mathbf{q}\mu}$ allows the calculation of the lattice thermal conductivity. The equation that provides the perturbed phonon population was formulated by Peierls\cite{peierls1929kinetischen}
+\begin{equation}
+ \label{bte}
+ -v_{\mu}(\mathbf{q})\frac{\partial T}{\partial x}\left(\frac{\partial n_{\mathbf{q}\mu}}{\partial T}\right)+\frac{\partial n_{\mathbf{q}\mu}}{\partial t}\vline_{_{_{_{_{_{_{_{_{scatt}}}}}}}}}=0,
+\end{equation} 
+and it is named the Boltzmann transport equation (BTE). In Eq. \ref{bte} the first term indicates the phonon diffusion due to the temperature gradient and the second term the scattering rate due to all the scattering 
+processes, which can be intrinsic or extrinsic. The intrinsic scattering arises in perfect and infinite crystalline materials and is created by the anharmonic phonon-phonon scattering. The main contribution of 
+the intrinsic scattering arises from the three-phonon scattering processes shown in Fig. \ref{three-phonon-scattering} and there are two types: the first type is the normal scattering where the momenta of the three 
+phonons that interact are in the 1BZ
+\begin{equation}
+\mathbf{q}_{1}+\mathbf{q}_{2}+\mathbf{q}_{3}=0
+\end{equation} 
+and, therefore, the crystal and total momentum are conserved. The second type is the umklapp scattering where the crystal momentum is conserved but not the total momentum and one of the three phonon momenta is out of the 1BZ
+\begin{equation}
+\mathbf{q}_{1}+\mathbf{q}_{2}+\mathbf{q}_{3}=\mathbf{G},
+\end{equation}
+$\mathbf{G}$ being a reciprocal lattice vector. The normal scattering processes do not create thermal resistivity but can change the phonon population\cite{callaway1959model,tritt2005thermal}, the umklapp scattering 
+processes do create thermal resistivity. The contribution of these three phonon scattering processes to the phonon self-energy was studied in sections \ref{perturbation-theory-third} and \ref{dynamical-sscha} and it is 
+included in the bubble self-energy diagram in Fig. \ref{self-energy-fig}. We will see below how to calculate the thermal conductivity associated to them using the linewidth extracted from the bubble self-energy. Regarding the 
+extrinsic scattering processes, there are different types and all of them create thermal resistivity: defects, impurities, boundaries$\dots$ In high quality samples, at room temperature, the intrinsic scattering is usually the 
+one playing the dominant role in balancing the perturbation due to the temperature gradient. \\
+
+In order to clarify the effect of the different scattering mechanisms on the thermal conductivity, in Fig. \ref{prototypical} we show the experimental thermal conductivity of $CoSb_{3}$\cite{yang2002influence} as a 
+function of temperature.
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.7\linewidth]{Figures/prototypical-solid.png}
+\caption[Thermal conductivity of $CoSb_{3}$]{Experimental thermal conductivity of $CoSb_{3}$\cite{yang2002influence} as a function of temperature and theoretical fitting with different power laws corresponding to different 
+scattering mechanisms.}
+\label{prototypical}
+\end{center}
+\end{figure}
+By looking at this figure we will describe the different regimes of the thermal conductivity as a function of temperature. At low temperatures (temperatures are always 
+compared to the Debye temperature of the solid) the thermal conductivity increases and at a point starts to saturate, finally, it reaches a maximum and at high temperatures it constantly decreases. At low 
+temperatures the extrinsic scattering is the dominant one because there is not enough energy for populating phonons and creating three phonon scattering events. Therefore, since the mobility of phonons increases 
+with temperature but they do not see the boundaries or defects due to their low values of mobility, the thermal conductivity increases with temperature. At some point, the temperature starts to be high enough for the 
+phonons to feel the boundaries and defects and this starts to saturate the thermal conducitvity of the solid. At the same time normal scattering processes start to be more important. At high temperature, umklapp 
+scattering processes start to dominate the total scattering and the thermal conductivity starts to decrease. \\
+
+As we will deal with highly pure solids at temperatures that are higher than the Debye temperature, we will only include the intrinsic scattering in the scattering term in the BTE. Eq. \ref{bte} must be solved 
+self-consistently. In the most general approach\cite{ziman2001electrons}, which assumes that the perturbation from the phonon equilibrium distribution is small, the temperature gradient of the perturbed phonon 
+population is replaced with the temperature gradient of the equilibrium phonon population. Thus, we replace $\frac{\partial n_{\mathbf{q}\mu}}{\partial T}$ by $\frac{\partial n_{B}(\omega_{\mu}(\mathbf{
+q}))}{\partial T}$. In the case of the scattering term in Eq. \ref{bte} we can expand it about its equilibrium value in terms of a first-order perturbation $f^{EX}$ (which is the quantity that we want to get)
+\begin{equation}
+ n_{\mathbf{q}\mu}\simeq n_{B}(\omega_{\mu}(\mathbf{q}))+n_{B}(\omega_{\mu}(\mathbf{q}))(n_{B}(\omega_{\mu}(\mathbf{q}))+1)\frac{\partial T}{\partial x}f^{EX}_{\mathbf{q}\mu}.
+\end{equation} 
+By using this equation, the linearized BTE can be written as\cite{sparavigna2002lattice}
+\begin{multline}
+ \label{bte-linearized}
+ v_{\mu}(\mathbf{q})\left(\frac{\partial n_{B}(\omega_{\mu}(\mathbf{q}))}{\partial T}\right)=\sum\limits_{\substack{\mu_{1}\mu_{2} \\ \mathbf{q}_{1}\mathbf{q}_{2}}}
+ [P_{\mathbf{q}\mu,\mathbf{q}_{1}\mu_{1}}^{\mathbf{q}_{2}\mu_{2}}(f_{\mathbf{q}\mu}^{EX}+f_{\mathbf{q}_{1}\mu_{1}}^{EX}-f_{\mathbf{q}_{2}\mu_{2}}^{EX}) \\ 
+ +\frac{1}{2}P_{\mathbf{q}\mu}^{\mathbf{q}_{1}\mu_{1},\mathbf{q}_{2}\mu_{2}}(f_{\mathbf{q}\mu}^{EX}-f_{\mathbf{q}_{1}\mu_{1}}^{EX}-f_{\mathbf{q}_{2}\mu_{2}}^{EX})].
+\end{multline}
+The $EX$ superscript of the first-order perturbation $f^{EX}$ denotes the exact solution of the linearized BTE. 
+In Eq. \ref{bte-linearized} $P_{\mathbf{q}\mu,\mathbf{q}_{1}\mu_{1}}^{\mathbf{q}_{2}\mu_{2}}$ is the scattering rate at the equilibrium of a process where a phonon mode $\mathbf{q}\mu$ scatters by 
+absorbing another mode $\mathbf{q}_{1}\mu_{1}$ to generate a third phonon $\mathbf{q}_{2}\mu_{2}$. $P_{\mathbf{q}\mu}^{\mathbf{q}_{1}\mu_{1}\mathbf{q}_{2}\mu_{2}}$ is the scattering rate at the equilibrium of a process 
+where a phonon mode $\mathbf{q}\mu$ decays in two phonons $\mathbf{q}_{1}\mu_{1}$ and $\mathbf{q}_{2}\mu_{2}$. We can see the diagrams of these scattering processes in Fig. \ref{three-phonon-scattering}.  
+\begin{figure}
+\begin{fmffile}{simple1}
+\begin{fmfgraph*}(190,100)
+\fmfleft{i1,i2}
+\fmfright{o1}
+\fmf{photon,label=$\mathbf{q}_{1}\mu_{1}$}{i1,v1}
+\fmf{photon,label=$\mathbf{q}_{2}\mu_{2}$}{i2,v1}
+\fmf{photon,label=$\mathbf{q}_{3}\mu_{3}$}{v1,o1}
+\end{fmfgraph*}
+\hspace{0.2cm}
+\begin{fmfgraph*}(190,100)
+\fmfleft{i1}
+\fmfright{o1,o2}
+\fmf{photon,label=$\mathbf{q}_{1}\mu_{1}$}{i1,v1}
+\fmf{photon,label=$\mathbf{q}_{2}\mu_{2}$}{v1,o1}
+\fmf{photon,label=$\mathbf{q}_{3}\mu_{3}$}{v1,o2}
+\end{fmfgraph*}
+\end{fmffile}
+\caption[Feynman diagrams for three phonon scattering events]{Feynman diagrams for three phonon scattering events. The one in the left corresponds to $P_{\mathbf{q}_{1}\mu_{1},\mathbf{q}_{2}\mu_{2}}^{\mathbf{q}_{3}\mu_{3}}$, where 
+two phonons collide $\mathbf{q}_{1}\mu_{1},\mathbf{q}_{2}\mu_{2}$ to create a new one $\mathbf{q}_{3}\mu_{3}$, and the one in the right corresponds to $P_{\mathbf{q}_{1}\mu_{1}}^{\mathbf{q}_{2}\mu_{2},\mathbf{q}_{3}\mu_{3}}$, where 
+one phonon $\mathbf{q}_{1}\mu_{1}$ is splitted in two phonon modes $\mathbf{q}_{2}\mu_{2},\mathbf{q}_{3}\mu_{3}$.}
+\label{three-phonon-scattering}
+\end{figure}
+The two scattering rates have the forms
+\begin{multline}
+ \label{scattering1}
+ P_{\mathbf{q}\mu,\mathbf{q}_{1}\mu_{1}}^{\mathbf{q}_{2}\mu_{2}}=\frac{2\pi}{N_{\mathbf{q}}}\sum_{\mathbf{G}}|\overset{(3)}{\phi}{}_{\mu\mu_{1}\mu_{2}}(\mathbf{q},\mathbf{q}_{1},\mathbf{q}_{2})|^{2} \\ \times
+ n_{B}(\omega_{\mu}(\mathbf{q}))n_{B}(\omega_{\mu_{1}}(\mathbf{q}_{1}))[n_{B}(\omega_{\mu_{2}}(\mathbf{q}_{2}))+1]\delta_{\mathbf{q}+\mathbf{q}_{1}-\mathbf{q}_{2},\mathbf{G}} \\ \times
+ \delta(\omega_{\mu}(\mathbf{q})+\omega_{\mu_{1}}(\mathbf{q}_{1})-\omega_{\mu_{2}}(\mathbf{q}_{2})),
+\end{multline}
+\begin{multline}
+ \label{scattering2}
+ P_{\mathbf{q}\mu}^{\mathbf{q}_{1}\mu_{1},\mathbf{q}_{2}\mu_{2}}=\frac{2\pi}{N_{\mathbf{q}}}\sum_{\mathbf{G}}|\overset{(3)}{\phi}{}_{\mu\mu_{1}\mu_{2}}(\mathbf{q},-\mathbf{q}_{1},-\mathbf{q}_{2})|^{2} \\ \times
+ n_{B}(\omega_{\mu}(\mathbf{q}))[n_{B}(\omega_{\mu_{1}}(\mathbf{q}_{1}))+1][n_{B}(\omega_{\mu_{2}}(\mathbf{q}_{2}))+1]\delta_{\mathbf{q}-\mathbf{q}_{1}-\mathbf{q}_{2},\mathbf{G}} \\ \times
+ \delta(\omega_{\mu}(\mathbf{q})-\omega_{\mu_{1}}(\mathbf{q}_{1})-\omega_{\mu_{2}}(\mathbf{q}_{2})).
+\end{multline}
+In the previous equations we have written the anharmonic 3BFC in normal coordinates space. For that purpose we need to apply the following tranformation to the atomic displacements in the nBFC 
+in Eq. \ref{perturbative-nbfc}
+\begin{equation}
+ X_{\mathbf{q}\mu}=\frac{1}{N_{\mathbf{q}}}\sum_{\mathbf{T}s\alpha}\sqrt{2m_{s}\omega_{\mu}(\mathbf{q})}\epsilon_{s\mu}^{\alpha*}(\mathbf{q})u_{s}^{\alpha}(\mathbf{T})e^{-i\mathbf{q}\cdot\mathbf{T}}.
+\end{equation}
+For simplifying the equations above, we can rewrite Eq. \ref{bte-linearized} in matrix form
+\begin{equation}
+ \label{linear-equation}
+ \mathbf{A}\mathbf{f}^{EX}=\mathbf{b},
+\end{equation} 
+where $b_{\mathbf{q}\mu}=-v_{\mu}(\mathbf{q})\omega_{\mu}(\mathbf{q})n_{B}(\omega_{\mu}(\mathbf{q}))[n_{B}(\omega_{\mu}(\mathbf{q}))+1]$ and 
+\begin{multline}
+ A_{\mathbf{q}\mu,\mathbf{q}_{1}\mu_{1}}=\sum\limits_{\substack{\mu_{2}\mu_{3} \\ \mathbf{q}_{2}\mathbf{q}_{3}}}\left(P_{\mathbf{q}\mu,\mathbf{q}_{3}\mu_{3}}^{\mathbf{q}_{2}\mu_{2}}+\frac{
+ P_{\mathbf{q}_{3}\mu_{3},\mathbf{q}_{2}\mu_{2}}^{\mathbf{q}\mu}}{2}\right)\delta_{\mathbf{q}\mathbf{q}_{1},\mu\mu_{1}} \\ -\sum_{\mathbf{q}_{2}\mu_{2}}(P_{\mathbf{q}\mu,\mathbf{q}_{2}\mu_{2}}^{
+ \mathbf{q}_{1}\mu_{1}}-P_{\mathbf{q}\mu,\mathbf{q}_{1}\mu_{1}}^{\mathbf{q}_{2}\mu_{2}}+P_{\mathbf{q}_{1}\mu_{1},\mathbf{q}_{2}\mu_{2}}^{\mathbf{q}\mu}).
+\end{multline}
+For getting the two equations above we have used $P_{\mathbf{q}\mu}^{\mathbf{q}_{1}\mu_{1},\mathbf{q}_{2}\mu_{2}}=P_{\mathbf{q}_{1}\mu_{1},\mathbf{q}_{2}\mu_{2}}^{\mathbf{q}\mu}$ from the balance 
+condition $n_{B}(\omega_{\mu}(\mathbf{q}))[n_{B}(\omega_{\mu_{1}}(\mathbf{q}_{1}))+1][n_{B}(\omega_{\mu_{2}}(\mathbf{q}_{2}))+1]=[n_{B}(\omega_{\mu}(\mathbf{q}))+1]n_{B}(\omega_{\mu_{1}}(\mathbf{q}_{1}))n_{B}(
+\omega_{\mu_{2}}(\mathbf{q}_{2}))$ valid under the assumption $\omega_{\mu}(\mathbf{q})=\omega_{\mu_{1}}(\mathbf{q}_{1})+\omega_{\mu_{2}}(\mathbf{q}_{2})$. In this form the matrix $\mathbf{A}$ is symmetric and 
+positive semidefinite\cite{fugallo2013ab} and it can be splited as $\mathbf{A}=\mathbf{A}^{in}+\mathbf{A}^{out}$ where
+\begin{equation}
+ A_{\mathbf{q}\mu,\mathbf{q}_{1}\mu_{q}}^{out}=\frac{n_{B}(\omega_{\mu}(\mathbf{q}))[n_{B}(\omega_{\mu}(\mathbf{q}))+1]}{\tau_{\mu}(\mathbf{q})}\delta_{\mu\mu_{1}}\delta_{\mathbf{q}\mathbf{q}_{1}},
+\end{equation}
+\begin{equation}
+ A_{\mathbf{q}\mu,\mathbf{q}_{1}\mu_{1}}^{in}=-\sum_{\mathbf{q}_{2}\mu_{2}}P_{\mathbf{q}\mu,\mathbf{q}_{2}\mu_{2}}^{\mathbf{q}_{1}\mu_{1}}-P_{\mathbf{q}\mu\mathbf{q}_{1}\mu_{1}}^{\mathbf{q}_{2}\mu_{
+ 2}}+P_{\mathbf{q}_{1}\mu_{1},\mathbf{q}_{2}\mu_{2}}^{\mathbf{q}\mu},
+\end{equation}
+where $\tau_{\mu}(\mathbf{q})$ is the phonon relaxation time or lifetime defined in Eq. \ref{lifetime}. The $\mathbf{A}^{out}$ diagonal matrix accounts for the depopulation of phonon 
+states due to the anharmonic scattering while the $\mathbf{A}^{in}$ matrix describes their repopulation due the incoming scattered phonons. \\
+
+Eq. \ref{linear-equation} can be solved by inverting the $\mathbf{A}$ matrix
+\begin{equation}
+\mathbf{f}^{EX}=\mathbf{A}^{-1}\mathbf{b}.
+\end{equation}
+Finally, with knowledge of $\mathbf{f}^{EX}$ the thermal conductivity can be calculated as
+\begin{equation}
+ \kappa_{l}=\lambda\mathbf{b}\cdot\mathbf{f}^{EX}=\frac{-1}{N_{\mathbf{q}}\Omega_{cell} k_{B}T^{2}}\sum_{\mathbf{q}\mu}v_{\mu}(\mathbf{q})\omega_{\mu}(\mathbf{q})n_{B}(\omega_{\mu}(\mathbf{q}))[n_{B}(\omega_{\mu}(\mathbf{q}))
+ +1]f_{\mathbf{q}\mu}^{EX},
+\end{equation}
+where $\lambda=1/(N_{\mathbf{q}}\Omega_{cell} k_{B}T)$. \\
+
+The main problem for calculating the lattice thermal conductivity is that the $\mathbf{A}$ matrix is, in general, a large non-diagonal matrix which must be computed, stored and inverted, which makes the problem 
+unsolvable for realistic systems. The simplest approximation one can do to solve the problem is the so called single mode relaxation time approximation (SMA).
+
+\section{Single mode relaxation time approximation (SMA)}
+
+In the SMA the BTE is solved for $n_{\mathbf{q}\mu}$ by setting $\mathbf{A}^{in}$ to zero, in this way the problem is solvable as the matrix to invert is diagonal. So, now, the solution of the problem is
+\begin{equation}
+ \mathbf{f}^{SMA}=(\mathbf{A}^{out})^{-1}\mathbf{b},
+\end{equation}
+which means that we are neglecting the role of the repopulation of the phonon modes. Within this approximation the lattice thermal conductivity can be written as
+\begin{equation}
+ \kappa_{l}^{SMA}=\lambda\mathbf{b}\cdot\mathbf{f}^{SMA}=\frac{1}{N_{\mathbf{q}}\Omega_{cell} k_{B}T^{2}}\sum_{\mathbf{q}\mu}v_{\mu}(\mathbf{q})^{2}\omega_{\mu}(\mathbf{q})^{2}n_{B}(\omega_{\mu}(\mathbf{q}))[n_{B}(\omega_{\mu}(
+ \mathbf{q}))+1]\tau_{\mu}(\mathbf{q}).
+\end{equation}
+As we can see, the lattice thermal conductivity can be calculated with the knowledge of the phonon spectrum and the linewidth of the phonons, which can be calculated within perturbation theory or the SSCHA as discussed 
+in sections \ref{perturbation-theory-third} and \ref{sscha-basics}, respectively. \\
+
+The SMA has a conceptual problem that arises from its definition and it is that both normal and umklapp scattering processes contribute to the thermal 
+resistivity of the solid. This is not actually what happens in real solids because, as we have already mentioned, normal processes do not create thermal resistivity. In other words, the thermal conductivity within the SMA does not 
+account for the thermal repopulation given by the normal scattering processes. Anyway, the SMA remains a very good approximation in materials where the umklapp scattering dominates the phonon-phonon interaction. The simplest 
+approximation one can do to go beyond the SMA is the so called Callaway model\cite{callaway1959model}, which was proposed by Callaway in 1959 and it is still applied nowadays. Some years ago a very elegant and exact way of 
+calculating the lattice thermal conductivity was proposed\cite{fugallo2013ab} and implemented based on a variational principle. \\
+
+\section{Exact solution of the linearized BTE}
+
+An exact way of solving the linearized BTE can be found by using the properties of the matrix $\mathbf{A}$ and the variational principle. The exact solution of the BTE is the vector $\mathbf{f}^{EX}$, which makes stationary 
+the quadratic form\cite{klemens1958thermal}
+\begin{equation}
+ \mathcal{P}(\mathbf{f})=\frac{1}{2}\mathbf{f}\cdot\mathbf{A}\mathbf{f}-\mathbf{b}\cdot\mathbf{f},
+\end{equation}
+for a generic vector $\mathbf{f}$. Since $\mathbf{A}$ is positive definite the stationary point is the global minimum of this functional. The variational conductivity functional can be defined as
+\begin{equation}
+ \kappa_{l}^{V}(\mathbf{f})=-2\lambda\mathcal{P}(\mathbf{f}),
+\end{equation}
+which fulfills the property $\kappa_{l}^{V}(\mathbf{f}^{EX})=\kappa_{l}$, while any other value of $\kappa_{l}^{V}(\mathbf{f})$ underestimates $\kappa_{l}$. Thus, minimizing the quadratic form is equivalent to 
+maximizing the thermal conductivity functional. Eq. \ref{linear-equation} can be solved on a grid\cite{fugallo2013ab} by using the conjugate gradient method to obtain the exact solution of the BTE. \\
+
+This method has proven to be extremely accurate in predicting the thermal conductivity of materials where the normal scattering processes are as important or even more than the umklapp scattering 
+processes\cite{fugallo2014thermal,cepellotti2015phonon}. 

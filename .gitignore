@@ -1,0 +1,14 @@
+main-blx.bib
+*.aux
+*.bbl
+*.blg
+*.lof
+*.log
+*.lot
+*.out
+*.pdf
+*.xml
+*.toc
+*.cls
+Literature/
+Toy-SSCHA/

@@ -1,0 +1,119 @@
+% Chapter 1
+
+\chapter{The Adiabatic Born-Oppenheimer Approximation} % Main chapter title
+
+\label{Chapter1} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+
+%----------------------------------------------------------------------------------------
+
+% Define some commands to keep the formatting separated from the content 
+\newcommand{\keyword}[1]{\textbf{#1}}
+\newcommand{\tabhead}[1]{\textbf{#1}}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\file}[1]{\texttt{\bfseries#1}}
+\newcommand{\option}[1]{\texttt{\itshape#1}}
+
+%----------------------------------------------------------------------------------------
+
+In the atomic scale, matter can be described as a set of electrons and ions interacting via the Coulomb interaction. These particles are arranged in a different way depending on the state of the system: gas, liquid, amorphous 
+solid, crystalline solid, plasma... The correct formalism to study any of these systems is quantum mechanics, which reduces to solving the time-independent Schr\"odinger equation
+\begin{equation}
+\label{schrodinger}
+ H|\Psi_{A}\rangle=E_{A}|\Psi_{A}\rangle,
+\end{equation}
+where $H$ is the Hamiltonian of the system, $E_{A}$ the eigenvalue with quantum number $A$ and $|\Psi_{A}\rangle$ its eigenvector. The corresponding eigenfunction is given by
+\begin{equation}
+ \langle\mathbf{r},\mathbf{R}|\Psi_{A}\rangle=\Psi_{A}(\mathbf{r}_{1},\dots,\mathbf{r}_{N},\mathbf{R}_{1},\dots,\mathbf{R}_{M})=\Psi_{A}(\mathbf{r},\mathbf{R}),
+\end{equation}
+with $N$ electrons at positions $\mathbf{r}\equiv\{\mathbf{r}_{1},\dots,\mathbf{r}_{N}\}$ and $M$ ions at positions $\mathbf{R}\equiv\{\mathbf{R}_{1},\dots,\mathbf{R}_{M}\}$. In the non-relativistic case and in the absence of 
+external forces the Hamiltonian in atomic units can be written as follows\cite{martin2004electronic}
+\begin{multline}
+ H=\frac{1}{2}\sum_{i}^{N}\mathbf{p}_{i}^{2}+\frac{1}{2}\sum_{j}^{M}\frac{\mathbf{P}_{j}^{2}}{m_{j}}-\sum_{i}^{N}\sum_{j}^{M}\frac{Z_{j}}{|\mathbf{r}_{i}-\mathbf{R}_{j}|}+\frac{1}{2}\sum_{i\ne j}^{N}\frac{1}{|\mathbf{r}_{i}-
+ \mathbf{r}_{j}|}\\+\frac{1}{2}\sum_{i\ne j}^{M}\frac{Z_{i}Z_{j}}{|\mathbf{R}_{i}-\mathbf{R}_{j}|}=T_{e}+T_{I}+V_{e,I}+V_{e,e}+V_{I,I},
+\end{multline}
+where $\mathbf{p}_{i}$ and $\mathbf{P}_{j}$ are electronic and ionic momentum operators, $Z_{j}$ is the ionic charge, and $m_{j}$ the ionic mass. $T_{e}$ and $T_{I}$ are the electronic and ionic kinetic energy operators, 
+respectively, and $V_{e,I}$, $V_{e,e}$, and $V_{I,I}$ are the electron-ion, electron-electron and ion-ion Coulomb interaction terms.  \\
+
+The solution of this eigenvalue problem would provide us with the exact non-relativistic structure of matter given by $\Psi_{A}(\mathbf{r},\mathbf{R})$. However, the problem 
+has $3(N+M)$ degrees of freedom ($N$, $M\sim10^{23}$ for macroscopic samples of matter) and the Coulomb interaction makes impossible to separate the many-body Hamiltonian into single-particle ones. This makes the problem 
+unsolvable. Nevertheless, from these equations we can already state that all the properties of a material are a consequence of the Coulomb interaction and the many-body character of the Hamiltonian. \\
+
+If we want to calculate the properties of matter, we need to use approximations right from the beginning. The first approximation we will apply is the Born-Oppenheimer approximation (BOA), which, as we will see in the 
+following paragraphs, will allow us to separate the total Hamiltonian into electronic and ionic parts. The BOA is based on the huge difference of masses between electrons and ions ($m_{j}\sim10^{3}$), what makes the 
+electrons move much faster\cite{ashcroft1976solid} and, therefore, adapt instantaneously to the slower motion of the ions. \\
+
+We will start by separating the total Hamiltonian $H$ into electronic $H^{e}$ and ionic $H^{I}$ parts. As we have assumed that ions do not move from the electronic point of view, the electronic Hamiltonian can be 
+built with the terms of the total Hamiltonian that depend only on electronic degrees of freedom and take the ionic configuration $\mathbf{R}$ as a parameter
+\begin{equation}
+\label{electronic-harmiltonian}
+H^{e}(\mathbf{R})=T_{e}+V_{e,I}(\mathbf{R})+V_{e,e}+V_{I,I}(\mathbf{R}).
+\end{equation}
+We have included the ion-ion term because from the electronic point of view it is a constant as $\mathbf{R}$ is a parameter. We define the electronic eigenvalue problem
+\begin{equation}
+ H^{e}(\mathbf{R})|\psi_{\alpha}^{e}(\mathbf{R})\rangle=E_{\alpha}^{e}(\mathbf{R})|\psi_{\alpha}^{e}(\mathbf{R})\rangle,
+\end{equation}
+where $\alpha$ is the quantum number of the electronic system. As the Hamiltonian only depends on $\mathbf{R}$ parametrically, the same stays for the eigenvalues $E_{\alpha}^{e}(\mathbf{R})$ and eigenfunctions
+\begin{equation}
+ \langle\mathbf{r}|\psi_{\alpha}^{e}(\mathbf{R})\rangle=\psi_{\alpha}^{e}(\mathbf{r};\mathbf{R}).
+\end{equation}
+Since the electronic eigenfunctions form a complete set in $\mathbf{r}$ space, it is possible to write any state of the total system as a linear combination of vectorial products expanded only on the electronic degrees of freedom
+\begin{equation}
+\label{totalvector}
+ |\Psi_{\alpha\beta}\rangle=\sum_{\alpha'}C_{\alpha'\alpha\beta}|\psi_{\alpha'\beta}^{I}\rangle\otimes|\psi_{\alpha'}^{e}(\mathbf{R})\rangle,
+\end{equation}
+where $C_{\alpha'\alpha\beta}$ is a complex tensor containing the expansion coefficients, $|\psi_{\alpha'\beta}^{I}\rangle$ is the eigenvector of the still to be determined $H^{I}$, and $\alpha\beta$ define the total quantum 
+number $A$ in Eq. \ref{schrodinger}. If we project Eq. \ref{totalvector} with $\langle\mathbf{r},\mathbf{R}|$ we can see that the total wave function is an expansion of products of ionic and electronic wave functions
+\begin{equation}
+ \Psi_{\alpha\beta}(\mathbf{r},\mathbf{R})=\sum_{\alpha'}C_{\alpha'\alpha\beta}\psi_{\alpha'\beta}^{I}(\mathbf{R})\psi_{\alpha'}^{e}(\mathbf{r};\mathbf{R}).
+\end{equation}
+The $\alpha'$ index in $\psi_{\alpha'\beta}^{I}(\mathbf{R})$ points out that the ionic states depend on the electronic quantum number. However, we have not determined $H^{I}$ yet. For that purpose, we plug 
+$|\Psi_{\alpha\beta}\rangle$ in Eq. \ref{schrodinger} and project it onto $\langle\psi_{\alpha'}^{e}(\mathbf{R})|$
+\begin{equation}
+\label{trick}
+ \langle\psi_{\alpha'}^{e}(\mathbf{R})|H|\Psi_{\alpha\beta}\rangle=E_{\alpha\beta}\langle\psi_{\alpha'}^{e}(\mathbf{R})|\Psi_{\alpha\beta}\rangle.
+\end{equation}
+Plugging Eq. \ref{totalvector} in Eq. \ref{trick} and using $H=H^{e}+T_{I}$ we obtain
+\begin{equation}
+\label{adiabatic}
+ C_{\alpha'\alpha\beta}E_{\alpha'}^{e}(\mathbf{R})|\psi_{\alpha'\beta}^{I}\rangle+\sum_{\alpha''}C_{\alpha''\alpha\beta}\langle\psi_{\alpha'}^{e}(\mathbf{R})|T_{I}[|\psi_{\alpha''}^{e}(\mathbf{R})\rangle\otimes|\psi_{\alpha''\beta}^{
+ I}\rangle]=C_{\alpha'\alpha\beta}E_{\alpha\beta}|\psi_{\alpha'\beta}^{I}\rangle,
+\end{equation}
+where
+\begin{equation}
+ T_{I}=\sum_{j}\frac{\mathbf{P}_{j}^{2}}{2m_{j}}=\sum_{j}\frac{[\mathbf{P}_{j}^{2}]_{I}}{2m_{j}}+\sum_{j}\frac{1}{2m_{j}}(2[\mathbf{P}_{j}]_{I}[\mathbf{P}_{j}]_{e}+[\mathbf{P}_{j}^{2}]_{e})=[T_{I}]_{I}+\Delta H.
+\end{equation}
+In the previous equation we have defined new operators $[O]_{I}$ and $[O]_{e}$ as an operator $O$ acting only on $|\psi^{e}\rangle$ and $|\psi^{I}\rangle$ states, respectively. Eq. \ref{adiabatic} is exact but we still 
+have coupled electronic and ionic equations. \\
+
+The last step for getting $H^{I}$ is the so called adiabatic approximation. This approximation assumes that the electronic states cannot be excited by the ionic kinetic energy, so we only consider $\alpha'=\alpha$ in 
+Eq. \ref{adiabatic} and neglect $\Delta H$. In this way Eq. \ref{adiabatic} is simplified into a Schr\"{o}dinger equation for the ions
+\begin{equation}
+ \label{schrodinger-nuclei}
+ H^{I}|\psi_{\alpha\beta}^{I}\rangle=E_{\alpha\beta}|\psi_{\alpha\beta}^{I}\rangle,
+\end{equation}
+where
+\begin{equation}
+ \label{nuclei1}
+ H^{I}\equiv H_{\alpha}^{I}=[T_{I}]_{I}+E_{\alpha}^{e}(\mathbf{R}).
+\end{equation}
+The right hand side of Eq. \ref{nuclei1} shows that the ions move in an effective potential energy surface $U_{\alpha}(\mathbf{R})=E_{\alpha}^{e}(\mathbf{R})$ and this surface is different for different electronic 
+eigenstates $\alpha$. It has been shown that for the great majority of the crystals at normal conditions the quantum number $\alpha$ can be dropped from the ionic problem and only consider the electronic ground state. This 
+happens because the electrons adapt instantaneously to the ground state and the ionic Hamiltonian can be rewritten
+\begin{equation}
+\label{nuclei}
+H^{I}=T_{I}+U(\mathbf{R}),
+\end{equation}
+where $U(\mathbf{R})\equiv E_{0}^{e}(\mathbf{R})$ is the ground state energy of the electronic Hamiltonian. In this way the electronic and ionic problems are decoupled and ionic eigenstates do not depend on electronic quantum 
+numbers anymore. Now, we can write any eigenstate of the Born-Oppenheimer Hamiltonian ($H_{BO}=H^{e}+H^{I}$) as a tensor product of individual electronic and ionic eigenstates
+\begin{equation}
+ |\Psi_{\alpha\beta}\rangle=|\psi_{\alpha}^{e}(\mathbf{R})\rangle\otimes|\psi_{\beta}^{I}\rangle\equiv|\alpha,\beta\rangle.
+\end{equation}
+In this basis $H_{BO}$ is diagonal
+\begin{equation}
+ \langle\alpha'\beta'|H_{BO}|\alpha\beta\rangle=E_{\alpha\beta}\delta_{\alpha\alpha'}\delta_{\beta\beta'}.
+\end{equation}
+\\
+
+The BOA has proven to be an excellent approximation for calculating and understanding electronic and vibrational properties of different materials. In this thesis we will not go beyond this approximation, however, it is important to 
+note that there are physical properties that arise due to the electronic excitations by the ionic motions, such as, electrical resistivity, superconductivity\dots Even if these properties point out that the BOA is not enough for 
+describing many material's properties, the picture of the separate electronic and ionic systems can be kept and treat their coupling as a perturbation.

@@ -1,0 +1,282 @@
+% Chapter 2
+
+\chapter{The electronic problem} % Main chapter title
+
+\label{Chapter2} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+
+%----------------------------------------------------------------------------------------
+
+In this section we will see how to solve the electronic part given by the BOA. We will drop the $\mathbf{R}$ parametric dependence introduced in chapter \ref{Chapter1} for simplifying the notation in this chapter. If  we have a 
+look at the electronic Hamiltonian in Eq. \ref{electronic-harmiltonian}, we realize that the electron-electron interaction $V_{e,e}$ potential couples the equations via the two-body operator $|\mathbf{r}_{i}-\mathbf{r}_{j}|^{-1}$ and 
+makes impossible to separate the many-body Hamiltonian into single-particle ones. In this thesis we will apply a mean-field theory named density functional theory (DFT) for transforming the many-body problem into a single-particle 
+one and solve it. First of all, we will see what is the advantage of transforming the many-body system into a single-particle one by analyzing the independent electron approximation.
+
+\section{Independent electron approximation}
+
+The simplest mean-field approximation for the electron-electron interaction is actually setting it to $0$ or the so called independent electron approximation. By neglecting this term, the electrons do not see each other and we are 
+left with a system of $N$ non-interacting particles under an external potential
+\begin{equation}
+ V_{ext}(\mathbf{x})=\sum_{j}^{M}\frac{Z_{j}}{|\mathbf{x}-\mathbf{R}_{j}|},
+\end{equation}
+where $\mathbf{x}$ denotes any electronic position. Now it is possible to separate the Hamiltonian into single-particle Hamiltonians $H^{e}=\sum_{i}^{N}H_{i}^{e}=\sum_{i}^{N}[T_{e}(\mathbf{r}_{i})+V_{ext}(\mathbf{r}_{i})]$ and get 
+the single electron states $|\phi_{\alpha_{i}}\rangle$ from
+\begin{equation}
+\label{independent-electron}
+ \left(-\frac{\nabla^{2}}{2}+V_{ext}\right)|\phi_{\alpha_{i}}\rangle=\epsilon_{\alpha_{i}}|\phi_{\alpha_{i}}\rangle,
+\end{equation}
+where $\epsilon_{\alpha_{i}}$ are the eigenvalues and $\langle\mathbf{x}|\phi_{\alpha_{i}}\rangle=\phi_{\alpha_{i}}(\mathbf{x})$ the eigenfunctions. Within the independent electron approximation, any total wave function of the 
+electronic system could be given by a Slater determinant\cite{slater1930note}
+\begin{equation}
+\label{slater}
+ \psi_{\alpha}^{e}(\mathbf{r})=\frac{1}{\sqrt{N!}}
+ \begin{vmatrix}
+  \phi_{\alpha_{1}}(\mathbf{r}_{1}) & \phi_{\alpha_{1}}(\mathbf{r}_{2}) & \dots & \phi_{\alpha_{1}}(\mathbf{r}_{N}) \\
+  \phi_{\alpha_{2}}(\mathbf{r}_{1}) & \phi_{\alpha_{2}}(\mathbf{r}_{2}) & \dots & \phi_{\alpha_{2}}(\mathbf{r}_{N}) \\
+  . & . & \dots & . \\
+  \phi_{\alpha_{N}}(\mathbf{r}_{1}) & \phi_{\alpha_{N}}(\mathbf{r}_{2}) & \dots & \phi_{\alpha_{N}}(\mathbf{r}_{N}) \\
+ \end{vmatrix}
+ ,
+\end{equation}
+with $\alpha\equiv\alpha_{1},\alpha_{2}\dots\alpha_{N}$ and $\langle\mathbf{r}_{j}|\phi_{\alpha_{i}}\rangle=\phi_{\alpha_{i}}(\mathbf{r}_{j})$ being the single-electron wave function of the $j^{th}$ electron at the 
+$\alpha_{i}^{th}$ state. \\
+
+This derivation shows that transforming the many-body system into a single-particle one is very convenient and makes the solution for many-electron systems possible. However, neglecting the electron-electron interaction 
+is a very bad approximation\cite{ashcroft1976solid} because it is responsible for many physical properties, in this work we will apply DFT to get a more accurate mean-field theory for the electronic system.
+
+\section{Density Functional Theory}
+\label{density-functional-theory}
+
+The formalism of DFT\cite{hohenberg1964inhomogeneous,kohn1965self} was mainly developed in the $60's$ by Kohn, Hohenberg, and Sham and it became very popular in the $90's$ when the computational power got strong enough for its 
+implementation. Since two decades it is one of the state of the art methods for studying solid state and molecular chemistry systems and Kohn and Sham were awarded with the Nobel Prize in $1998$. \\
+
+The main ingredient of DFT is the ground state electronic density
+\begin{multline}
+ n_{0}(\mathbf{x})=\langle\psi_{0}^{e}|n(\mathbf{x})|\psi_{0}^{e}\rangle=\langle\psi_{0}^{e}|\sum_{i}^{N}\delta(\mathbf{x}-\mathbf{r}_{i})|\psi_{0}^{e}\rangle= \\
+ N\int(\dots)\int d\mathbf{r}_{2}\dots d\mathbf{r}_{N}\psi_{0}^{e*}(\mathbf{x},\mathbf{r}_{2},\dots,\mathbf{r}_{N})\psi_{0}^{e}(\mathbf{x},\mathbf{r}_{2},\dots,\mathbf{r}_{N}),
+\end{multline}
+together with two theorems. The first theorem states that for any system of interacting particles in an external potential $V_{ext}(\mathbf{x})$, $V_{ext}(\mathbf{x})$ is uniquely determined, except for a constant, by the 
+ground state density $n_{0}(\mathbf{x})$. Since the Hamiltonian is fully determined, it follows that all the properties of the system are completely determined given only $n_{0}(\mathbf{x})$. The second theorem states that 
+a universal functional of the total energy $E^{e}[n_{0}(\mathbf{x})]$ can be defined for any $V_{ext}(\mathbf{x})$. The minimum of this functional is the ground state energy of the system and the density that minimizes 
+the functional is the exact ground state density. Therefore, the functional $E^{e}[n_{0}(\mathbf{x})]$ alone is sufficient to determine the exact ground state energy and density. \\
+
+In our case the external potential is the electron-ion interaction
+\begin{equation}
+ V_{ext}(\mathbf{x})=\sum_{j}^{M}\frac{Z_{j}}{|\mathbf{x}-\mathbf{R}_{j}|}=\sum_{j}^{M}v_{ext}(\mathbf{x}-\mathbf{R}_{j}).
+\end{equation}
+In order to apply these two theorems to the many-body electronic problem, Kohn and Sham proposed a new way of interpreting the electronic system. Their goal was to find a single-particle problem that would minimize 
+the $E^{e}[n_{0}]$ functional. For that purpose, they replaced the interacting electronic system with a non-interacting one that would have exactly the same ground state density. The Hamiltonian of the non-interacting 
+system or the Kohn-Sham Hamiltonian is separable
+\begin{equation}
+ H^{e}(\mathbf{r})=\sum_{i}^{N}\left[-\frac{1}{2}\boldsymbol{\nabla}_{\mathbf{r}_{i}}^{2}+V^{KS}(\mathbf{r}_{i})\right]=\sum_{i}^{N}H^{KS}(\mathbf{r}_{i}),
+\end{equation}
+where the Kohn-Sham one-electron ground state vectors $|\phi_{0_{i}}\rangle$ fulfill
+\begin{equation}
+\label{kohn-sham}
+ H^{KS}|\phi_{0_{i}}\rangle=\epsilon_{0_{i}}|\phi_{0_{i}}\rangle.
+\end{equation}
+The total Kohn-Sham state of this non-interacting system $|\psi_{0}^{KS}\rangle$ is built with a Slater determinant as in Eq. \ref{slater}. Now, the main ingredient of DFT can be written as the sum of densities of 
+single-particle densities
+\begin{equation}
+\label{electronic-density}
+ n_{0}(\mathbf{x})=\sum_{i}^{N}|\phi_{0_{i}}|^{2}.
+\end{equation}
+Eq. \ref{kohn-sham} is equivalent to Eq. \ref{independent-electron} in the independent electron approximation, the difference is that $V^{KS}(\mathbf{r}_{i})$ includes the electron-electron interaction in a mean-field 
+form. However, even if we know that it exits, we do not know the functional form of $V^{KS}$ yet. \\
+
+We will see now how to get the $V^{KS}$ functional. The electronic energy functional can be written as
+\begin{equation}
+ E^{e}[n_{0}]=T_{e}[n_{0}]+E_{e,e}[n_{0}]+E_{ext}[n_{0}],
+\end{equation}
+where the functional form of the electron-ion energy is
+\begin{equation}
+ E_{ext}[n_{0}]=\int{d\mathbf{x}n_{0}(\mathbf{x})V_{ext}(\mathbf{x})}.
+\end{equation}
+The energy functionals of $T_{e}[n_{0}]$ and $E_{e,e}[n_{0}]$ are not so straightforward to obtain. It is convenient to split the electronic kinetic energy functional in two parts 
+$T_{e}[n_{0}]=T_{e}^{KS}[n_{0}]+T_{C}[n_{0}]$. The first term is the Kohn-Sham or the independent electron kinetic energy. As the total Kohn-Sham wave function $|\psi_{0}^{KS}\rangle$ can be written as an 
+expansion of Kohn-Sham state $|\phi_{0_{i}}\rangle$ products, $T_{e}^{KS}[n_{0}]$ accounts for the single-particle kinetic energy via $\mathbf{p}_{i}$. $T_{C}[n_{0}]$ provides the correlation kinetic energy, which 
+arises due to the fact that the motion of one electron affects the motion of another. It is important to note that $T_{e}^{KS}[n_{0}]$ accounts for most of the total electronic kinetic energy. The functional form of 
+$T_{e}^{KS}[n_{0}]$ is
+\begin{multline}
+ T_{e}^{KS}[n_{0}]=\langle\psi_{0}^{KS}|T_{e}^{KS}|\psi_{0}^{KS}\rangle= \\ =-\frac{1}{2}\sum_{i}^{N}\langle\phi_{0_{i}}|\boldsymbol{\nabla}^{2}|\phi_{0_{i}}\rangle=-\frac{1}{2}\sum_{i}^{N}\int{d\mathbf{
+ x}\phi_{0_{i}}^{*}(\mathbf{x})\boldsymbol{\nabla}^{2}\phi_{0_{i}}(\mathbf{x})},
+\end{multline}
+where the density dependence of $T_{e}^{KS}[n_{0}]$ is implicit an it comes from the density dependence of $\phi_{0_{i}}(\mathbf{x})$. Something similar can be done with the electron-electron energy functional, we 
+separate the total functional into the single-electron and correlation parts
+\begin{equation}
+ E_{e,e}[n_{0}]=E_{e,e}^{KS}[n_{0}]+E_{e,e,C}[n_{0}],
+\end{equation}
+where the Kohn-Sham electron-electron energy functional contains the Hartree $E_{H}[n_{0}]$ and exchange $E_{X}[n_{0}]$ terms
+\begin{equation}
+ E_{e,e}^{KS}=E_{H}[n_{0}]+E_{X}[n_{0}],
+\end{equation}
+which can be written as
+\begin{equation}
+ E_{H}[n_{0}]=\frac{1}{2}\int{\int{d\mathbf{x}d\mathbf{x}'\frac{n_{0}(\mathbf{x})n_{0}(\mathbf{x}')}{|\mathbf{x}-\mathbf{x}'|}}},
+\end{equation}
+\begin{equation}
+ E_{X}[n_{0}]=-\frac{1}{2}\sum_{i,j}\int{\int{d\mathbf{x}d\mathbf{x}'\frac{\phi_{0_{i}}^{*}(\mathbf{x})\phi_{0_{i}}(\mathbf{x}')\phi_{0_{j}}^{*}(\mathbf{x}')\phi_{0_{j}}(\mathbf{
+ x})}{|\mathbf{x}-\mathbf{x}'|}}}.
+\end{equation}
+The Hartree energy accounts for the interaction that an electronic density has with itself. The exchange term accounts for the antisymmetric nature of the wave function with respect to the exchange of any two particle coordinates 
+and the quantized nature of electrons, meaning it corrects the self-interaction of each electron wrongly included in $E_{H}[n_{0}]$. Again, the $E_{e,e,C}[n_{0}]$ energy is the potential correlation energy 
+that $E_{e,e}^{KS}[n_{0}]$ lacks. \\
+
+Now we can rewrite the total energy functional as
+\begin{equation}
+ E^{e}[n_{0}]=T_{e}^{KS}[n_{0}]+E_{ext}[n_{0}]+E_{H}[n_{0}]+E_{X}[n_{0}]+T_{C}[n_{0}]+E_{e,e,C}[n_{0}].
+\end{equation}
+Correlation energies arise due to the many-body character of the system and can only be calculated exactly by solving the many-body Schr\"odinger equation\cite{ceperley1980ground}. The only terms that need an approximation are the 
+correlation energies $T_{C}[n_{0}]$ and $E_{e,e,C}[n_{0}]$, however, the calculation of $E_{X}[n_{0}]$ is more expensive than the calculations of $T_{e}^{KS}[n_{0}]$, $E_{ext}[n_{0}]$ and $E_{H}[n_{0}]$. Thus, it 
+is very common in DFT to give an approximate functional for the exchange energy as well what in the end leaves the total energy functional as
+\begin{equation}
+ E^{e}[n_{0}]=T_{e}^{KS}[n_{0}]+E_{ext}[n_{0}]+E_{H}[n_{0}]+E_{xc}[n_{0}],
+\end{equation}
+where $E_{xc}[n_{0}]$ contains the exchange and correlation functionals and it is named exchange-correlation energy. \\
+
+Now we minimize the total electronic energy functional with respect to $\phi_{0_{i}}^{*}(\mathbf{x})$
+\begin{equation}
+ \frac{\delta}{\delta\phi_{0_{i}}^{*}(\mathbf{x})}\left(E^{e}[n_{0}]-\sum_{j}\epsilon_{j}(\int{d\mathbf{x}\phi_{0_{j}}^{*}(\mathbf{x})\phi_{0_{j}}(\mathbf{x})-1})\right)=0,
+\end{equation}
+where $\epsilon_{j}$ are Lagrange multipliers related to the normalization condition of the single-particle wave functions. Using Eq. \ref{electronic-density} we can get
+\begin{equation}
+\label{functional-derivate}
+ -\frac{1}{2}\boldsymbol{\nabla}^{2}\phi_{0_{i}}(\mathbf{x})+\left(\frac{\delta E_{ext}[n_{0}]}{\delta n_{0}(\mathbf{x})}+\frac{\delta E_{H}[n_{0}]}{\delta n_{0}(\mathbf{x})}+\frac{
+ \delta E_{xc}[n_{0}]}{\delta n_{0}(\mathbf{x})}\right)\phi_{0_{i}}(\mathbf{x})=\epsilon_{i}\phi_{0_{i}}(\mathbf{x}).
+\end{equation}
+We know from the second Hohenberg and Khon theorem that the density that minimizes the total electronic energy functional is the exact ground state energy. Since eletrons are fermions, the ground-state density is
+\begin{equation}
+ \label{ground-state-density}
+ n_{0}(\mathbf{x})=\sum_{i}f_{0_{i}}|\phi_{0_{i}}(\mathbf{x})|^{2},
+\end{equation}
+where $f_{0_{i}}$ is the Fermi-Dirac distribution function given by
+\begin{equation}
+ \label{fermidirac}
+ f_{\alpha_{i}}=\frac{2}{e^{\beta(\epsilon_{\alpha_{i}}-\epsilon_{F})}+1},
+\end{equation}
+with $\beta=1/(k_{B}T)$ $k_{B}$ being the Boltzmann's constant,$T$ the temperature, and $\epsilon_{F}$ the Fermi energy or the highest occupied energy. The $2$ factor in Eq. \ref{fermidirac} accounts for the 
+spin degeneracy because in this work we have not included spin dependent terms in the electronic Hamiltonian. Now for obtaining $V^{KS}(\mathbf{x})$ we compare Eq. \ref{kohn-sham} with Eq. \ref{functional-derivate} and we get
+\begin{multline}
+ V^{KS}(\mathbf{x})=V_{ext}(\mathbf{x})+\int{d\mathbf{x}\frac{n_{0}(\mathbf{x})}{|\mathbf{x}-\mathbf{x}'|}}+\frac{\delta E_{xc}[n_{0}]}{\delta n_{0}(\mathbf{x})}=V_{ext}(\mathbf{x})+V_{H}(\mathbf{x})+V_{xc}(\mathbf{x}).
+\end{multline}
+With the knowledge of the functional form of the exchange-correlation energy we would get the ground state density and energy exactly. However, the functional is not known and approximations are necessary. Since the first DFT 
+implementations many functionals \cite{perdew1981self,perdew1996generalized} for $E_{xc}$ have been proposed with their benefits and pathologies. The analysis and development of exchange-correlation functionals is a science on
+itself and it is out of the scope of this thesis, that is why we will not go further in this topic. In this work we have made use of the most simple and common functionals, the 
+LDA\cite{perdew1981self} (local density approximation) and GGA\cite{perdew1996generalized} (generalized gradient approximation). The LDA takes the functional of the homogeneous electron gas\cite{pyne1992iterative} by assuming that 
+the electronic density of the system is homogeneous. Thus, the $E_{xc}$ at each point depends only on the density at that point. The GGA not only considers the density of the system at each point but includes a gradient 
+correction. In this work we have used the PBE\cite{perdew1996generalized} parametrization of the GGA. These approximations seem too simple but provide surprisingly good results as the density of the valence electrons in normal 
+solids is not so far from the homogeneous electron gas\cite{martin2004electronic}.
+
+\section{Crystal periodicity and plane wave basis}
+\label{plane-wave-basis}
+In this section we will see how the Kohn-Sham wave functions of a crystalline material can be expanded on plane waves and how this is applied to the DFT formalism. 
+A crystalline solid is formed by the periodic repetition of its unit cell. Since the system is periodic, the Hamiltonian must be periodic and the following symmetry holds for the Kohn-Sham potential $V^{KS}$
+\begin{equation}
+ V^{KS}(\mathbf{x}+\mathbf{T})=V^{KS}(\mathbf{x}),
+\end{equation}
+where $\mathbf{T}$ is a general lattice vector. Bloch's theorem\cite{ashcroft1976solid} states that the eigenstates of a single electron Hamiltonian with a periodic potential can be chosen to have the form of a 
+plane wave times a function with the periodicity of the lattice
+\begin{equation}
+ \phi_{n\mathbf{k}}(\mathbf{x})=u_{n\mathbf{k}}(\mathbf{x})e^{i\mathbf{k}\cdot\mathbf{x}},
+\end{equation}
+where $u_{n\mathbf{k}}(\mathbf{x}+\mathbf{T})=u_{n\mathbf{k}}(\mathbf{x})$ is the periodic part of the Kohn-Sham state $\phi_{n\mathbf{k}}(\mathbf{x})$. Note that the quantum number $i$ is now splitted in a band index $n$ 
+and a $\mathbf{k}$ point, where $\mathbf{k}$ is a vector inside the first Brillouin zone (1BZ). One can apply Born-von Karman periodic boundary conditions\cite{ashcroft1976solid} on $\phi_{n\mathbf{k}}(\mathbf{x})$, in that case 
+the number of allowed wave vectors $\mathbf{k}$ in the 1BZ is finite and equals the number of unit cells in the crystal. \\
+
+In the calculations performed in this work we have used a plane wave basis with
+\begin{equation}
+ \langle\mathbf{x}|\mathbf{k}\rangle=\frac{1}{\sqrt{\Omega}}e^{i\mathbf{k}\cdot\mathbf{x}},
+\end{equation} 
+where $\Omega$ is the total volume of the crystal. Taking into account that $u_{n\mathbf{k}}(\mathbf{x})$ is periodic, only reciprocal lattice vectors $\mathbf{G}$, for which
+\begin{equation}
+ e^{i\mathbf{G}\cdot\mathbf{T}}=1,
+\end{equation}
+contribute to the plane wave expansion and the Kohn-Sham state can be written as
+\begin{equation}
+ \label{planewave-expansion}
+ |\phi_{n\mathbf{k}}\rangle=\sum_{\mathbf{G}}c_{n\mathbf{k}+\mathbf{G}}|\mathbf{k}+\mathbf{G}\rangle,
+\end{equation}
+where $\langle\mathbf{x}|\phi_{n\mathbf{k}}\rangle=\phi_{n\mathbf{k}}(\mathbf{x})$. Therefore, for a given $\mathbf{k}$ point within the 1BZ, the single-particle wave functions can be expanded as in 
+Eq. \ref{planewave-expansion}. \\
+
+Once we have decided to expand the electronic wave functions in a plane wave basis, $H^{KS}$ needs to be diagonalized at every $\mathbf{k}$ point allowed by the Born-von Karman boundary conditions within the 1BZ. The 
+eigenvalues obtained at each $\mathbf{k}$ point yield the single-particle energies, or band energies, $\epsilon_{n\mathbf{k}}$. In order to get the band energies for a given $\mathbf{k}$ point, the matrix that needs 
+to be diagonalized looks like
+\begin{equation}
+\label{hamiltonian-planewave}
+\langle\mathbf{k}+\mathbf{G}|H^{KS}|\mathbf{k}+\mathbf{G}'\rangle=\frac{1}{2}|\mathbf{k}+\mathbf{G}|^{2}\delta_{\mathbf{G}\mathbf{G}'}+V^{KS}(\mathbf{G}-\mathbf{G}').
+\end{equation} 
+The equality in Eq. \ref{hamiltonian-planewave} is easy to get taking into account that the kinetic energy is diagonal in the plane wave basis and $V^{KS}(\mathbf{k})$ is the Fourier transform of $V^{KS}(\mathbf{x})$. The eigenvalues 
+of the matrix will be the energies $\epsilon_{n\mathbf{k}}$ and, for a given quantum number $n\mathbf{k}$, the eigenvector will be formed by the $c_{n\mathbf{k}+\mathbf{G}}$ coefficients. So far we have all the elements of 
+Eq. \ref{planewave-expansion} and finally, the electron density can be calculated from the Kohn-Sham states as
+\begin{equation}
+ n_{0}(\mathbf{x})=\sum_{n}\sum_{\mathbf{k}}^{1BZ}f_{n\mathbf{k}}|\phi_{n\mathbf{k}}(\mathbf{x})|^{2},
+\end{equation}
+where the sum extends to the 1BZ.
+
+\section{Computational method}
+
+In section \ref{density-functional-theory} we have described the basics of DFT. We have seen that instead of solving a many-body problem, we can solve a single-particle system that has the same ground state density and 
+energy. However, in the formalism the electronic density is the input and output at the same time, because we need it for constructing the Kohn-Sham potential $V^{KS}$. Therefore, the problem must be solved in a 
+self-consistent way as explained in Fig. \ref{self-consistent-cycle} 
+\begin{figure}[h]
+\begin{center}
+\begin{tikzpicture}[node distance = 2cm, auto]
+    % Place nodes
+    \node [block] (init) {Initial wave function guess};
+    \node [block, below of=init] (identify) {Calculate density};
+    \node [block, below of=identify] (evaluate) {Build $V^{KS}$};
+    \node [cloud, left of=evaluate, node distance=4cm] (update) {$|\Delta E|>\epsilon$};
+    \node [block, below of=evaluate] (decide) {Diagonalize $H$};
+    \node [cloud, below of=decide, node distance=2cm] (check) {$|\Delta E|<\epsilon$};
+    \node [block, below of=check] (stop) {End of calculation};
+    % Draw edges
+    \path [line] (init) -- (identify);
+    \path [line] (identify) -- (evaluate);
+    \path [line] (decide) -| (update);
+    \path [line] (update) |- (identify);
+    \path [line] (evaluate) -- (decide);
+    \path [line] (decide) -- (check);
+    \path [line] (check) -- (stop);
+\end{tikzpicture}
+\end{center}
+\caption[DFT self-consistent cycle]{Flowchart of the self-consistent cycle for solving the Kohn-Sham equation. $\Delta E$ and $\epsilon$ are the energy difference between current cycle and the previous and the chosen threshold, respectively.}
+\label{self-consistent-cycle}
+\end{figure}
+First of all we need a guess for the electronic density, which, for instance, can be the sum of the atomic electronic densities. With this density we can build the 
+Kohn-sham potential and solve the Kohn-Sham equation. With the eigenfunctions of the solution we can build a new density and repeat the process. We will consider that the total energy of the system is converged when 
+the difference in energy between two steps, $\Delta E$, is smaller than the threshold energy $\epsilon$. \\
+
+In this thesis we have used the $Quantum$ $Espresso$\cite{giannozzi2009quantum} software package which implements the self-consistent procedure and uses a plane wave basis to expand the Kohn-Sham wave functions as 
+described in section \ref{plane-wave-basis}. As we have seen in the plane wave expansion in Eq. \ref{planewave-expansion}, in principle, the sum contains an infinite number of $\mathbf{G}$ reciprocal vectors. In practice, a cutoff 
+energy $E_{cutoff}$ is taken so that the $\mathbf{G}$ vectors satisfy 
+\begin{equation}
+ \frac{1}{2}|\mathbf{k}+\mathbf{G}|^{2}\leq E_{cutoff}.
+\end{equation}
+The proper value of $E_{cutoff}$ is system dependent because highly localized states require the inclusion of a large amount of $\mathbf{G}$ vectors in the expansion. \\
+
+We have seen as well that $H^{KS}$ need to be diagonalized in every $\mathbf{k}$ allowed by the Born-Von Karman boundary conditions within the 1BZ. If the crystal is infinite, we have infinite matrices to diagonalize 
+and, therefore, we divide the 1BZ in a Monkhorst-Pack\cite{monkhorst1976special} grid. This grid must be optimised to provide the convergence in energy that we want to achieve.
+
+\section{Pseudopotentials}
+
+Finally, we will introduce the concept of the pseudopotentials\cite{martin2004electronic}, which is used in the $Quantum$ $Espresso$ framework for speeding up the calculations. \\
+
+Atoms in a solid are composed by a nucleus and core and valence electrons. Valence electrons are responsible for the interaction among different atoms in a solid, thus, one could think about not including the core electrons 
+in the electronic problem. However, this is a very bad approximation because all the electronic eigenfunction of the system must be orthogonal, which means that core and valence electronic wave functions have to be orthogonal 
+among themselves. On top of that, the core electrons have a non-negligible contribution to the external potential $v_{ext}$. \\
+
+%The core electrons that get very close the atomic nucleus have a very high kinetic energy in order to compensate the coulomb atraction, which means that their wave functions oscillate a lot close to the nucleus. Due to this 
+%oscillation, we would need many $\mathbf{G}$ vectors in Eq. \ref{planewave-expansion} to expand their wave functions. These oscillations make also the valence electronic wave functions oscillate due to the need of 
+%orthogonality. \\
+
+In order to account for the core electrons in the external potential and make the valence electronic wave functions smother close to the nucleus, pseudopotentials are used. First of all the electronic wave function of the 
+atoms are calculated within DFT. Once we have all the wave functions, we have to decide which ones are core and which ones valence electrons. We take the valence electronic wave functions $\phi_{i}(\mathbf{x})$ and we 
+create new wave functions $\phi_{i}^{ps}$ which are smother than the original ones below a given radius $R_{c}$. With this pseudo wave function of the valence electrons we will solve the Schr\"{o}dinger equation in 
+Eq. \ref{kohn-sham} and we will get the potential $v_{i}^{ps}(\mathbf{x})$ for each orbital channel. That pseusopotential is the one we will use to build $v_{ext}$, which takes into account the inner electrons of 
+the ion. \\
+
+The smooth part of the pseudo wave function is non-unique and it is the difference among different types of pseudopotentials. In this work we have applied 
+norm-conserving\cite{hamann1979norm,troullier1991efficient} (NC), ultrasoft\cite{vanderbilt1990soft} (US), and projector augmented\cite{blochl1994projector} (PAW) pseudopotentials. In NC pseudopotentials the 
+charge enclosed by the core radius in the all-electron wave function is preserved in the pseudo wave function. US pseudopotentials relax the norm-conserving constraint allowing for a smoother core 
+part of the wave function and, thus, requiring less plane waves, yet compromising transferability from one system to another and making more testing necessary to avoid spurious results. PAW pseudopotentials have 
+smaller radial cutoffs and reconstruct the exact valence wave function with all nodes in the core region.
