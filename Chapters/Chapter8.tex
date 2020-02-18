@@ -1,0 +1,43 @@
+% Chapter 1
+
+\chapter{2D materials: Graphene} % Main chapter title
+
+\label{Chapter8} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+
+%----------------------------------------------------------------------------------------
+
+% Define some commands to keep the formatting separated from the content 
+%\newcommand{\keyword}[1]{\textbf{#1}}
+%\newcommand{\tabhead}[1]{\textbf{#1}}
+%\newcommand{\code}[1]{\texttt{#1}}
+%\newcommand{\file}[1]{\texttt{\bfseries#1}}
+%\newcommand{\option}[1]{\texttt{\itshape#1}}
+
+%----------------------------------------------------------------------------------------
+
+\section{Quadratic dispersion of ZA modes within the harmonic approximation}
+
+In this section we prove that the dispersion of the ZA phonon modes close to the point $\Gamma$ is quadratic in the 
+harmonic approximation. \\
+
+For that purpose, by using the inversion symmetry and the ASR in Eq. \ref{acoustic-sum-rule} we will rewrite Eq. \ref{2bfc-fourier-simple} in section \ref{harmonic-approximation} as
+\begin{multline}
+ \phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{q})=N_{\mathbf{q}}\sum_{\mathbf{T}}\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T},0)e^{-i\mathbf{q}\cdot\mathbf{T}}=\\\frac{N_{\mathbf{q}}}{2}\sum_{\mathbf{T}}\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T},0)(e^{-i\mathbf{q}\cdot\mathbf{T}}+e^{i\mathbf{q}\cdot\mathbf{T}}-2)=-2N_{\mathbf{q}}\sum_{\mathbf{T}}\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T},0)sin^{2}(\mathbf{k}\cdot\mathbf{T}/2).
+\end{multline}
+And by Taylor expanding this equation close to the point $\Gamma$ we get
+\begin{equation}
+\label{need-zero}
+\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{q})\simeq -\frac{N_{\mathbf{q}}}{2}\sum_{\alpha\beta}q_{\alpha}q_{\beta}\sum_{\mathbf{T}}\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T})T_{\alpha}T_{\beta}+O(q^{4}),
+\end{equation} 
+$\alpha$, $\beta$ being $x$, $y$, and $z$ Cartesian components. \\
+
+The fact that a material is bidimensional and the equilibrium atomic positions are contained in the $z=0$ plane,
+makes that all the 2BFC of the type $\phi_{s_{1}s_{2}}^{xz}(\mathbf{T})$, $\phi_{s_{1}s_{2}}^{yz}(\mathbf{T})$ are zero. This is translated into the fact that the out-of-plane $z$ direction is an eigendirection of the system and the 
+harmonic frequency of the ZA mode is given by
+\begin{equation} 
+\omega_{ZA}^{2}(\mathbf{q})=D_{11}^{zz}(\mathbf{q})+D_{12}^{zz}(\mathbf{q}). 
+\end{equation} 
+Therefore, by looking at Eq. \ref{need-zero} we can see that for proving that the dispersion of the ZA modes is quadratic we need to prove that 
+$\sum_{\mathbf{T}}\phi_{s_{1}s_{2}}^{zz}(\mathbf{T})T_{\alpha}T_{\beta}=0$. Actually, this equality is enforced by the rotational invariance of the system. \\
+
+In conclusion, the 2D character of the 2BFC and the rotational invariance of the system make the harmonic dispersion of the ZA modes close to the point $\Gamma$ to be quadratic.

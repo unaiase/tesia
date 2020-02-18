@@ -38,7 +38,12 @@ with
  \alpha_{n}}(\mathbf{T}_{n})}\vline_{_{_{_{_{_{_{_{_{\mathbf{R}^{0}}}}}}}}}}.
 \end{equation}
 The number of possible $\mathbf{T}$ lattice vectors is equal to the number of unit cells. The atom index $s$ goes from $1$ to $N_{s}$, the number of atoms per unit cell, and $\alpha$ runs on the Cartesian coordinates $x$, $y$, and 
-$z$. $\phi_{s_{1},\dots,s_{n}}^{\alpha_{1},\dots,\alpha_{n}}(\mathbf{T}_{1},\dots,\mathbf{T}_{n})$ are the $n$ body force-constants ($n$BFC). For the 2BFC we omit the index $(2)$. \\
+$z$. $\phi_{s_{1},\dots,s_{n}}^{\alpha_{1},\dots,\alpha_{n}}(\mathbf{T}_{1},\dots,\mathbf{T}_{n})$ are the $n$ body force-constants ($n$BFC). For the 2BFC we omit the index $(2)$. As a rigid shift of the crystal cannot change the energy of the system, 2BFC fulfill the following equality
+\begin{equation}
+\label{acoustic-sum-rule}
+\sum_{\mathbf{T}_{1},\alpha_{1},s_{1}}\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2})=0,
+\end{equation}
+which is named acoustic sum rule (ASR). \\
 
 In principle, the ionic configuration $\mathbf{R}$ depends on the three lattice vectors of the system $\mathbf{R}\equiv\mathbf{R}(\{\mathbf{a}_{i}\})$ $i=1,2,3$ and, therefore, the BOES also depends on them. The Born-Oppenheimer stress 
 tensor can be defined as
@@ -64,6 +69,7 @@ where $N_{\mathbf{q}}$ is the number of $\mathbf{q}$ points in the 1BZ or equiva
 depend on $\mathbf{T}=\mathbf{T}_{1}-\mathbf{T}_{2}$. Therefore, only the terms with $\mathbf{q}_{1}=-\mathbf{q}_{2}$ are non-zero in 
 Eq. \ref{2bfc-fourier} and the equation can be rewritten
 \begin{equation}
+ \label{2bfc-fourier-simple}
  \phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{q})=\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{q},-\mathbf{q})=N_{\mathbf{q}}\sum_{\mathbf{T}}\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T},0)e^{-i\mathbf{
  q}\cdot\mathbf{T}},
 \end{equation} 
@@ -107,7 +113,7 @@ with the following eigenenergies
 \end{equation}
 $\boldsymbol{\epsilon}_{s\mu}(\mathbf{q})$ and $\omega_{\mu}(\mathbf{q})$ are the polarization vector (of atom $s$ in the unit cell) and the frequency of mode $\mu$ with 
 momentum $\mathbf{q}$, respectively. $n_{\mu\mathbf{q}}$ denotes the occupation level of a mode, when a given mode is excited to the $n^{th}_{\mu\mathbf{q}}$ level, we would say that we have $n_{\mu\mathbf{q}}$ 
-phonons of that mode. We will name $\omega_{\mu}(\mathbf{q})$ $phonon$ $frequencies$ and their dispersion with respect to momentum $phonon$ $spectrum$. \\
+phonons of that mode. We will name $\omega_{\mu}(\mathbf{q})$ $phonon$ $frequencies$ and their dispersion with respect to momentum $phonon$ $spectrum$. The ASR makes $D_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{q}=0)$ to have three null eigenvalues, which correspond to the three acoustic branches at the $\Gamma$ point. \\
 
 Finally, the energy of a total ionic state $|\beta\rangle=|n_{1\mathbf{q}_{1}}\dots n_{3N_{s}\mathbf{q}_{1}}\dots n_{3N_{s}\mathbf{q}_{N_{\mathbf{q}}}}\rangle$, is given by
 \begin{equation}
