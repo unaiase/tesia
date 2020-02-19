@@ -25,12 +25,12 @@ harmonic approximation. \\
 
 For that purpose, by using the inversion symmetry and the ASR in Eq. \ref{acoustic-sum-rule} we will rewrite Eq. \ref{2bfc-fourier-simple} in section \ref{harmonic-approximation} as
 \begin{multline}
- \phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{q})=N_{\mathbf{q}}\sum_{\mathbf{T}}\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T},0)e^{-i\mathbf{q}\cdot\mathbf{T}}=\\\frac{N_{\mathbf{q}}}{2}\sum_{\mathbf{T}}\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T},0)(e^{-i\mathbf{q}\cdot\mathbf{T}}+e^{i\mathbf{q}\cdot\mathbf{T}}-2)=-2N_{\mathbf{q}}\sum_{\mathbf{T}}\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T},0)sin^{2}(\mathbf{k}\cdot\mathbf{T}/2).
+ \phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{q})=\sum_{\mathbf{T}}\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T},0)e^{-i\mathbf{q}\cdot\mathbf{T}}=\\\frac{1}{2}\sum_{\mathbf{T}}\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T},0)(e^{-i\mathbf{q}\cdot\mathbf{T}}+e^{i\mathbf{q}\cdot\mathbf{T}}-2)=-2\sum_{\mathbf{T}}\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T},0)sin^{2}(\mathbf{q}\cdot\mathbf{T}/2).
 \end{multline}
 And by Taylor expanding this equation close to the point $\Gamma$ we get
 \begin{equation}
 \label{need-zero}
-\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{q})\simeq -\frac{N_{\mathbf{q}}}{2}\sum_{\alpha\beta}q_{\alpha}q_{\beta}\sum_{\mathbf{T}}\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T})T_{\alpha}T_{\beta}+O(q^{4}),
+\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{q})\simeq -\frac{1}{2}\sum_{\alpha\beta}q_{\alpha}q_{\beta}\sum_{\mathbf{T}}\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T})T_{\alpha}T_{\beta}+O(q^{4}),
 \end{equation} 
 $\alpha$, $\beta$ being $x$, $y$, and $z$ Cartesian components. \\
 

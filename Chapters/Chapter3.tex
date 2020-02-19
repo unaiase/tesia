@@ -62,7 +62,7 @@ displacements. The lowest-order approximation is named harmonic approximation an
 We will name higher-order terms ($n>2$) anharmonic terms. It is convenient to Fourier transform the 2BFC  with the following general Fourier transform for any $n$BFC
 \begin{equation}
  \label{2bfc-fourier}
- \overset{(n)}{\phi}{}_{s_{1}\dots s_{n}}^{\alpha_{1}\dots\alpha_{n}}(\mathbf{T}_{1},\dots,\mathbf{T}_{n})=\frac{1}{N_{\mathbf{q}}^{n}}\sum_{\mathbf{q}_{1}\dots\mathbf{q}_{n}}e^{i(\mathbf{q}_{1}\cdot\mathbf{T}_{1}+\dots+\mathbf{q}_{
+ \overset{(n)}{\phi}{}_{s_{1}\dots s_{n}}^{\alpha_{1}\dots\alpha_{n}}(\mathbf{T}_{1},\dots,\mathbf{T}_{n})=\frac{1}{N_{\mathbf{q}}^{n-1}}\sum_{\mathbf{q}_{1}\dots\mathbf{q}_{n}}e^{i(\mathbf{q}_{1}\cdot\mathbf{T}_{1}+\dots+\mathbf{q}_{
  n}\cdot\mathbf{T}_{n})}\times\overset{(n)}{\phi}{}_{s_{1}\dots s_{n}}^{\alpha_{1}\dots\alpha_{n}}(\mathbf{q}_{1},\dots,\mathbf{q}_{n}),
 \end{equation}
 where $N_{\mathbf{q}}$ is the number of $\mathbf{q}$ points in the 1BZ or equivalently the number of allowed $\mathbf{T}$ lattice vectors. Due to the translational symmetry of the crystal, 2BFC have also translational invariance and only 
@@ -70,7 +70,7 @@ depend on $\mathbf{T}=\mathbf{T}_{1}-\mathbf{T}_{2}$. Therefore, only the terms 
 Eq. \ref{2bfc-fourier} and the equation can be rewritten
 \begin{equation}
  \label{2bfc-fourier-simple}
- \phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{q})=\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{q},-\mathbf{q})=N_{\mathbf{q}}\sum_{\mathbf{T}}\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T},0)e^{-i\mathbf{
+ \phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{q})=\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{q},-\mathbf{q})=\sum_{\mathbf{T}}\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T},0)e^{-i\mathbf{
  q}\cdot\mathbf{T}},
 \end{equation} 
 where $\mathbf{q}=\mathbf{q}_{1}=-\mathbf{q}_{2}$. In the same way we can define the Fourier transforms of the displacement and momentum operators
