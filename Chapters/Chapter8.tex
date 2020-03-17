@@ -178,6 +178,45 @@ to $\Gamma$ for the ZA mode already at $500$ K. In the shadowed region in Fig. \
 valid. This result questions the results obtained with this approach that yield a negative thermal expansion at all 
 temperatures\cite{mounet2005first}.
 
+\section{Graphene phonons}
+
+In Fig. \ref{spectrum-graphene} we compare the harmonic phonon spectra with the one obtained diagonalizing the SCHA 
+effective force constants $\boldsymbol{\Phi}$ as well as the spectra obtained from the Hessian of the SCHA free 
+energy. 
+\begin{figure*}[ht]
+\includegraphics[width=0.32\linewidth]{Figures/T0.eps}
+\includegraphics[width=0.32\linewidth]{Figures/T300.eps}
+\includegraphics[width=0.32\linewidth]{Figures/T2000.eps}
+\caption{Harmonic phonon spectra together with the SCHA phonons (labeled as ``SCHA'') and those obtained from the 
+	Hessian of the SCHA free energy as (labeled as ``Physical''). Results at 0 K (a), 300 K (b), and 2000 K (c) 
+	are shown. (d), (e) and (f) show only the dispersion of the ZA mode close to $\Gamma$ in logarithmic scale 
+	at 0 K, 300 K, and 2000 K, respectively. In the small panels the dispersion corresponds to the $\Gamma$M 
+	direction. For reference, the M point is at $1.4662$ $\AA^{-1}$ at $0$ K, at $1.4671$ $\AA^{-1}$ at $300$ K, 
+	and at $1.4652$ $\AA^{-1}$ at $200$ K. The harmonic result (solid black) is computed at the lattice parameter 
+	that minimizes $U$, while the other results include thermal expansion (see Fig. \ref{lattice}). The dashed 
+	black lines correspond to harmonic calculations including thermal expansion (TE). All these calculations are 
+	performed with the machine learning atomistic potential.}
+\label{spectrum-graphene}
+\end{figure*}
+The main conclusion is that while the dispersion of the ZA modes obtained from $\boldsymbol{\Phi}$ is linearized, 
+the physical phonons given by the Hessian of $F$ become close to a quadratic dispersion and approach the harmonic 
+dispersion, as expected by symmetry. The SCHA ZA frequencies suffer a blue-shift with respect to the harmonic ones, 
+but are red-shifted once the Hessian is calculated. Both shifts are bigger when the temperature is increased, but 
+the quadratic behavior of the ZA modes is always recovered regardless of the temperature. With respect to the optical 
+modes, we observe that the frequencies red-shift with increasing temperature in agreement with experiments and 
+theory\cite{calizo2007temperature,bonini2007phonon}. It is noteworthy that the phonon frequencies obtained from the 
+Hessian of $F$ should only be understood as the physical phonons in the static limit\cite{bianco2017second}. However, 
+as shown in Fig. \ref{static-dynamic}, 
+\begin{figure}[ht]
+\includegraphics[width=0.32\linewidth]{Figures/T0-za.eps}
+\includegraphics[width=0.32\linewidth]{Figures/T300-za.eps}
+\includegraphics[width=0.32\linewidth]{Figures/T2000-za.eps}
+\caption{Harmonic, SCHA, and physical phonons (static and dynamic) calculated at 0 K a), 300 K b), and 2000 K c).}
+\label{static-dynamic}
+\end{figure}
+the static phonons agree with those derived from the dynamical (see section \ref{perturbation-theory-third}) theory 
+and are thus good representatives of the physical phonons expected experimentally.
+
 \section{SCHA applied to a continuum membrane Hamiltonian}
 
 In this section we apply the SCHA in a continuum membrane Hamiltonian in order to get some results at very small 
