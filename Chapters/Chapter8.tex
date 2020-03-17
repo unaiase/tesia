@@ -17,8 +17,95 @@
 
 \section{Introduction}
 
+The discovery of graphene\cite{novoselov2004electric,novoselov2005two,novoselov2005twoo,zhang2005experimental} proved 
+the existence of 2D materials and launched their science and technology. Graphene is already a reality in different 
+industrial products\cite{Kong2019path} that benefit from its fantastic properties. In particular, its mechanical and 
+thermal properties are crucial for many of its current and future applications. For instance, graphene's uneven 
+strength, stiffness, and lightness\cite{lee2008measurement} has been used to make stronger but lighter macroscopic 
+objects, such as tennis rackets, shoes, and so on. Graphene, due to its very high thermal 
+conductivity\cite{ghosh2008extremely}, has been already incorporated into electronic devices like mobile phones for 
+efficient heat dissipation. \\
+
+The understanding of the mechanical and thermal properties of graphene, and in general of any 2D material, 
+is, however, far from trivial. Even the possibility of having crystalline order in 2D has been long 
+questioned\cite{landau_statistical_physics,mermin1968crystalline}. Indeed, the mean square displacement calculated 
+in the harmonic approximation diverges in the long wave-length limit, which means that the larger the sample of a 2D 
+material the bigger the atomic displacements, which prevents any crystalline order\cite{landau_statistical_physics}. 
+In Fig. \ref{rms_harmonic} we show the atomic displacements of carbon atoms in graphene as a function of the sample 
+size, or the supercell used for the calculation.
+\begin{figure}[h]
+\includegraphics[width=0.8\linewidth]{Figures/rms-harmonic.eps}
+\caption{Atomic displacements of carbon atoms in graphene calculated using the harmonic dispersion as a function 
+	of the supercell size for different temperatures.}
+\label{rms_harmonic}
+\end{figure}
+As the figure clearly shows, the mean square atomic displacements diverge at finite temperatures as a function of 
+the sample size. Mermin's theorem\cite{mermin1968crystalline} proves that, even without assuming the harmonic 
+approximation, long-range crystalline order is not possible in a two-dimensional crystal described by a pair 
+potential. Experimentally, however, crystalline order has been observed in suspended 
+graphene\cite{meyer2007structure}, although it shows ripples that seem to be intrinsic\cite{fasolino2007intrinsic}. \\
+
+Most of the problems related to the mechanical stability of graphene are caused by the quadratic dispersion of the 
+acoustic out-of-plane (ZA) mode that is obtained in the harmonic approximation. The harmonic phonon spectrum of 
+graphene is shown in Fig. \ref{harmonic-graphene}.
+\begin{figure}[h]
+\includegraphics[width=0.55\linewidth]{Figures/harmonic-graphene.eps}
+\includegraphics[width=0.45\linewidth]{Figures/harmonic-graphene-logarithmic.eps}
+\caption{Left: Harmonic phonon spectrum of graphene. Right: Harmonic ZA phonon dispersion of graphene in logarithmic 
+	scale. We include a quadratic line for reference.}
+\label{harmonic-graphene}
+\end{figure}
+We can see that the LA and TA modes have a linear dispersion close to the point $\Gamma$ as it happens in 3D 
+crystals. However, the ZA mode, which atomic displacements are directed in the out-of-plane direction, has a 
+quadratic dispersion. This is very clear in the plot in logarithmic scale where we have included a quadratic line for 
+reference. The quadratic dispersion is given by the rotational symmetry, together with the fact that in a strictly 
+two-dimensional system force constants involving an in-plane and an out-of-plane displacement 
+vanish\cite{katsnelson2013graphene}. The mathematical proof of the quadratic dispersion is given in 
+section \ref{quadratic-dispersion}. \\
+
+The quadratic dispersion also creates spurious divergences in physical properties calculated perturbativaly on top of 
+the harmonic result. The phonon linewidths of the in-plane acoustic longitudinal (LA) and transverse (TA) phonons 
+calculated perturbatively do not vanish as the momentum decreases\cite{paulatto2013anharmonic}, precisely, because of 
+the $\sim q^2$ dispersion of the ZA modes\cite{bonini2012acoustic}. The linewidths of the LA and TA modes are shown 
+in Fig. \ref{lata-harmonic-lw}. 
+\begin{figure}[h]
+\includegraphics[width=0.8\linewidth]{Figures/lw-graphene-harmonic.eps}
+\caption{Linewidths (full width at half maximum, FWHM) of the LA and TA modes calculated using the harmonic phonon 
+spectrum for the three phonon scattering processes and 3BFC calculated within the SCHA at $0$ K.}
+\label{lata-harmonic-lw}
+\end{figure}
+The figure clearly shown how the linewidths do not vanish at small momenta. This yields to the conclusion that for 
+small enough momentum phonons do not live long enough for vibrating one period and the quasiparticle picture is lost. 
+Consequently, the thermal conductivity calculated with the perturbative phonon 
+lifetimes\cite{fugallo2013ab,fugallo2014thermal} does not converge with the sample size\cite{bonini2012acoustic}.
+The application of strain linearizes the dispersion of the ZA phonons and makes the linewidth of the LA and TA 
+phonon modes vanish together with their frequency at small momenta, keeping the phonon 
+picture\cite{bonini2012acoustic}. \\
+
+It has been argued\cite{wang2016anharmonic,los2009scaling,katsnelson2013graphene,zakharchenko2009finite,mariani2008flexural,amorim2014thermodynamics,de2012bending} that the anharmonic coupling between in-plane and out-of-plane phonon 
+modes renormalizes the dispersion of the ZA phonon modes, providing it with a linear term at small momenta that 
+somewhat cures the pathologies. This conclusion has been drawn by Monte Carlo simulations with empirical 
+potentials\cite{wang2016anharmonic,los2009scaling,katsnelson2013graphene,zakharchenko2009finite} and by using a 
+membrane continuum  Hamiltonian that mimics the interaction among acoustic 
+modes\cite{mariani2008flexural,amorim2014thermodynamics,de2012bending}. Anharmonic phonons expected experimentally 
+should be calculated from the free energy Hessian, i.e., diagonalizing the  $[\frac{\partial F}{\partial \mathcal{R}_a \partial \mathcal{R}_b}]_{0}/\sqrt{M_aM_b}$ matrix, where $F$ is the free energy calculated including anharmonic 
+effects and $\boldsymbol{\mathcal{R}}$ the centroid positions that determine the most probable ionic 
+positions\cite{bianco2017second}. If this is the case, as $F$ obeys the same symmetry properties as $V$, a similar 
+$\sim q^2$ dispersion would be expected for the ZA mode even if anharmonic effects are included in the calculation 
+of $F$. Actually, measurements done with helium diffraction show a ZA mode with a quadratic 
+dispersion\cite{al2016acoustic,al2015helium,al2018resolving}, though the linearization regime may not be seen and 
+substrate effects may be important. The remaining question is thus whether the ZA modes really have a quadratic 
+dispersion, and, if it is so, how the mechanical stability and thermal properties of graphene can be explained. \\
+
+In this work we show that a quadratic dispersion of the ZA mode is actually expected for graphene provided that it 
+is calculated from the Hessian of the anharmonic free energy $F$, and that it is compatible with the absence of 
+divergences. We estimate $F$ within the self-consistent harmonic approximation (SCHA). We apply the SCHA in its 
+stochastic implementation (SSCHA) making use of a machine learning atomistic potential trained with density 
+functional theory\cite{rowe2018development}. We also solve the SCHA equations in a membrane continuum Hamiltonian 
+which provides results at smaller momenta.
 
 \section{Quadratic dispersion of ZA modes within the harmonic approximation}
+\label{quadratic-dispersion}
 
 In this section we prove that the dispersion of the ZA phonon modes close to the point $\Gamma$ is quadratic in the 
 harmonic approximation. \\
@@ -44,6 +131,52 @@ Therefore, by looking at Eq. \ref{need-zero} we can see that for proving that th
 $\sum_{\mathbf{T}}\phi_{s_{1}s_{2}}^{zz}(\mathbf{T})T_{\alpha}T_{\beta}=0$. Actually, this equality is enforced by the rotational invariance of the system. \\
 
 In conclusion, the 2D character of the 2BFC and the rotational invariance of the system make the harmonic dispersion of the ZA modes close to the point $\Gamma$ to be quadratic.
+
+\section{Graphene without stress}
+
+In order to calculate phonon spectra in unstrained graphene at any temperature, we calculate the SCHA stress tensor 
+following the procedure in section \ref{scha-stress-section} and pick the lattice parameter that sets it to zero at 
+each temperature. For that purpose, we calculate the stress in ranges of $0.0005$ $\AA$ and then we interpolate the 
+result, which is fitted very good with a linear function. The lattice parameter calculated in this way includes 
+anharmonic effects as well as the effect of quantum and thermal fluctuations. In order to properly account for 
+thermal expansion, all the phonon spectra shown in this work that are obtained with the atomistic potential are 
+calculated with the lattice parameter that gives a null SCHA stress at each temperature. The harmonic spectra on the 
+contrary is always calculated at the lattice parameter that minimizes $U$. The temperature dependence of the lattice 
+parameter and the thermal expansion coefficient are shown in Fig. \ref{lattice}.
+\begin{figure}[ht]
+\includegraphics[width=0.99\linewidth]{Figures/lattice.eps}
+\caption{a) Lattice parameter of graphene as a function of temperature obtained with the SCHA using a machine 
+	learning atomistic potential. Both quantum (black) and classical (blue) calculations are included. The 
+	classical result is calculated setting $\hbar=0$ in the SCHA free energy. The temperature-independent frozen 
+	nuclei (FN) result corresponds to the lattice parameter that minimizes the Born Oppenheimer potential $U$. 
+	Results obtained by Rowe et al.\cite{rowe2018development}are also inlcuded for comparison. Solid black and 
+	blue lines correspond to cubic fits. The black dashed line corresponds to the quasiharmonic result. b) 
+	Thermal expansion coefficient (CTE) calculated as $CTE=\frac{1}{A}\frac{\partial A}{\partial T}$, $A$ being 
+	the area of the membrane. Red line is directly taken from \cite{rowe2018development}. Black and blue lines 
+	are calculated using the cubic fits in a).}
+\label{lattice}
+\end{figure}
+We include the results of Rowe et al.\cite{rowe2018development}, which do not account for quantum effects as they 
+are done with molecular dynamics (MD). They use the same potential as we do. For comparison we also include SCHA 
+calculations in he classical limit and within the quasiharmonic (QH) approximation. Our quantum calculations 
+correctly capture the negative thermal expansion of graphene up to $\sim$ 750 K that has been estimated in previous 
+theoretical works\cite{rowe2018development,zakharchenko2009finite}. Our quantum calculations show a larger lattice 
+parameter and a more pronounced thermal expansion (in absolute value) at low temperatures. This is not surprising as 
+classical calculations neglect quantum fluctuations and, consequently, underestimate the fluctuations associated to 
+the high-energy optical modes (the highest energy phonon modes require temperatures of around 2000 K to be thermally 
+populated). Actually, the classical result approaches the quantum at high temperatures. This remarks the importance 
+of considering quantum effects in the evaluation of thermodynamical properties of graphene. Our classical results 
+and the MD calculations of Rowe et al.\cite{rowe2018development} are in agreement (within their error of $0.003$ 
+$\AA$) at low temperatures. However, at high temperatures they deviate and our calculations approach the quantum 
+result as it should be. The difference may be due to the non-trivial calculation of the lattice parameter within MD. 
+We have also included the quasiharmonic (QH) result. The lattice parameter within the QH approximation is calculated 
+by calculating the harmonic free energy for different temperatures and lattice paramters. The lattice parameter 
+dependence comes from the different harmonic phonons at different lattice parameters. Then, we take the lattice 
+parameter that minimizes the harmonic free energy at each temperature. It is worth noting that this approximation is 
+not valid to calculate the thermal expansion of graphene due to the imaginary phonon frequencies that appear close 
+to $\Gamma$ for the ZA mode already at $500$ K. In the shadowed region in Fig. \ref{lattice} the QH is not 
+valid. This result questions the results obtained with this approach that yield a negative thermal expansion at all 
+temperatures\cite{mounet2005first}.
 
 \section{SCHA applied to a continuum membrane Hamiltonian}
 
