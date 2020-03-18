@@ -45,9 +45,12 @@ work\cite{aseginolaza2019phonon}. The experimental lattice parameters taken from
 and $a=21.69$ a$_{0}$, $b=7.84$ a$_{0}$, $c=7.84$ a$_{0}$ (a$_{0}$ is the Bohr length) for SnS. The structures of the high temperature $Cmcm$ and low temperature $Pnma$ phases are shown in Figure \ref{pnma-cmcm}.
 Anharmonic phonons and nonperturbative third-order force-constants are calculated within the SSCHA using a $2\times2\times2$ supercell. For the SSCHA calculation we use forces calculated within DFT. Once we get the anharmonic
 force-constants, we substract the harmonic ones and interpolate the difference to a $6\times6\times6$ grid. Then, we add this interpolated difference to the harmonic dynamical matrices in a $6\times6\times6$ grid, which yields
-anharmonic force-constants in a fine grid. By Fourier interpolating the latter we can calculate phonon frequencies at any point in the Brillouin zone. We impose the acoustic sum rule to the third-order force-constants with an
-iterative method prior to their Fourier interpolation\cite{paulatto2013anharmonic,aseginolaza2019phonon}. The lattice thermal conductivity is calculated a $10\times10\times10$ grid. For the calculation of the phonon linewidths 
-we use a $20\times20\times20$ mesh with a Gaussian smearing of $1$ cm$^{-1}$ for the Dirac deltas.
+anharmonic force-constants in a fine grid (see appendix \ref{appendixB} for more details). By Fourier interpolating 
+the latter we can calculate phonon frequencies at any point in the Brillouin zone. We impose the acoustic sum rule 
+to the third-order force-constants with an iterative method prior to their Fourier 
+interpolation\cite{paulatto2013anharmonic,aseginolaza2019phonon}. The lattice thermal conductivity is calculated in 
+a $10\times10\times10$ grid. For the calculation of the phonon linewidths we use a $20\times20\times20$ mesh with a 
+Gaussian smearing of $1$ cm$^{-1}$ for the Dirac deltas.
 
 \section{Electronic transport}
 

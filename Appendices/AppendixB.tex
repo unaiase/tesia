@@ -1,0 +1,29 @@
+% Appendix A
+
+\chapter{Interpolation of SSCHA dynamical matrices} % Main appendix title
+
+\label{appendixB} % For referencing this appendix elsewhere, use \ref{AppendixA}
+
+In the SSCHA forces are calculated in supercells and, therefore, anharmonic dynamical matrices are obtained in a 
+commensurate $\boldsymbol{q}$ points grid. Computational costs increase enormously with the supercell size making 
+dense sampling calculations extremely time-demanding. Therefore, whenever a fine sampling of the 1BZ is required, we 
+have used the following interpolation scheme. \\
+
+Let us call the anharmonic dynamical matrices obtained in the output of the SSCHA calculation in a coarse 
+$\boldsymbol{q}$ point grid (small supercell) $\boldsymbol{D}_{coarse}^{S}(\boldsymbol{q})$. We will name the 
+harmonic dynamical matrices obtained in the same grid as $\boldsymbol{D}_{coarse}(\boldsymbol{q})$. Our goal is to 
+obtain anharmonic dynamical matrices in a finer grid, written as $\boldsymbol{D}_{fine}^{(S)}(\boldsymbol{q})$, by 
+taking advantage of having the fine grid harmonic dynamical matrices $\boldsymbol{D}_{fine}(\boldsymbol{q})$ 
+already computed (which are faster to obtain than the anharmonic ones). Assuming that
+\begin{equation}
+\tilde{\boldsymbol{D}}_{coarse}(\boldsymbol{q})\equiv\boldsymbol{D}_{coarse}^{(S)}(\boldsymbol{q})-
+\boldsymbol{D}_{coarse}(\boldsymbol{q})
+\end{equation}
+is slowly varying in the reciprocal space ($i.e.$ the differences between the SSCHA and the harmonic force constant 
+matrices are more localized in real space than the harmonic force constant matrices) we can interpolate 
+$\tilde{\boldsymbol{D}}_{coarse}(\boldsymbol{q})$ using Fourier interpolation to the fine grid of our choice to 
+obtain $\tilde{\boldsymbol{D}}_{fine}(\boldsymbol{q})$. Now, it is straightforward to obtain
+\begin{equation}
+\boldsymbol{D}_{fine}^{(S)}(\boldsymbol{q})=\boldsymbol{D}_{fine}(\boldsymbol{q})+
+\tilde{\boldsymbol{D}}_{fine}(\boldsymbol{q}).
+\end{equation}

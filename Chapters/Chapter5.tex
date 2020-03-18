@@ -63,10 +63,14 @@ Our calculations are based on DFT using the QUANTUM-ESPRESSO\cite{giannozzi2009q
 differences\cite{li2014shengbte}. Anharmonic phonons and nonperturbative 3BFC were calculated using the SCHA. For the exchange-correlation interaction we use the Perdew-Burke-Ernzerhof (PBE) generalized gradient 
 approximation and the local density approximation (LDA) with ultrasoft (US) and Projector Augmented Wave method (PAW) pseudopotentials respectively. Due to limitations in the implementation of perturbative 3BFC 
 within DFPT we use norm-conserving (NC) pseudopotentials. We use a cutoff energy of 70 Ry and a grid of $16\times16\times16$ $\boldsymbol{k}$ points to sample the first Brillouin zone. For the harmonic phonon calculations 
-we use a $6\times6\times6$ supercell and a $2\times2\times2$ one for the 3BFC. For the SSCHA calculation we use a $2\times2\times2$ supercell. Then, for the anharmonic phonon dispersion, we interpolate the difference between the 
-harmonic and anharmonic force-constants in the $2\times2\times2$ supercell to the $6\times6\times6$ and we add it to the $6\times6\times6$ harmonic force-constants. For the linewidth calculations we use a $20\times20\times20$ 
-$\boldsymbol{q}$ points grid obtained by Fourier interpolation with a smearing of $1$ cm$^{-1}$. For the thermal conductivity calculation we use a $10\times10\times10$ grid of $\boldsymbol{q}$ points to sample the first 
-Brillouin zone. We have done calculations in denser grids to test these parameters.
+we use a $6\times6\times6$ supercell and a $2\times2\times2$ one for the 3BFC. For the SSCHA calculation we use a 
+$2\times2\times2$ supercell. Then, for the anharmonic phonon dispersion, we interpolate the difference between the 
+harmonic and anharmonic force-constants in the $2\times2\times2$ supercell to the $6\times6\times6$ and we add it to 
+the $6\times6\times6$ harmonic force-constants (see appendix \ref{appendixB} for more details). For the linewidth 
+calculations we use a $20\times20\times20$ $\boldsymbol{q}$ points grid obtained by Fourier interpolation with a 
+smearing of $1$ cm$^{-1}$. For the thermal conductivity calculation we use a $10\times10\times10$ grid of 
+$\boldsymbol{q}$ points to sample the first Brillouin zone. We have done calculations in denser grids to test 
+these parameters.
 
 \section{Phase transition}
 
