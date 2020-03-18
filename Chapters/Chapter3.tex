@@ -658,6 +658,7 @@ of fluctuations. \\
 The SCHA stress tensor can be calculated with the knowledge of the BOES, the atomic forces and the BO stress tensor and the stochastic framework in Eq. \ref{stochastic} is also valid for the stress calculation. 
 
 \subsection{The free energy Hessian and second-order phase transitions within the SSCHA}
+\label{free-energy-section}
 
 In section \ref{sscha-basics} we have seen how to get an approximation for the vibrational free energy. For that purpose, the SSCHA uses trial centroids and 2BFC and will provide us with the $\boldsymbol{\mathcal{R}}$ 
 and $\boldsymbol{\Phi}$ that minimize the free energy of the system. In this section we will see 
@@ -778,7 +779,9 @@ as the perturbation theory in section \ref{perturbation-theory-third}. Within th
 \end{equation} 
 where $M_{ab}=\delta_{ab}m_{a}$ is the mass matrix. With this self-energy, basically, we get an analogous theory of the perturbation theory, but instead of having harmonic frequencies $\omega_{\mu}(\mathbf{q})$ we 
 have the auxiliary phonon frequencies $\tilde{\Omega}_{\mu}(\mathbf{q})$ and instead of having the perturbative 3BFC $\overset{(3)}{\phi}{}_{s_{1}s_{2}s_{2}}^{\alpha_{1}\alpha_{2}\alpha_{3}}(\mathbf{T}_{1},\mathbf{
- T}_{2},\mathbf{T}_{3})$ we have the non-perturbative ones $\overset{(3)}{\Phi}{}_{s_{1}s_{2}s_{2}}^{\alpha_{1}\alpha_{2}\alpha_{3}}(\mathbf{T}_{1},\mathbf{T}_{2},\mathbf{T}_{3})$.  \\
+ T}_{2},\mathbf{T}_{3})$ we have the non-perturbative ones $\overset{(3)}{\Phi}{}_{s_{1}s_{2}s_{2}}^{\alpha_{1}\alpha_{2}\alpha_{3}}(\mathbf{T}_{1},\mathbf{T}_{2},\mathbf{T}_{3})$. By setting $z=0$ we recover the static limit and these 
+ phonons are equvalent to the ones defined from the free energy Hessian ($\boldsymbol{D}^{(F)}$) in 
+ section \ref{free-energy-section}. \\
 
 The SSCHA has proven to be an extremely powerful method for including anharmonic effects at a non-perturbative level. It has been successfully applied in bulk and monolayer materials including 
 superconductors\cite{errea2013first,errea2016quantum}, materials undergoing charge density wave\cite{leroux2015strong,bianco2019quantum} and ferroelectric\cite{ribeiro2018strong} transitions, thermoelectric 
