@@ -313,45 +313,52 @@ phonon fields has the following form:
 $\boldsymbol{u}(\boldsymbol{x})$ and $h(\boldsymbol{x})$ are the in-plane and out-of-plane displacement 
 fields, respectively, and $\boldsymbol{x}$ is the 2D position vector in the membrane. $\kappa$ is the bending 
 rigidity of the membrane and the tensor 
-$C^{ijkl}=\lambda\delta^{ij}\delta^{kl}+\mu(\delta^{ik}\delta^{jl}+\delta^{il}\delta^{jk})$ contains the Lame 
+$C^{ijkl}=\lambda\delta^{ij}\delta^{kl}+\mu(\delta^{ik}\delta^{jl}+\delta^{il}\delta^{jk})$ contains the Lame's 
 coefficients $\lambda$ and $\mu$ and Kronecker deltas. As it is a continuum model it only accounts for acoustic 
-modes and the second-order terms in the potential are the harmonic terms. The harmonic frequencies are 
-$\omega_{ZA}(q)=\sqrt{\kappa/\rho}q^{2}$, $\omega_{LA}(q)=\sqrt{(\lambda+\mu)/\rho}q$, and 
-$\omega_{TA}(q)=\sqrt{\mu\rho} q$, $\rho$ being the mass density of the membrane. The higher-order terms account 
+modes and the second-order terms in the potential are the harmonic terms. The harmonic frequencies in normal 
+coordinates space are $\omega_{ZA}(q)=\sqrt{\phi_{h}(\boldsymbol{q})/\rho}$, 
+$\omega_{LA}(q)=\sqrt{(\phi_{LA}(\boldsymbol{q})/\rho}$, and 
+$\omega_{TA}(q)=\sqrt{\phi_{TA}(\boldsymbol{q})/\rho}$, where $\rho$ is the mass density of the membrane and 
+$\phi_{ZA}(\boldsymbol{q})=\kappa |\boldsymbol{q}|^{4}$, 
+$\phi_{LA}(\boldsymbol{q})=(\lambda+\mu)|\boldsymbol{q}|^{2}$, and
+$\phi_{TA}(\boldsymbol{q})=\mu|\boldsymbol{q}|^{2}$ are the harmonic 2BFC. LA and TA correspond to the in-plane 
+longitudinal and transversal phonons and ZA corresponds to the out-of-plane phonons. The higher-order terms account 
 for the phonon-phonon anharmonic interactions. The thermal expansion is included in this formalism by changing the 
 in-plane derivatives $\partial_{i}u_{j}\rightarrow \partial_{i}u_{j}+\delta^{ij}\delta a$, with 
-$\delta a=(a-a_{0})a_{0}$, $a_{0}$ being the lattice parameter that minimizes $V$. \\
+$\delta a=(a-a_{0})a_{0}$, $a_{0}$ being the lattice parameter that minimizes $U$. \\
 
-It is not possible to apply the SCHA analytically in Eq. \ref{membrane-potential}. The simplest approximation that 
-allows applying the SCHA analytically is to neglect fourth-order terms including in-plane phonon fields. In that 
-case the potential can be written as
+It is not possible to apply the SCHA analytically in Eq. \ref{membrane-potential}. As far as we know, the simplest 
+approximation that allows applying the SCHA analytically is to neglect fourth-order terms including in-plane phonon 
+fields. In that case the potential can be written as
 \begin{multline}
 \label{membrane-potential-tommaso}
-V=\frac{1}{2}\int_{\Omega}d^{2}x[C^{ijkl}\partial_{i}u_{j}\partial_{k}u_{l}+\kappa(\partial^{2}h)^{2}+
+U=\frac{1}{2}\int_{\Omega}d^{2}x[C^{ijkl}\partial_{i}u_{j}\partial_{k}u_{l}+\kappa(\partial^{2}h)^{2}+
 C^{ijkl}\partial_{i}u_{j}\partial_{k}h\partial_{l}h+\frac{C^{ijkl}}{4}\partial_{i}h\partial_{j}h\partial_{k}h\partial_{l}h]+\\+2\Omega(\lambda+\mu)(\delta a)^{2}+\delta a(\lambda+\mu)\int_{\Omega}d^{2}x\partial_{k}h\partial_{k}h.
 \end{multline}
 By Fourier transforming this potential in $\boldsymbol{q}$ space and applying Eq. \ref{scha-equation}, we arrive to 
 the SCHA equations (see appendix for further derivations)
 \begin{equation}
 \label{tommaso-eq1}
-\frac{\partial\mathcal{F}}{\partial\delta a}=0\rightarrow\delta a=-\frac{1}{4\Omega}\sum_{\boldsymbol{q}}|\boldsymbol{q}|^{2}g[\Omega_{SCHA}^{(h)}(\boldsymbol{q})],
+\frac{\partial\mathcal{F}}{\partial\delta a}=0\rightarrow\delta a=-\frac{1}{4\Omega}\sum_{\boldsymbol{q}}|\boldsymbol{q}|^{2}g[\Omega_{ZA}^{(S)}(\boldsymbol{q})],
 \end{equation}   
 \begin{equation}
 \label{tommaso-eq2}
-\frac{\partial\mathcal{F}}{\partial\Phi_{h}(\boldsymbol{q})}=0\rightarrow\Phi_{h}(\boldsymbol{q})=\kappa|\boldsymbol{q}|^{4}+2\delta a(\lambda+\mu)|\boldsymbol{q}|^{2}+\frac{\lambda+2\mu}{2\Omega}\sum_{\boldsymbol{k}}g[\Omega_{SCHA}^{(h)}(\boldsymbol{k})][|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+2(\boldsymbol{q}\cdot\boldsymbol{k})^{2}].
+\frac{\partial\mathcal{F}}{\partial\Phi_{ZA}(\boldsymbol{q})}=0\rightarrow\Phi_{h}(\boldsymbol{q})=\kappa|\boldsymbol{q}|^{4}+2\delta a(\lambda+\mu)|\boldsymbol{q}|^{2}+\frac{\lambda+2\mu}{2\Omega}\sum_{\boldsymbol{k}}g[\Omega_{ZA}^{(S)}(\boldsymbol{k})][|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+2(\boldsymbol{q}\cdot\boldsymbol{k})^{2}].
 \end{equation}
-$\Phi_{h}(\boldsymbol{q})$ are the SCHA 2BFC that correspond to the out-of-plane modes and the frequencies are 
-$\Omega_{SCHA}^{(h)}(\boldsymbol{q})=\sqrt{\Phi_{h}(\boldsymbol{q})/\rho}$. The function $g$ is defined as
+$\Phi_{ZA}(\boldsymbol{q})$ are the SCHA 2BFC that correspond to the out-of-plane modes and the frequencies are 
+$\Omega_{ZA}^{(S)}(\boldsymbol{q})=\sqrt{\Phi_{ZA}(\boldsymbol{q})/\rho}$. The function $g$ is defined as
 $g(x)=coth(x/2T)/2\rho x$, $T$ being the temperature. Already from Eq. \ref{tommaso-eq2} it can be seen that the 
 non-zero $\delta a$ provides the SCHA frequency with a linear term. By inserting Eq. \ref{tommaso-eq1} in 
 Eq. \ref{tommaso-eq2} the SCHA 2BFC can be written as 
-$\Phi_{h}(\boldsymbol{q})=\kappa|\boldsymbol{q}|^{4}+\gamma|\boldsymbol{q}|^{2}$. The expression for $\gamma$ is given in appendix. Therefore, we have shown that the SCHA flexural acoustic modes have a linear dispersion close to the points $\Gamma$. \\
+$\Phi_{ZA}(\boldsymbol{q})=\kappa|\boldsymbol{q}|^{4}+\gamma|\boldsymbol{q}|^{2}$. The expression for $\gamma$ is 
+given in appendix. Therefore, we have shown that the SCHA flexural acoustic (ZA) modes have a linear dispersion 
+close to the point $\Gamma$. \\
 
 For calculating the physical phonons, given by the second derivative of the free energy, an analogous formula to 
 Eq. \ref{free-energy-hessian} can be found within the membrane formalism (see appendix). By applying this formula 
 we arrive to the following expression for the physical phonons at $T=0$
 \begin{equation}
- \Phi_{F}^{(h)}(\boldsymbol{q})=\kappa|\boldsymbol{q}|^{2}+(\gamma-\sigma)|\boldsymbol{q}|^{2}+
+ \Phi_{h}^{(F)}(\boldsymbol{q})=\kappa|\boldsymbol{q}|^{2}+(\gamma-\sigma)|\boldsymbol{q}|^{2}+
  O(|\boldsymbol{q}|^{4}).
 \end{equation} 
 The formula of $\sigma$ is given in the appendix. The positive number $\sigma$ makes the linear term in the physical 
@@ -364,18 +371,18 @@ By taking the full potential in Eq. \ref{membrane-potential}, Fourier transformi
 Eq. \ref{scha-equation} we arrive to the SCHA equations for the rotationally invariant membrane
 \begin{multline}
  \frac{\partial\mathcal{F}(\mathcal{V})}{\partial\delta a}=0=2\Omega(2\delta a+3\delta a^{2}+\delta a^{3})(\lambda+
-\mu)+\frac{1}{2}\sum_{\boldsymbol{q}}g[\Omega_{SCHA}^{(h)}(\boldsymbol{q})]2(1+\delta a)(\lambda+\mu)|\boldsymbol{
+\mu)+\frac{1}{2}\sum_{\boldsymbol{q}}g[\Omega_{SCHA}^{(ZA)}(\boldsymbol{q})]2(1+\delta a)(\lambda+\mu)|\boldsymbol{
  q}|^{2}\\+\frac{1}{2}\sum_{\boldsymbol{q}}g[\Omega_{SCHA}^{(LA)}(\boldsymbol{q})][2(1+\delta a)(\lambda+2\mu)|\boldsymbol{q}|^{2}+2(1+\delta a)(\lambda+\mu)|\boldsymbol{q}|^{2}]+\\\frac{1}{2}\sum_{\boldsymbol{q}}g[\Omega_{
  SCHA}^{(TA)}(\boldsymbol{q})][2(1+\delta a)\mu|\boldsymbol{q}|^{2}+2(1+\delta a/2)(\lambda+\mu)|\boldsymbol{q}|^{2}],
 \end{multline}
 \begin{multline}
- \Phi_{h}(\boldsymbol{q})=\kappa|\boldsymbol{q}|^{4}+2(1+\delta a/2)\delta a(\lambda+\mu)|\boldsymbol{q}|^{2}+\frac{\lambda+2\mu}{2\Omega}\sum_{\boldsymbol{k}}g[\Omega_{SCHA}^{(h)}(\boldsymbol{k})][|\boldsymbol{q}|^{2}|\boldsymbol{
+ \Phi_{ZA}(\boldsymbol{q})=\kappa|\boldsymbol{q}|^{4}+2(1+\delta a/2)\delta a(\lambda+\mu)|\boldsymbol{q}|^{2}+\frac{\lambda+2\mu}{2\Omega}\sum_{\boldsymbol{k}}g[\Omega_{SCHA}^{(ZA)}(\boldsymbol{k})][|\boldsymbol{q}|^{2}|\boldsymbol{
  k}|^{2}+2(\boldsymbol{q}\cdot\boldsymbol{k})^{2}]+\\\frac{1}{2\Omega}\sum_{\boldsymbol{k}}\{g[\Omega_{SCHA}^{(LA)}(\boldsymbol{k})]+g[\Omega_{SCHA}^{(TA)}(\boldsymbol{k})]\}[\lambda|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+2\mu(
  \boldsymbol{q}\cdot\boldsymbol{k})^{2}],
 \end{multline}
 \begin{multline}
  \Phi_{LA}(\boldsymbol{q})=(\lambda+2\mu)|\boldsymbol{q}|^{2}+2(1+\delta a/2)\delta a(\lambda+2\mu)|\boldsymbol{q}|^{2}+2(1+\delta a/2)\delta a(\lambda+\mu)|\boldsymbol{q}|^{2}\\+\frac{1}{2\Omega}\sum_{\boldsymbol{k}}g[\Omega_{SCHA}^{
- (h)}(\boldsymbol{k})][\lambda|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+2\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}]+\\\frac{1}{4\Omega}\sum_{\boldsymbol{k}}\{4g[\Omega_{SCHA}^{(TA)}(\boldsymbol{k})][\lambda(\boldsymbol{q}\cdot\boldsymbol{
+ (ZA)}(\boldsymbol{k})][\lambda|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+2\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}]+\\\frac{1}{4\Omega}\sum_{\boldsymbol{k}}\{4g[\Omega_{SCHA}^{(TA)}(\boldsymbol{k})][\lambda(\boldsymbol{q}\cdot\boldsymbol{
  k})^{2}+\mu|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}](\hat{\boldsymbol{q}_{\perp}}\cdot\hat{\boldsymbol{k}})+ \\ 2g[\Omega_{SCHA}^{(TA)}(\boldsymbol{k})][\lambda|\boldsymbol{q}|^{2}|\boldsymbol{
  k}|^{2}+2\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}]+ \\ 2g[\Omega_{SCHA}^{(LA)}(\boldsymbol{k})][\lambda|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+2\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}]+ \\ 4g[\Omega_{SCHA}^{(LA)}(\boldsymbol{
  k})][\lambda(\boldsymbol{q}\cdot\boldsymbol{k})^{2}+\mu|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}](\hat{\boldsymbol{q}}\cdot\hat{\boldsymbol{k}})\}
@@ -383,26 +390,51 @@ Eq. \ref{scha-equation} we arrive to the SCHA equations for the rotationally inv
 and,
 \begin{multline}
  \Phi_{TA}(\boldsymbol{q})=\mu|\boldsymbol{q}|^{2}+2(1+\delta a/2)\delta a\mu|\boldsymbol{q}|^{2}+2(1+\delta a/2)\delta a(\lambda+\mu)|\boldsymbol{q}|^{2}\\+\frac{1}{2\Omega}\sum_{\boldsymbol{k}}g[\Omega_{SCHA}^{
- (h)}(\boldsymbol{k})][\lambda|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+2\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}]+\\\frac{1}{4\Omega}\sum_{\boldsymbol{k}}\{
+ (ZA)}(\boldsymbol{k})][\lambda|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+2\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}]+\\\frac{1}{4\Omega}\sum_{\boldsymbol{k}}\{
  4g[\Omega_{SCHA}^{(TA)}(\boldsymbol{k})][\lambda(\boldsymbol{q}\cdot\boldsymbol{k})^{2}+\mu|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}](\hat{\boldsymbol{q}_{\perp}}\cdot\hat{
  \boldsymbol{k}_{\perp}})]+\\4g[\Omega_{SCHA}^{(LA)}(\boldsymbol{k})][\lambda(\boldsymbol{q}\cdot\boldsymbol{k})^{2}+\mu|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}](\hat{\boldsymbol{
  q}_{\perp}}\cdot\hat{\boldsymbol{k}})+ \\ 2g[\Omega_{SCHA}^{(TA)}(\boldsymbol{k})][\lambda|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+2\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}]  \}.
 \end{multline}
-The subscripts $LA$, $TA$ correspond to the longitudinal and transversal acoustic modes. We have solved these 
-equation by using the Newton-Raphson method in a circular discretized grid of $60\times60$ $\boldsymbol{q}$ 
-points. The results is shown in Fig. \ref{membrane-results}. 
+We have solved these equation by using the Newton-Raphson method\cite{ypma1995historical} in a circular discretized grid of $60\times60$ $\boldsymbol{q}$ 
+points. The results are shown in Fig. \ref{membrane-results}. 
 \begin{figure}[h]
 \includegraphics[width=\linewidth]{Figures/membrane.eps}
-\caption{a) Frequency of the ZA mode in the harmonic approximation, within the SCHA and obtained from the Hessian of 
-	the SCHA (labeled as ``Physical'') at 0 K in the membrane model. We name rotationally invariant (RI) the 
-	results considering the full potential in Eq. \ref{membrane-potential}. We name no rotationally invariant 
-	(No RI) the results neglecting the last three terms in Eq. \ref{membrane-potential}. b) Frequency of the ZA 
-	mode in the harmonic approximation, within the SCHA and obtained from the Hessian of the SCHA at $0$ K and 
-	$100$ K in the membrane model. We also include the SCHA and physical phonons at $100$ K without considering 
-	thermal expansion (NTE).}
+\caption[ZA harmonic and anharmonic phonons in the membrane model.]{a) Frequency of the ZA mode in the harmonic 
+	approximation, within the SCHA and obtained from the Hessian of the SCHA (labeled as ``Physical'') at 0 K in 
+	the membrane model. We name rotationally invariant (RI) the results considering the full potential in 
+	Eq. \ref{membrane-potential}. We name no rotationally invariant (No RI) the results neglecting the last three 
+	terms in Eq. \ref{membrane-potential}. b) Frequency of the ZA mode in the harmonic approximation, within the 
+	SCHA and obtained from the Hessian of the SCHA at $0$ K and $100$ K in the membrane model. We also include 
+	the SCHA and physical phonons at $100$ K without considering thermal expansion (NTE).}
 \label{membrane-results}
 \end{figure}
-As we can see, the SCHA frequencies are linear at any temperature and the linear term is bigger for higher 
-temperatures. The physical phonons are on top of the harmonic values, which means that the correction for 
-calculating the physical phonons is bigger for higher temperatures. This result clearly shows that the physical 
-phonons are quadratic, as it is expected by symmetry. 
+All conclusions drawn with the atomistic model are confirmed and put in solid grounds. Again the ZA phonons obtained 
+from the SCHA force constants get linearized at small momenta and the linearization is bigger for higher 
+temperatures. These results are consistent with the anharmonic linearization obtained for this mode in previous 
+calculations\cite{mariani2008flexural,amorim2014thermodynamics,de2012bending}. However, when the phonons are 
+calculated from the free energy Hessian, the ZA phonon frequencies get basically on top of the harmonic values 
+recovering a quadratic dispersion. This means that the physical phonons have a quadratic dispersion for small momenta 
+in an unstrained membrane, as it is expected by symmetry. We also show that accounting correctly for the thermal 
+expansion is crucial to recover the $\sim q^2$ behavior as shown in Fig. \ref{membrane-results}(b). The membrane 
+potential is able to capture the negative thermal expansion at small temperatures, as it is shown in 
+Fig. \ref{cte-membrane}. 
+\begin{figure}[ht]
+\includegraphics[width=0.8\linewidth]{Figures/cte-membrane.eps}
+\caption{$\delta a$ as a function of temperature in the membrane model.}
+\label{cte-membrane}
+\end{figure}
+Finally, it is important to remark that a fully rotationally invariant potential is needed to recover the quadratic 
+dispersion (see Fig. \ref{membrane-results}(b)). If the last three terms in Eq. \ref{membrane-potential} are 
+neglected, which breaks the rotational symmetry of the potential, the quadratic dispersion is not recovered. This 
+means that it is very important to keep these terms in the potential to correctly estimate the mechanical properties 
+of membranes even if they are usually neglected\cite{mariani2008flexural,amorim2014thermodynamics,de2012bending}. 
+
+\section{Conclusions}
+
+In conclusion, we show that anharmonic effects are crucial to mechanically stabilize graphene and to guarantee its 
+phonon modes make physical sense at small momenta. Moreover, we determine that, despite the relevance of anharmonic 
+effects, the out-of-plane acoustic modes should show a quadratic dispersion experimentally. We estimate anharmonic 
+effects within the self-consistent harmonic approximation both with an atomistic machine learning potential and with 
+a membrane model, obtaining consistent results in both cases. Our results show how all the divergences of the 
+harmonic and quasiharmonic approximations are cured by anharmonicity. These conclusions can be extrapolated to any 
+strictly 2D material and will have a large impact on the understanding if their mechanical and thermal properties.
