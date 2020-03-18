@@ -35,8 +35,9 @@ In Fig. \ref{rms_harmonic} we show the atomic displacements of carbon atoms in g
 size, or the supercell used for the calculation.
 \begin{figure}[h]
 \includegraphics[width=0.8\linewidth]{Figures/rms-harmonic.eps}
-\caption{Atomic displacements of carbon atoms in graphene calculated using the harmonic dispersion as a function 
-	of the supercell size for different temperatures.}
+\caption[Mean square atomic displacements of carbon atoms in graphene calculated using the harmonic dispersion]{Mean 
+	square atomic displacements of carbon atoms in graphene calculated using the harmonic dispersion as a 
+	function of the supercell size for different temperatures.}
 \label{rms_harmonic}
 \end{figure}
 As the figure clearly shows, the mean square atomic displacements diverge at finite temperatures as a function of 
@@ -51,8 +52,8 @@ graphene is shown in Fig. \ref{harmonic-graphene}.
 \begin{figure}[h]
 \includegraphics[width=0.55\linewidth]{Figures/harmonic-graphene.eps}
 \includegraphics[width=0.45\linewidth]{Figures/harmonic-graphene-logarithmic.eps}
-\caption{Left: Harmonic phonon spectrum of graphene. Right: Harmonic ZA phonon dispersion of graphene in logarithmic 
-	scale. We include a quadratic line for reference.}
+\caption[Graphene harmonic phonons]{Left: Harmonic phonon spectrum of graphene. Right: Harmonic ZA phonon dispersion 
+	of graphene in logarithmic scale. We include a quadratic line for reference.}
 \label{harmonic-graphene}
 \end{figure}
 We can see that the LA and TA modes have a linear dispersion close to the point $\Gamma$ as it happens in 3D 
@@ -70,11 +71,12 @@ the $\sim q^2$ dispersion of the ZA modes\cite{bonini2012acoustic}. The linewidt
 in Fig. \ref{lata-harmonic-lw}. 
 \begin{figure}[h]
 \includegraphics[width=0.8\linewidth]{Figures/lw-graphene-harmonic.eps}
-\caption{Linewidths (full width at half maximum, FWHM) of the LA and TA modes calculated using the harmonic phonon 
-spectrum for the three phonon scattering processes and 3BFC calculated within the SCHA at $0$ K.}
+\caption[Graphene harmonic linewidths]{Linewidths (full width at half maximum, FWHM) of the LA and TA modes 
+	calculated using the harmonic phonon spectrum for the three phonon scattering processes and 3BFC calculated 
+	within the SCHA at $0$ K.}
 \label{lata-harmonic-lw}
 \end{figure}
-The figure clearly shown how the linewidths do not vanish at small momenta. This yields to the conclusion that for 
+The figure clearly shows how the linewidths do not vanish at small momenta. This yields to the conclusion that for 
 small enough momentum phonons do not live long enough for vibrating one period and the quasiparticle picture is lost. 
 Consequently, the thermal conductivity calculated with the perturbative phonon 
 lifetimes\cite{fugallo2013ab,fugallo2014thermal} does not converge with the sample size\cite{bonini2012acoustic}.
@@ -145,15 +147,17 @@ ultrasoft pseudopotential\cite{vanderbilt1990soft} with Van der Walls correction
 results are shown in Figs. \ref{benchmark-spectrum} and \ref{benchmark}.
 \begin{figure}[ht]
 \includegraphics[width=0.99\linewidth]{Figures/abinito-vs-empirical.eps}
-\caption{Harmonic phonon spectrum of graphene calculated with the empirical potential and $ab$ $initio$. The 
-	calculations are done in a $6\times6$ supercell.}
+\caption[Harmonic phonon spectrum of graphene calculated with the empirical                                 
+        potential and $ab$ $initio$.]{Harmonic phonon spectrum of graphene calculated with the empirical potential 
+	and $ab$ $initio$. The calculations are done in a $6\times6$ supercell.}
 \label{benchmark-spectrum}
 \end{figure}
 \begin{figure}[ht]
 \includegraphics[width=0.49\linewidth]{Figures/bm1.eps}
 \includegraphics[width=0.49\linewidth]{Figures/bm2.eps}
-\caption{Harmonic, SCHA and physical frequencies (static) using the DFT and machine learning (ML) forces. The 
-left panel shows the in-plane optical frequency at the $\Gamma$ point and the right panel the out-of-plane one.}
+\caption[Harmonic, SCHA and physical frequencies (static) using the DFT and machine learning (ML) forces.]{Harmonic, 
+	SCHA and physical frequencies (static) using the DFT and machine learning (ML) forces. The left panel shows 
+	the in-plane optical frequency at the $\Gamma$ point and the right panel the out-of-plane one.}
 \label{benchmark}
 \end{figure}
 As we can see in Fig. \ref{benchmark-spectrum}, the two potentials provide very similar harmonic phonons, or what is 
@@ -182,15 +186,15 @@ contrary is always calculated at the lattice parameter that minimizes $U$. The t
 parameter and the thermal expansion coefficient are shown in Fig. \ref{lattice}.
 \begin{figure}[ht]
 \includegraphics[width=0.99\linewidth]{Figures/lattice.eps}
-\caption{a) Lattice parameter of graphene as a function of temperature obtained with the SCHA using a machine 
-	learning atomistic potential. Both quantum (black) and classical (blue) calculations are included. The 
-	classical result is calculated setting $\hbar=0$ in the SCHA free energy. The temperature-independent frozen 
-	nuclei (FN) result corresponds to the lattice parameter that minimizes the Born Oppenheimer potential $U$. 
-	Results obtained by Rowe et al.\cite{rowe2018development}are also inlcuded for comparison. Solid black and 
-	blue lines correspond to cubic fits. The black dashed line corresponds to the quasiharmonic result. b) 
-	Thermal expansion coefficient (CTE) calculated as $CTE=\frac{1}{A}\frac{\partial A}{\partial T}$, $A$ being 
-	the area of the membrane. Red line is directly taken from \cite{rowe2018development}. Black and blue lines 
-	are calculated using the cubic fits in a).}
+\caption[Lattice parameter of graphene as a function of temperature]{a) Lattice parameter of graphene as a function 
+	of temperature obtained with the SCHA using a machine learning atomistic potential. Both quantum (black) and 
+	classical (blue) calculations are included. The classical result is calculated setting $\hbar=0$ in the SCHA 
+	free energy. The temperature-independent frozen nuclei (FN) result corresponds to the lattice parameter that 
+	minimizes the Born Oppenheimer potential $U$. Results obtained by Rowe et al.\cite{rowe2018development} are 
+	also inlcuded for comparison. Solid black and blue lines correspond to cubic fits. The black dashed line 
+	corresponds to the quasiharmonic result. b) Thermal expansion coefficient (CTE) calculated as 
+	$CTE=\frac{1}{A}\frac{\partial A}{\partial T}$, $A$ being the area of the membrane. Red line is directly 
+	taken from \cite{rowe2018development}. Black and blue lines are calculated using the cubic fits in a).}
 \label{lattice}
 \end{figure}
 We include the results of Rowe et al.\cite{rowe2018development}, which do not account for quantum effects as they 
@@ -224,16 +228,16 @@ energy $\boldsymbol{D}^{(F)}$.
 \includegraphics[width=0.32\linewidth]{Figures/T0.eps}
 \includegraphics[width=0.32\linewidth]{Figures/T300.eps}
 \includegraphics[width=0.32\linewidth]{Figures/T2000.eps}
-	\caption{Harmonic phonon spectra together with the SCHA phonons $\boldsymbol{D}^{(S)}$ (labeled as ``SCHA'') 
-	and those obtained from the Hessian of the SCHA free energy $\boldsymbol{D}^{(F)}$ as (labeled 
-	as ``Physical''). Results at 0 K (a), 300 K (b), and 2000 K (c) are shown. (d), (e) and (f) show only the 
-	dispersion of the ZA mode close to $\Gamma$ in logarithmic scale at 0 K, 300 K, and 2000 K, respectively. In 
-	the small panels the dispersion corresponds to the $\Gamma$M direction. For reference, the M point is at 
-	$1.4662$ $\AA^{-1}$ at $0$ K, at $1.4671$ $\AA^{-1}$ at $300$ K, and at $1.4652$ $\AA^{-1}$ at $200$ K. The 
-	harmonic result (solid black) is computed at the lattice parameter that minimizes $U$, while the other 
-	results include thermal expansion (see Fig. \ref{lattice}). The dashed black lines correspond to harmonic 
-	calculations including thermal expansion (TE). All these calculations are performed with the machine 
-	learning atomistic potential.}
+	\caption[Graphene harmonic and anharmonic phonons]{Harmonic phonon spectra together with the SCHA phonons 
+	$\boldsymbol{D}^{(S)}$ (labeled as ``SCHA'') and those obtained from the Hessian of the SCHA free energy 
+	$\boldsymbol{D}^{(F)}$ as (labeled as ``Physical''). Results at 0 K (a), 300 K (b), and 2000 K (c) are shown. 
+	(d), (e) and (f) show only the dispersion of the ZA mode close to $\Gamma$ in logarithmic scale at 0 K, 300 
+	K, and 2000 K, respectively. In the small panels the dispersion corresponds to the $\Gamma$M direction. For 
+	reference, the M point is at $1.4662$ $\AA^{-1}$ at $0$ K, at $1.4671$ $\AA^{-1}$ at $300$ K, and at $1.4652$ 
+	$\AA^{-1}$ at $200$ K. The harmonic result (solid black) is computed at the lattice parameter that minimizes 
+	$U$, while the other results include thermal expansion (see Fig. \ref{lattice}). The dashed black lines 
+	correspond to harmonic calculations including thermal expansion (TE). All these calculations are performed 
+	with the machine learning atomistic potential.}
 \label{spectrum-graphene}
 \end{figure*}
 The main conclusion is that while the dispersion of the ZA modes obtained from $\boldsymbol{D}^{(S)}$ is linearized, 
@@ -250,7 +254,8 @@ However, as shown in Fig. \ref{static-dynamic},
 \includegraphics[width=0.32\linewidth]{Figures/T0-za.eps}
 \includegraphics[width=0.32\linewidth]{Figures/T300-za.eps}
 \includegraphics[width=0.32\linewidth]{Figures/T2000-za.eps}
-\caption{Harmonic, SCHA, and physical phonons (static and dynamic) calculated at 0 K a), 300 K b), and 2000 K c).}
+	\caption[Graphene harmonic and anharmonic ZA phonons]{Harmonic, SCHA, and physical phonons (static and 
+	dynamic) calculated at 0 K a), 300 K b), and 2000 K c).}
 \label{static-dynamic}
 \end{figure}
 the static phonons agree with those derived from the dynamical (see section \ref{dynamical-sscha}) theory 
@@ -263,7 +268,12 @@ huge impact on the mechanical and thermal properties of graphene. As shown in Fi
 \begin{figure*}[ht]
 \includegraphics[width=0.49\linewidth]{Figures/rms.eps}
 \includegraphics[width=0.49\linewidth]{Figures/lw-graphene.eps}
-\caption{(a) Mean square atomic displacement of carbon atoms in graphene calculated using the harmonic and the SCHA density matrices. The harmonic result is always computed at the lattice parameter that minimizes $V$, while the SCHA results include thermal expansion (see Fig. \ref{lattice}). (b) Linewidths (full width at half maximum) of LA and TA phonon modes at $300$ K calculated within the harmonic approximation and the SCHA. Results in both figures are obtained with the machine learning atomistic potential.}
+\caption[SCHA mean square atomic displacements and linewidths]{(a) Mean square atomic displacement of carbon atoms 
+	in graphene calculated using the harmonic and the SCHA density matrices. The harmonic result is always 
+	computed at the lattice parameter that minimizes $U$, while the SCHA results include thermal expansion (see 
+	Fig. \ref{lattice}). (b) Linewidths (full width at half maximum) of LA and TA phonon modes at $300$ K 
+	calculated within the harmonic approximation and the SCHA. Results in both figures are obtained with the 
+	machine learning atomistic potential.}
 \label{problems}
 \end{figure*}
 when calculating the mean square atomic displacement with the SCHA density matrix as 
@@ -287,15 +297,16 @@ SCHA phonons together with quadratic physical phonons. Anharmonicity is responsi
 
 \section{SCHA applied to a continuum membrane Hamiltonian}
 
-In this section we apply the SCHA in a continuum membrane Hamiltonian in order to get some results at very small 
-momenta and reinforce our conclusions from the atomistic model. This model has been very much used in the 
-literature to acount for the coupling between in-plane and out-of plane acoustic modes of 
-graphene\cite{mariani2008flexural,amorim2014thermodynamics,de2012bending}. The most general rotationally invariant 
+In order to obtain results at very small momenta and reinforce the conclusions drawn with the atomistic calculations 
+with the machine learning potential, we also solve the SCHA equations in a continuum membrane Hamiltonian. This model 
+has been widely used in the literature to describe graphene as an elastic membrane as well as to account for the 
+coupling between in-plane and out-of plane acoustic 
+modes\cite{mariani2008flexural,amorim2014thermodynamics,de2012bending}. The most general rotationally invariant 
 continuum model potential for phonons in free-standing 2D membranes up to the fourth-order with respect to the 
 phonon fields has the following form:
 \begin{multline}
  \label{membrane-potential}
- V=\frac{1}{2}\int_{\Omega}d^{2}x[\kappa(\partial^{2}h)^{2}+C^{ijkl}\partial_{i}u_{j}\partial_{k}u_{l}+C^{ijkl}\partial_{i}u_{j}\partial_{k}h\partial_{l}h+\\ +\frac{C^{ijkl}}{4}\partial_{i}h\partial_{j}h\partial_{
+ U=\frac{1}{2}\int_{\Omega}d^{2}x[\kappa(\partial^{2}h)^{2}+C^{ijkl}\partial_{i}u_{j}\partial_{k}u_{l}+C^{ijkl}\partial_{i}u_{j}\partial_{k}h\partial_{l}h+\\ +\frac{C^{ijkl}}{4}\partial_{i}h\partial_{j}h\partial_{
  k}h\partial_{l}h+\frac{C^{ijkl}}{2}\partial_{i}\boldsymbol{u}\cdot\partial_{j}\boldsymbol{u}\partial_{k}h\partial_{l}h+\\+C^{ijkl}\partial_{i}u_{j}\partial_{k}\boldsymbol{u}\cdot\partial_{l}\boldsymbol{u}+
  \frac{C^{ijkl}}{4}\partial_{i}\boldsymbol{u}\cdot\partial_{j}\boldsymbol{u}\partial_{k}\boldsymbol{u}\cdot\partial_{l}\boldsymbol{u}].
 \end{multline}
@@ -382,7 +393,13 @@ equation by using the Newton-Raphson method in a circular discretized grid of $6
 points. The results is shown in Fig. \ref{membrane-results}. 
 \begin{figure}[h]
 \includegraphics[width=\linewidth]{Figures/membrane.eps}
-\caption{Harmonic, SCHA and physical (static) ZA phonon frequencies at $T=0$ K and $T=100$ K in the membrane model.}
+\caption{a) Frequency of the ZA mode in the harmonic approximation, within the SCHA and obtained from the Hessian of 
+	the SCHA (labeled as ``Physical'') at 0 K in the membrane model. We name rotationally invariant (RI) the 
+	results considering the full potential in Eq. \ref{membrane-potential}. We name no rotationally invariant 
+	(No RI) the results neglecting the last three terms in Eq. \ref{membrane-potential}. b) Frequency of the ZA 
+	mode in the harmonic approximation, within the SCHA and obtained from the Hessian of the SCHA at $0$ K and 
+	$100$ K in the membrane model. We also include the SCHA and physical phonons at $100$ K without considering 
+	thermal expansion (NTE).}
 \label{membrane-results}
 \end{figure}
 As we can see, the SCHA frequencies are linear at any temperature and the linear term is bigger for higher 
