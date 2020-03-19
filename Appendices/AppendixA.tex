@@ -9,7 +9,7 @@ In this appendix we include all the mathematical derivations and calculation det
 The general rotationally invariant potential for a membrane can be written as follows
 \begin{equation}
  \label{full-potential}
- V=\frac{1}{2}\int_{\Omega}{d^{2}x\left(\kappa(\partial^{2}h)^{2}+\sum_{n\geq 2}u_{i_{1}j_{1}}\dots u_{i_{n}j_{n}}C_{i_{1}j_{1}\dots i_{n}j_{n}}^{(2n)}\right)},
+ U=\frac{1}{2}\int_{\Omega}{d^{2}x\left(\kappa(\partial^{2}h)^{2}+\sum_{n\geq 2}u_{i_{1}j_{1}}\dots u_{i_{n}j_{n}}C_{i_{1}j_{1}\dots i_{n}j_{n}}^{(2n)}\right)},
 \end{equation}
 where $\Omega$ is the area of the membrane in equilibrium, $\kappa$ is the bending rigidity, $h$ is the
 out-of-plane component of the displacement field and the rotationally invariant strain tensor $u_{ij}$ is defined
@@ -23,13 +23,13 @@ subscripts label the 2d coordinates $x,y$ and the sum over indices is assumed. T
 Eq. \ref{full-potential} with respect to the phonon fields is given by
 \begin{equation}
  \label{rank2-potential-strain}
- V=\frac{1}{2}\int_{\Omega}{d^{2}x\left(\kappa(\partial^{2}h)^{2}+C^{(4)}_{ijkl}u_{ij}u_{il}\right)},
+ U=\frac{1}{2}\int_{\Omega}{d^{2}x\left(\kappa(\partial^{2}h)^{2}+C^{(4)}_{ijkl}u_{ij}u_{il}\right)},
 \end{equation}
 with $C^{(4)}_{ijkl}=\lambda\delta_{ij}\delta_{kl}+\mu(\delta_{ik}\delta_{jl}+\delta_{il}\delta_{jk})$. By using
 equation \ref{strain-tensor} and $C_{ijkl}^{(4)}=C^{ijkl}$, equation \ref{rank2-potential-strain} can be rewritten as
 \begin{multline}
  \label{rank2-potential-disp}
- V=\frac{1}{2}\int_{\Omega}d^{2}x[\kappa(\partial^{2}h)^{2}+C^{ijkl}\partial_{i}u_{j}\partial_{k}u_{l}+C^{ijkl}\partial_{i}u_{j}\partial_{k}h\partial_{l}h+\frac{C^{ijkl}}{4}\partial_{i}h\partial_{j}h\partial_{
+ U=\frac{1}{2}\int_{\Omega}d^{2}x[\kappa(\partial^{2}h)^{2}+C^{ijkl}\partial_{i}u_{j}\partial_{k}u_{l}+C^{ijkl}\partial_{i}u_{j}\partial_{k}h\partial_{l}h+\frac{C^{ijkl}}{4}\partial_{i}h\partial_{j}h\partial_{
  k}h\partial_{l}h+\\+\frac{C^{ijkl}}{2}\partial_{i}\boldsymbol{u}\cdot\partial_{j}\boldsymbol{u}\partial_{k}h\partial_{l}h+C^{ijkl}\partial_{i}u_{j}\partial_{k}\boldsymbol{u}\cdot\partial_{l}\boldsymbol{u}+
 \frac{C^{ijkl}}{4}\partial_{i}\boldsymbol{u}\cdot\partial_{j}\boldsymbol{u}\partial_{k}\boldsymbol{u}\cdot\partial_{l}\boldsymbol{u}].
 \end{multline}
@@ -39,59 +39,57 @@ $\delta a=(a-a_{0})/a_{0}$. Then, by taking into account periodic boundary condi
 $\int_{\Omega}{d^{2}x\partial_{i}u_{j}}$ we can rewrite the potential
 \begin{multline}
  \label{deltaa-potential}
- V\rightarrow V+2\Omega(1+\delta a)(\lambda+\mu)\delta a^{2}+(1+\frac{\delta a}{2})\delta a(\lambda+\mu)\int_{\Omega}{d^{2}x\partial_{k}h\partial_{k}h}+\frac{\delta a}{2}\int_{\Omega}{d^{2}xC^{ijkl}\partial_{i}u_{j}\partial_{k}h\partial_{
+ U\rightarrow U+2\Omega(1+\delta a)(\lambda+\mu)\delta a^{2}+(1+\frac{\delta a}{2})\delta a(\lambda+\mu)\int_{\Omega}{d^{2}x\partial_{k}h\partial_{k}h}+\frac{\delta a}{2}\int_{\Omega}{d^{2}xC^{ijkl}\partial_{i}u_{j}\partial_{k}h\partial_{
  l}h}+\\(1+\frac{\delta a}{2})\delta a\int_{\Omega}{d^{2}xC^{ijkl}\partial_{i}u_{j}\partial_{k}u_{l}}+(1+\frac{\delta a}{2})\delta a(\lambda+\mu)\int_{\Omega}{d^{2}x\partial_{k}\boldsymbol{
  u}\cdot\partial_{k}\boldsymbol{u}}+\frac{\delta a^{4}\Omega}{2}(\lambda+\mu)+\\\frac{\delta a}{4}\int_{\Omega}{d^{2}xC^{ijkl}[\partial_{i}\boldsymbol{u}\cdot\partial_{j}\boldsymbol{u}\partial_{k}u_{l}+\partial_{
  i}u_{j}\partial_{k}\boldsymbol{u}\cdot\partial_{l}\boldsymbol{u}]}.
 \end{multline}
-If we Fourier transform the potential, the SCHA free energy can be written as (we use $\hbar=k_{B}=1$)
+If we Fourier transform the potential and we apply $\langle u_{\alpha}(\boldsymbol{q})u_{\alpha}(-\boldsymbol{q})\rangle_{\rho_{\mathcal{H}}}=g[\Omega_{\alpha}^{(S)}(\boldsymbol{q})]$ ($\alpha=$LA,TA), $\langle h(\boldsymbol{q})h(-\boldsymbol{q})\rangle_{\rho_{\mathcal{H}}}=g[\Omega_{ZA}^{(S)}(\boldsymbol{q})]$, the SCHA free energy can be written 
+as (we use $\hbar=k_{B}=1$)
 \begin{multline}
 \label{scha-f}
- \mathcal{F}(\mathcal{V})=F_{\mathcal{V}}+2\Omega(1+\delta a+\frac{\delta a^{2}}{4})(\lambda+\mu)\delta a^{2}+\frac{1}{2}\sum_{\boldsymbol{q}}\{g[\Omega_{SCHA}^{(h)}(\boldsymbol{q})]\kappa|\boldsymbol{q}|^{4}+\{(\lambda+2\mu)
- g[\Omega_{SCHA}^{(LA)}(\boldsymbol{q})]+\\\mu g[\Omega_{SCHA}^{(TA)}(\boldsymbol{q})]\}|\boldsymbol{q}|^{2}+\frac{\lambda+2\mu}{4\Omega}\sum_{\boldsymbol{k}}g[\Omega_{SCHA}^{(h)}(\boldsymbol{q})]g[\Omega_{SCHA}^{(h)}(\boldsymbol{
- k})][|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+2(\boldsymbol{q}\cdot\boldsymbol{k})^{2}]+\\\frac{1}{2\Omega}\sum_{\boldsymbol{k}}g[\Omega_{SCHA}^{(h)}(\boldsymbol{k})]\{g[\Omega_{SCHA}^{(LA)}(\boldsymbol{q})]+g[\Omega_{SCHA}^{(TA)}(
- \boldsymbol{q})]\}[\lambda|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+2\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}]+\\+2(1+\frac{\delta a}{2})\delta a(\lambda+\mu)g[\Omega_{SCHA}^{(h)}(\boldsymbol{q})]|\boldsymbol{q}|^{2}+2(1+\frac{
- \delta a}{2})\delta a\{(\lambda+2\mu)g[\Omega_{SCHA}^{(LA)}(\boldsymbol{q})]+\mu g[\Omega_{SCHA}^{(TA)}(\boldsymbol{q})]\}|\boldsymbol{q}|^{2}+\\2(1+\frac{\delta a}{2})\delta a(\lambda+\mu)\{g[\Omega_{SCHA}^{(LA)}(\boldsymbol{
- q})]+g[\Omega_{SCHA}^{(TA)}(\boldsymbol{q})]\}|\boldsymbol{q}|^{2}-g[\Omega_{SCHA}^{(h)}(\boldsymbol{q})]\Phi_{SCHA}^{(h)}(\boldsymbol{q})-\sum_{\alpha}g[\Omega_{SCHA}^{(\alpha)}(\boldsymbol{q})]\Phi_{SCHA}^{(\alpha)}(\boldsymbol{q})+ \\
- \frac{1}{4\Omega}\sum_{\boldsymbol{q}\boldsymbol{k}}[4g[\Omega_{SCHA}^{(LA)}(
- \boldsymbol{q})]g[\Omega_{SCHA}^{(TA)}(\boldsymbol{k})][\lambda(\boldsymbol{q}\cdot\boldsymbol{k})^{2}+\mu|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}](\hat{\boldsymbol{q}_{\perp}}\cdot\hat{
- \boldsymbol{k}})+ \\ 2g[\Omega_{SCHA}^{(LA)}(\boldsymbol{q})]g[\Omega_{SCHA}^{(TA)}(\boldsymbol{k})][\lambda|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+2\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}]+ \\ (g[\Omega_{SCHA}^{(LA)}(
- \boldsymbol{q})]g[\Omega_{SCHA}^{(LA)}(\boldsymbol{k})]+g[\Omega_{SCHA}^{(TA)}(\boldsymbol{q})]g[\Omega_{SCHA}^{(TA)}(\boldsymbol{k})])[\lambda|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+2\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}]+
- \\2(g[\Omega_{SCHA}^{(LA)}(\boldsymbol{q})]g[\Omega_{SCHA}^{(LA)}(\boldsymbol{k})])[\lambda(\boldsymbol{q}\cdot\boldsymbol{k})^{2}+\mu|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}](\hat{
- \boldsymbol{q}}\cdot\hat{\boldsymbol{k}}) + \\ 2(g[\Omega_{SCHA}^{(TA)}(\boldsymbol{q})]g[\Omega_{SCHA}^{(TA)}(\boldsymbol{k})])[\lambda(\boldsymbol{q}\cdot\boldsymbol{k})^{2}+\mu|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+\mu(
+ \mathcal{F}(\mathcal{U})=F_{\mathcal{U}}+2\Omega(1+\delta a+\frac{\delta a^{2}}{4})(\lambda+\mu)\delta a^{2}+\frac{1}{2}\sum_{\boldsymbol{q}}\{g[\Omega_{ZA}^{(S)}(\boldsymbol{q})]\kappa|\boldsymbol{q}|^{4}+\\\{(\lambda+2\mu)
+ g[\Omega_{LA}^{(S)}(\boldsymbol{q})]+\mu g[\Omega_{TA}^{(S)}(\boldsymbol{q})]\}|\boldsymbol{q}|^{2}+\\\frac{\lambda+2\mu}{4\Omega}\sum_{\boldsymbol{k}}g[\Omega_{ZA}^{(S)}(\boldsymbol{q})]g[\Omega_{ZA}^{(S)}(\boldsymbol{
+ k})][|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+2(\boldsymbol{q}\cdot\boldsymbol{k})^{2}]+\\\frac{1}{2\Omega}\sum_{\boldsymbol{k}}g[\Omega_{ZA}^{(S)}(\boldsymbol{k})]\{g[\Omega_{LA}^{(S)}(\boldsymbol{q})]+g[\Omega_{TA}^{(S)}(
+ \boldsymbol{q})]\}[\lambda|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+2\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}]+\\+2(1+\frac{\delta a}{2})\delta a(\lambda+\mu)g[\Omega_{ZA}^{(S)}(\boldsymbol{q})]|\boldsymbol{q}|^{2}+2(1+\frac{
+ \delta a}{2})\delta a\{(\lambda+2\mu)g[\Omega_{LA}^{(S)}(\boldsymbol{q})]+\mu g[\Omega_{TA}^{(S)}(\boldsymbol{q})]\}|\boldsymbol{q}|^{2}+\\2(1+\frac{\delta a}{2})\delta a(\lambda+\mu)\{g[\Omega_{LA}^{(S)}(\boldsymbol{
+ q})]+g[\Omega_{TA}^{(S)}(\boldsymbol{q})]\}|\boldsymbol{q}|^{2}-g[\Omega_{ZA}^{(S)}(\boldsymbol{q})]\Phi_{ZA}^{(S)}(\boldsymbol{q})-\\\sum_{\alpha}g[\Omega_{\alpha}^{(S)}(\boldsymbol{q})]\Phi_{\alpha}^{(S)}(\boldsymbol{q})+ \\
+ \frac{1}{4\Omega}\sum_{\boldsymbol{q}\boldsymbol{k}}[4g[\Omega_{LA}^{(S)}(
+ \boldsymbol{q})]g[\Omega_{TA}^{(S)}(\boldsymbol{k})][\lambda(\boldsymbol{q}\cdot\boldsymbol{k})^{2}+\mu|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}](\hat{\boldsymbol{q}_{\perp}}\cdot\hat{
+ \boldsymbol{k}})+ \\ 2g[\Omega_{LA}^{(S)}(\boldsymbol{q})]g[\Omega_{TA}^{(S)}(\boldsymbol{k})][\lambda|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+2\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}]+ \\ (g[\Omega_{LA}^{(S)}(
+ \boldsymbol{q})]g[\Omega_{LA}^{(S)}(\boldsymbol{k})]+g[\Omega_{TA}^{(S)}(\boldsymbol{q})]g[\Omega_{TA}^{(S)}(\boldsymbol{k})])[\lambda|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+2\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}]+
+ \\2(g[\Omega_{LA}^{(S)}(\boldsymbol{q})]g[\Omega_{LA}^{(S)}(\boldsymbol{k})])[\lambda(\boldsymbol{q}\cdot\boldsymbol{k})^{2}+\mu|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}](\hat{
+ \boldsymbol{q}}\cdot\hat{\boldsymbol{k}}) + \\ 2(g[\Omega_{TA}^{(S)}(\boldsymbol{q})]g[\Omega_{TA}^{(S)}(\boldsymbol{k})])[\lambda(\boldsymbol{q}\cdot\boldsymbol{k})^{2}+\mu|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+\mu(
  \boldsymbol{q}\cdot\boldsymbol{k})^{2}](\hat{\boldsymbol{q}_{\perp}}\cdot\hat{\boldsymbol{k}_{\perp}})] \},
 \end{multline}
-where $g(\omega)=coth((\omega/2T))/(2\rho\omega)$ and $\Omega_{SCHA}^{\alpha}(\boldsymbol{q})=\sqrt{\Phi_{SCHA}^{(\alpha)}(
-\boldsymbol{q})/\rho}$ ($\alpha=h,LA,TA$) is the SCHA frequency. $\rho$ is the mass density. In Eq. \ref{scha-f} the 
-in plane displacement vector $\boldsymbol{u}(\boldsymbol{q}$) is separated into longitudinal and transversal 
-components $\boldsymbol{u}(\boldsymbol{q})=u_{LA}(\boldsymbol{q})\hat{\boldsymbol{q}}+u_{TA}(\boldsymbol{q})\hat{\boldsymbol{q}_{\perp}}$, $\hat{\boldsymbol{q}}_{\perp}$ being the unitary vector perpendicular to $\hat{\boldsymbol{q}}$. 
-$F_{\mathcal{V}}$ is the harmonic free energy of the harmonic trial potential $\mathcal{V}$. Now, by taking the 
-derivative of the SCHA free energy with respect to the lattice constant and SCHA 2BFC, we arrive to the SCHA 
-equations
+where $g(\omega)=coth((\omega/2T))/(2\rho\omega)$ and $\Omega_{\alpha}^{(S)}(\boldsymbol{q})=\sqrt{\Phi_{\alpha}^{(S)}(\boldsymbol{q})/\rho}$ ($\alpha=$ZA,LA and, TA) is the SCHA frequency. $\rho$ is the mass density. In 
+Eq. \ref{scha-f} the in plane displacement vector $\boldsymbol{u}(\boldsymbol{q}$) is separated into longitudinal 
+and transversal components $\boldsymbol{u}(\boldsymbol{q})=u_{LA}(\boldsymbol{q})\hat{\boldsymbol{q}}+u_{TA}(\boldsymbol{q})\hat{\boldsymbol{q}_{\perp}}$, $\hat{\boldsymbol{q}}_{\perp}$ being the unitary vector perpendicular to 
+$\hat{\boldsymbol{q}}$. $F_{\mathcal{U}}$ is the harmonic free energy of the harmonic trial potential $\mathcal{U}$. 
+Now, by taking the derivative of the SCHA free energy with respect to the lattice constant and SCHA 2BFC, we arrive 
+to the SCHA equations
 \begin{multline}
- \frac{\partial\mathcal{F}(\mathcal{V})}{\partial\delta a}=0=2\Omega(2\delta a+3\delta a^{2}+\delta a^{3})(\lambda+
-\mu)+\frac{1}{2}\sum_{\boldsymbol{q}}g[\Omega_{SCHA}^{(h)}(\boldsymbol{q})]2(1+\delta a)(\lambda+\mu)|\boldsymbol{
- q}|^{2}\\+\frac{1}{2}\sum_{\boldsymbol{q}}g[\Omega_{SCHA}^{(LA)}(\boldsymbol{q})][2(1+\delta a)(\lambda+2\mu)|\boldsymbol{q}|^{2}+2(1+\delta a)(\lambda+\mu)|\boldsymbol{q}|^{2}]+\\\frac{1}{2}\sum_{\boldsymbol{q}}g[\Omega_{
- SCHA}^{(TA)}(\boldsymbol{q})][2(1+\delta a)\mu|\boldsymbol{q}|^{2}+2(1+\delta a/2)(\lambda+\mu)|\boldsymbol{q}|^{2}],
+ \frac{\partial\mathcal{F}(\mathcal{U})}{\partial\delta a}=0=2\Omega(2\delta a+3\delta a^{2}+\delta a^{3})(\lambda+
+\mu)+\frac{1}{2}\sum_{\boldsymbol{q}}g[\Omega_{ZA}^{(S)}(\boldsymbol{q})]2(1+\delta a)(\lambda+\mu)|\boldsymbol{
+ q}|^{2}\\+\frac{1}{2}\sum_{\boldsymbol{q}}g[\Omega_{LA}^{(S)}(\boldsymbol{q})][2(1+\delta a)(\lambda+2\mu)|\boldsymbol{q}|^{2}+2(1+\delta a)(\lambda+\mu)|\boldsymbol{q}|^{2}]+\\\frac{1}{2}\sum_{\boldsymbol{q}}g[\Omega_{
+ TA}^{(S)}(\boldsymbol{q})][2(1+\delta a)\mu|\boldsymbol{q}|^{2}+2(1+\delta a/2)(\lambda+\mu)|\boldsymbol{q}|^{2}],
 \end{multline}
 \begin{multline}
- \Phi_{SCHA}^{(h)}(\boldsymbol{q})=\kappa|\boldsymbol{q}|^{4}+2(1+\delta a/2)\delta a(\lambda+\mu)|\boldsymbol{q}|^{2}+\frac{\lambda+2\mu}{2\Omega}\sum_{\boldsymbol{k}}g[\Omega_{SCHA}^{(h)}(\boldsymbol{k})][|\boldsymbol{q}|^{2}|\boldsymbol{
- k}|^{2}+2(\boldsymbol{q}\cdot\boldsymbol{k})^{2}]+\\\frac{1}{2\Omega}\sum_{\boldsymbol{k}}\{g[\Omega_{SCHA}^{(LA)}(\boldsymbol{k})]+g[\Omega_{SCHA}^{(TA)}(\boldsymbol{k})]\}[\lambda|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+2\mu(
+ \Phi_{ZA}^{(S)}(\boldsymbol{q})=\kappa|\boldsymbol{q}|^{4}+2(1+\delta a/2)\delta a(\lambda+\mu)|\boldsymbol{q}|^{2}+\frac{\lambda+2\mu}{2\Omega}\sum_{\boldsymbol{k}}g[\Omega_{ZA}^{(S)}(\boldsymbol{k})][|\boldsymbol{q}|^{2}|\boldsymbol{
+ k}|^{2}+2(\boldsymbol{q}\cdot\boldsymbol{k})^{2}]+\\\frac{1}{2\Omega}\sum_{\boldsymbol{k}}\{g[\Omega_{LA}^{(S)}(\boldsymbol{k})]+g[\Omega_{TA}^{(S)}(\boldsymbol{k})]\}[\lambda|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+2\mu(
  \boldsymbol{q}\cdot\boldsymbol{k})^{2}],
 \end{multline}
 \begin{multline}
- \Phi_{SCHA}^{(LA)}(\boldsymbol{q})=(\lambda+2\mu)|\boldsymbol{q}|^{2}+2(1+\delta a/2)\delta a(\lambda+2\mu)|\boldsymbol{q}|^{2}+2(1+\delta a/2)\delta a(\lambda+\mu)|\boldsymbol{q}|^{2}\\+\frac{1}{2\Omega}\sum_{\boldsymbol{k}}g[\Omega_{SCHA}^{
- (h)}(\boldsymbol{k})][\lambda|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+2\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}]+\frac{1}{4\Omega}\sum_{\boldsymbol{k}}\{4g[\Omega_{SCHA}^{(TA)}(\boldsymbol{k})][\lambda(\boldsymbol{q}\cdot\boldsymbol{
- k})^{2}+\mu|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}](\hat{\boldsymbol{q}_{\perp}}\cdot\hat{\boldsymbol{k}})+ \\ 2g[\Omega_{SCHA}^{(TA)}(\boldsymbol{k})][\lambda|\boldsymbol{q}|^{2}|\boldsymbol{
- k}|^{2}+2\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}]+ \\ 2g[\Omega_{SCHA}^{(LA)}(\boldsymbol{k})][\lambda|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+2\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}]+ \\ 4g[\Omega_{SCHA}^{(LA)}(\boldsymbol{
+ \Phi_{LA}^{(S)}(\boldsymbol{q})=(\lambda+2\mu)|\boldsymbol{q}|^{2}+2(1+\delta a/2)\delta a(\lambda+2\mu)|\boldsymbol{q}|^{2}+2(1+\delta a/2)\delta a(\lambda+\mu)|\boldsymbol{q}|^{2}\\+\frac{1}{2\Omega}\sum_{\boldsymbol{k}}g[\Omega_{ZA}^{(S)}(\boldsymbol{k})][\lambda|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+2\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}]+\frac{1}{4\Omega}\sum_{\boldsymbol{k}}\{4g[\Omega_{TA}^{(S)}(\boldsymbol{k})][\lambda(\boldsymbol{q}\cdot\boldsymbol{
+ k})^{2}+\\\mu|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}](\hat{\boldsymbol{q}_{\perp}}\cdot\hat{\boldsymbol{k}})+ \\ 2g[\Omega_{TA}^{(S)}(\boldsymbol{k})][\lambda|\boldsymbol{q}|^{2}|\boldsymbol{
+ k}|^{2}+2\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}]+ \\ 2g[\Omega_{LA}^{(S)}(\boldsymbol{k})][\lambda|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+2\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}]+ \\ 4g[\Omega_{LA}^{(S)}(\boldsymbol{
  k})][\lambda(\boldsymbol{q}\cdot\boldsymbol{k})^{2}+\mu|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}](\hat{\boldsymbol{q}}\cdot\hat{\boldsymbol{k}})\}
 \end{multline}
 and,
 \begin{multline}
- \Phi_{SCHA}^{(TA)}(\boldsymbol{q})=\mu|\boldsymbol{q}|^{2}+2(1+\delta a/2)\delta a\mu|\boldsymbol{q}|^{2}+2(1+\delta a/2)\delta a(\lambda+\mu)|\boldsymbol{q}|^{2}\\+\frac{1}{2\Omega}\sum_{\boldsymbol{k}}g[\Omega_{SCHA}^{
- (h)}(\boldsymbol{k})][\lambda|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+2\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}]+\frac{1}{4\Omega}\sum_{\boldsymbol{k}}\{
- 4g[\Omega_{SCHA}^{(TA)}(\boldsymbol{k})][\lambda(\boldsymbol{q}\cdot\boldsymbol{k})^{2}+\mu|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}](\hat{\boldsymbol{q}_{\perp}}\cdot\hat{
- \boldsymbol{k}_{\perp}})]+\\4g[\Omega_{SCHA}^{(LA)}(\boldsymbol{k})][\lambda(\boldsymbol{q}\cdot\boldsymbol{k})^{2}+\mu|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}](\hat{\boldsymbol{
+ \Phi_{TA}^{(S)}(\boldsymbol{q})=\mu|\boldsymbol{q}|^{2}+2(1+\delta a/2)\delta a\mu|\boldsymbol{q}|^{2}+2(1+\delta a/2)\delta a(\lambda+\mu)|\boldsymbol{q}|^{2}\\+\frac{1}{2\Omega}\sum_{\boldsymbol{k}}g[\Omega_{ZA}^{(S)}(\boldsymbol{k})][\lambda|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+2\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}]+\frac{1}{4\Omega}\sum_{\boldsymbol{k}}\{
+ 4g[\Omega_{TA}^{(S)}(\boldsymbol{k})][\lambda(\boldsymbol{q}\cdot\boldsymbol{k})^{2}+\\\mu|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}](\hat{\boldsymbol{q}_{\perp}}\cdot\hat{
+ \boldsymbol{k}_{\perp}})]+\\4g[\Omega_{LA}^{(S)}(\boldsymbol{k})][\lambda(\boldsymbol{q}\cdot\boldsymbol{k})^{2}+\mu|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}](\hat{\boldsymbol{
  q}_{\perp}}\cdot\hat{\boldsymbol{k}})+ \\ 2g[\Omega_{SCHA}^{(TA)}(\boldsymbol{k})][\lambda|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+2\mu(\boldsymbol{q}\cdot\boldsymbol{k})^{2}]  \}.
 \end{multline}
 We have solved this equations in a circular grid with $60\times60$ $\boldsymbol{q}$ points with a radius of $1$ 
@@ -112,18 +110,18 @@ the dynamical matrices in normal coordinates are defined as
 \begin{equation}
  \label{third-order}
  \overset{(3)}{D}{}_{\alpha\beta\gamma}(\boldsymbol{q},\boldsymbol{k},\boldsymbol{p})=\frac{1}{\rho^{3/2}}\left\langle\frac{\partial^{3}V}{\partial\alpha(\boldsymbol{q})\partial\beta(\boldsymbol{k})\partial\gamma(\boldsymbol{
- p})}\right\rangle_{\mathcal{V}}\sqrt{G_{\beta\gamma}(\boldsymbol{k},\boldsymbol{p})},
+ p})}\right\rangle_{\mathcal{H}}\sqrt{G_{\beta\gamma}(\boldsymbol{k},\boldsymbol{p})},
 \end{equation}
 \begin{equation}
  \label{fourth-order}
  \overset{(4)}{D}{}_{\alpha\beta\gamma\epsilon}(\boldsymbol{q},\boldsymbol{q}',\boldsymbol{k},\boldsymbol{k}')=\frac{1}{\rho^{2}}\left\langle\frac{\partial^{4}V}{\partial\alpha(\boldsymbol{q})\partial\beta(\boldsymbol{
- q}')\partial\gamma(\boldsymbol{k})\partial\epsilon(\boldsymbol{k}')}\right\rangle_{\mathcal{V}}\sqrt{G_{\alpha\beta}(\boldsymbol{q},\boldsymbol{k})G_{\gamma\epsilon}(\boldsymbol{q}',\boldsymbol{k}')}.
+ q}')\partial\gamma(\boldsymbol{k})\partial\epsilon(\boldsymbol{k}')}\right\rangle_{\mathcal{H}}\sqrt{G_{\alpha\beta}(\boldsymbol{q},\boldsymbol{k})G_{\gamma\epsilon}(\boldsymbol{q}',\boldsymbol{k}')}.
 \end{equation}
 The matrix $G_{\alpha\beta}(\boldsymbol{q},\boldsymbol{k})$ is defined as
 \begin{equation}
- G_{\alpha\beta}(\boldsymbol{q},\boldsymbol{k})=\frac{F(0,\Omega_{SCHA}^{\alpha}(\boldsymbol{q}),\Omega_{SCHA}^{\beta}(\boldsymbol{k}))}{\Omega_{SCHA}^{\alpha}(\boldsymbol{q})\Omega_{SCHA}^{\beta}(\boldsymbol{k}},
+	G_{\alpha\beta}(\boldsymbol{q},\boldsymbol{k})=\frac{F(0,\Omega_{\alpha}^{(S)}(\boldsymbol{q}),\Omega_{\beta}^{(S)}(\boldsymbol{k}))}{\Omega_{\alpha}^{(S)}(\boldsymbol{q})\Omega_{\beta}^{(S)}(\boldsymbol{k})},
 \end{equation}
-$F(0,\Omega_{SCHA}^{\alpha}(\boldsymbol{q}),\Omega_{SCHA}^{\beta}(\boldsymbol{k}))$ being the function defined in
+$F(0,\Omega_{\alpha}^{(S)}(\boldsymbol{q}),\Omega_{\beta}^{(S)}(\boldsymbol{k}))$ being the function defined in
 Eq. \ref{raffaello-function}. We are interested in the corrections to the out-of-plane modes, therefore, we are
 interested in the terms of the type
 \begin{equation}
@@ -140,27 +138,27 @@ Eq. \ref{third-order}. Therefore, Eq. \ref{correction} can be rewritten as
 \end{equation}
 where now the subindexes only run in $\alpha,\beta=u_{LA},u_{TA}$. Now, we can calculate the statistical averages
 \begin{equation}
- \left\langle\frac{\partial^{3}V}{\partial h(\boldsymbol{k}_{1})\partial h(\boldsymbol{k}_{2})\partial u_{LA}(\boldsymbol{k}_{3})}\right\rangle_{\mathcal{V}}=\frac{1+\delta a}{\sqrt{\Omega}}\delta_{\boldsymbol{k}_{1}+\boldsymbol{
+ \left\langle\frac{\partial^{3}V}{\partial h(\boldsymbol{k}_{1})\partial h(\boldsymbol{k}_{2})\partial u_{LA}(\boldsymbol{k}_{3})}\right\rangle_{\mathcal{H}}=\frac{1+\delta a}{\sqrt{\Omega}}\delta_{\boldsymbol{k}_{1}+\boldsymbol{
  k}_{2}+\boldsymbol{k}_{3},0}\left[\lambda|\boldsymbol{k}_{3}|\boldsymbol{k}_{1}\cdot\boldsymbol{k}_{2}+2\mu\frac{(\boldsymbol{k}_{3}\cdot\boldsymbol{k}_{1})(\boldsymbol{k}_{3}\cdot\boldsymbol{k}_{2})}{|\boldsymbol{k}_{3}|}\right],
 \end{equation}
 \begin{equation}
- \left\langle\frac{\partial^{3}V}{\partial h(\boldsymbol{k}_{1})\partial h(\boldsymbol{k}_{2})\partial u_{TA}(\boldsymbol{k}_{3})}\right\rangle_{\mathcal{V}}=\frac{\mu(1+\delta a)}{\sqrt{\Omega}}\delta_{\boldsymbol{k}_{
+ \left\langle\frac{\partial^{3}V}{\partial h(\boldsymbol{k}_{1})\partial h(\boldsymbol{k}_{2})\partial u_{TA}(\boldsymbol{k}_{3})}\right\rangle_{\mathcal{H}}=\frac{\mu(1+\delta a)}{\sqrt{\Omega}}\delta_{\boldsymbol{k}_{
  1}+\boldsymbol{k}_{2}+\boldsymbol{k}_{3},0}\left[\frac{(\boldsymbol{k}_{3}\cdot\boldsymbol{k}_{1})(\boldsymbol{k}_{3\perp}\cdot\boldsymbol{k}_{2})+(\boldsymbol{k}_{3}\cdot\boldsymbol{k}_{2})(\boldsymbol{k}_{3\perp}\cdot
  \boldsymbol{k}_{1})}{|\boldsymbol{k}_{3}|}\right],
 \end{equation}
 \begin{multline}
-\left\langle\frac{\partial^{4}V}{\partial h(\boldsymbol{k}_{1})\partial h(\boldsymbol{k}_{2})\partial u_{LA}(\boldsymbol{k}_{3})\partial u_{LA}(\boldsymbol{k}_{4})}\right\rangle_{\mathcal{V}}=\frac{1}{\Omega}\delta_{\boldsymbol{
+\left\langle\frac{\partial^{4}V}{\partial h(\boldsymbol{k}_{1})\partial h(\boldsymbol{k}_{2})\partial u_{LA}(\boldsymbol{k}_{3})\partial u_{LA}(\boldsymbol{k}_{4})}\right\rangle_{\mathcal{H}}=\frac{1}{\Omega}\delta_{\boldsymbol{
  k}_{1}+\boldsymbol{k}_{2}+\boldsymbol{k}_{3}+\boldsymbol{k}_{4},0}\frac{\boldsymbol{k}_{3}\cdot\boldsymbol{k}_{4}}{|\boldsymbol{k}_{3}||\boldsymbol{k}_{4}|}[\lambda(\boldsymbol{k}_{3}\cdot\boldsymbol{k}_{4})(\boldsymbol{k}_{
  1}\cdot\boldsymbol{k}_{2})+\\\mu(\boldsymbol{k}_{3}\cdot\boldsymbol{k}_{1})(\boldsymbol{k}_{4}\cdot\boldsymbol{k}_{2})+\mu(\boldsymbol{k}_{3}\cdot\boldsymbol{k}_{2})(\boldsymbol{k}_{4}\cdot\boldsymbol{k}_{1})],
 \end{multline}
 \begin{multline}
- \left\langle\frac{\partial^{4}V}{\partial h(\boldsymbol{k}_{1})\partial h(\boldsymbol{k}_{2})\partial u_{TA}(\boldsymbol{k}_{3})\partial u_{TA}(\boldsymbol{k}_{4})}\right\rangle_{\mathcal{V}}=\frac{1}{\Omega}\delta_{\boldsymbol{
+ \left\langle\frac{\partial^{4}V}{\partial h(\boldsymbol{k}_{1})\partial h(\boldsymbol{k}_{2})\partial u_{TA}(\boldsymbol{k}_{3})\partial u_{TA}(\boldsymbol{k}_{4})}\right\rangle_{\mathcal{H}}=\frac{1}{\Omega}\delta_{\boldsymbol{
  k}_{1}+\boldsymbol{k}_{2}+\boldsymbol{k}_{3}+\boldsymbol{k}_{4},0}\frac{\boldsymbol{k}_{3\perp}\cdot\boldsymbol{k}_{4\perp}}{|\boldsymbol{k}_{3}||\boldsymbol{k}_{4}|}[\lambda(\boldsymbol{k}_{3}\cdot\boldsymbol{k}_{4})(\boldsymbol{k}_{
  1}\cdot\boldsymbol{k}_{2})+\\\mu(\boldsymbol{k}_{3}\cdot\boldsymbol{k}_{1})(\boldsymbol{k}_{4}\cdot\boldsymbol{k}_{2})+\mu(\boldsymbol{k}_{3}\cdot\boldsymbol{k}_{2})(\boldsymbol{k}_{4}\cdot\boldsymbol{k}_{1})],
 \end{multline}
 and
 \begin{multline}
- \left\langle\frac{\partial^{4}V}{\partial h(\boldsymbol{k}_{1})\partial h(\boldsymbol{k}_{2})\partial u_{LA}(\boldsymbol{k}_{3})\partial u_{TA}(\boldsymbol{k}_{4})}\right\rangle_{\mathcal{V}}=\frac{1}{\Omega}\delta_{\boldsymbol{
+ \left\langle\frac{\partial^{4}V}{\partial h(\boldsymbol{k}_{1})\partial h(\boldsymbol{k}_{2})\partial u_{LA}(\boldsymbol{k}_{3})\partial u_{TA}(\boldsymbol{k}_{4})}\right\rangle_{\mathcal{H}}=\frac{1}{\Omega}\delta_{\boldsymbol{
  k}_{1}+\boldsymbol{k}_{2}+\boldsymbol{k}_{3}+\boldsymbol{k}_{4},0}\frac{\boldsymbol{k}_{3}\cdot\boldsymbol{k}_{4\perp}}{|\boldsymbol{k}_{3}||\boldsymbol{k}_{4}|}[\lambda(\boldsymbol{k}_{3}\cdot\boldsymbol{k}_{4})(\boldsymbol{k}_{
  1}\cdot\boldsymbol{k}_{2})+\\\mu(\boldsymbol{k}_{3}\cdot\boldsymbol{k}_{1})(\boldsymbol{k}_{4}\cdot\boldsymbol{k}_{2})+\mu(\boldsymbol{k}_{3}\cdot\boldsymbol{k}_{2})(\boldsymbol{k}_{4}\cdot\boldsymbol{k}_{1})].
 \end{multline}
@@ -172,17 +170,17 @@ By neglecting the fourth-order terms containing in-plane displacement fields in 
 can be applied analytically in this model. The SCHA equations simplify to
 \begin{equation}
 \label{scha-tommaso1}
-\delta a=-\frac{1}{4\Omega}\sum_{\boldsymbol{q}}|\boldsymbol{q}|^{2}g[\Omega_{SCHA}^{(h)}(\boldsymbol{q})],
+\delta a=-\frac{1}{4\Omega}\sum_{\boldsymbol{q}}|\boldsymbol{q}|^{2}g[\Omega_{ZA}^{(S)}(\boldsymbol{q})],
 \end{equation}
 \begin{equation}
 \label{scha-tommaso2}
-\Phi_{SCHA}^{(h)}(\boldsymbol{q})=\kappa|\boldsymbol{q}|^{4}+2\delta a(\lambda+\mu)|\boldsymbol{q}|^{2}+\frac{\lambda+2\mu}{2\Omega}\sum_{\boldsymbol{k}}g[\Omega_{SCHA}^{(LA)}(\boldsymbol{k})][|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+2(\boldsymbol{q}\cdot\boldsymbol{k})^{2}].
+\Phi_{ZA}^{(S)}(\boldsymbol{q})=\kappa|\boldsymbol{q}|^{4}+2\delta a(\lambda+\mu)|\boldsymbol{q}|^{2}+\frac{\lambda+2\mu}{2\Omega}\sum_{\boldsymbol{k}}g[\Omega_{ZA}^{(S)}(\boldsymbol{k})][|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+2(\boldsymbol{q}\cdot\boldsymbol{k})^{2}].
 \end{equation}
 By inserting Eq. \ref{scha-tommaso1} in Eq. \ref{scha-tommaso2} and considering the infinite volume limit 
 ($\Omega\rightarrow\infty$), we obtain
 \begin{equation}
 \label{tommaso1}
-\Phi_{SCHA}^{(h)}(\boldsymbol{q})=\kappa|\boldsymbol{q}|^{4}+\gamma|\boldsymbol{q}|^{2},
+\Phi_{ZA}^{(S)}(\boldsymbol{q})=\kappa|\boldsymbol{q}|^{4}+\gamma|\boldsymbol{q}|^{2},
 \end{equation}
 where $\gamma$ is given by the solution of
 \begin{equation}
@@ -194,7 +192,7 @@ Eqs. \ref{tommaso1} and \ref{tommaso2} show that the dispersion of the SCHA ZA m
 correction for getting the physical phonons in the static approach in Eq. \ref{correction-simple} (in this case the 
 fourth-order tensor is $0$) the result is
 \begin{equation}
-\Phi_{F}^{(h)}(\boldsymbol{q})=\kappa|\boldsymbol{q}|^{4}+(\gamma-\sigma)|\boldsymbol{q}|^{2}+O(|\boldsymbol{q}|^{4}),
+\Phi_{ZA}^{(F)}(\boldsymbol{q})=\kappa|\boldsymbol{q}|^{4}+(\gamma-\sigma)|\boldsymbol{q}|^{2}+O(|\boldsymbol{q}|^{4}),
 \end{equation}
 where at $T=0$ K
 \begin{equation}
