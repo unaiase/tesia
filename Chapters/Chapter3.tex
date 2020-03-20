@@ -459,7 +459,9 @@ small compared to the separation between harmonic frequencies. There is one extr
 means that the system is unstable within this approximation. \\
 
 A formalism that can be applied in the cases where perturbation theory fails, even in the cases where there are harmonic instabilities, is the variational approach defined by the self-consistent harmonic 
-approximation (SCHA)\cite{hooton1955li}, which has been implemented in a stochastic framework in the so called stochastic self-consistent harmonic approximation (SSCHA)\cite{errea2014anharmonic,errea2013first}. \\ 
+approximation (SCHA)\cite{hooton1955li}, which has been implemented in a stochastic framework in the so called 
+stochastic self-consistent harmonic approximation 
+(SSCHA)\cite{errea2013first,errea2014anharmonic,bianco2017second,monacelli2018pressure}. \\ 
 
 The exact vibrational free energy of a solid is given by the sum of the total energy and entropic contributions
 \begin{equation}
@@ -505,7 +507,7 @@ matrix $D_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}(S)}(\mathbf{q})=\Phi_{s_{1}s_{2}}^{
 The only parameters that contains the trial harmonic potential are $\mathcal{R}_{s}^{\alpha}(\mathbf{T})$ and $\Phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2})$ with respect to 
 which $\mathcal{F}_{H}[\mathcal{H}]$ needs to be minimized. For the minimization we can apply a conjugate gradient (CG) algorithm and at the end of the minimization, which is done in a subspace that 
 preserves the crystal symmetries, we will get the $\boldsymbol{\mathcal{R}}$ positions or centroids and $\Phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2})$ 2BFC that minimize 
-the free energy including anharmonic effects. The centroid positions that minimize the SCHA free energy are the centers of the SCHA Gaussian wave functions and the trial 2BFC that minimize the SCHA free 
+the free energy including anharmonic effects. The centroid positions that minimize the SSCHA free energy are the centers of the SSCHA Gaussian wave functions and the trial 2BFC that minimize the SSCHA free 
 energy provide the width of these Gaussians. \\
 
 For the CG minimization we need the expressions of the function and its derivatives with respect to $\boldsymbol{\mathcal{R}}$ and $\Phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2})$
@@ -616,14 +618,14 @@ see, the SSCHA is able to find a very good approximation for the ground state en
 \label{scha-stress-section}
 
 In Eq. \ref{bo-stress} we saw how to calculate the Born-Oppenheimer stress tensor which does not include any effect from the thermal and quantum fluctuations of the ions. In this section we will see how to calculate 
-the SSCHA stress tensor $P_{\alpha\beta}^{SCHA}$ which will include these effects at an anharmonic level. \\
+the SSCHA stress tensor $P_{\alpha\beta}^{SSCHA}$ which will include these effects at an anharmonic level. \\
 
 In this section, the parameters of the trial Hamiltonian are $\boldsymbol{\mathcal{R}}$, $\Phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{2},\mathbf{T}_{2})$ and $\{\mathbf{a}_{i}\}$. We will assume 
-that $\boldsymbol{\mathcal{R}}$ are the internal coordinates and $\{\mathbf{a}_{i}\}$ are the lattice vectors that define the unit cell. Within the SCHA, the stress tensor is defined as the derivative of the free energy 
+that $\boldsymbol{\mathcal{R}}$ are the internal coordinates and $\{\mathbf{a}_{i}\}$ are the lattice vectors that define the unit cell. Within the SSCHA, the stress tensor is defined as the derivative of the free energy 
 with respect to the strain tensor
 \begin{equation}
 \label{scha-stress}
- P_{\alpha\beta}^{SCHA}(\boldsymbol{\mathcal{R}},\{\mathbf{a}_{i}\})=-\frac{1}{\Omega}\frac{\partial\mathcal{F}_{H}[\boldsymbol{\mathcal{R}},\{\mathbf{a}_{i}\}]}{\partial\epsilon_{\alpha\beta}}\vline_{_{_{_{_{_{_{_{
+ P_{\alpha\beta}^{SSCHA}(\boldsymbol{\mathcal{R}},\{\mathbf{a}_{i}\})=-\frac{1}{\Omega}\frac{\partial\mathcal{F}_{H}[\boldsymbol{\mathcal{R}},\{\mathbf{a}_{i}\}]}{\partial\epsilon_{\alpha\beta}}\vline_{_{_{_{_{_{_{_{
 \boldsymbol{\epsilon}=0}}}}}}}}, 
 \end{equation}  
 where we assume that the trial 2BFC are the ones that minimize the trial free energy for the given centroids and 
@@ -634,10 +636,10 @@ a_{i}^{'\alpha}=a_{i}^{\alpha}+\sum_{\beta=1}^{3}\epsilon_{\alpha\beta}a_{i}^{\b
 \begin{equation}
 \mathcal{R}_{n}^{'\alpha}=\mathcal{R}_{n}^{\alpha}+\sum_{\beta=1}^{3}\epsilon_{\alpha\beta}\mathcal{R}_{n}^{\beta}.
 \end{equation}
-This is equivalent to performing a strain keeping fixed the internal crystal coordinates of the system. In order to compare the SCHA stress tensor with the BO one, the SCHA tensor can be divided into three 
+This is equivalent to performing a strain keeping fixed the internal crystal coordinates of the system. In order to compare the SSCHA stress tensor with the BO one, the SSCHA tensor can be divided into three 
 parts\cite{monacelli2018pressure}:
 \begin{equation}
- P_{\alpha\beta}^{SCHA}(\boldsymbol{\mathcal{R}},\{\mathbf{a}_{i}\})=P_{\alpha\beta}^{BO}(\boldsymbol{\mathcal{R}},\{\mathbf{a}_{i}\})+P_{\alpha\beta}^{FLC}(\boldsymbol{\mathcal{R}},\{\mathbf{a}_{i}\})+
+ P_{\alpha\beta}^{SSCHA}(\boldsymbol{\mathcal{R}},\{\mathbf{a}_{i}\})=P_{\alpha\beta}^{BO}(\boldsymbol{\mathcal{R}},\{\mathbf{a}_{i}\})+P_{\alpha\beta}^{FLC}(\boldsymbol{\mathcal{R}},\{\mathbf{a}_{i}\})+
  P_{\alpha\beta}^{FRC}(\boldsymbol{\mathcal{R}},\{\mathbf{a}_{i}\}),
 \end{equation}
 where $P_{\alpha\beta}^{BO}$ is the static contribution from the BO stress in Eq. \ref{bo-stress}, $P_{\alpha\beta}^{FLC}$ is the contribution of the fluctuations to the stress, and $P_{\alpha\beta}^{FRC}$ is an extra 
@@ -655,7 +657,7 @@ term that takes into account the work necessary to move the centroids according 
 The last term in Eq. \ref{stress-fluctuations} makes fluctuations on pressure disappear in pure harmonic crystals\cite{monacelli2018pressure}, that is why we say that $P_{\alpha\beta}^{BO}$ does not include the effect
 of fluctuations. \\
 
-The SCHA stress tensor can be calculated with the knowledge of the BOES, the atomic forces and the BO stress tensor and the stochastic framework in Eq. \ref{stochastic} is also valid for the stress calculation. 
+The SSCHA stress tensor can be calculated with the knowledge of the BOES, the atomic forces and the BO stress tensor and the stochastic framework in Eq. \ref{stochastic} is also valid for the stress calculation. 
 
 \subsection{The free energy Hessian and second-order phase transitions within the SSCHA}
 \label{free-energy-section}

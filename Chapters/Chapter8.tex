@@ -73,7 +73,7 @@ in Fig. \ref{lata-harmonic-lw}.
 \includegraphics[width=0.8\linewidth]{Figures/lw-graphene-harmonic.eps}
 \caption[Graphene harmonic linewidths]{Linewidths (full width at half maximum, FWHM) of the LA and TA modes 
 	calculated using the harmonic phonon spectrum for the three phonon scattering processes and 3BFC calculated 
-	within the SCHA at $0$ K.}
+	within the SSCHA at $0$ K.}
 \label{lata-harmonic-lw}
 \end{figure}
 The figure clearly shows how the linewidths do not vanish at small momenta. This yields to the conclusion that for 
@@ -136,10 +136,10 @@ In conclusion, the 2D character of the 2BFC and the rotational invariance of the
 
 \section{Empirical potential benchmark and calculation parameters}
 
-For calculating the forces needed in the SCHA minimization\cite{errea2014anharmonic} we have used an empirical 
+For calculating the forces needed in the SSCHA minimization\cite{errea2014anharmonic} we have used an empirical 
 potential trained with machine learning and density functional theory (DFT) forces. The details about the machine 
 learning training are explained in Ref. \cite{rowe2018development}. Here we have benchmarked the ability of 
-the potential to account for the anharmonic effects. For that purpose we have applied the SCHA method by using 
+the potential to account for the anharmonic effects. For that purpose we have applied the SSCHA method by using 
 DFT and empirical forces in a $2\times2$ supercell and we have checked the anharmonic effects in the optical 
 modes at the $\Gamma$ point. The machine learning potential is trained with the exchange-correlation in 
 Ref. \cite{dion2004van} and for the DFT calculations we have applied a PBE\cite{perdew1996generalized} 
@@ -155,8 +155,8 @@ results are shown in Figs. \ref{benchmark-spectrum} and \ref{benchmark}.
 \begin{figure}[ht]
 \includegraphics[width=0.49\linewidth]{Figures/bm1.eps}
 \includegraphics[width=0.49\linewidth]{Figures/bm2.eps}
-\caption[Harmonic, SCHA and physical frequencies (static) using the DFT and machine learning (ML) forces.]{Harmonic, 
-	SCHA and physical frequencies (static) using the DFT and machine learning (ML) forces. The left panel shows 
+\caption[Harmonic, SSCHA and physical frequencies (static) using the DFT and machine learning (ML) forces.]{Harmonic, 
+	SSCHA and physical frequencies (static) using the DFT and machine learning (ML) forces. The left panel shows 
 	the in-plane optical frequency at the $\Gamma$ point and the right panel the out-of-plane one.}
 \label{benchmark}
 \end{figure}
@@ -170,25 +170,25 @@ density. For the Brillouin zone integration we have used a Monkhorst pack grid\c
 $32\times32$ points with a Gaussian smearing of $0.02$ Ry. For the linewidth calculations in the main text we have 
 used a grid of $400\times400$ grid with a Gaussian smearing of $1$ cm$^{-1}$. For the stress calculation in order 
 to account for the thermal expansion we have used a $10\times10$ supercell. We have used the same supercell for 
-the SCHA and physical frequency calculations. For the linewidth calculations we have used 3BFC calculated in 
+the SSCHA and physical frequency calculations. For the linewidth calculations we have used 3BFC calculated in 
 $3\times3$ supercells. We have tested all the calculations with denser grids and bigger supercells.
 
 \section{Graphene without stress}
 
-In order to calculate phonon spectra in unstrained graphene at any temperature, we calculate the SCHA stress tensor 
+In order to calculate phonon spectra in unstrained graphene at any temperature, we calculate the SSCHA stress tensor 
 following the procedure in section \ref{scha-stress-section} and pick the lattice parameter that sets it to zero at 
 each temperature. For that purpose, we calculate the stress in ranges of $0.0005$ $\AA$ and then we interpolate the 
 result, which is fitted very good with a linear function. The lattice parameter calculated in this way includes 
 anharmonic effects as well as the effect of quantum and thermal fluctuations. In order to properly account for 
 thermal expansion, all the phonon spectra shown in this work that are obtained with the atomistic potential are 
-calculated with the lattice parameter that gives a null SCHA stress at each temperature. The harmonic spectra on the 
+calculated with the lattice parameter that gives a null SSCHA stress at each temperature. The harmonic spectra on the 
 contrary is always calculated at the lattice parameter that minimizes $U$. The temperature dependence of the lattice 
 parameter and the thermal expansion coefficient are shown in Fig. \ref{lattice}.
 \begin{figure}[ht]
 \includegraphics[width=0.99\linewidth]{Figures/lattice.eps}
 \caption[Lattice parameter of graphene as a function of temperature]{a) Lattice parameter of graphene as a function 
-	of temperature obtained with the SCHA using a machine learning atomistic potential. Both quantum (black) and 
-	classical (blue) calculations are included. The classical result is calculated setting $\hbar=0$ in the SCHA 
+	of temperature obtained with the SSCHA using a machine learning atomistic potential. Both quantum (black) and 
+	classical (blue) calculations are included. The classical result is calculated setting $\hbar=0$ in the SSCHA 
 	free energy. The temperature-independent frozen nuclei (FN) result corresponds to the lattice parameter that 
 	minimizes the Born Oppenheimer potential $U$. Results obtained by Rowe et al.\cite{rowe2018development} are 
 	also inlcuded for comparison. Solid black and blue lines correspond to cubic fits. The black dashed line 
@@ -198,7 +198,7 @@ parameter and the thermal expansion coefficient are shown in Fig. \ref{lattice}.
 \label{lattice}
 \end{figure}
 We include the results of Rowe et al.\cite{rowe2018development}, which do not account for quantum effects as they 
-are done with molecular dynamics (MD). They use the same potential as we do. For comparison we also include SCHA 
+are done with molecular dynamics (MD). They use the same potential as we do. For comparison we also include SSCHA 
 calculations in he classical limit and within the quasiharmonic (QH) approximation. Our quantum calculations 
 correctly capture the negative thermal expansion of graphene up to $\sim$ 750 K that has been estimated in previous 
 theoretical works\cite{rowe2018development,zakharchenko2009finite}. Our quantum calculations show a larger lattice 
@@ -221,15 +221,15 @@ temperatures\cite{mounet2005first}.
 
 \section{Graphene phonons}
 
-In Fig. \ref{spectrum-graphene} we compare the harmonic phonon spectra with the one obtained from the SCHA dynamical 
-matrix $\boldsymbol{D}^{(S)}$ as well as the spectra obtained from the Hessian of the SCHA free 
+In Fig. \ref{spectrum-graphene} we compare the harmonic phonon spectra with the one obtained from the SSCHA dynamical 
+matrix $\boldsymbol{D}^{(S)}$ as well as the spectra obtained from the Hessian of the SSCHA free 
 energy $\boldsymbol{D}^{(F)}$. 
 \begin{figure*}[ht]
 \includegraphics[width=0.32\linewidth]{Figures/T0.eps}
 \includegraphics[width=0.32\linewidth]{Figures/T300.eps}
 \includegraphics[width=0.32\linewidth]{Figures/T2000.eps}
-	\caption[Graphene harmonic and anharmonic phonons]{Harmonic phonon spectra together with the SCHA phonons 
-	$\boldsymbol{D}^{(S)}$ (labeled as ``SCHA'') and those obtained from the Hessian of the SCHA free energy 
+	\caption[Graphene harmonic and anharmonic phonons]{Harmonic phonon spectra together with the SSCHA phonons 
+	$\boldsymbol{D}^{(S)}$ (labeled as ``SSCHA'') and those obtained from the Hessian of the SSCHA free energy 
 	$\boldsymbol{D}^{(F)}$ as (labeled as ``Physical''). Results at 0 K (a), 300 K (b), and 2000 K (c) are shown. 
 	(d), (e) and (f) show only the dispersion of the ZA mode close to $\Gamma$ in logarithmic scale at 0 K, 300 
 	K, and 2000 K, respectively. In the small panels the dispersion corresponds to the $\Gamma$M direction. For 
@@ -242,7 +242,7 @@ energy $\boldsymbol{D}^{(F)}$.
 \end{figure*}
 The main conclusion is that while the dispersion of the ZA modes obtained from $\boldsymbol{D}^{(S)}$ is linearized, 
 the physical phonons given by the Hessian of $F$ ($\boldsymbol{D}^{(F)}$) become close to a quadratic dispersion and 
-approach the harmonic dispersion, as expected by symmetry. The SCHA ZA frequencies suffer a blue-shift with respect 
+approach the harmonic dispersion, as expected by symmetry. The SSCHA ZA frequencies suffer a blue-shift with respect 
 to the harmonic ones, but are red-shifted once the Hessian is calculated. Both shifts are bigger when the temperature 
 is increased, but the quadratic behavior of the ZA modes is always recovered regardless of the temperature. With 
 respect to the optical modes, we observe that the frequencies red-shift with increasing temperature in agreement with 
@@ -254,7 +254,7 @@ However, as shown in Fig. \ref{static-dynamic},
 \includegraphics[width=0.32\linewidth]{Figures/T0-za.eps}
 \includegraphics[width=0.32\linewidth]{Figures/T300-za.eps}
 \includegraphics[width=0.32\linewidth]{Figures/T2000-za.eps}
-	\caption[Graphene harmonic and anharmonic ZA phonons]{Harmonic, SCHA, and physical phonons (static and 
+	\caption[Graphene harmonic and anharmonic ZA phonons]{Harmonic, SSCHA, and physical phonons (static and 
 	dynamic) calculated at 0 K a), 300 K b), and 2000 K c).}
 \label{static-dynamic}
 \end{figure}
@@ -268,32 +268,32 @@ huge impact on the mechanical and thermal properties of graphene. As shown in Fi
 \begin{figure*}[ht]
 \includegraphics[width=0.49\linewidth]{Figures/rms.eps}
 \includegraphics[width=0.49\linewidth]{Figures/lw-graphene.eps}
-\caption[SCHA mean square atomic displacements and linewidths]{(a) Mean square atomic displacement of carbon atoms 
-	in graphene calculated using the harmonic and the SCHA density matrices. The harmonic result is always 
-	computed at the lattice parameter that minimizes $U$, while the SCHA results include thermal expansion (see 
+\caption[SSCHA mean square atomic displacements and linewidths]{(a) Mean square atomic displacement of carbon atoms 
+	in graphene calculated using the harmonic and the SSCHA density matrices. The harmonic result is always 
+	computed at the lattice parameter that minimizes $U$, while the SSCHA results include thermal expansion (see 
 	Fig. \ref{lattice}). (b) Linewidths (full width at half maximum) of LA and TA phonon modes at $300$ K 
-	calculated within the harmonic approximation and the SCHA. Results in both figures are obtained with the 
+	calculated within the harmonic approximation and the SSCHA. Results in both figures are obtained with the 
 	machine learning atomistic potential.}
 \label{problems}
 \end{figure*}
-when calculating the mean square atomic displacement with the SCHA density matrix as 
+when calculating the mean square atomic displacement with the SSCHA density matrix as 
 $\langle \mathbf{u}^2 \rangle_{\rho_{\mathcal{H}}}$, the dramatic divergences with the sample size obtained in the 
 harmonic case are critically suppressed, clearly showing the contribution of anharmonicity to the crystalline order 
-of graphene. The divergences are suppressed precisely because the SCHA phonon frequencies obtained from 
+of graphene. The divergences are suppressed precisely because the SSCHA phonon frequencies obtained from 
 $\boldsymbol{D}^{(S)}$ that build $\rho_{\mathcal{H}}$ are linear at small momenta (see 
-Fig. \ref{spectrum-graphene}). Thus, even if the phonons obtained from the SCHA free energy Hessian 
+Fig. \ref{spectrum-graphene}). Thus, even if the phonons obtained from the SSCHA free energy Hessian 
 $\boldsymbol{D}^{(F)}$ are quadratic, the fact that the density matrix used to compute thermodynamic properties is 
 built with linearized phonons is responsible for curing the divergences. \\
 
-The SCHA phonon frequencies obtained from $\boldsymbol{D}^{(S)}$ also provide an appropriate basis to calculate 
+The SSCHA phonon frequencies obtained from $\boldsymbol{D}^{(S)}$ also provide an appropriate basis to calculate 
 phonon linewidths\cite{bianco2017second,aseginolaza2019phonon}. The results presented in Fig. \ref{problems} clearly 
-show that the linearization of the SCHA frequencies dramatically changes the linewidth of the LA and TA modes at 
+show that the linearization of the SSCHA frequencies dramatically changes the linewidth of the LA and TA modes at 
 small momenta by making them smaller as momentum decreases. This result recovers the quasiparticle picture for these 
 modes. Similar results are obtained in Ref. \cite{bonini2012acoustic}. However, in this work linewidths of LA 
 and TA modes at small momenta only vanish when strain is applied. Somewhat strain has an analogous effect to 
-anharmonicity by linearizing the ZA dispersion. The problem is that strain linearizes both SCHA and physical phonons. 
-We show here that there is no need of strain to have physically well-defined phonon-linewidths provided by linear 
-SCHA phonons together with quadratic physical phonons. Anharmonicity is responsible for it.
+anharmonicity by linearizing the ZA dispersion. The problem is that strain linearizes both SSCHA and physical 
+phonons. We show here that there is no need of strain to have physically well-defined phonon-linewidths provided by 
+linear SCHA phonons together with quadratic physical phonons. Anharmonicity is responsible for it.
 
 \section{SCHA applied to a continuum membrane Hamiltonian}
 
