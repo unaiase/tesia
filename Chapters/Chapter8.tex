@@ -62,7 +62,7 @@ quadratic dispersion. This is very clear in the plot in logarithmic scale where 
 reference. The quadratic dispersion is given by the rotational symmetry, together with the fact that in a strictly 
 two-dimensional system force constants involving an in-plane and an out-of-plane displacement 
 vanish\cite{katsnelson2013graphene}. The mathematical proof of the quadratic dispersion is given in 
-section \ref{quadratic-dispersion}. \\
+appendix \ref{quadratic-dispersion}. \\
 
 The quadratic dispersion also creates spurious divergences in physical properties calculated perturbativaly on top of 
 the harmonic result. The phonon linewidths of the in-plane acoustic longitudinal (LA) and transverse (TA) phonons 
@@ -105,34 +105,6 @@ divergences. We estimate $F$ within the self-consistent harmonic approximation (
 stochastic implementation (SSCHA) making use of a machine learning atomistic potential trained with density 
 functional theory\cite{rowe2018development}. We also solve the SCHA equations in a membrane continuum Hamiltonian 
 which provides results at smaller momenta.
-
-\section{Quadratic dispersion of ZA modes within the harmonic approximation}
-\label{quadratic-dispersion}
-
-In this section we prove that the dispersion of the ZA phonon modes close to the point $\Gamma$ is quadratic in the 
-harmonic approximation. \\
-
-For that purpose, by using the inversion symmetry and the ASR in Eq. \ref{acoustic-sum-rule} we will rewrite Eq. \ref{2bfc-fourier-simple} in section \ref{harmonic-approximation} as
-\begin{multline}
- \phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{q})=\sum_{\mathbf{T}}\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T},0)e^{-i\mathbf{q}\cdot\mathbf{T}}=\\\frac{1}{2}\sum_{\mathbf{T}}\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T},0)(e^{-i\mathbf{q}\cdot\mathbf{T}}+e^{i\mathbf{q}\cdot\mathbf{T}}-2)=-2\sum_{\mathbf{T}}\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T},0)sin^{2}(\mathbf{q}\cdot\mathbf{T}/2).
-\end{multline}
-And by Taylor expanding this equation close to the point $\Gamma$ we get
-\begin{equation}
-\label{need-zero}
-\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{q})\simeq -\frac{1}{2}\sum_{\alpha\beta}q_{\alpha}q_{\beta}\sum_{\mathbf{T}}\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T})T_{\alpha}T_{\beta}+O(q^{4}),
-\end{equation} 
-$\alpha$, $\beta$ being $x$, $y$, and $z$ Cartesian components. \\
-
-The fact that a material is bidimensional and the equilibrium atomic positions are contained in the $z=0$ plane,
-makes that all the 2BFC of the type $\phi_{s_{1}s_{2}}^{xz}(\mathbf{T})$, $\phi_{s_{1}s_{2}}^{yz}(\mathbf{T})$ are zero. This is translated into the fact that the out-of-plane $z$ direction is an eigendirection of the system and the 
-harmonic frequency of the ZA mode is given by
-\begin{equation} 
-\omega_{ZA}^{2}(\mathbf{q})=\sum_{s_{2}}D_{1s_{2}}^{zz}(\mathbf{q}). 
-\end{equation} 
-Therefore, by looking at Eq. \ref{need-zero} we can see that for proving that the dispersion of the ZA modes is quadratic we need to prove that 
-$\sum_{\mathbf{T}}\phi_{s_{1}s_{2}}^{zz}(\mathbf{T})T_{\alpha}T_{\beta}=0$. Actually, this equality is enforced by the rotational invariance of the system. \\
-
-In conclusion, the 2D character of the 2BFC and the rotational invariance of the system make the harmonic dispersion of the ZA modes close to the point $\Gamma$ to be quadratic.
 
 \section{Empirical potential benchmark and calculation parameters}
 
