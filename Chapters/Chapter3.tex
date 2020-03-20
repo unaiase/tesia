@@ -493,15 +493,15 @@ $\Phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2})$, which
 trial potential which is harmonic is that $\rho_{\mathcal{H}}$ and $F_{\mathcal{H}}$ have closed analytical forms. 
 \begin{multline}
  \rho_{\mathcal{H}}(\mathbf{R})=\langle\mathbf{R}|\rho_{\mathcal{H}}|\mathbf{R}\rangle=\\=A_{\mathcal{H}}exp\left(-\sum\limits_{\substack{s_{1}s_{2} \\ \alpha_{1}\alpha_{2} \\ \mathbf{T}_{1}\mathbf{T}_{2} \\ \mu}}\frac{\sqrt{
- m_{s_{1}}m_{s_{2}}}}{2a_{\mu\mathcal{H}}^{2}}\tilde{\epsilon}_{\mu\mathcal{H}}^{s_{1}\alpha_{1}}(\mathbf{T}_{1})\tilde{\epsilon}_{\mu\mathcal{H}}^{s_{2}\alpha_{2}}(\mathbf{T}_{2})u_{s_{1}}^{\alpha_{1}}[\mathbf{T}_{1}](\mathbf{
+	 m_{s_{1}}m_{s_{2}}}}{2a_{\mu\mathcal{H}}^{2}}\epsilon_{\mu\mathcal{H}}^{s_{1}\alpha_{1}}(\mathbf{T}_{1})\epsilon_{\mu\mathcal{H}}^{s_{2}\alpha_{2}}(\mathbf{T}_{2})u_{s_{1}}^{\alpha_{1}}[\mathbf{T}_{1}](\mathbf{
  R})u_{s_{2}}^{\alpha_{2}}[\mathbf{T}_{2}](\mathbf{R})\right),
 \end{multline}
 \begin{equation}
- F_{\mathcal{H}}=\sum_{\mu}\left[\frac{\tilde{\Omega}_{\mu\mathcal{H}}}{2}+Tln\left(1-e^{-\beta\tilde{\Omega}_{\mu\mathcal{H}}}\right)\right],
+	F_{\mathcal{H}}=\sum_{\mu}\left[\frac{\Omega^{(S)}_{\mu\mathcal{H}}}{2}+Tln\left(1-e^{-\beta\Omega^{(S)}_{\mu\mathcal{H}}}\right)\right],
 \end{equation}
-where $A_{\mathcal{H}}$ is a normalization constant and $a_{\mu\mathcal{H}}=\sqrt{coth(\beta\tilde{\Omega}_{\mu\mathcal{H}}/2)/(2\tilde{\Omega}_{\mu\mathcal{H}})}$ is called the normal length. $\rho_{\mathcal{H}}(\mathbf{R})$ 
+where $A_{\mathcal{H}}$ is a normalization constant and $a_{\mu\mathcal{H}}=\sqrt{coth(\beta\Omega^{(S)}_{\mu\mathcal{H}}/2)/(2\Omega^{(S)}_{\mu\mathcal{H}})}$ is called the normal length. $\rho_{\mathcal{H}}(\mathbf{R})$ 
 is the probability to find the system described by $\mathcal{H}$ in the general ionic configuration $\mathbf{R}$. In normal coordinates space, $\rho_{\mathcal{H}}(\mathbf{R})$, is a product of Gaussians and the normal length 
-is their standard deviation. $\tilde{\Omega}_{\mu}(\mathbf{q})$ and $\tilde{\epsilon}_{s\mu}^{\alpha}(\mathbf{q})$ are the frequencies and polarization vectors that diagonalize the SSCHA dynamical 
+is their standard deviation. $\Omega^{(S)}_{\mu}(\mathbf{q})$ and $\epsilon_{s\mu}^{\alpha (S)}(\mathbf{q})$ are the frequencies and polarization vectors that diagonalize the SSCHA dynamical 
 matrix $D_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}(S)}(\mathbf{q})=\Phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{q})/(\sqrt{m_{s_{1}}m_{s_{2}}})$. \\
 
 The only parameters that contains the trial harmonic potential are $\mathcal{R}_{s}^{\alpha}(\mathbf{T})$ and $\Phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2})$ with respect to 
@@ -522,8 +522,8 @@ For the CG minimization we need the expressions of the function and its derivati
 \begin{multline}
  \label{minim3}
  \boldsymbol{\nabla}_{\Phi}\mathcal{F}_{H}[\mathcal{H}]=-\sum\limits_{\substack{s_{1}s_{2} \\ \alpha_{1}\alpha_{2} \\ \mathbf{T}_{1}\mathbf{T}_{2} \\ \mu}}\sqrt{\frac{m_{s_{1}}}{m_{s_{
- 2}}}}(\tilde{\epsilon}_{s_{1}\mu\mathcal{H}}^{\alpha_{1}}(\mathbf{T}_{1})\boldsymbol{\nabla}_{\Phi}lna_{\mu\mathcal{H}}+\boldsymbol{\nabla}_{\Phi}\tilde{\epsilon}_{s_{1}\mu\mathcal{H}}^{\alpha_{1}}(\mathbf{T}_{1}))
- \tilde{\epsilon}_{s_{2}\mu\mathcal{H}}^{\alpha_{2}}(\mathbf{T}_{2}) \\ \times\int{d\mathbf{R}[f_{s_{1}}^{\alpha_{1}}[\mathbf{T}_{1}](\mathbf{R})-f_{s_{1}\mathcal{H}}^{\alpha_{1}}[\mathbf{T}_{1}](\mathbf{
+	 2}}}}(\epsilon_{s_{1}\mu\mathcal{H}}^{\alpha_{1}}(\mathbf{T}_{1})\boldsymbol{\nabla}_{\Phi}lna_{\mu\mathcal{H}}+\boldsymbol{\nabla}_{\Phi}\epsilon_{s_{1}\mu\mathcal{H}}^{\alpha_{1}}(\mathbf{T}_{1}))
+	\epsilon_{s_{2}\mu\mathcal{H}}^{\alpha_{2}}(\mathbf{T}_{2}) \\ \times\int{d\mathbf{R}[f_{s_{1}}^{\alpha_{1}}[\mathbf{T}_{1}](\mathbf{R})-f_{s_{1}\mathcal{H}}^{\alpha_{1}}[\mathbf{T}_{1}](\mathbf{
  R})](R_{s_{2}}^{\alpha_{2}}(\mathbf{T}_{2})-\mathcal{R}_{s_{2}}^{\alpha_{2}}(\mathbf{T}_{2}))\rho_{\mathcal{H}}(\mathbf{R})}.
 \end{multline}
 $\mathbf{f}(\mathbf{R})$ is the vector formed by all the atomic forces for the ionic configuration $\mathbf{R}$ and $\mathbf{f}_{\mathcal{H}}(\mathbf{R})$ are the forces defined by $\mathcal{H}$
@@ -579,7 +579,8 @@ In Fig. \ref{sscha-workflow}
     \node [cloud, below of=check-rho, node distance=2cm] (precision) {Minimum found?};
     \node [block, left of=precision, node distance=6cm] (again) {Continue minimizing};
     \node [block, right of=check-rho, node distance=6cm] (update) {$j_{0}=j$};
-    \node [block, below of=precision, node distance=3cm] (output) {Output quantities $\mathcal{H}=\mathcal{H}_{j}$, $\mathcal{F}_{H^{I}}[\mathcal{H}]$, $\boldsymbol{\mathcal{R}}_{\mathcal{H}}$, $\tilde{\Omega}_{\mu\mathcal{H}}$, and $\boldsymbol{\tilde{\epsilon}}_{s\mu\mathcal{H}}$};
+	\node [block, below of=precision, node distance=3cm] (output) {Output quantities $\mathcal{H}=\mathcal{H}_{j}$, $\mathcal{F}_{H^{I}}[\mathcal{H}]$, $\boldsymbol{\mathcal{R}}_{\mathcal{H}}$, $\Omega^{(S)}_{\mu\mathcal{H}}$, and 
+	$\boldsymbol{\epsilon}_{s\mu\mathcal{H}}$};
     % Draw edges
     \path [line] (init) -- node {$j=0$ and $j_{0}=0$}(createconf);
     \path [line] (createconf) -- (calculate);
@@ -698,9 +699,9 @@ where
 are the non-perturbative nBFC which should not be confused with the perturbative nBFC in Eq. \ref{perturbative-nbfc} that are calculated as $n^{th}$ derivatives of the BOES at the atomic positions defined as the minimum of 
 the BOES. In Eq. \ref{free-energy-hessian} the value $z=0$ of the fourth-order tensor $\boldsymbol{\Lambda}(z)$ is used. For a generic complex number $z$ $\boldsymbol{\Lambda}(z)$ is defined as
 \begin{multline}
- \Lambda_{s_{1}s_{2}s_{3}s_{4}}^{\alpha_{1}\alpha_{2}\alpha_{3}\alpha_{4}}(\mathbf{T}_{1},\mathbf{T}_{2},\mathbf{T}_{3},\mathbf{T}_{4};z)=-\frac{1}{2}\sum_{\mu\nu}\tilde{F}(z,\tilde{\Omega}_{\mu},\tilde{\Omega}_{\nu})\sqrt{\frac{
- 1}{2m_{s_{1}}\tilde{\Omega}_{\mu}}}\tilde{\epsilon}_{s_{1}\mu}^{\alpha_{1}}(\mathbf{T}_{1})\sqrt{\frac{1}{2m_{s_{2}}\tilde{\Omega}_{\nu}}}\tilde{\epsilon}_{s_{2}\nu}^{\alpha_{2}}(\mathbf{T}_{2})\times\\\times\sqrt{\frac{1}{2m_{
- s_{3}}\tilde{\Omega}_{\mu}}}\tilde{\epsilon}_{s_{3}\mu}^{\alpha_{3}}(\mathbf{T}_{3})\sqrt{\frac{1}{2m_{s_{4}}\tilde{\Omega}_{\nu}}}\tilde{\epsilon}_{s_{4}\nu}^{\alpha_{4}}(\mathbf{T}_{4}),
+\Lambda_{s_{1}s_{2}s_{3}s_{4}}^{\alpha_{1}\alpha_{2}\alpha_{3}\alpha_{4}}(\mathbf{T}_{1},\mathbf{T}_{2},\mathbf{T}_{3},\mathbf{T}_{4};z)=-\frac{1}{2}\sum_{\mu\nu}\tilde{F}(z,\Omega^{(S)}_{\mu},\Omega^{(S)}_{\nu})\sqrt{\frac{
+	1}{2m_{s_{1}}\Omega^{(S)}_{\mu}}}\epsilon_{s_{1}\mu\mathcal{H}}^{\alpha_{1}}(\mathbf{T}_{1})\times\\\times\sqrt{\frac{1}{2m_{s_{2}}\Omega^{(S)}_{\nu}}}\epsilon_{s_{2}\nu\mathcal{H}}^{\alpha_{2}}(\mathbf{T}_{2})\sqrt{\frac{1}{2m_{
+		s_{3}}\Omega^{(S)}_{\mu}}}\epsilon_{s_{3}\mu\mathcal{H}}^{\alpha_{3}}(\mathbf{T}_{3})\sqrt{\frac{1}{2m_{s_{4}}\Omega^{(S)}_{\nu}}}\epsilon_{s_{4}\nu\mathcal{H}}^{\alpha_{4}}(\mathbf{T}_{4}),
 \end{multline}
 where $\tilde{F}$ is defined as 
 \begin{multline}
@@ -714,7 +715,7 @@ In all the systems considered in this thesis, $\overset{(4)}{\boldsymbol{\Phi}}\
 \begin{equation}
  \frac{\partial^{2}\mathcal{F}}{\partial\boldsymbol{\mathcal{R}}\partial\boldsymbol{\mathcal{R}}}=\boldsymbol{\Phi}+\overset{(3)}{\boldsymbol{\Phi}}\boldsymbol{\Lambda}(0)\overset{(3)}{\boldsymbol{\Phi}}.
 \end{equation}
-We will define the phonons defined from the free energy as the eigenvalues of
+We will define the phonons defined from the free energy as the eigenvalues ($\Omega^{(F)}_{\mu}(\boldsymbol{q})$) of
 \begin{equation}
  \label{free-energy-dynamical-matrix}
  D_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}(F)}(\mathbf{T}_{1},\mathbf{T}_{2})=\frac{1}{\sqrt{m_{s_{1}}m_{s_{2}}}}\frac{\partial^{2}\mathcal{F}}{\partial\mathcal{R}_{s_{1}}^{\alpha_{1}}(\mathbf{T}_{1})\partial\mathcal{R}_{s_{2}}^{\alpha_{
@@ -781,7 +782,7 @@ as the perturbation theory in section \ref{perturbation-theory-third}. Within th
  \boldsymbol{\Pi}^{(S)}(z)=\overset{(B)}{\boldsymbol{\Pi}}{}^{(S)}(z)=\boldsymbol{M}^{-\frac{1}{2}}\overset{(3)}{\boldsymbol{\Phi}}\boldsymbol{\Lambda}(z)\overset{(3)}{\boldsymbol{\Phi}}\boldsymbol{M}^{-\frac{1}{2}},
 \end{equation} 
 where $M_{ab}=\delta_{ab}m_{a}$ is the mass matrix. With this self-energy, basically, we get an analogous theory of the perturbation theory, but instead of having harmonic frequencies $\omega_{\mu}(\mathbf{q})$ we 
-have the auxiliary phonon frequencies $\tilde{\Omega}_{\mu}(\mathbf{q})$ and instead of having the perturbative 3BFC $\overset{(3)}{\phi}{}_{s_{1}s_{2}s_{2}}^{\alpha_{1}\alpha_{2}\alpha_{3}}(\mathbf{T}_{1},\mathbf{
+have the auxiliary phonon frequencies $\Omega^{(S)}_{\mu}(\mathbf{q})$ and instead of having the perturbative 3BFC $\overset{(3)}{\phi}{}_{s_{1}s_{2}s_{2}}^{\alpha_{1}\alpha_{2}\alpha_{3}}(\mathbf{T}_{1},\mathbf{
  T}_{2},\mathbf{T}_{3})$ we have the non-perturbative ones $\overset{(3)}{\Phi}{}_{s_{1}s_{2}s_{2}}^{\alpha_{1}\alpha_{2}\alpha_{3}}(\mathbf{T}_{1},\mathbf{T}_{2},\mathbf{T}_{3})$. By setting $z=0$ we recover the static limit and these 
  phonons are equivalent to the ones defined from the free energy Hessian ($\boldsymbol{D}^{(F)}$) in 
  section \ref{free-energy-section}. \\

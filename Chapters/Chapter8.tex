@@ -90,9 +90,9 @@ somewhat cures the pathologies. This conclusion has been drawn by Monte Carlo si
 potentials\cite{wang2016anharmonic,los2009scaling,katsnelson2013graphene,zakharchenko2009finite} and by using a 
 membrane continuum  Hamiltonian that mimics the interaction among acoustic 
 modes\cite{mariani2008flexural,amorim2014thermodynamics,de2012bending}. Anharmonic phonons expected experimentally 
-should be calculated from the free energy Hessian, i.e., diagonalizing the  $[\frac{\partial F}{\partial \mathcal{R}_a \partial \mathcal{R}_b}]_{0}/\sqrt{M_aM_b}$ matrix, where $F$ is the free energy calculated including anharmonic 
+should be calculated from the free energy Hessian, i.e., diagonalizing the  $[\frac{\partial F}{\partial \mathcal{R}_a \partial \mathcal{R}_b}]_{0}/\sqrt{m_am_b}$ matrix, where $F$ is the free energy calculated including anharmonic 
 effects and $\boldsymbol{\mathcal{R}}$ the centroid positions that determine the most probable ionic 
-positions\cite{bianco2017second}. If this is the case, as $F$ obeys the same symmetry properties as $V$, a similar 
+positions\cite{bianco2017second}. If this is the case, as $F$ obeys the same symmetry properties as $U$, a similar 
 $\sim q^2$ dispersion would be expected for the ZA mode even if anharmonic effects are included in the calculation 
 of $F$. Actually, measurements done with helium diffraction show a ZA mode with a quadratic 
 dispersion\cite{al2016acoustic,al2015helium,al2018resolving}, though the linearization regime may not be seen and 
@@ -230,8 +230,9 @@ However, as shown in Fig. \ref{static-dynamic},
 	dynamic) calculated at 0 K a), 300 K b), and 2000 K c).}
 \label{static-dynamic}
 \end{figure}
-the static phonons agree with those derived from the dynamical (see section \ref{dynamical-sscha}) theory 
-and are thus good representatives of the physical phonons expected experimentally. \\
+the static phonons ($\Omega^{(F)}_{\mu}(\boldsymbol{q})$) agree with those derived from the dynamical (see section 
+\ref{dynamical-sscha}) theory ($\Omega_{\mu}(\boldsymbol{q})$) and are thus good representatives of the physical 
+phonons expected experimentally. \\
 
 \section{Mean square displacements and linewidths}
 
@@ -288,7 +289,7 @@ rigidity of the membrane and the tensor
 $C^{ijkl}=\lambda\delta^{ij}\delta^{kl}+\mu(\delta^{ik}\delta^{jl}+\delta^{il}\delta^{jk})$ contains the Lame's 
 coefficients $\lambda$ and $\mu$ and Kronecker deltas. As it is a continuum model it only accounts for acoustic 
 modes and the second-order terms in the potential are the harmonic terms. The harmonic frequencies in normal 
-coordinates space are $\omega_{ZA}(q)=\sqrt{\phi_{h}(\boldsymbol{q})/\rho}$, 
+coordinates space are $\omega_{ZA}(q)=\sqrt{\phi_{ZA}(\boldsymbol{q})/\rho}$, 
 $\omega_{LA}(q)=\sqrt{(\phi_{LA}(\boldsymbol{q})/\rho}$, and 
 $\omega_{TA}(q)=\sqrt{\phi_{TA}(\boldsymbol{q})/\rho}$, where $\rho$ is the mass density of the membrane and 
 $\phi_{ZA}(\boldsymbol{q})=\kappa |\boldsymbol{q}|^{4}$, 
@@ -315,7 +316,7 @@ the SCHA equations (see appendix \ref{appendixA} for further derivations)
 \end{equation}   
 \begin{equation}
 \label{tommaso-eq2}
-\frac{\partial\mathcal{F}}{\partial\Phi_{ZA}(\boldsymbol{q})}=0\rightarrow\Phi_{h}(\boldsymbol{q})=\kappa|\boldsymbol{q}|^{4}+2\delta a(\lambda+\mu)|\boldsymbol{q}|^{2}+\frac{\lambda+2\mu}{2\Omega}\sum_{\boldsymbol{k}}g[\Omega_{ZA}^{(S)}(\boldsymbol{k})][|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+2(\boldsymbol{q}\cdot\boldsymbol{k})^{2}].
+\frac{\partial\mathcal{F}}{\partial\Phi_{ZA}(\boldsymbol{q})}=0\rightarrow\Phi_{ZA}(\boldsymbol{q})=\kappa|\boldsymbol{q}|^{4}+2\delta a(\lambda+\mu)|\boldsymbol{q}|^{2}+\frac{\lambda+2\mu}{2\Omega}\sum_{\boldsymbol{k}}g[\Omega_{ZA}^{(S)}(\boldsymbol{k})][|\boldsymbol{q}|^{2}|\boldsymbol{k}|^{2}+2(\boldsymbol{q}\cdot\boldsymbol{k})^{2}].
 \end{equation}
 $\Phi_{ZA}(\boldsymbol{q})$ are the SCHA 2BFC that correspond to the out-of-plane modes and the frequencies are 
 $\Omega_{ZA}^{(S)}(\boldsymbol{q})=\sqrt{\Phi_{ZA}(\boldsymbol{q})/\rho}$. The function $g$ is defined as
@@ -328,7 +329,7 @@ dispersion close to the point $\Gamma$. \\
 
 For calculating the physical phonons, given by the second derivative of the free energy, an analogous formula to 
 Eq. \ref{free-energy-hessian} can be found within the membrane formalism (see appendix \ref{appendixA}). By applying 
-this formula we arrive to the following expression for the physical phonons at $T=0$
+this formula we arrive to the following expression for the physical 2BFC at $T=0$
 \begin{equation}
  \Phi_{ZA}^{(F)}(\boldsymbol{q})=\kappa|\boldsymbol{q}|^{2}+(\gamma-\sigma)|\boldsymbol{q}|^{2}+
  O(|\boldsymbol{q}|^{4}).
@@ -376,8 +377,8 @@ points. The results are shown in Fig. \ref{membrane-results}.
 	the membrane model. We name rotationally invariant (RI) the results considering the full potential in 
 	Eq. \ref{membrane-potential}. We name no rotationally invariant (No RI) the results neglecting the last three 
 	terms in Eq. \ref{membrane-potential}. b) Frequency of the ZA mode in the harmonic approximation, within the 
-	SCHA and obtained from the Hessian of the SCHA at $0$ K and $100$ K in the membrane model. We also include 
-	the SCHA and physical phonons at $100$ K without considering thermal expansion (NTE).}
+	SCHA and obtained from the Hessian of the SCHA at $0$ K and $300$ K in the membrane model. We also include 
+	the SCHA and physical phonons at $300$ K without considering thermal expansion (NTE).}
 \label{membrane-results}
 \end{figure}
 All conclusions drawn with the atomistic model are confirmed and put in solid grounds. Again the ZA phonons obtained 

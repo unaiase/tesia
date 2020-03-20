@@ -85,14 +85,14 @@ at the zone border $Y$ point with irreducible representation $Y_{2}^{+}$ (see Fi
 \label{patterns}
 \end{center}
 \end{figure}
-This means that $\partial^{2}F/\partial Q^{2}$ is proportional to the eigenvalue of the free energy Hessian matrix associated to this irreducible representation: $\omega_{Y_{1}}^{2}$. This frequency can be calculated within the 
+This means that $\partial^{2}F/\partial Q^{2}$ is proportional to the eigenvalue of the free energy Hessian matrix associated to this irreducible representation: $\Omega^{(F)2}_{Y_{1}}$. This frequency can be calculated within the 
 SSCHA using Eq. \ref{free-energy-hessian}. \\
 
-The calculated temperature dependence of $\omega_{Y_{1}}^{2}$ is shown in Fig. \ref{freq-y1-snse} for LDA and PBE for two different lattice volumes in each case.
+The calculated temperature dependence of $\Omega^{(F)2}_{Y_{1}}$ is shown in Fig. \ref{freq-y1-snse} for LDA and PBE for two different lattice volumes in each case.
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.9\linewidth]{Figures/freq-main-snse.eps}
-\caption[Phonon collapse in SnSe.]{$\omega_{Y_{1}}^{2}$ as a function of temperature within LDA and PBE approximations for different lattice volumes (circles). In the LDA we compare the results obtained with the theoretical and 
+	\caption[Phonon collapse in SnSe.]{$\Omega^{(F)2}_{Y_{1}}$ as a function of temperature within LDA and PBE approximations for different lattice volumes (circles). In the LDA we compare the results obtained with the theoretical and 
 experimental\cite{zhao2014ultralow} lattice parameters. In the PBE calculation we present the results for the experimental lattice parameters and a stretched unit cell (see Table \ref{cell-parameters} for the lattice
 parameters). The solid lines correspond to a polynomial fit.}
 \label{freq-y1-snse}
@@ -122,7 +122,7 @@ parameters). The solid lines correspond to a polynomial fit.}
 	$600$ K (LDA Exp.), $400$ K (PBE Exp.), $400$ K (PBE theory), and $400$ K (PBE stretched).}
 \label{cell-parameters}
 \end{table}
-In all cases $\omega_{Y_{1}}^{2}$ is positive at high temperatures, but it rapidly decreases with lowering the temperature, vanishing at $T_{c}$. This phonon collapse is consistent with a second-order phase transition between
+In all cases $\Omega^{(F)2}_{Y_{1}}$ is positive at high temperatures, but it rapidly decreases with lowering the temperature, vanishing at $T_{c}$. This phonon collapse is consistent with a second-order phase transition between
 the $Pnma$ and $Cmcm$. We check that a SSCHA calculation at $T>T_{c}$ ($T=800$ K) starting from the relaxed low-symmetry $Pnma$ phase (relaxed at DFT static level) yields the high-symmetry $Cmcm$ atomic positions for the 
 $\boldsymbol{\mathcal{R}}$ centroids. The SSCHA relaxation is shown in Fig. \ref{atomic-relaxation}.
 \begin{figure}[h]
@@ -157,7 +157,7 @@ the experimental lattice (the results below are also obtained within LDA in the 
 \begin{figure}[h]
 \includegraphics[width=\linewidth]{Figures/spectrum-snse.eps}
 \caption[Phonons in the Lorentzian approximation in SnSe.]{Harmonic and anharmonic phonons in the Lorentzian approximation ($\Omega_{\mu}(\mathbf{q})$). The length of the bars corresponds to the linewidth (full length of the line 
-is the full width at half maximum divided by a factor of $1.5$). The calculations are done within LDA in the experimental structure using SSCHA 3BFC at $800$ K and $\tilde{\Omega}_{\mu}(\mathbf{q})$ at $800$ K.}
+is the full width at half maximum divided by a factor of $1.5$). The calculations are done within LDA in the experimental structure using SSCHA 3BFC at $800$ K and $\Omega^{(S)}_{\mu}(\mathbf{q})$ at $800$ K.}
 \label{spectrum-phonon-snse}
 \end{figure}
 The anharmonic lineshift is large for most of the modes across the 1BZ. Within the harmonic approximation there are five unstable modes: two ($\Gamma_{1}$, $\Gamma_{2}$) at $\Gamma$, two ($Y_{1}$, $Y_{3}$) at $Y$ and one 
@@ -177,7 +177,8 @@ picture. In Fig. \ref{spectral-snse} we show the spectral function keeping the f
 \includegraphics[width=0.80\linewidth]{Figures/ins-snse.eps}
 \caption[Nonperturbative spectral function in SnSe.]{Spectral function of SnSe in the $Cmcm$ phase calculated at a) $600$ K and b) $800$ K using the SSCHA 3BFC at the corresponding temperature. The spectral function at the c) $\Gamma$ 
 and d) Y points at $600$ and $800$ K. The contribution of each mode to the spectral function is also shown at the $\Gamma$ point e) and the Y point f) at $800$ K. Different colors correspond to different modes. All the calculations are 
-performed within LDA in the experimental structure. In each case we use $\tilde{\Omega}_{\mu}(\mathbf{q})$ calculated at the same temperature as the SSCHA 3BFC.}
+performed within LDA in the experimental structure. In each case we use $\Omega^{(S)}_{\mu}(\mathbf{q})$ calculated 
+at the same temperature as the SSCHA 3BFC.}
 \label{spectral-snse}
 \end{center}
 \end{figure}
@@ -195,10 +196,11 @@ and $Y$ calculated with the perturbative and nonperturbatibe 3BFC in Fig. \ref{s
 \begin{center}
 \includegraphics[width=0.75\linewidth]{Figures/spectrum-lorentzian-snse.eps}
 \includegraphics[width=0.75\linewidth]{Figures/spf-p-np-snse.eps}
-\caption[Perturbative and nonperturbative spectral functions in SnSe.]{a) Nonperturbative spectral functions calculated in the Lorentzian approximation at the $\Gamma$ point. b) The same as a) at the point
-$Y$. Dashed vertical lines correspond to $\tilde{\Omega}_{\mu}$ frequencies. c) Nonperturbative (solid lines) and perturbative (dashed lines)
-spectral functions calculated at the $\Gamma$ point. d) The same as c) at the point $Y$. The calculations are done using $\tilde{\Omega}_{\mu}$
-SSCHA frequencies at $800$ K within LDA in the experimental structure. Nonperturbative calculations are done with 3BFC at $800$ K.}
+\caption[Perturbative and nonperturbative spectral functions in SnSe.]{a) Nonperturbative spectral functions calculated in the Lorentzian approximation at the $\Gamma$ point. b) The same as a) at the point $Y$. Dashed vertical lines 
+correspond to $\Omega^{(S)}_{\mu}$ frequencies. c) Nonperturbative (solid lines) and perturbative (dashed lines)
+spectral functions calculated at the $\Gamma$ point. d) The same as c) at the point $Y$. The calculations are done 
+using $\Omega^{(S)}_{\mu}$ SSCHA frequencies at $800$ K within LDA in the experimental structure. Nonperturbative 
+calculations are done with 3BFC at $800$ K.}
 \label{spf-p-np}
 \end{center}
 \end{figure}
@@ -213,7 +215,7 @@ chapter \ref{Chapter4}).
 \begin{figure}[h]
 \includegraphics[width=\linewidth]{Figures/tk-snse.eps}
 \caption[Lattice thermla conductivity of SnSe]{Lattice thermal conductivity of SnSe calculated with perturbative (P) and nonperturbative (NP) at $800$ K compared to the experiments by Ibrahim et al.\cite{ibrahim2017reinvestigation} 
-and Zhao et al.\cite{zhao2014ultralow}. We use the $\tilde{\Omega}_{\mu}(\mathbf{q})$ phonon frequencies calculated at $800$ K at all temperatures. Calculations are performed within LDA using the experimental structure.}
+and Zhao et al.\cite{zhao2014ultralow}. We use the $\Omega^{(S)}_{\mu}(\mathbf{q})$ phonon frequencies calculated at $800$ K at all temperatures. Calculations are performed within LDA using the experimental structure.}
 \label{thermal-snse}
 \end{figure}
 The thermal conductivity of SnSe is very low, mainly because the contribution of optical modes is strongly suppressed by the large anharmonicity and the contribution of acoustic modes is also reduced due to the large 

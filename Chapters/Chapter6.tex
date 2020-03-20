@@ -100,12 +100,12 @@ materials, which is expected for isoelectronic and isostructural compounds.
 As it was already pointed out\cite{chattopadhyay1986neutron,aseginolaza2019phonon}, symmetry\cite{orobengoa2009amplimodes,perez2010mode} dictates that it is possible to have a second-order phase transition between
 the $Cmcm$ and $Pnma$ phases. The transition is dominated by the distortion pattern associated to a non-degenerate mode ($Y_{1}$) at the zone border $Y$ point. This means\cite{aseginolaza2019phonon} that, in a second-order
 displacive phase transition scenario, the transition temperature $T_{c}$ is defined as $\partial^{2}F/\partial Q^{2}(T=T_{c})=0$ where $Q$ is the order parameter that transforms the system continuously from the $Pnma$ ($Q\ne0$) to
-the $Cmcm$ ($Q=0$) phase. As the distortion is dominated by the $Y_{1}$ phonon,  $\partial^{2}F/\partial Q^{2}(T)$ is proportional to $\omega_{Y_{1}}^{2}(T)$, which can be calculated using Eq. \ref{free-energy-hessian}. \\
+the $Cmcm$ ($Q=0$) phase. As the distortion is dominated by the $Y_{1}$ phonon,  $\partial^{2}F/\partial Q^{2}(T)$ is proportional to $\Omega^{(F)2}_{Y_{1}}(T)$, which can be calculated using Eq. \ref{free-energy-hessian}. \\
 
-Figure \ref{transition-sns} shows $\omega_{Y_{1}}^{2}(T)$ within the LDA and PBE approximations.
+Figure \ref{transition-sns} shows $\Omega^{(F)2}_{Y_{1}}(T)$ within the LDA and PBE approximations.
 \begin{figure}[h]
 \includegraphics[width=\linewidth]{Figures/freq-sns.eps}
-\caption[Phonon collapse in SnS.]{$\omega_{Y_{1}}^{2}$ as a function of temperature within LDA and PBE approximations using the experimental lattice parameters (circles). The solid lines correspond to a polynomial fit. We include the pressure component
+	\caption[Phonon collapse in SnS.]{$\Omega^{(F)2}_{Y_{1}}$ as a function of temperature within LDA and PBE approximations using the experimental lattice parameters (circles). The solid lines correspond to a polynomial fit. We include the pressure component
 $P_{zz}$, which is the pressure in the direction where the atoms move in the transition.  This pressure is calculated including the anharmonic vibrational energy within the SSCHA.}
 \label{transition-sns}
 \end{figure}
@@ -127,7 +127,7 @@ the $\Omega_{\mu}(\mathbf{q})$ values of Eq. \ref{lineshift}. The linewidth (Eq.
 \includegraphics[width=0.7\linewidth]{Figures/phonon-sns.eps}
 \includegraphics[width=0.7\linewidth]{Figures/spf-sns.eps}
 \caption[Phonons within the Lorentzian approximation in SnS.]{(a) Harmonic and anharmonic $[\Omega_{\mu}(\mathbf{q})]$ phonon spectra within the Lorentzian approximation. The length of the bars corresponds to the linewidth (full 
-length of the line is the half width at half maximum). The calculations are done within the LDA using SSCHA 3BFCs at $800$ K and $\tilde{\Omega}_{\mu}(\mathbf{q})$ at $800$ K. (b) and (c) $\tilde{\sigma}(\omega)$ spectral functions at 
+	length of the line is the half width at half maximum). The calculations are done within the LDA using SSCHA 3BFCs at $800$ K and $\Omega^{(S)}_{\mu}(\mathbf{q})$ at $800$ K. (b) and (c) $\tilde{\sigma}(\omega)$ spectral functions at 
 the points $\Gamma$ and $Y$, respectively. Solid lines correspond to individual modes and dashed lines are the total spectral functions.}
 \label{lw-sns}
 \end{center}
@@ -155,8 +155,9 @@ the SMA (see chapter \ref{Chapter4}). In Figure \ref{tk-sns} (b) we show the lat
 \begin{center}
 \includegraphics[width=0.8\linewidth]{Figures/tk-paper1.eps}
 \includegraphics[width=0.8\linewidth]{Figures/tk-paper2.eps}
-\caption[Lattice thermal conductivity of SnS and SnSe.]{a) Lattice thermal conductivity of $Cmcm$ SnS calculated within nonperturbative (NP) and perturbative (P) approaches. We have used $\tilde{\Omega}_{\mu}(\mathbf{q})$ at $800$ K 
-for both and SSCHA 3BFCs at $800$ K for the calculation in both cases. Calculations are within the LDA. b) Lattice thermal conductivity of $Cmcm$ SnS and SnSe calculated within the nonperturbative (NP) approach.}
+	\caption[Lattice thermal conductivity of SnS and SnSe.]{a) Lattice thermal conductivity of $Cmcm$ SnS calculated within nonperturbative (NP) and perturbative (P) approaches. We have used $\Omega^{(S)}_{\mu}(\mathbf{q})$ at 
+$800$ K for both and SSCHA 3BFCs at $800$ K for the calculation in both cases. Calculations are within the LDA. b) 
+Lattice thermal conductivity of $Cmcm$ SnS and SnSe calculated within the nonperturbative (NP) approach.}
 \label{tk-sns}
 \end{center}
 \end{figure}
