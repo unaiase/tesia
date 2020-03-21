@@ -9,7 +9,8 @@
 The thermal conductivity of solids is mainly constituted by the electronic and lattice thermal conductivities\cite{tritt2005thermal}. The electronic thermal conductivity accounts for the heat conducted by the free 
 electrons and the lattice thermal conductivity accounts for the heat conduction of phonons. In metallic materials with free electrons, the thermal conductivity to electrical conductivity ratio at low temperature is given by the 
 Wiedemann-Franz law and it states that it is proportional to the Lorenz number multiplied by the temperature\cite{ashcroft1976solid}. In these kind of materials the two contributions, electronic and lattice thermal conductivities, are 
-of the same order of magnitude and both need to be calculated in order to get a good approximation of the total thermal conductivity. Instead, in insulators and semiconductors there are no free electrons and the 
+of the same order of magnitude and both need to be calculated in order to get a good approximation of the total 
+thermal conductivity. Instead, in insulators and  intrinsic semiconductors there are no free electrons and the 
 heat is mainly transported by phonons. As in this thesis we have studied semiconductor materials, we will only describe how to calculate the lattice thermal conductivity. \\
  
 When a gradient of temperature $\boldsymbol{\nabla}T$ is applied to a crystal, there will be a heat flux propagating in the material from the hot to the cold side (see Fig. \ref{heatflow}). 
@@ -65,13 +66,19 @@ scattering mechanisms.}
 By looking at this figure we will describe the different regimes of the thermal conductivity as a function of temperature. At low temperatures (temperatures are always 
 compared to the Debye temperature of the solid) the thermal conductivity increases and at a point starts to saturate, finally, it reaches a maximum and at high temperatures it constantly decreases. At low 
 temperatures the extrinsic scattering is the dominant one because there is not enough energy for populating phonons and creating three phonon scattering events. Therefore, since the mobility of phonons increases 
-with temperature but they do not see the boundaries or defects due to their low values of mobility, the thermal conductivity increases with temperature. At some point, the temperature starts to be high enough for the 
-phonons to feel the boundaries and defects and this starts to saturate the thermal conducitvity of the solid. At the same time normal scattering processes start to be more important. At high temperature, umklapp 
-scattering processes start to dominate the total scattering and the thermal conductivity starts to decrease. \\
+with temperature but they do not see the defects due to their low values of mobility, the thermal conductivity increases with temperature. At some point, the temperature starts to be high enough for the 
+phonons to see defects and, therefore, the thermal conductivity of the solid starts to saturate. At high 
+temperature, umklapp scattering processes start to dominate the total scattering and the thermal conductivity starts 
+to decrease. \\
 
-As we will deal with highly pure solids at temperatures that are higher than the Debye temperature, we will only include the intrinsic scattering in the scattering term in the BTE. Eq. \ref{bte} must be solved 
-self-consistently. In the most general approach\cite{ziman2001electrons}, which assumes that the perturbation from the phonon equilibrium distribution is small, the temperature gradient of the perturbed phonon 
-population is replaced with the temperature gradient of the equilibrium phonon population. Thus, we replace $\frac{\partial n_{\mathbf{q}\mu}}{\partial T}$ by $\frac{\partial n_{B}(\omega_{\mu}(\mathbf{
+As we will deal with highly pure solids at temperatures that are higher than the Debye temperature, we will only 
+include the intrinsic scattering in the scattering term in the BTE. If extrinsic scattering processes are neglected, 
+the thermal conductivity approaches infinity as temperature decreases and decreases monotonically as temperature 
+increases. Therefore, the thermal conductivities calculated in this thesis are only valid in the high temperature 
+region where umklapp processes dominate. \\
+
+Eq. \ref{bte} must be solved self-consistently. In the most general approach\cite{ziman2001electrons}, which assumes 
+that the perturbation from the phonon equilibrium distribution is small, the temperature gradient of the perturbed phonon population is replaced with the temperature gradient of the equilibrium phonon population. Thus, we replace $\frac{\partial n_{\mathbf{q}\mu}}{\partial T}$ by $\frac{\partial n_{B}(\omega_{\mu}(\mathbf{
 q}))}{\partial T}$. In the case of the scattering term in Eq. \ref{bte} we can expand it about its equilibrium value in terms of a first-order perturbation $f^{EX}$ (which is the quantity that we want to get)
 \begin{equation}
  n_{\mathbf{q}\mu}\simeq n_{B}(\omega_{\mu}(\mathbf{q}))+n_{B}(\omega_{\mu}(\mathbf{q}))(n_{B}(\omega_{\mu}(\mathbf{q}))+1)\frac{\partial T}{\partial x}f^{EX}_{\mathbf{q}\mu}.

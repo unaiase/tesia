@@ -57,6 +57,40 @@ shoulders and satellilte peaks, as in other monochalcogenides\cite{ribeiro2018st
 nonperturbative 3BFC. We show that nonperturbative anharmonic effects are not only crucial in the phonon spectra, but also in high-order force-constants, which have a huge impact on the calculated thermal conductivity. 
 $\kappa_{l}$ agrees with experiments\cite{ibrahim2017reinvestigation} only with nonperturbative 3BFC.
 
+\section{Structure and high symmetry points}
+
+The $Cmcm$ and $Pnma$ phases are orthorhombic and their structure  is shown in Fig. \ref{pnma-cmcm}. The $Cmcm$ phase 
+has a centering in the $XZ$ plane of the rectangular conventional cell and contains 4 atoms in the primitive cell. 
+The primitive cell of the $Pnma$ phase is the conventional cell and contains $8$ atoms. The primitive lattice vectors 
+of the $Cmcm$ structure are: $\mathbf{a}_{1}=(a/2,0,c/2)$, $\mathbf{a}_{2}=(-a/2,0,c/2)$ and
+$\mathbf{a}_{3}=(0,b,0)$, where $a$ (long axis), $b$ and $c$ are the lattice constants of the conventional cell. \\
+
+The reciprocal lattice vectors of the $Cmcm$ primitive 1BZ are $\mathbf{b}_{1}=2\pi(1/a,0,1/c)$, 
+$\mathbf{b}_{2}=2\pi(-1/a,0,1/c)$ and $\mathbf{b}_{3}=2\pi(0,1/b,0)$. The high symmetry points and their coordinates 
+used in phonon dispersion figures are listed in table \ref{qpoints}.
+\begin{table}
+\begin{center}
+\begin{tabular*}{0.45\textwidth}{l c}
+ \hline
+ \hline
+ %\multicolumn{4}{|c|}{Country List} \\
+             Symmetry point  & Reduced $\mathbf{q}$ vector  \\
+ \hline
+ $Z$                  &  0.0, 0.0, 0.5  \\
+ $R$                  &  0.0, 0.5, 0.5  \\
+ $S$                  &  0.0, 0.5, 0.0  \\
+ $\Gamma$             &  0.0, 0.0, 0.0  \\
+ $Y$                  &  0.5, -0.5, 0.0  \\
+ $T$                  &  0.5, 0.5, 0.5  \\
+ \hline
+ \hline
+\end{tabular*}
+\end{center}
+\caption{Reduced $\mathbf{q}$ vectors of the high symmetry points in the Brillouin zone of the $Cmcm$ phase. The 
+coordinates are given with respect to the reciprocal lattice vectors of the primitive cell.}
+\label{qpoints}
+\end{table}
+
 \section{Calculation details}
 
 Our calculations are based on DFT using the QUANTUM-ESPRESSO\cite{giannozzi2009quantum} software package. Harmonic phonons were calculated within DFPT and perturbative 3BFC were calculated within DFPT or finite 
@@ -209,7 +243,7 @@ captured by $\overset{(3)}{\boldsymbol{\Phi}}$. \\
 
 \section{Lattice thermal conductivity of $Cmcm$ SnSe}
 
-In Fig. \ref{thermal-snse} we present the lattice thermal conductivity calculated with the SSCHA frequencies ($\tilde{\Omega}_{\mu}(\boldsymbol{q})$) and nonperturbative 3BFC ($\overset{(3)}{\boldsymbol{\Phi}}$). For comparison 
+In Fig. \ref{thermal-snse} we present the lattice thermal conductivity calculated with the SSCHA frequencies ($\Omega^{(S)}_{\mu}(\boldsymbol{q})$) and nonperturbative 3BFC ($\overset{(3)}{\boldsymbol{\Phi}}$). For comparison 
 we also calculate $\kappa_{l}$ substituting $\overset{(3)}{\boldsymbol{\Phi}}$ by $\overset{(3)}{\boldsymbol{\phi}}$. The calculation is performed solving the BTE assuming the single-mode relaxation times approximation (SMA) (see 
 chapter \ref{Chapter4}).
 \begin{figure}[h]
