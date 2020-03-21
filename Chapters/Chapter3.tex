@@ -19,7 +19,7 @@ much smaller than the interatomic distances\cite{ashcroft1976solid}.
 \section{The harmonic approximation}
 \label{harmonic-approximation}
 
-From now on the ions are not frozen and are allowed to move. The harmonic approximations departs from the classical picture where the atoms oscillate around their equilibrium positions. These equilibrium positions are defined as 
+From now on the ions are not frozen and are allowed to move. The harmonic approximation departs from the classical picture where the atoms oscillate around their equilibrium positions. These equilibrium positions are defined as 
 the minimum of the BOES. In this framework the position of the $s^{th}$ atom in the $m^{th}$ unit cell can be described as
 \begin{equation}
  \mathbf{R}_{s}(\mathbf{T}_{m})=\mathbf{T}_{m}+\boldsymbol{\tau}_{s}+\mathbf{u}_{s}(\mathbf{T}_{m})=\mathbf{R}_{s}^{0}(\mathbf{T}_{m})+\mathbf{u}_{s}(\mathbf{T}_{m}),
@@ -38,7 +38,9 @@ with
  \alpha_{n}}(\mathbf{T}_{n})}\vline_{_{_{_{_{_{_{_{_{\mathbf{R}^{0}}}}}}}}}}.
 \end{equation}
 The number of possible $\mathbf{T}$ lattice vectors is equal to the number of unit cells. The atom index $s$ goes from $1$ to $N_{s}$, the number of atoms per unit cell, and $\alpha$ runs on the Cartesian coordinates $x$, $y$, and 
-$z$. $\phi_{s_{1},\dots,s_{n}}^{\alpha_{1},\dots,\alpha_{n}}(\mathbf{T}_{1},\dots,\mathbf{T}_{n})$ are the $n$ body force-constants ($n$BFC). For the 2BFC we omit the index $(2)$. As a rigid shift of the crystal cannot change the energy of the system, 2BFC fulfill the following equality
+$z$. $\overset{(n)}{\phi}{}_{s_{1},\dots,s_{n}}^{\alpha_{1},\dots,\alpha_{n}}(\mathbf{T}_{1},\dots,\mathbf{T}_{n})$ 
+are the $n$ body force-constants ($n$BFC). For the 2BFC we omit the index $(2)$. As a rigid shift of the crystal 
+cannot change the energy of the system, 2BFC fulfill the following equality
 \begin{equation}
 \label{acoustic-sum-rule}
 \sum_{\mathbf{T}_{1},\alpha_{1},s_{1}}\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2})=0,
@@ -211,7 +213,7 @@ induction $\boldsymbol{\mathsf{D}}$
 \end{equation}
 \begin{equation}
  \label{conjugate-field}
- \boldsymbol{\mathsf{D}}\equiv -\frac{4\pi}{\Omega}\frac{\partial E}{\partial \boldsymbol{\mathsf{E}}}=\frac{4\pi}{\Omega}Z^{*}\mathbf{u}+\epsilon_{\infty}\boldsymbol{\mathsf{E}}.
+	\boldsymbol{\mathsf{D}}\equiv -\frac{4\pi}{\Omega_{cell}}\frac{\partial E}{\partial \boldsymbol{\mathsf{E}}}=\frac{4\pi}{\Omega_{cell}}Z^{*}\mathbf{u}+\epsilon_{\infty}\boldsymbol{\mathsf{E}}.
 \end{equation}
 
 In the absence of free external charges, the Maxwell equations give
@@ -225,9 +227,9 @@ In the absence of free external charges, the Maxwell equations give
 \end{equation}
 For transverse modes, where the electric field is perpendicular to the phonon momentum, Eq. \ref{rotational} gives $\boldsymbol{\mathsf{E}}_{T}=0$ ($\boldsymbol{\mathsf{E}}_{T}$ is the transversal component of the electric 
 field), and Eq. \ref{conjugate-force} $\mathbf{f}_{T}=-m\omega_{0}^{2}\mathbf{u}$. Therefore the transverse frequency is $\omega_{T}=\omega_{0}$. For longitudinal modes, where the electric field is parallel to the phonon 
-momentum, Eq. \ref{divergency} gives $\boldsymbol{\mathsf{D}}_{L}=0$ and Eq. \ref{conjugate-field} gives $\boldsymbol{\mathsf{E}}_{L}=-4\pi Z^{*}/(\Omega\epsilon_{\infty})\mathbf{u}$ ($\boldsymbol{\mathsf{E}}_{L}$ is the 
-longitudinal component of the electric field). Eq. \ref{conjugate-force} gives $\mathbf{f}_{L}=-(m\omega_{0}^{2}+4\pi Z^{*2}/(\Omega\epsilon_{\infty}))\mathbf{u}$. Therefore, the longitudinal frequency 
-is $\omega_{L}=\sqrt{\omega_{0}^{2}+4\pi Z^{*2}/(\Omega\epsilon_{\infty}m)}$. These results clearly show that the frequency of longitudinal modes in the long-wavelength limit have an extra term that arises due to the 
+momentum, Eq. \ref{divergency} gives $\boldsymbol{\mathsf{D}}_{L}=0$ and Eq. \ref{conjugate-field} gives $\boldsymbol{\mathsf{E}}_{L}=-4\pi Z^{*}/(\Omega_{cell}\epsilon_{\infty})\mathbf{u}$ ($\boldsymbol{\mathsf{E}}_{L}$ is the 
+longitudinal component of the electric field). Eq. \ref{conjugate-force} gives $\mathbf{f}_{L}=-(m\omega_{0}^{2}+4\pi Z^{*2}/(\Omega_{cell}\epsilon_{\infty}))\mathbf{u}$. Therefore, the longitudinal frequency 
+is $\omega_{L}=\sqrt{\omega_{0}^{2}+4\pi Z^{*2}/(\Omega_{cell}\epsilon_{\infty}m)}$. These results clearly show that the frequency of longitudinal modes in the long-wavelength limit have an extra term that arises due to the 
 coupling with the electric field. The formalism can be generalized for crystals with any symmetry and in these cases the Born effective charges and the electronic dielectric constant will be tensors. \\
 
 The first-principles calculation of $\epsilon_{\infty}^{\alpha\beta}$ and $Z_{s}^{*\alpha\beta}$ can be started from the definition of the macroscopic electric polarization of the medium, 
@@ -294,7 +296,8 @@ self-consistent harmonic approximation (SCHA) formulated by Hooton\cite{hooton19
 the free energy calculated with a trial harmonic density matrix for the same system, which does not necessarily coincide with the harmonic density matrix obtained from the harmonic approximation. \\
 
 In this thesis we have applied the perturbative method\cite{paulatto2013anharmonic} and a stochastic implementation of the SCHA, the so called stochastic self-consistent 
-harmonic approximation (SSCHA)\cite{errea2014anharmonic,errea2013first}. In the following sections we will discuss both of them.
+harmonic approximation (SSCHA)\cite{errea2013first,errea2014anharmonic,bianco2017second,monacelli2018pressure}. In 
+the following sections we will discuss both of them.
 
 \section{Perturbation theory of the phonon-phonon interaction}
 \label{perturbation-theory-third}
@@ -379,14 +382,14 @@ the effect of an optical phonon at the $\Gamma$ point and it accounts for the re
 does not contribute\cite{calandra2007anharmonic}. On the contrary, if Wyckoff positions have free parameters\cite{aroyo2011crystallography}, the $T_{O}$ diagram accounts for the effect of quantum and thermal fluctuations in the 
 internal coordinates. An alternative way of accounting for the $T_{O}$ diagram is to minimize the free energy within the quasiharmonic approximation (QHA)\cite{bonini2007phonon}. For the internal coordinates that minimize the 
 free energy within the QHA the $T_{O}$ diagram vanishes. These equilibrium atomic positions might be different from $\mathbf{R}^{0}$ obtained from the minimum of the BOES. The $T_{A}$ diagram includes the effect of an acoustic 
-phonon in the limit of $\mathbf{q}\rightarrow\Gamma$ and accounts for the cell parameters relaxation. It can also be calculated within the QHA\cite{bonini2007phonon}.  
+phonon in the limit of $\mathbf{q}\rightarrow\Gamma$ and accounts for the cell parameters relaxation. It can also be calculated within the QHA.  
 \\
 
-From $\boldsymbol{G}(z)$ we can calculate the one-phonon spectral function as $\tilde{\sigma}=-2ImTr[\boldsymbol{G}(\omega+i0^{+})]$. Peaks in the spectral functions as a function of $\omega$ signal the presence of 
+From $\boldsymbol{G}(z)$ we can calculate the one-phonon spectral function as $\tilde{\sigma}=-2ImTr[\boldsymbol{G}(\omega+i0^{+})]$. Peaks in the spectral function as a function of $\omega$ signal the presence of 
 collective vibrational excitations, phonon quasiparticles, having certain energies. The sharper are the peaks the more lasting are these quasiparticles, their lifetime being inversely proportional to the width. A broad 
 spectral function means that anharmonicity has removed the existence of quasiplarticles with definite identity. This kind of information can be probed with inelastic scattering experiments, for example.  \\ 
 
-We take advantage of the lattice periodicity also in this case and, Fourier transforming with respect to the lattice indices, we consider separated spectral functions $-2ImTr[\boldsymbol{G}(\boldsymbol{q},\omega+i0^{+})]$ for 
+We take advantage of the lattice periodicity also in this case and Fourier transforming with respect to lattice indices, we consider separated spectral functions $-2ImTr[\boldsymbol{G}(\boldsymbol{q},\omega+i0^{+})]$ for 
 each $\boldsymbol{q}$ point in the 1BZ. We find convenient to multiply the spectral function by $\omega/2\pi$
 \begin{equation}
 \label{sigma-nodiagonal}
@@ -405,7 +408,7 @@ The spectral function is then given by
 2}}\right]+\\\sum_{\mu}\frac{1}{2}\left[\frac{1}{\pi}\frac{Im\mathcal{Z}_{\mu}(\mathbf{q},\omega)}{[\omega+Re\mathcal{Z}_{\mu}(\mathbf{q},\omega)]^{2}+[Im\mathcal{Z}_{\mu}(\mathbf{q},\omega)]^{2}}\right]
 \end{multline}
 with $\mathcal{Z}_{\mu}(\mathbf{q},\omega)=\sqrt{\omega_{\mu}^{2}(\mathbf{q})+\Pi_{\mu}(\mathbf{q},\omega+i0^{+})}$, where we consider the principal value of the square root.  
-The spectral function calculated in Eq. \ref{cross-section-new} does not have any given line shape. Depending on the line shape of the spectral function we can divide the materials into three groups: harmonic, weakly 
+The spectral function calculated in Eq. \ref{cross-section-new} does not have any given line shape. Depending on the line shape of the spectral function we can divide the phonon quasiparticles into three groups: harmonic, weakly 
 anharmonic and strongly or full anharmonic materials. In Fig. \ref{instoy} we qualitatively describe the cross section of the three groups.
 \begin{figure}[h]
 \begin{center}
@@ -434,7 +437,9 @@ where
  \label{linewidth}
  \Gamma_{\mu}(\mathbf{q})=-Im\mathcal{Z}_{\mu}(\mathbf{q},\omega_{\mu}(\mathbf{q}))
 \end{equation}
-are shift (with respect to the harmonic frequency) and half-width at half-maximum (HWHM) of mode $\mu$, respectively. In this limit, the lifetime of a phonon $\mu\mathbf{q}$ is defined as the inverse linewidth 
+are shift (with respect to the harmonic frequency) and half-width at half-maximum (HWHM) of mode $\mu$, respectively. 
+In this limit, the lifetime of a phonon $\mu\mathbf{q}$ is defined as the inverse line width (full width at half 
+maximum, FWHM)
 \begin{equation}
 \label{lifetime}
  \tau_{\mu}(\mathbf{q})=\frac{1}{2\Gamma_{\mu}(\mathbf{q})}.
@@ -444,11 +449,14 @@ functions are not Lorentzians and they can show strongly anharmonic features suc
 point of view, since more peaks than modes can appear or two modes can appear as only one. \\
 
 As we can see from Eqs. \ref{loop-diagram}, \ref{bubble-diagram}, and \ref{tadpole-diagram} in order to account for the phonon-phonon interactions at the lowest-order in perturbation theory we need to calculate 
-the $D_{s_{1},s_{2},s_{3}}^{\alpha_{1}\alpha_{2}\alpha_{3}}(\mathbf{T}_{1},\mathbf{T}_{2},\mathbf{T}_{3})$ and $D_{s_{1}s_{1},s_{3}s_{4}}^{\alpha_{1}\alpha_{2}\alpha_{3}\alpha_{4}}(\mathbf{T}_{1},\mathbf{T}_{2},\mathbf{T}_{
-3},\mathbf{T}_{4})$ anharmonic dynamical matrices. The straightforward way of calculating these coefficients is to apply finite differences in the BOES\cite{li2014shengbte}. However, this method requires calculation in 
-supercells that are commensurate with the phonons that interact, therefore, they require calculations in big supercells in order to achieve convergence. Furthermore, the number of elements to be determined is huge, complicating 
-the finite difference approach. An alternative, and more elegant, procedure for the third-order anharmonic coefficients is to apply the $2n+1$ theorem\cite{gonze1989density} which allows to get the $(2n+1)^{th}$ derivatives 
-of the BOES with the knowledge of the $n^{th}$ derivatives of the electronic density. The latter method is more complicated to implement\cite{paulatto2013anharmonic} but allows to make the calculations in the unit cell 
+the $\overset{(3)}{D}{}_{s_{1},s_{2},s_{3}}^{\alpha_{1}\alpha_{2}\alpha_{3}}(\mathbf{T}_{1},\mathbf{T}_{2},\mathbf{T}_{3})$ and $\overset{(4)}{D}{}_{s_{1}s_{1},s_{3}s_{4}}^{\alpha_{1}\alpha_{2}\alpha_{3}\alpha_{4}}(\mathbf{T}_{1},\mathbf{T}_{2},\mathbf{T}_{3},\mathbf{T}_{4})$ anharmonic dynamical matrices. The straightforward way of calculating these 
+coefficients is to apply finite differences in the BOES\cite{li2014shengbte}. However, this method requires 
+calculation in supercells that are commensurate with the phonons that interact, therefore, they require calculations 
+in big supercells in order to achieve convergence. Furthermore, the number of elements to be determined is huge, 
+complicating the finite difference approach. An alternative, and more elegant, procedure for the third-order 
+anharmonic coefficients is to apply the $2n+1$ theorem\cite{gonze1989density} which allows to get the $(2n+1)^{th}$ 
+derivatives of the BOES with the knowledge of the $n^{th}$ derivatives of the electronic density. The latter method 
+is more complicated to implement\cite{paulatto2013anharmonic} but allows to make the calculations in the unit cell 
 independently of the modes that are considered.  
 
 \section{The stochastic self-consistent harmonic approximation}
@@ -497,11 +505,11 @@ trial potential which is harmonic is that $\rho_{\mathcal{H}}$ and $F_{\mathcal{
  R})u_{s_{2}}^{\alpha_{2}}[\mathbf{T}_{2}](\mathbf{R})\right),
 \end{multline}
 \begin{equation}
-	F_{\mathcal{H}}=\sum_{\mu}\left[\frac{\Omega^{(S)}_{\mu\mathcal{H}}}{2}+Tln\left(1-e^{-\beta\Omega^{(S)}_{\mu\mathcal{H}}}\right)\right],
+	F_{\mathcal{H}}=\sum_{\mu}\left[\frac{\Omega^{(S)}_{\mu}}{2}+Tln\left(1-e^{-\beta\Omega^{(S)}_{\mu}}\right)\right],
 \end{equation}
-where $A_{\mathcal{H}}$ is a normalization constant and $a_{\mu\mathcal{H}}=\sqrt{coth(\beta\Omega^{(S)}_{\mu\mathcal{H}}/2)/(2\Omega^{(S)}_{\mu\mathcal{H}})}$ is called the normal length. $\rho_{\mathcal{H}}(\mathbf{R})$ 
+where $A_{\mathcal{H}}$ is a normalization constant and $a_{\mu\mathcal{H}}=\sqrt{coth(\beta\Omega^{(S)}_{\mu}/2)/(2\Omega^{(S)}_{\mu})}$ is called the normal length. $\rho_{\mathcal{H}}(\mathbf{R})$ 
 is the probability to find the system described by $\mathcal{H}$ in the general ionic configuration $\mathbf{R}$. In normal coordinates space, $\rho_{\mathcal{H}}(\mathbf{R})$, is a product of Gaussians and the normal length 
-is their standard deviation. $\Omega^{(S)}_{\mu}(\mathbf{q})$ and $\epsilon_{s\mu}^{\alpha (S)}(\mathbf{q})$ are the frequencies and polarization vectors that diagonalize the SSCHA dynamical 
+is their standard deviation. $\Omega^{(S)}_{\mu}(\mathbf{q})$ and $\epsilon_{s\mu\mathcal{H}}^{\alpha (S)}(\mathbf{q})$ are the frequencies and polarization vectors that diagonalize the SSCHA dynamical 
 matrix $D_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}(S)}(\mathbf{q})=\Phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{q})/(\sqrt{m_{s_{1}}m_{s_{2}}})$. \\
 
 The only parameters that contains the trial harmonic potential are $\mathcal{R}_{s}^{\alpha}(\mathbf{T})$ and $\Phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2})$ with respect to 
@@ -528,7 +536,7 @@ For the CG minimization we need the expressions of the function and its derivati
 \end{multline}
 $\mathbf{f}(\mathbf{R})$ is the vector formed by all the atomic forces for the ionic configuration $\mathbf{R}$ and $\mathbf{f}_{\mathcal{H}}(\mathbf{R})$ are the forces defined by $\mathcal{H}$
 \begin{equation}
- f_{s_{1}\mathcal{H}}^{\alpha_{1}}[\mathbf{T}_{1}](\mathbf{R})=-\sum_{s_{2}\alpha_{2}\mathbf{T}_{2}}\Phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2})u_{s_{2}}^{\alpha_{2}}[\mathbf{
+	f_{s_{1}\mathcal{H}}^{\alpha_{1}}[\mathbf{T}_{1}](\mathbf{R})=-\sum_{s_{2}\alpha_{2}\mathbf{T}_{2}}\Phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2})\mathsf{u}_{s_{2}}^{\alpha_{2}}[\mathbf{
  T}_{2}](\mathbf{R}).
 \end{equation}
 The only non-analytic terms in these equations are the integrals and the actual forces $\mathbf{f}(\mathbf{R})$. \\
@@ -542,7 +550,8 @@ stochastically by using the relationship
 The set of $\mathbf{R}_{I}$ ionic configurations is created according to the distribution $\rho_{\mathcal{H}}(\mathbf{R})$. $\mathbf{O}$ is any operator that only depends on the ionic configuration and $N_{c}$ is the number of 
 configurations we have created. The equality in Eq. \ref{stochastic} is hold when $N_{c}\rightarrow\infty$. As we are dealing with a stochastic framework, the statistical error scales as $1/\sqrt{N_{c}}$. The advantage 
 of using Eq. \ref{stochastic} is that the gradients in Eqs. \ref{minim2} and \ref{minim3} can be calculated by getting the forces acting on atoms in supercells in the configurations given by $\rho_{\mathcal{H}}$, which are easily 
-extracted from electronic ground state calculations thanks to the Hellmann-Feynman theorem. \\
+extracted from electronic ground state calculations thanks to the Hellmann-Feynman 
+theorem\cite{feynman1939forces}. \\
 
 Once we calculate the gradient of the free energy, we can apply the CG method to minimize the free energy. The flowchart of the SSCHA method is the following. An initial guess $\mathcal{H}_{0}$ (in the first 
 step $j=0$) is made for the trial Hamiltonian. This guess can be the harmonic Hamiltonian. However, it needs to be stable so we need to find another guess for materials with imaginary frequencies in the harmonic approximation. This 
@@ -716,6 +725,7 @@ In all the systems considered in this thesis, $\overset{(4)}{\boldsymbol{\Phi}}\
  \frac{\partial^{2}\mathcal{F}}{\partial\boldsymbol{\mathcal{R}}\partial\boldsymbol{\mathcal{R}}}=\boldsymbol{\Phi}+\overset{(3)}{\boldsymbol{\Phi}}\boldsymbol{\Lambda}(0)\overset{(3)}{\boldsymbol{\Phi}}.
 \end{equation}
 We will define the phonons defined from the free energy as the eigenvalues ($\Omega^{(F)}_{\mu}(\boldsymbol{q})$) of
+the Fourier transform of
 \begin{equation}
  \label{free-energy-dynamical-matrix}
  D_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}(F)}(\mathbf{T}_{1},\mathbf{T}_{2})=\frac{1}{\sqrt{m_{s_{1}}m_{s_{2}}}}\frac{\partial^{2}\mathcal{F}}{\partial\mathcal{R}_{s_{1}}^{\alpha_{1}}(\mathbf{T}_{1})\partial\mathcal{R}_{s_{2}}^{\alpha_{

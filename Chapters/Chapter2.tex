@@ -143,7 +143,7 @@ where $\epsilon_{j}$ are Lagrange multipliers related to the normalization condi
  -\frac{1}{2}\boldsymbol{\nabla}^{2}\phi_{0_{i}}(\mathbf{x})+\left(\frac{\delta E_{ext}[n_{0}]}{\delta n_{0}(\mathbf{x})}+\frac{\delta E_{H}[n_{0}]}{\delta n_{0}(\mathbf{x})}+\frac{
  \delta E_{xc}[n_{0}]}{\delta n_{0}(\mathbf{x})}\right)\phi_{0_{i}}(\mathbf{x})=\epsilon_{i}\phi_{0_{i}}(\mathbf{x}).
 \end{equation}
-We know from the second Hohenberg and Khon theorem that the density that minimizes the total electronic energy functional is the exact ground state energy. Since eletrons are fermions, the ground-state density is
+We know from the second Hohenberg and Khon theorem that the density that minimizes the total electronic energy functional is the exact ground state energy. Since electrons are fermions, the ground-state density is
 \begin{equation}
  \label{ground-state-density}
  n_{0}(\mathbf{x})=\sum_{i}f_{0_{i}}|\phi_{0_{i}}(\mathbf{x})|^{2},
@@ -243,7 +243,7 @@ self-consistent way as explained in Fig. \ref{self-consistent-cycle}
 \label{self-consistent-cycle}
 \end{figure}
 First of all we need a guess for the electronic density, which, for instance, can be the sum of the atomic electronic densities. With this density we can build the 
-Kohn-sham potential and solve the Kohn-Sham equation. With the eigenfunctions of the solution we can build a new density and repeat the process. We will consider that the total energy of the system is converged when 
+Kohn-sham potential and solve the Kohn-Sham equations. With the eigenfunctions of the solution we can build a new density and repeat the process. We will consider that the total energy of the system is converged when 
 the difference in energy between two steps, $\Delta E$, is smaller than the threshold energy $\epsilon$. \\
 
 In this thesis we have used the $Quantum$ $Espresso$\cite{giannozzi2009quantum} software package which implements the self-consistent procedure and uses a plane wave basis to expand the Kohn-Sham wave functions as 
@@ -269,9 +269,9 @@ among themselves. On top of that, the core electrons have a non-negligible contr
 %oscillation, we would need many $\mathbf{G}$ vectors in Eq. \ref{planewave-expansion} to expand their wave functions. These oscillations make also the valence electronic wave functions oscillate due to the need of 
 %orthogonality. \\
 
-In order to account for the core electrons in the external potential and make the valence electronic wave functions smother close to the nucleus, pseudopotentials are used. First of all the electronic wave function of the 
+In order to account for the core electrons in the external potential and make the valence electronic wave functions smother close to the nucleus, pseudopotentials are used. First of all the electronic wave functions of the 
 atoms are calculated within DFT. Once we have all the wave functions, we have to decide which ones are core and which ones valence electrons. We take the valence electronic wave functions $\phi_{i}(\mathbf{x})$ and we 
-create new wave functions $\phi_{i}^{ps}$ which are smother than the original ones below a given radius $R_{c}$. With this pseudo wave function of the valence electrons we will solve the Schr\"{o}dinger equation in 
+create new wave functions $\phi_{i}^{ps}(\mathbf{x})$ which are smother than the original ones below a given radius $R_{c}$. With this pseudo wave function of the valence electrons we will solve the Schr\"{o}dinger equation in 
 Eq. \ref{kohn-sham} and we will get the potential $v_{i}^{ps}(\mathbf{x})$ for each orbital channel. That pseusopotential is the one we will use to build $v_{ext}$, which takes into account the inner electrons of 
 the ion. \\
 
