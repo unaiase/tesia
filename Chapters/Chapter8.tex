@@ -106,6 +106,30 @@ stochastic implementation (SSCHA) making use of a machine learning atomistic pot
 functional theory\cite{rowe2018development}. We also solve the SCHA equations in a membrane continuum Hamiltonian 
 which provides results at smaller momenta.
 
+\section{Crystal structure}
+
+The direct lattice of graphene has a hexagonal structure with two atoms per unit cell. The two vectors of the direct 
+lattice in Cartesian coordinates are the following:
+\begin{itemize}
+ \item $\mathbf{a}_{1}=a(1,0)$,
+ \item $\mathbf{a}_{2}=a\left(-\frac{1}{2},\frac{\sqrt{3}}{2}\right)$,
+\end{itemize}
+where one atom is in the origin and the other in $a(0,1/\sqrt{3})$. Then, the reciprocal lattice is:
+\begin{itemize}
+ \item $\mathbf{b}_{1}=\frac{2\pi}{a}\left(1,\frac{1}{\sqrt{3}}\right)$,
+ \item $\mathbf{b}_{2}=\frac{2\pi}{a}\left(0,\frac{2}{\sqrt{3}}\right)$.
+\end{itemize}
+The reciprocal lattice of graphene is equivalent to the direct one but rotated by $60$ degrees. The high symmetry 
+points in the first Brillouin zone of graphene are $K=\frac{2\pi}{a}\left(\frac{1}{3},\frac{1}{\sqrt{3}}\right)$ and 
+$M=\frac{2\pi}{a}\left(0,\frac{1}{\sqrt{3}}\right)$. We can see the Wigner-Seitz cell and the 1BZ of graphene in 
+Fig. \ref{wigner}.
+\begin{figure}[htb]
+\includegraphics[width=0.45\linewidth]{Figures/ws.pdf}
+\includegraphics[width=0.45\linewidth]{Figures/brillouin.pdf}
+\caption{Wigner-Seitz cell and first Brillouin zone of graphene.}
+\label{wigner}
+\end{figure}
+
 \section{Empirical potential benchmark and calculation parameters}
 
 For calculating the forces needed in the SSCHA minimization\cite{errea2014anharmonic} we have used an empirical 

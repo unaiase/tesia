@@ -166,12 +166,17 @@ $\boldsymbol{\mathcal{R}}$ centroids. The SSCHA relaxation is shown in Fig. \ref
 \label{atomic-relaxation}
 \end{center}
 \end{figure}
-As we can see, the atomic positions relax to the high symmetry positions $0$, $1$, and $0.5$ with an error smaller than $0.04$ $a_{0}$. Thus, the $Pnma$ is not a local minimum of the free energy above $T_{c}$, ruling out the first-order transition. Our result disagrees with the conclusions drawn in Ref. \cite{dewandre2016two}.
-First, because at the $T_{c}$ calculated in that reference, which is estimated by comparing the free energies of the two structures, the $Y_{1}$ mode of the $Cmcm$ phase is stable, which implies this phase is a local minimum 
-at $T_{c}$, and, thus, the transition is of first-order type. And second, because it is argued that the instability at $Y$ is produced by a slight change in the in-plane lattice parameters induced by temperature
-(from $c/b>1$ to $c/b<1$), which makes the transition a two-step process. We do not see this sudden appearance of the instability. \\
+As we can see, the atomic positions relax to the high symmetry positions $0$, $1$, and $0.5$ with an error smaller than $0.04$ $a_{0}$. Thus, the $Pnma$ is not a local minimum of the free energy above $T_{c}$, ruling out the 
+first-order transition. Our result disagrees with the conclusions drawn in Ref. \cite{dewandre2016two}.
+First, because at the $T_{c}$ calculated in that reference, which is estimated by comparing the free energies of the 
+two structures, the $Y_{1}$ mode of the $Cmcm$ phase is stable, which implies this phase is a local minimum 
+at $T_{c}$, and, thus, the transition is of first-order type. And second, because it is argued that the instability 
+at $Y$ is produced by a slight change in the in-plane lattice parameters induced by temperature (from $c/b>1$ to 
+$c/b<1$), which makes the transition a two-step process. We do not see this sudden appearance of the instability 
+(see appendix \ref{volume-effects}). \\
 
-The obtained transition temperature strongly depends on the exchange-correlation functional and volume, as it occurs in similar monochalcogenides\cite{ribeiro2018strong}. Within LDA $T_{c}$ ranges between $168$ K with 
+The obtained transition temperature strongly depends on the exchange-correlation functional and volume, as it occurs in similar monochalcogenides\cite{ribeiro2018strong} and in the harmonic phonons (see appendix \ref{volume-effects}). 
+Within LDA $T_{c}$ ranges between $168$ K with 
 theoretical lattice parameters and $616$ K with experimental lattice parameters. Within PBE $T_{c}$ barely changes between the experimental and theoretical lattice parameters. We attribute this result to the fact that 
 the in-plane lattice parameters $b$ and $c$ are in good agreement with the experimental results within PBE, while LDA clearly underestimates them. The theoretical lattice parameters are estimated neglecting vibrational 
 contributions to the free energy. In order to estimate the role of the thermal expansion, we calculate the stress tensor including vibrational contributions at the anharmonic level as explained in 
@@ -195,7 +200,7 @@ is the full width at half maximum divided by a factor of $1.5$). The calculation
 \label{spectrum-phonon-snse}
 \end{figure}
 The anharmonic lineshift is large for most of the modes across the 1BZ. Within the harmonic approximation there are five unstable modes: two ($\Gamma_{1}$, $\Gamma_{2}$) at $\Gamma$, two ($Y_{1}$, $Y_{3}$) at $Y$ and one 
-($R_{1}$) at $R$. These instabilities appear when we do the harmonic calculation in the experimental cell, in the theoretically relaxed cell only appear the instabilities $\Gamma_{1}$ and $Y_{1}$. The instabilities at $\Gamma$ would cause ferroelectric transitions\cite{skelton2016anharmonicity,hong2016electronic}, but they suffer an anharmonic renormalization that prevents it. $Y_{3}$ and $R_{1}$ are also stabilized by anharmonic effects. The $Y_{1}$ mode however remains unstable at $600$ K and it is stabilized after the transition (see Fig. \ref{spectral-snse}). In Fig. \ref{phonon-exp} we compare our harmonic and anharmonic phonons with available INS experimental results\cite{chatterji2018soft}. 
+($R_{1}$) at $R$. These instabilities appear when we do the harmonic calculation in the experimental cell, in the theoretically relaxed cell only appear the instabilities $\Gamma_{1}$ and $Y_{1}$ (see appendix \ref{volume-effects}). The instabilities at $\Gamma$ would cause ferroelectric transitions\cite{skelton2016anharmonicity,hong2016electronic}, but they suffer an anharmonic renormalization that prevents it. $Y_{3}$ and $R_{1}$ are also stabilized by anharmonic effects. The $Y_{1}$ mode however remains unstable at $600$ K and it is stabilized after the transition (see Fig. \ref{spectral-snse}). In Fig. \ref{phonon-exp} we compare our harmonic and anharmonic phonons with available INS experimental results\cite{chatterji2018soft}. 
 \begin{figure}[h]
 \includegraphics[width=\linewidth]{Figures/exp-vs-theory.eps}
 \caption[Comparison of phonons in the Lorentzian approximation and INS experiments.]{Harmonic and anharmonic phonons in the Lorentzian approximation ($\Omega_{\mu}(\mathbf{q})$). We include experimental points\cite{chatterji2018soft}.}
@@ -228,8 +233,8 @@ $\overset{(3)}{\boldsymbol{\Phi}}$ by $\overset{(3)}{\boldsymbol{\phi}}$, substi
 and $Y$ calculated with the perturbative and nonperturbatibe 3BFC in Fig. \ref{spf-p-np}.
 \begin{figure}[th]
 \begin{center}
-\includegraphics[width=0.75\linewidth]{Figures/spectrum-lorentzian-snse.eps}
-\includegraphics[width=0.75\linewidth]{Figures/spf-p-np-snse.eps}
+\includegraphics[width=0.8\linewidth]{Figures/spectrum-lorentzian-snse.eps}
+\includegraphics[width=0.8\linewidth]{Figures/spf-p-np-snse.eps}
 \caption[Perturbative and nonperturbative spectral functions in SnSe.]{a) Nonperturbative spectral functions calculated in the Lorentzian approximation at the $\Gamma$ point. b) The same as a) at the point $Y$. Dashed vertical lines 
 correspond to $\Omega^{(S)}_{\mu}$ frequencies. c) Nonperturbative (solid lines) and perturbative (dashed lines)
 spectral functions calculated at the $\Gamma$ point. d) The same as c) at the point $Y$. The calculations are done 
@@ -252,8 +257,8 @@ chapter \ref{Chapter4}).
 and Zhao et al.\cite{zhao2014ultralow}. We use the $\Omega^{(S)}_{\mu}(\mathbf{q})$ phonon frequencies calculated at $800$ K at all temperatures. Calculations are performed within LDA using the experimental structure.}
 \label{thermal-snse}
 \end{figure}
-The thermal conductivity of SnSe is very low, mainly because the contribution of optical modes is strongly suppressed by the large anharmonicity and the contribution of acoustic modes is also reduced due to the large 
-scattering among themselves and with the $\Gamma_1$ mode. We compare our results with the values obtained by Zhao et al.\cite{zhao2014ultralow} above the transition at $800$ K. We also include in the figure the results 
+The thermal conductivity of SnSe is very low, mainly because the contribution of optical modes is strongly suppressed by the large anharmonicity and the contribution of acoustic modes is also reduced due to the large scattering among 
+themselves and with the $\Gamma_1$ mode (further detail in appendic \ref{thermal-properties}). We compare our results with the values obtained by Zhao et al.\cite{zhao2014ultralow} above the transition at $800$ K. We also include in the figure the results 
 obtained by Ibrahim et al.\cite{ibrahim2017reinvestigation} above $600$ K (only the in-plane $\kappa_l$ is reported at these temperatures) in the $Pnma$ phase. Even if the results belong to different phases, comparing our 
 calculations for the $Cmcm$ phase with those obtained in the latter work is insightful because the thermal conductivity of these two phases is very similar close to the transition, as expected in a second-order phase 
 transition. Though direct comparison should be taken carefully for this reason, the lattice thermal conductivity is in better agreement with experimental results using $\overset{(3)}{\boldsymbol{\Phi}}$ instead 
