@@ -33,7 +33,115 @@ ferroelectric state with a higher transition temperature than its bulk counterpa
 properties make very interesting the theoretical study of the ferroelectric transition in SnSe. \\
 
 The structure and physical and thermoelectric properties of bulk SnSe have been explained in chapter \ref{Chapter5}. 
-As can be seen in Fig. , monolayer SnSe has the same structure and space group but in the unit cell it only contains 
-one bilayer with four atoms per unit cell (the bulk has two bilayers with 8 atoms). The electronic band gap is 
-bigger in the monolayer\cite{wang2015thermoelectric,hu2017high}, due to quantum confinement effects, and the lattice 
-thermal conductivity is of the same order of magnitude\cite{wang2015thermoelectric,hu2017high}.
+As can be seen in Fig. \ref{pnma-cmcm-mono}, monolayer SnSe has the same structure and space group of the bulk, but 
+in the unit cell it only contains one bilayer with four atoms per unit cell (the bulk has two bilayers with 8 atoms). 
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.8\linewidth]{Figures/monolayer-structure.pdf}
+\caption{Monolayer SnSe crystal structure in the a) $Cmcm$ and b) $Pnma$ phases.}
+\label{pnma-cmcm-mono}
+\end{center}
+\end{figure}
+The electronic band gap is bigger in the monolayer\cite{wang2015thermoelectric,hu2017high}, due to quantum 
+confinement effects, and the lattice thermal conductivity is of the same order of 
+magnitude\cite{wang2015thermoelectric,hu2017high} compared to the bulk counterpart. According to several theoretical 
+works, monolayer SnSe in the $Pnma$ structure could have a higher thermoelectric figure of 
+merit\cite{wang2015thermoelectric,hu2017high} than bulk $Pnma$. This makes very interesting the study of the 
+thermoelectric properties of monolayer SnSe in the $Cmcm$ structure as in the bulk it is a better thermoelectric 
+material than the $Pnma$ phase at high temperatures. \\
+
+Experimentally, there are no measurements for the ferroelectric phase transition temperature. However, monolayer 
+SnSe seems to crystallize in the $Pnma$ structure at room temperature\cite{li2013single}, therefore, the 
+ferroelectric transition temperature must be higher. According to theoretical studies applying molecular dynamics 
+simulations\cite{mehboudi2016structural,barraza2018tuning} the transition temperature is around $200$ K. Another 
+work applying DFT and an effective Hamiltonian claims\cite{fei2016ferroelectricity} that the transition occurs at 
+around $320$ K. Regarding the thermoelectric properties in monolayer SnSe in the $Cmcm$ structure, there are no 
+theoretical calculations of the lattice thermal conductivity as it has an imaginary phonon frequency at the $\Gamma$ 
+point, which hinders the calculation of $\kappa_{l}$. \\
+
+In this chapter we study the vibrational properties of $Cmcm$ monolayer SnSe and the associated transition to the 
+ferroelectric state. According to our calculations monolayer SnSe suffers a second-order phase transition to the 
+ferroelectric $Pnma$ phase at around $200$ K. We also try to calculate the lattice thermal conductivity of $Cmcm$ 
+monolayer SnSe, howerver, we will see that it is not possible due to the two dimensional character of the system. 
+This last result will be an extra  motivation for the last chapter of this thesis.
+
+\section{Crystal structure and high symmetry points}
+
+The $Cmcm$ and $Pnma$ phases are orthorhombic and their two dimensional structure is shown in 
+Fig. \ref{pnma-cmcm-mono}. The primitive cell of both structures contains 4 atoms in the primitive cell. The 
+primitive lattice vectors of both structures are: $\mathbf{a}_{1}=(a,0)$ and $\mathbf{a}_{2}=(0,b)$, where $a$ and 
+$b$ are the lattice constants. \\
+
+The reciprocal lattice vectors of the $Cmcm$ primitive 1BZ are $\mathbf{b}_{1}=2\pi(1/a,0)$ and 
+$\mathbf{b}_{2}=2\pi(0,1/b)$. The high symmetry points and their coordinates used in phonon dispersion figures are 
+listed in table \ref{qpoints-mono}.
+\begin{table}
+\begin{center}
+\begin{tabular*}{0.45\textwidth}{l c}
+ \hline
+ \hline
+ %\multicolumn{4}{|c|}{Country List} \\
+             Symmetry point  & Reduced $\mathbf{q}$ vector  \\
+ \hline
+ $X$                  &  0.5, 0.0 \\
+ $Y$                  &  0.0, 0.5 \\
+ $R$                  &  0.5, 0.5  \\
+ $\Gamma$             &  0.0, 0.0  \\
+ \hline
+ \hline
+\end{tabular*}
+\end{center}
+\caption{Reduced $\mathbf{q}$ vectors of the high symmetry points in the Brillouin zone of the $Cmcm$ and $Pnma$ 
+phases.}
+\label{qpoints-mono}
+\end{table}
+
+\section{Calculation details}
+
+Our calculations are based on DFT using the QUANTUM-ESPRESSO\cite{giannozzi2009quantum} software package. Harmonic 
+phonons were calculated within DFPT. Anharmonic phonons were calculated within the SSCHA. For the 
+exchange-correlation interaction we use the Perdew-Burke-Ernzerhof (PBE) generalized gradient approximation and the 
+local density approximation (LDA) with ultrasoft (US) and Projector Augmented Wave method (PAW) pseudopotentials 
+respectively. We use a cutoff energy of 70 Ry and a grid of $16\times16$  $\boldsymbol{k}$ points to sample the first 
+Brillouin zone. For the harmonic phonon calculations we use a $6\times6$ supercell for both harmonic and SSCHA 
+calculation.
+
+\section{Ferroelectric phase transition}
+
+As it has been already pointed out in chapters \ref{Chapter5} and \ref{Chapter6}, 
+symmetry\cite{orobengoa2009amplimodes,perez2010mode} dictates that it is possible to have a second-order phase 
+transition between the $Cmcm$ and $Pnma$ phases. In the case of the monolayer, The transition is dominated by the 
+distortion pattern associated to a mode ($\Gamma_{1}$) at the zone center $\Gamma$ point. The distortion of this 
+mode is shown in Fig. . 
+Figure \ref{transition-mono} shows $\Omega^{(F)2}_{Y_{1}}(T)$ within the LDA and PBE approximations.
+\begin{figure}[h]
+\includegraphics[width=\linewidth]{Figures/transition-mono.pdf}
+	\caption{Distortion pattern associated to the $\Gamma_{1}$ mode.}
+\label{transition-mono}
+\end{figure}
+This mode is different in the bulk, where the distortion is associated to a mode at the 
+zone border. In the monolayer the second bilayer does not exist, that is why the mode is at the zone center. This 
+fact makes that the bulk $Pnma$ is centrosymmetryc but not the monolayer $Pnma$, which has no inversion symmetry 
+and it is a ferroelectric phase. \\
+
+In a second-order displacive phase transition scenario, the transition temperature $T_{c}$ is defined as 
+$\partial^{2}F/\partial Q^{2}(T=T_{c})=0$ where $Q$ is the order parameter that transforms the system continuously 
+from the $Pnma$ ($Q\ne0$) to the $Cmcm$ ($Q=0$) phase. As the distortion is dominated by the $\Gamma_{1}$ phonon, 
+$\partial^{2}F/\partial Q^{2}(T)$ is proportional to $\Omega^{(F)2}_{\Gamma_{1}}(T)$, which can be calculated using 
+Eq. \ref{free-energy-hessian}. \\
+
+Figure \ref{freq-transition-mono} shows $\Omega^{(F)2}_{Y_{1}}(T)$ within the LDA and PBE approximations.
+\begin{figure}[h]
+\includegraphics[width=\linewidth]{Figures/freq-sns.eps}
+        \caption[Phonon collapse in SnS.]{$\Omega^{(F)2}_{Y_{1}}$ as a function of temperature within LDA and PBE approximations using the experimental lattice parameters (circles). The solid lines correspond to a polynomial fit. We include the pressure component
+$P_{zz}$, which is the pressure in the direction where the atoms move in the transition.  This pressure is calculated including the anharmonic vibrational energy within the SSCHA.}
+\label{freq-transition-mono}
+\end{figure}
+As in the case of SnSe\cite{aseginolaza2019phonon}, the second derivative of the free energy is positive at high temperatures and decreases lowering the temperature. For both approximations, it becomes negative at the critical
+temperature $T_c$, which means that the $Cmcm$ phase is not any longer a minimum of the free energy and the structure distorts adopting the $Pnma$ phase. $T_{c}$ strongly depends on the approximation of the exchange-correlation
+functional: it is $600$ K for LDA and $465$ K for PBE. Our LDA calculation agrees better with the experimental value, around $900$ K\cite{chattopadhyay1986neutron}. We associate the discrepancy between LDA and PBE  to the different
+pressures obtained in the transition direction, $P_{zz}$. In fact, as shown in the case of SnSe\cite{aseginolaza2019phonon}, $T_{c}$ depends strongly on the pressure in this $z$ direction. The pressure in
+Figure \ref{transition} includes anharmonic vibrational effects on the energy following the procedure outlined in section \ref{scha-stress-section}. For the same lattice parameter LDA displays a much smaller pressure, as
+generally LDA predicts smaller lattice volumes than PBE. The underestimation with respect to experiments may be attributed to the small supercell size used for the SSCHA calculations ($2\times2\times2$). Even if
+experimentally $T_{c}$ is around $100$ K higher in SnS than in SnSe, our LDA calculations give basically the same transition temperature for both materials as $T_{c}=616$ K in SnSe according to our previous
+calculations\cite{aseginolaza2019phonon}. However, within PBE SnSe does show a lower transition temperature since $T_c=299$ K for SnSe\cite{aseginolaza2019phonon}.
