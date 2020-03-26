@@ -9,8 +9,9 @@
 The adiabatic BOA allowed us to separate the electronic and ionic problems. So far, we have shown how to solve the electronic part. Electronic degrees of freedom are responsible for many properties 
 of solids, nevertheless, many other, such us, thermal and electrical resistivity arise due to ionic degrees of freedom. \\
 
-In order to study the dynamics of ions we have to solve the nuclear Schr\"odinger equation Eq. \ref{schrodinger-nuclei}. As we saw in Eq. \ref{nuclei}, the ions move in a potential given by the previously calculated 
-electronic total ground state energy which is usually named Born-Oppenheimer Energy Surface (BOES). \\
+In order to study the dynamics of ions we have to solve the nuclear Schr\"odinger equation in Eq. 
+\ref{schrodinger-nuclei}. As we saw in Eq. \ref{nuclei}, the ions move in a potential given by the previously 
+calculated electronic total ground state energy which is usually named Born-Oppenheimer Energy Surface (BOES). \\
 
 The BOES has around $10^{23}$ degrees of freedom and it is an extremely complex energy landscape, therefore, the nuclear Hamiltonian is unsolvable unless the problem is simplified by applying approximations. The first non-trivial 
 approximation we can adopt to solve this problem is the harmonic approximation, which is a low-order expansion of the BOES in the atomic displacements and is justified by the fact that in many solids the atomic displacements are 
@@ -59,6 +60,7 @@ that the stress tensor in Eq. \ref{bo-stress} does not include any effect from t
 Since we are at a local minimum of the BOES, the first-order term $U_{1}$ is zero by definition, thus, the lowest-order approximation we can do for the nuclear motion is to keep the terms up to second-order in the atomic 
 displacements. The lowest-order approximation is named harmonic approximation and the harmonic Hamiltonian reads
 \begin{equation}
+\label{harmonic_hamiltonian}
  H^{I}(\mathbf{R})\simeq\sum_{\mathbf{T}s\alpha}\frac{(P_{s}^{\alpha}(\mathbf{T}))^{2}}{2m_{s}}+U(\mathbf{R}^{0})+U_{2}(\mathbf{R}).
 \end{equation}
 We will name higher-order terms ($n>2$) anharmonic terms. It is convenient to Fourier transform the 2BFC  with the following general Fourier transform for any $n$BFC
@@ -192,9 +194,104 @@ Equivalently, as the kinetic energy has no first-order contribution,
 The combination of Eqs. \ref{sternheimer1}, \ref{sternheimer2}, and \ref{sternheimer3} forms a set of equations for the perturbed system that can be solved in a self-consistent way. The formalism we have 
 described can give the derivatives of the density that we need to calculate the dynamical matrices and it is implemented in the $Quantum$ $Espresso$ software package\cite{giannozzi2009quantum}.
 
+\section{Phonons from the finite displacements method}
+
+In this section we will see how we can calculate the 2BFC just by calculating the forces given by the 
+Hellman-Feynman theorem in different supercells. In the harmonic approximation the $\alpha_{1}$ Cartesian component 
+of the force exerted on the atom at position 
+$\mathbf{R}_{s_{1}}(\mathbf{T}_{1})$ is 
+\begin{equation}
+f_{s_{1}}^{\alpha_{1}}(\mathbf{T}_{1})=-\sum_{\mathbf{T}_{2}s_{2}\alpha_{2}}\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(
+\mathbf{T}_{1},\mathbf{T}_{2})u_{s_{2}}^{\alpha_{2}}(\mathbf{T}_{2}),
+ \label{forces_formula}
+\end{equation}
+We can arrive to that expression just by taking the derivative of Eq. \ref{harmonic_hamiltonian}. The 2BFC can be 
+calculated as
+\begin{equation}
+\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2})=-\frac{f_{s_{1}}^{\alpha_{1}}(\mathbf{T}_{1})}{u_{s_{2}}^{\alpha_{2}}(\mathbf{T}_{2})},
+ \label{forward}
+\end{equation}
+by displacing once at a time all the atoms of the lattice along the three Cartesian components by 
+$u_{s_{2}}^{\alpha_{2}}(\mathbf{T}_{2})$, and calculating the forces 
+$f_{s_{1}}^{\alpha_{1}}(\mathbf{T}_{1})$ induced on the atom at $\mathbf{R}_{s_{1}}(\mathbf{T}_{1})$. Eq. 
+\ref{forward} computes the 2BFC using forward differences. For numerical reasons it can be advantageous in some 
+cases to use central differences. \\
+
+Since the crystal is invariant under translations of any lattice vector, it is only necessary to displace atoms in 
+one primitive cell and calculate the forces induced on all the other atoms of the crystal. From now on we will 
+assume that this is understood and put simply $\mathbf{T}_{2}=0$. \\
+
+It is really important to point that the 2BFC 
+$\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2})$ in Eq. \ref{perturbative-nbfc} are the 
+2BFC in the infinite lattice, therefore, there is no restriction on the lattice vectors $\mathbf{T}$. However, the 
+calculation of the 2BFC expressed in Eqs. \ref{forces_formula} and \ref{forward} can only be done in supercell 
+geometry. Using the supercell geometry we can only calculate the dynamical matrices at wavevectors that are 
+reciprocal lattice vectors of the superlattice, so, without further approximations the calculation of the infinite 
+lattice 2BFC is impossible. \\
+
+Our assumption will be the following: The infinite lattice 2BFC 
+$\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2})$ vanishes when the separation 
+$|\mathbf{R}_{s_{1}}(\mathbf{T}_{1})-\mathbf{R}_{s_{2}}(\mathbf{T}_{2})|$ is such that the positions 
+$\mathbf{R}_{s_{1}}(\mathbf{T}_{1})$ and $\mathbf{R}_{s_{2}}(\mathbf{T}_{2})$ lie in different Wigner-Seitz (WS) 
+cells\cite{ashcroft1976solid} of the chosen superlattice. Mathematically speaking, we are assuming that if we 
+take the WS cell centered on $\mathbf{R}_{s_{2}}(\mathbf{T}_{2})$, then the infinite lattice value of the 2BFC 
+$\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2})$ is equally zero if 
+$\mathbf{R}_{s_{1}}(\mathbf{T}_{1})$ is in a different WS cell; it is equal to the supercell value if 
+$\mathbf{R}_{s_{1}}(\mathbf{T}_{1})$ is within the same WS cell; and it is equal to the supercell value divided by 
+an integer $P$ if $\mathbf{R}_{s_{1}}(\mathbf{T}_{1})$ lies on the boundary of the same WS cell, where $P$ 
+is the number of WS cells having $\mathbf{R}_{s_{1}}(\mathbf{T}_{1})$ on their boundary. With this assumption, the 
+2BFC will converge to the correct infinite lattice values as the dimensions of the supercell are systematically 
+increased. \\
+
+So far we have described a method to properly converge the 2BFC to the infinite lattice 2BFC by calculating the 
+forces in different supercell sizes. For that purpose, we need to move all the atoms one by one and calculate the 
+resulting forces in all the other atoms. However, it is not always necessary to 
+displace all the atoms in the primitive cell, since the use of symmetries can simplify this task. If there is a 
+symmetry operation $S$ that relates two atomic positions in the primitive cell and the whole crystal is invariant 
+under such transformation, then it is not necessary to move both atoms. Imagine we calculate the 2BFC 
+$\phi_{s1}(\mathbf{T}, 0)$. Then, if the atom $1$ and $2$ are related by the symmetry 
+operation $S$, we can write 
+\begin{equation}
+	\phi_{s2}(\mathbf{T},0)=\mathbf{B}(S)\phi_{\lambda_{s_{1}}(S)1}(\mathbf{T},0)\mathbf{B}(S^{-1}),
+\end{equation}
+where $\mathbf{B}(S)$ is the $3\times3$ matrix representing the point group part of $S$ in Cartesian coordinates and 
+$\lambda_{s}(S)$ indicates the atom of the crystal where the atom $\mathbf{R}_{s}(\mathbf{T})$ is brought because of 
+the action of the symmetry operation $S$. This procedure is repeated then for all the atoms of the primitive cell. \\
+
+In principle each atom has to be displaced along the three Cartesian directions. It is sometimes convenient to
+displace the atoms along some special directions so as to maximize the number of symmetry operations still present 
+in the perturbed (once the atoms displaced) supercell. \\
+
+Using symmetries it is possible to reduce the number of displacementsr. If applying a point group 
+symmetry operation $W$ to the displacement vector $\mathbf{u}_{1}$ one obtains a vector $\mathbf{u}_{2}$ which is 
+linearly independent from $\mathbf{u}_{1}$, then the force field that would be induced by the displacement 
+$\mathbf{u}_{2}$ can be calculated by 
+\begin{equation}
+\mathbf{f}_{s_{1}s_{2}}^{2}(\mathbf{T}_{1},0)=\mathbf{B}(W)\mathbf{f}_{\lambda_{s_{1}}(W^{-1}),s_{2}}^{1}(\mathbf{T}_{1},0).
+\end{equation}
+$\mathbf{f}_{s_{1}s_{2}}^{2}(\mathbf{T}_{1},0)$ is the force on atom $\mathbf{R}_{s_{1}}(\mathbf{T}_{1})$ when 
+applied displacement $\mathbf{u}_{2}$ to atom $\mathbf{R}_{s_{2}}(0)$.
+If we can not find a linearly independent displacement using the previous idea one has to displace the atom along a 
+chosen independent direction and perform another calculation. This must be done until a set of three independent 
+directions is found. \\
+
+In principle, well defined 2BFC are invariant under the point group symmetry operations of the 
+crystal. However, this is not automatically guaranteed by the procedure we have just described, because in general, 
+the crystal is not harmonic and therefore Eq. \ref{forward} is only an approximation. So, the 2BFC must be 
+symmetrized with respect to the point group operations of the crystal
+\begin{equation}
+\phi_{s_{1}s_{2}}(\mathbf{T}_{1},0)=\frac{1}{N_{W}}\sum_{W}\mathbf{B}(W)\phi_{\lambda_{s_{1}}(W),s_{2}}(\mathbf{T}_{1},0)\mathbf{B}(W)^{-1},
+\end{equation}
+$N_{W}$ being the number of point group operations. 
+The symmetrization of the 2BFC removes all even-order anharmonicities. It must be pointed that the harmonic 
+approximation becomes better and better as the displacement are made smaller and smaller. However, this can 
+not be taken to the limit because the smaller are the displacements the smaller are the induced forces and the level 
+of accuracy is always finite. So, one can not make too small displacements but usually a fraction of a percentage of 
+the nearest neighbour distance is a good compromise. \\
+
 \section{Long-wavelength vibrations in polar materials}
 
-The formalism we have described so far is general for metals and insulators and allows the calculation of phonon frequencies and polarization vectors at any $\mathbf{q}$ point of the 1BZ. However, in polar 
+The formalisms we have described so far is general for metals and insulators and allows the calculation of phonon frequencies and polarization vectors at any $\mathbf{q}$ point of the 1BZ. However, in polar 
 semiconductors and insulators, the long-range character of the Coulomb forces gives rise to macroscopic electric fields for longitudinal optic (LO) phonons in the long-wavelength limit. In this limit, phonons 
 are coupled to these macroscopic electric fields and their energy is shifted. \\
 
