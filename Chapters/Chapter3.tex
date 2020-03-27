@@ -195,6 +195,7 @@ The combination of Eqs. \ref{sternheimer1}, \ref{sternheimer2}, and \ref{sternhe
 described can give the derivatives of the density that we need to calculate the dynamical matrices and it is implemented in the $Quantum$ $Espresso$ software package\cite{giannozzi2009quantum}.
 
 \section{Phonons from the finite displacements method}
+\label{finite_displacement}
 
 In this section we will see how we can calculate the 2BFC just by calculating the forces given by the 
 Hellman-Feynman theorem in different supercells. In the harmonic approximation the $\alpha_{1}$ Cartesian component 
@@ -291,9 +292,11 @@ the nearest neighbour distance is a good compromise. \\
 
 \section{Long-wavelength vibrations in polar materials}
 
-The formalisms we have described so far is general for metals and insulators and allows the calculation of phonon frequencies and polarization vectors at any $\mathbf{q}$ point of the 1BZ. However, in polar 
-semiconductors and insulators, the long-range character of the Coulomb forces gives rise to macroscopic electric fields for longitudinal optic (LO) phonons in the long-wavelength limit. In this limit, phonons 
-are coupled to these macroscopic electric fields and their energy is shifted. \\
+The formalisms we have described so far are general for metals and insulators and allow the calculation of phonon 
+frequencies and polarization vectors at any $\mathbf{q}$ point of the 1BZ. However, in polar semiconductors and 
+insulators, the long-range character of the Coulomb forces gives rise to macroscopic electric fields for longitudinal 
+optic (LO) phonons in the long-wavelength limit. In this limit, phonons are coupled to these macroscopic electric 
+fields and their energy is shifted. \\
 
 The physics of the system can be understood within the Huang's phenomenological model\cite{born1954dynamical} for a cubic lattice with two atoms per unit cell and easily generalized for any kind of lattice. This is 
 just a simple model to understand the physics behind this effect. The most general quadratic expression of the energy as a function of the phonon optic coordinates $\mathbf{u}$ and the electric field $\boldsymbol{\mathsf{E}}$ is
@@ -399,8 +402,9 @@ the following sections we will discuss both of them.
 \section{Perturbation theory of the phonon-phonon interaction}
 \label{perturbation-theory-third}
 
-In this section we will see what is the correction that the lowest-order perturbation theory makes to the harmonic result. We will see that this approximation not only gives an anharmonic lineshift to the harmonic 
-frequencies, but also an anharmonic linewidth, which makes clear that the non-interacting phonons do not diagonalize the anharmonic Hamiltonian and they will no longer have an infinite lifetime. Therefore, this 
+In this section we will see what is the correction that the lowest-order perturbation theory makes to the harmonic 
+result. We will see that this approximation not only gives an anharmonic line shift to the harmonic 
+frequencies, but also an anharmonic line width, which makes clear that the non-interacting phonons do not diagonalize the anharmonic Hamiltonian and they will no longer have an infinite lifetime. Therefore, this 
 theory will allow us to calculate properties, such as, the lattice thermal conductivity and the phonon spectral function measured in inelastic scattering experiments. \\
 
 We will name the harmonic Hamiltonian $H^{(0)}$ and we will treat the anharmonic part as a small perturbation of $H^{(0)}$. With $G_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2};z)$ and 
@@ -547,14 +551,15 @@ point of view, since more peaks than modes can appear or two modes can appear as
 
 As we can see from Eqs. \ref{loop-diagram}, \ref{bubble-diagram}, and \ref{tadpole-diagram} in order to account for the phonon-phonon interactions at the lowest-order in perturbation theory we need to calculate 
 the $\overset{(3)}{D}{}_{s_{1},s_{2},s_{3}}^{\alpha_{1}\alpha_{2}\alpha_{3}}(\mathbf{T}_{1},\mathbf{T}_{2},\mathbf{T}_{3})$ and $\overset{(4)}{D}{}_{s_{1}s_{1},s_{3}s_{4}}^{\alpha_{1}\alpha_{2}\alpha_{3}\alpha_{4}}(\mathbf{T}_{1},\mathbf{T}_{2},\mathbf{T}_{3},\mathbf{T}_{4})$ anharmonic dynamical matrices. The straightforward way of calculating these 
-coefficients is to apply finite differences in the BOES\cite{li2014shengbte}. However, this method requires 
-calculation in supercells that are commensurate with the phonons that interact, therefore, they require calculations 
-in big supercells in order to achieve convergence. Furthermore, the number of elements to be determined is huge, 
-complicating the finite difference approach. An alternative, and more elegant, procedure for the third-order 
-anharmonic coefficients is to apply the $2n+1$ theorem\cite{gonze1989density} which allows to get the $(2n+1)^{th}$ 
-derivatives of the BOES with the knowledge of the $n^{th}$ derivatives of the electronic density. The latter method 
-is more complicated to implement\cite{paulatto2013anharmonic} but allows to make the calculations in the unit cell 
-independently of the modes that are considered.  
+coefficients is to apply finite differences in the BOES\cite{li2014shengbte} as explained in section 
+\ref{finite_displacement} for the second-order. However, this method requires calculation in supercells that are 
+commensurate with the phonons that interact, therefore, they require calculations in big supercells in order to 
+achieve convergence. Furthermore, the number of elements to be determined is huge, complicating the finite difference 
+approach. An alternative, and more elegant, procedure for the third-order anharmonic coefficients is to apply the 
+$2n+1$ theorem\cite{gonze1989density} which allows to get the $(2n+1)^{th}$ derivatives of the BOES with the 
+knowledge of the $n^{th}$ derivatives of the electronic density. The latter method is more complicated to 
+implement\cite{paulatto2013anharmonic} but allows to make the calculations in the unit cell independently of the 
+modes that are considered.  
 
 \section{The stochastic self-consistent harmonic approximation}
 \label{sscha-basics}
@@ -606,7 +611,7 @@ trial potential which is harmonic is that $\rho_{\mathcal{H}}$ and $F_{\mathcal{
 \end{equation}
 where $A_{\mathcal{H}}$ is a normalization constant and $a_{\mu\mathcal{H}}=\sqrt{coth(\beta\Omega^{(S)}_{\mu}/2)/(2\Omega^{(S)}_{\mu})}$ is called the normal length. $\rho_{\mathcal{H}}(\mathbf{R})$ 
 is the probability to find the system described by $\mathcal{H}$ in the general ionic configuration $\mathbf{R}$. In normal coordinates space, $\rho_{\mathcal{H}}(\mathbf{R})$, is a product of Gaussians and the normal length 
-is their standard deviation. $\Omega^{(S)}_{\mu}(\mathbf{q})$ and $\epsilon_{s\mu\mathcal{H}}^{\alpha (S)}(\mathbf{q})$ are the frequencies and polarization vectors that diagonalize the SSCHA dynamical 
+is their standard deviation. $\Omega^{(S)}_{\mu}(\mathbf{q})$ and $\epsilon_{s\mu\mathcal{H}}^{\alpha}(\mathbf{q})$ are the frequencies and polarization vectors that diagonalize the SSCHA dynamical 
 matrix $D_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}(S)}(\mathbf{q})=\Phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{q})/(\sqrt{m_{s_{1}}m_{s_{2}}})$. \\
 
 The only parameters that contains the trial harmonic potential are $\mathcal{R}_{s}^{\alpha}(\mathbf{T})$ and $\Phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2})$ with respect to 
@@ -842,7 +847,7 @@ $\boldsymbol{\phi}$, the following can be obtained\cite{bianco2017second}
  \mathbf{D}^{(S)}\simeq\mathbf{D}+\overset{(T)}{\boldsymbol{\Pi}}{}^{(0)}+\overset{(L)}{\boldsymbol{\Pi}}{}^{(0)},
 \end{equation}
 where $\overset{(T)}{\boldsymbol{\Pi}}{}^{(0)}$ and $\overset{(L)}{\boldsymbol{\Pi}}{}^{(0)}$ are the tadpole and loop contributions to the harmonic self-energy and $\mathbf{D}$ is the harmonic dynamical matrix. From 
-this equation it is clear that, in the perturbative limit, the anharmonic lineshift of the auxiliary $\mathbf{D}^{(S)}$ dynamical matrix with respect to the harmonic one is given by the tadpole and loop 
+this equation it is clear that, in the perturbative limit, the anharmonic line shift of the auxiliary $\mathbf{D}^{(S)}$ dynamical matrix with respect to the harmonic one is given by the tadpole and loop 
 contributions to the self-energy. It is extremely interesting to note that the SSCHA could be used to include the loop and tadpole diagrams to the self-energy in materials where the perturbation theory works but 
 the calculation of the 4BFC is too cumbersome. Then, the remaining bubble self-energy could be added on top of the SSCHA by using perturbation theory\cite{paulatto2015first}. \\
 
@@ -859,7 +864,7 @@ In the next section we describe a possible dynamic extension for the SSCHA studi
 \subsection{Dynamical properties of solids and phonon frequencies within the SSCHA}
 \label{dynamical-sscha}
 
-So far we have seen that the SSCHA is a static theory, which means that we cannot access dynamical properties, such as, the linewidth of a phonon which makes impossible the calculation of spectral functions or 
+So far we have seen that the SSCHA is a static theory, which means that we cannot access dynamical properties, such as, the line width of a phonon which makes impossible the calculation of spectral functions or 
 the thermal conductivity of a solid. \\
 
 Within the SSCHA it is possible to formulate a valid ansatz in order to calculate dynamical properties of crystals. The main idea behind this ansatz is to take the non-perturbative 

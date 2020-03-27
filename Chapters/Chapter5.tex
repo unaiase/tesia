@@ -101,7 +101,7 @@ within DFPT we use norm-conserving (NC) pseudopotentials. We use a cutoff energy
 we use a $6\times6\times6$ supercell and a $2\times2\times2$ one for the 3BFC. For the SSCHA calculation we use a 
 $2\times2\times2$ supercell. Then, for the anharmonic phonon dispersion, we interpolate the difference between the 
 harmonic and anharmonic force-constants in the $2\times2\times2$ supercell to the $6\times6\times6$ and we add it to 
-the $6\times6\times6$ harmonic force-constants (see appendix \ref{appendixB} for more details). For the linewidth 
+the $6\times6\times6$ harmonic force-constants (see appendix \ref{appendixB} for more details). For the line width 
 calculations we use a $20\times20\times20$ $\boldsymbol{q}$ points grid obtained by Fourier interpolation with a 
 smearing of $1$ cm$^{-1}$. For the thermal conductivity calculation we use a $10\times10\times10$ grid of 
 $\boldsymbol{q}$ points to sample the first Brillouin zone. We have done calculations in denser grids to test 
@@ -196,11 +196,11 @@ First of all, in Fig. \ref{spectrum-phonon-snse}, we compare the harmonic phonon
 the experimental lattice (the results below are also obtained within LDA in the experimental lattice).
 \begin{figure}[h]
 \includegraphics[width=\linewidth]{Figures/spectrum-snse.eps}
-\caption[Phonons in the Lorentzian approximation in SnSe.]{Harmonic and anharmonic phonons in the Lorentzian approximation ($\Omega_{\mu}(\mathbf{q})$). The length of the bars corresponds to the linewidth (full length of the line 
+\caption[Phonons in the Lorentzian approximation in SnSe.]{Harmonic and anharmonic phonons in the Lorentzian approximation ($\Omega_{\mu}(\mathbf{q})$). The length of the bars corresponds to the line width (full length of the line 
 is the full width at half maximum divided by a factor of $1.5$). The calculations are done within LDA in the experimental structure using SSCHA 3BFC at $800$ K and $\Omega^{(S)}_{\mu}(\mathbf{q})$ at $800$ K.}
 \label{spectrum-phonon-snse}
 \end{figure}
-The anharmonic lineshift is large for most of the modes across the 1BZ. Within the harmonic approximation there are five unstable modes: two ($\Gamma_{1}$, $\Gamma_{2}$) at $\Gamma$, two ($Y_{1}$, $Y_{3}$) at $Y$ and one 
+The anharmonic line shift is large for most of the modes across the 1BZ. Within the harmonic approximation there are five unstable modes: two ($\Gamma_{1}$, $\Gamma_{2}$) at $\Gamma$, two ($Y_{1}$, $Y_{3}$) at $Y$ and one 
 ($R_{1}$) at $R$. These instabilities appear when we do the harmonic calculation in the experimental cell, in the theoretically relaxed cell only appear the instabilities $\Gamma_{1}$ and $Y_{1}$ (see appendix \ref{volume-effects}). The instabilities at $\Gamma$ would cause ferroelectric transitions\cite{skelton2016anharmonicity,hong2016electronic}, but they suffer an anharmonic renormalization that prevents it. $Y_{3}$ and $R_{1}$ are also stabilized by anharmonic effects. The $Y_{1}$ mode however remains unstable at $600$ K and it is stabilized after the transition (see Fig. \ref{spectral-snse}). In Fig. \ref{phonon-exp} we compare our harmonic and anharmonic phonons with available INS experimental results\cite{chatterji2018soft}. 
 \begin{figure}[h]
 \includegraphics[width=\linewidth]{Figures/exp-vs-theory.eps}
@@ -227,9 +227,9 @@ reflected on the spectral function. The anharmonic features specially affect the
 the in-plane $y$ axis in opposite direction for the Sn and Se atoms (see Fig. \ref{patterns}) and is stabilized by anharmonicity, shows a double peak structure and a broad shoulder (see Fig. \ref{spectral-snse}). The mode that 
 describes the same vibration ($\Gamma_{2}$) but in the other in-plane $z$ direction also shows a complex non-Lorentzian shape. The overall $\tilde{\sigma}(\boldsymbol{q}=\Gamma,\omega)$ consequently has a broad shoulder 
 at $\simeq25$ cm$^{-1}$ as marked in Fig. \ref{spectral-snse} (c), which is less acute as temperature increases. At the $Y$ point there are also two modes, $Y_{2}$, whose eigenvector is plotted in Fig. \ref{patterns}, and 
-$Y_{3}$, which describes the same displacement but in the other $y$ in-plane direction, that show a strongly anharmonic non-Lorentzian shape. The modes with complex lineshapes are those that show the largest linewidth in the 
-Lorentzian limit (see Fig. \ref{spectrum-phonon-snse}). These modes have strongly anomalous spectral function and large linewidths because they can easily scatter with an optical mode close in energy and an acoustic mode 
-close to $\Gamma$. We identify this by directly analyzing which phonon triplets contribute more to the linewidth. It is interesting to remark that if the phonon self-energy is calculated by substituting 
+$Y_{3}$, which describes the same displacement but in the other $y$ in-plane direction, that show a strongly anharmonic non-Lorentzian shape. The modes with complex lineshapes are those that show the largest line width in the 
+Lorentzian limit (see Fig. \ref{spectrum-phonon-snse}). These modes have strongly anomalous spectral function and large line widths because they can easily scatter with an optical mode close in energy and an acoustic mode 
+close to $\Gamma$. We identify this by directly analyzing which phonon triplets contribute more to the line width. It is interesting to remark that if the phonon self-energy is calculated by substituting 
 $\overset{(3)}{\boldsymbol{\Phi}}$ by $\overset{(3)}{\boldsymbol{\phi}}$, substituting the nonperturbative 3BFC by the perturbative ones, the anomalies of these modes become weaker. We show the spectral function at the points $\Gamma$ 
 and $Y$ calculated with the perturbative and nonperturbatibe 3BFC in Fig. \ref{spf-p-np}.
 \begin{figure}[th]
@@ -244,7 +244,7 @@ calculations are done with 3BFC at $800$ K.}
 \label{spf-p-np}
 \end{center}
 \end{figure}
-This underlines that in the $Cmcm$ phase the third-order derivative of the BOES are not sufficient to calculate the phonon linewidths and that higher order terms are important, which are effectively 
+This underlines that in the $Cmcm$ phase the third-order derivative of the BOES are not sufficient to calculate the phonon line widths and that higher order terms are important, which are effectively 
 captured by $\overset{(3)}{\boldsymbol{\Phi}}$. \\
 
 \section{Lattice thermal conductivity of $Cmcm$ SnSe}
@@ -263,7 +263,7 @@ themselves and with the $\Gamma_1$ mode (further detail in appendic \ref{thermal
 obtained by Ibrahim et al.\cite{ibrahim2017reinvestigation} above $600$ K (only the in-plane $\kappa_l$ is reported at these temperatures) in the $Pnma$ phase. Even if the results belong to different phases, comparing our 
 calculations for the $Cmcm$ phase with those obtained in the latter work is insightful because the thermal conductivity of these two phases is very similar close to the transition, as expected in a second-order phase 
 transition. Though direct comparison should be taken carefully for this reason, the lattice thermal conductivity is in better agreement with experimental results using $\overset{(3)}{\boldsymbol{\Phi}}$ instead 
-of $\overset{(3)}{\boldsymbol{\phi}}$, which overestimates the lattice thermal conductivity along the in-plane directions. This is consistent with the larger phonon linewidths obtained with the nonperturbative 3BFCs. The 
+of $\overset{(3)}{\boldsymbol{\phi}}$, which overestimates the lattice thermal conductivity along the in-plane directions. This is consistent with the larger phonon line widths obtained with the nonperturbative 3BFCs. The 
 agreement for the in-plane $\kappa_{yy} \sim \kappa_{zz}$ with the measurements by Ibrahim et al.\cite{ibrahim2017reinvestigation} is good in the nonperturbative limit, contrary to previous calculations that 
 underestimate it\cite{skelton2016anharmonicity}. The calculated out-of-plane $\kappa_{xx}$ is also in good agreement with the results by Zhao et al.\cite{zhao2014ultralow}, but we find that their ultralow results for the 
 in-plane $\kappa_l$, in contradiction with the values in Ref. \cite{ibrahim2017reinvestigation} obtained for the low-symmetry phase close to the transition, are underestimated. These results suggest that the thermal 

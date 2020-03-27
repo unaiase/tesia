@@ -24,8 +24,9 @@ Refs. \cite{he2018remarkable,tan2014thermoelectrics} it is shown how the $ZT$ of
 transport measurements for the high temperature phase of SnS. First-principles calculations of the thermoelectric properties are also absent in the literature, hindered by the unstable modes obtained within the harmonic 
 approximation as in the case of SnSe\cite{skelton2016anharmonicity,dewandre2016two}. \\
 
-In this chaper, we propose that $Cmcm$ SnS is expected to be a very efficient intrinsic thermoelectric material, as good as SnSe in this phase. We show that the $P_{F}$ of SnSe and SnS are expected to be very similar in this 
-phase, as long as the electronic relaxation time is similar in both materials. By including anharmonicity int he phonon calculation at a nonperturbative level within the SSCHA we show that the phonon spectrum of SnS suffers 
+In this chapter, we propose that $Cmcm$ SnS is expected to be a very efficient intrinsic thermoelectric material, as good as SnSe in this phase. We show that the $P_{F}$ of SnSe and SnS are expected to be very similar in this 
+phase, as long as the electronic relaxation time is similar in both materials. By including anharmonicity in the 
+phonon calculation at a nonperturbative level within the SSCHA we show that the phonon spectrum of SnS suffers 
 a strong anharmonic renormalization. The phase transition is driven by the collapse of a zone-border phonon. Anharmonicity is so large that the spectral function of some vibrational modes deviates from the Lorentzian-like 
 shape as it happens in other monochalcogenides\cite{ribeiro2018strong,li2014phonon}. Finally, we calculate the lattice thermal conductivity of $Cmcm$ SnS obtaining ultralow values below $\simeq 1.0$ W/mK. Nonperturbative 
 anharmonic corrections to the 3BFC are important in this calculation as it happens in SnSe\cite{aseginolaza2019phonon}. There is a clear anisotropy between in-plane and out-of-plane thermal conductivities. The similarity
@@ -37,7 +38,7 @@ in the high temperature phase.
 We calculate the electronic bands using {\it ab initio} DFT calculations within the local density approximation (LDA)\cite{perdew1981self} and the generalized gradient approximation in the Perdew Burke
 Ernzerhof (PBE) parametrization\cite{perdew1996generalized} as implemented in the {\sc Quantum ESPRESSO}\cite{giannozzi2009quantum} software package. Harmonic phonons and perturbative 3BFC $\overset{(3)}{\boldsymbol{\phi}}$ 
 are calculated  using Density Functional Perturbation Theory\cite{baroni2001phonons,paulatto2013anharmonic}. We use projector augmented wave\cite{blochl1994projector} (PAW) pseudopotentials that 
-include $5s^{2}$ $5p^{2}$ $4d^{10}$ electrons in the case of Sn and $3s^{2}$ $3p^{4}$ in the case of S or Se. For the perturbative third-order force-constants we use norm-conserving pseudopotentials which were 
+include $5s^{2}$ $5p^{2}$ $4d^{10}$ electrons in the case of Sn and $3s^{2}$ $3p^{4}$ in the case of S or Se. For the perturbative 3BFC we use norm-conserving pseudopotentials which were 
 shown\cite{aseginolaza2019phonon} to provide very similar third-order force-constants compared to the PAW result. A $16\times16\times16$ sampling of the first Brillouin zone of the primitive cell and an energy
 cutoff of $70$ Ry are employed for the DFT self-consistent calculation. For the electronic transport calculations we use the Boltztrap software package\cite{madsen2006boltztrap}. For the self-consistent DFT calculation we 
 use a $30\times30\times30$ sampling of the first Brillouin zone. We use experimental lattice parameters at the transition temperature as we got better agreement with experiments for SnSe in a previous
@@ -63,10 +64,10 @@ Within the semiclassical Boltzmann transport theory\cite{scheidemantel2003transp
 \end{eqnarray}
 where $e$ is the electron charge,  $\mu$ the chemical potential, $ f(T,\mu,\varepsilon)$ the Fermi-Dirac distribution function, and $\Sigma(\varepsilon)$ the transport distribution function. The latter is defined as
 \begin{equation}
-\Sigma(\varepsilon) = \frac{1}{\Omega N_{\mathbf{k}}} \sum_{n\mathbf{k}} \tau^e_{n\mathbf{k}}  |\mathbf{v}_{n\mathbf{k}}|^{2} \delta( \varepsilon-\varepsilon_{n\mathbf{k}} ), 
+\Sigma(\varepsilon) = \frac{1}{\Omega_{cell} N_{\mathbf{k}}} \sum_{n\mathbf{k}} \tau^e_{n\mathbf{k}}  |\mathbf{v}_{n\mathbf{k}}|^{2} \delta( \varepsilon-\varepsilon_{n\mathbf{k}} ), 
 \label{eq-tdf}
 \end{equation}
-where $\Omega$ is the unit cell volume, $N_{\mathbf{k}}$ the number of $\mathbf{k}$ points in the sum, and $\varepsilon_{n\mathbf{k}} $, $\mathbf{v}_{n\mathbf{k}} $ and  $\tau^e_{n\mathbf{k}}$ are, respectively, the energy, Fermi
+where $\Omega_{cell}$ is the unit cell volume, $N_{\mathbf{k}}$ the number of $\mathbf{k}$ points in the sum, and $\varepsilon_{n\mathbf{k}} $, $\mathbf{v}_{n\mathbf{k}} $ and  $\tau^e_{n\mathbf{k}}$ are, respectively, the energy, Fermi
 velocity and relaxation time of the electronic state with band index $n$ and crystal momentum $\mathbf{k}$. Our goal here is to compare the power factors $P_{F}(T,\mu)=\sigma(T,\mu) S^2(T,\mu)$ of SnSe and SnS coming from
 their different band structure without explicitly calculating the electronic relaxation times. We thus assume that $\tau^e_{n\mathbf{k}}=\tau^e$ is just the same constant for both compounds. In these conditions it is easy to see
 from Eqs. \eqref{eq-sigma}-\eqref{eq-tdf} that the power factor is proportional to $\tau^e$.  In the following we will limit ourselves to the analysis of $P_{F}(T,\mu)/\tau^e$, which only depends on the band
