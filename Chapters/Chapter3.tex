@@ -561,10 +561,7 @@ In Fig. \ref{instoy} we qualitatively describe the Lorentzian cross section.
 \label{instoy}
 \end{center}
 \end{figure}
-We can see that how anharmonicity within perturbation theory provides two anharmonic properties. A line shift with respect to the harmonic value and a line width, which does not exist within the harmonic theory. \\
-%The third group is the strongly or full anharmonic group where the self-energy is not small compared to the dynamical frequencies. In this case the spectral
-%functions are not Lorentzians and they can show strongly anharmonic features such as: shoulders, satellite peaks$\dots$ The spectral function of these kind of materials can be very difficult to study from an experimental
-%point of view, since more peaks than modes can appear or two modes can appear as only one. \\
+We can see that how anharmonicity within perturbation theory provides two anharmonic properties. A line shift with respect to the harmonic value $\Omega_{\mu}(\mathbf{q})-\omega_{\mu}(\mathbf{q})$ and a line width $2\Gamma_{\mu}(\mathbf{q})$ (FWHM), which does not exist within the harmonic theory. \\
 
 As we can see from Eqs. \ref{loop-diagram}, \ref{bubble-diagram}, and \ref{tadpole-diagram} in order to account for the phonon-phonon interactions at the lowest-order in perturbation theory we need to calculate 
 the $\overset{(3)}{D}{}_{s_{1},s_{2},s_{3}}^{\alpha_{1}\alpha_{2}\alpha_{3}}(\mathbf{T}_{1},\mathbf{T}_{2},\mathbf{T}_{3})$ and $\overset{(4)}{D}{}_{s_{1}s_{1},s_{3}s_{4}}^{\alpha_{1}\alpha_{2}\alpha_{3}\alpha_{4}}(\mathbf{T}_{1},\mathbf{T}_{2},\mathbf{T}_{3},\mathbf{T}_{4})$ anharmonic dynamical matrices. The straightforward way of calculating these 
@@ -615,10 +612,11 @@ for any trial potential $\mathcal{U}$. The main idea behind the SSCHA is that $\
  \alpha_{1}}(\mathbf{T}_{1})\mathsf{u}_{s_{2}}^{\alpha_{2}}(\mathbf{T}_{2}).
 \end{equation}
 The $\mathsf{u}_{s}^{\alpha}(\mathbf{T})$ atomic displacements are different from the $u_{s}^{\alpha}(\mathbf{T})$. $u_{s}^{\alpha}(\mathbf{T})$ measure the displacements from the minimum of the BOES $R_{s}^{0\alpha}(\mathbf{T})$
-while $\mathsf{u}_{s}^{\alpha}(\mathbf{T})$ measure the displacements from trial equilibrium positions $\mathcal{R}_{s}^{\alpha}(\mathbf{T})$. The same applies to 
+while $\mathsf{u}_{s}^{\alpha}(\mathbf{T})$ measure the displacements from trial equilibrium positions $\mathcal{R}_{s}^{\alpha}(\mathbf{T})$. We will name these trial equilibrium positions centroids. The same applies to 
 $\Phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2})$, which are trial 2BFC and not the harmonic ones $\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2})$. The advantage of choosing a 
 trial potential which is harmonic is that $\rho_{\mathcal{H}}$ and $F_{\mathcal{H}}$ have closed analytical forms. 
 \begin{multline}
+ \label{gaussian_sscha}
  \rho_{\mathcal{H}}(\mathbf{R})=\langle\mathbf{R}|\rho_{\mathcal{H}}|\mathbf{R}\rangle=\\=A_{\mathcal{H}}exp\left(-\sum\limits_{\substack{s_{1}s_{2} \\ \alpha_{1}\alpha_{2} \\ \mathbf{T}_{1}\mathbf{T}_{2} \\ \mu}}\frac{\sqrt{
 	 m_{s_{1}}m_{s_{2}}}}{2a_{\mu\mathcal{H}}^{2}}\epsilon_{\mu\mathcal{H}}^{s_{1}\alpha_{1}}(\mathbf{T}_{1})\epsilon_{\mu\mathcal{H}}^{s_{2}\alpha_{2}}(\mathbf{T}_{2})u_{s_{1}}^{\alpha_{1}}[\mathbf{T}_{1}](\mathbf{
  R})u_{s_{2}}^{\alpha_{2}}[\mathbf{T}_{2}](\mathbf{R})\right),
@@ -628,14 +626,14 @@ trial potential which is harmonic is that $\rho_{\mathcal{H}}$ and $F_{\mathcal{
 \end{equation}
 where $A_{\mathcal{H}}$ is a normalization constant and $a_{\mu\mathcal{H}}=\sqrt{coth(\beta\Omega^{(S)}_{\mu}/2)/(2\Omega^{(S)}_{\mu})}$ is called the normal length. $\rho_{\mathcal{H}}(\mathbf{R})$ 
 is the probability to find the system described by $\mathcal{H}$ in the general ionic configuration $\mathbf{R}$. In normal coordinates space, $\rho_{\mathcal{H}}(\mathbf{R})$, is a product of Gaussians and the normal length 
-is their standard deviation. $\Omega^{(S)}_{\mu}(\mathbf{q})$ and $\epsilon_{s\mu\mathcal{H}}^{\alpha}(\mathbf{q})$ are the frequencies and polarization vectors that diagonalize the SSCHA dynamical 
-matrix $D_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}(S)}(\mathbf{q})=\Phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{q})/(\sqrt{m_{s_{1}}m_{s_{2}}})$. \\
+is their standard deviation, which is given by the $\Omega_{\mu}^{(S)}$ frequencies. These Gaussians are centered in the centroid positions. $\Omega^{(S)}_{\mu}$ and $\epsilon_{s\mu\mathcal{H}}^{\alpha}$ are the frequencies and polarization vectors that diagonalize the SSCHA dynamical matrix $D_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}(S)}(\mathbf{T}_{1},\mathbf{T}_{2})=\Phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2})/(\sqrt{m_{s_{1}}m_{s_{2}}})$. \\
 
 The only parameters that contains the trial harmonic potential are $\mathcal{R}_{s}^{\alpha}(\mathbf{T})$ and $\Phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2})$ with respect to 
 which $\mathcal{F}_{H}[\mathcal{H}]$ needs to be minimized. For the minimization we can apply a conjugate gradient (CG) algorithm and at the end of the minimization, which is done in a subspace that 
 preserves the crystal symmetries, we will get the $\boldsymbol{\mathcal{R}}$ positions or centroids and $\Phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2})$ 2BFC that minimize 
-the free energy including anharmonic effects. The centroid positions that minimize the SSCHA free energy are the centers of the SSCHA Gaussian wave functions and the trial 2BFC that minimize the SSCHA free 
-energy provide the width of these Gaussians. \\
+the free energy including anharmonic effects. \\
+%The centroid positions that minimize the SSCHA free energy are the centers of the SSCHA Gaussian wave functions and the trial 2BFC that minimize the SSCHA free 
+%energy provide the width of these Gaussians. \\
 
 For the CG minimization we need the expressions of the function and its derivatives with respect to $\boldsymbol{\mathcal{R}}$ and $\Phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2})$
 \begin{equation}
@@ -664,10 +662,10 @@ A possible procedure for evaluating the integrals is to get higher order coeffic
 stochastically by using the relationship
 \begin{equation}
  \label{stochastic}
- \int{\mathbf{O}(\mathbf{R})\rho(\mathbf{R})d\mathbf{R}}\simeq\frac{1}{N_{c}}\sum_{I=1}^{N_{c}}\mathbf{O}(\mathbf{R}_{I})\equiv\langle\mathbf{O}\rangle_{\rho}.
+\int{\mathbf{O}(\mathbf{R})\rho_{\mathcal{H}}(\mathbf{R})d\mathbf{R}}\simeq\frac{1}{N_{c}}\sum_{I=1}^{N_{c}}\mathbf{O}(\mathbf{R}_{I})\equiv\langle\mathbf{O}\rangle_{\rho_{\mathcal{H}}}.
 \end{equation}
 The set of $\mathbf{R}_{I}$ ionic configurations is created according to the distribution $\rho_{\mathcal{H}}(\mathbf{R})$. $\mathbf{O}$ is any operator that only depends on the ionic configuration and $N_{c}$ is the number of 
-configurations we have created. The equality in Eq. \ref{stochastic} is hold when $N_{c}\rightarrow\infty$. As we are dealing with a stochastic framework, the statistical error scales as $1/\sqrt{N_{c}}$. The advantage 
+configurations we have created. The equality in Eq. \ref{stochastic} holds when $N_{c}\rightarrow\infty$. As we are dealing with a stochastic framework, the statistical error scales as $1/\sqrt{N_{c}}$. The advantage 
 of using Eq. \ref{stochastic} is that the gradients in Eqs. \ref{minim2} and \ref{minim3} can be calculated by getting the forces acting on atoms in supercells in the configurations given by $\rho_{\mathcal{H}}$, which are easily 
 extracted from electronic ground state calculations thanks to the Hellmann-Feynman 
 theorem\cite{feynman1939forces}. \\
@@ -680,7 +678,7 @@ evaluate the integrals in Eq. \ref{minim1}, \ref{minim2}, and \ref{minim3}. This
 At this point we would need to create new configurations by using the new $\rho_{\mathcal{H}_{j}}(\mathbf{R})$. However, this would be very inefficient as we would need to calculate energies and forces again. 
 Instead, one can use a reweighting  importance sampling technique by changing Eq. \ref{stochastic} by
 \begin{equation}
- \int{\mathbf{O}(\mathbf{R})\rho(\mathbf{R})d\mathbf{R}}\simeq\frac{1}{N_{c}}\sum_{I=1}^{N_{c}}\mathbf{O}(\mathbf{R}_{I})\frac{\rho_{\mathcal{H}_{j}}}{\rho_{\mathcal{H}_{j_{0}}}},
+	\int{\mathbf{O}(\mathbf{R})\rho_{\mathcal{H}_{j}}(\mathbf{R})d\mathbf{R}}\simeq\frac{1}{N_{c}}\sum_{I=1}^{N_{c}}\mathbf{O}(\mathbf{R}_{I})\frac{\rho_{\mathcal{H}_{j}}}{\rho_{\mathcal{H}_{j_{0}}}},
 \end{equation} 
 where $j_{0}$ is the latest iteration at which configurations were created. As long as $\left\langle\frac{\rho_{\mathcal{H}_{j}}}{\rho_{\mathcal{H}_{j_{0}}}}\right\rangle_{\rho_{\mathcal{H}_{j_{0}}}}$ is not 
 far from unity the configurations created with $\mathcal{H}_{j_{0}}$ can be reused. We can control this deviation from unity to get the statistical convergence or precision that we 
@@ -810,8 +808,8 @@ blue line corresponds to a temperature below the critical temperature, the red l
 \label{transition}
 \end{center}
 \end{figure}
-As we can see, at $T>T_{c}$, the second derivative of the free energy with respect to $Q$ is positive and the system stays in the high symmetry phase. As temperature decreases, at $T=T_{c}$, $\partial^{2}F/\partial Q^{2}$ equals 
-$0$ and once the temperature gets below the transition temperature the free energy develops some minima and the system goes to the low symmetry phase. In second-order phase transitions the process is reversible and the critical 
+As we can see, at $T>T_{c}$, the second derivative of the free energy with respect to $Q$ is positive, and the system stays in the high symmetry phase. As temperature decreases, at $T=T_{c}$, $\partial^{2}F/\partial Q^{2}$ equals 
+$0$, and once the temperature gets below the transition temperature the free energy develops some minima and the system goes to the low symmetry phase. In second-order phase transitions the process is reversible and the critical 
 temperature does not change by approaching $T_{c}$ from below or above. \\
 
 The SSCHA free energy Hessian can be computed by using the analytic formula\cite{bianco2017second}
@@ -915,6 +913,16 @@ have the auxiliary phonon frequencies $\Omega^{(S)}_{\mu}(\mathbf{q})$ and inste
  T}_{2},\mathbf{T}_{3})$ we have the non-perturbative ones $\overset{(3)}{\Phi}{}_{s_{1}s_{2}s_{2}}^{\alpha_{1}\alpha_{2}\alpha_{3}}(\mathbf{T}_{1},\mathbf{T}_{2},\mathbf{T}_{3})$. By setting $z=0$ we recover the static limit and these 
  phonons are equivalent to the ones defined from the free energy Hessian ($\boldsymbol{D}^{(F)}$) in 
  section \ref{free-energy-section}. \\
+
+At this points we can recalculate the spectral function by using the 3BFC given by the SSCHA. In this case, as we are working with a non-perturbative theory, the Lorentzian approximation is not justified and its validity must be checked in each system. In Fig. \ref{instoy2} we show a cartoon situation where the Lorentzian approximation does not hold.
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.9\linewidth]{Figures/ins-toy2.eps}
+\caption[SSCHA and harmonic spectral functions]{SSCHA and harmonic spectral functions where the Lorentzian approxiation does not hold.}
+\label{instoy2}
+\end{center}
+\end{figure}
+In this case the spectral functions are not Lorentzians and they can show strongly anharmonic features such as: shoulders, satellite peaks$\dots$ As the Lorentzian picture is lost, $\Gamma_{\mu}(\mathbf{q})$ and $\Omega_{\mu}(\mathbf{q})$ are not good representatives of that phonon. The spectral function of these kind of materials can be very difficult to study from an experimental point of view, since more peaks than modes can appear or two modes can appear as only one. It is important to remark that even in non-perturbative anharmonicity is important in a system the Lorentzian approximation may hold. \\
 
 The SSCHA has proven to be an extremely powerful method for including anharmonic effects at a non-perturbative level. It has been successfully applied in bulk and monolayer materials including 
 superconductors\cite{errea2013first,errea2016quantum}, materials undergoing charge density wave\cite{leroux2015strong,bianco2019quantum} and ferroelectric\cite{ribeiro2018strong} transitions, thermoelectric 

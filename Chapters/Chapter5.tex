@@ -27,10 +27,10 @@ good thermoelectric performance requires a high power factor $P_{F}=S^{2}\sigma$
 
 Monochalcogenides have proven to be efficient thermoelectric materials\cite{heremans2008enhancement,zhang2013high,yang2008nanostructures,cho2011thermoelectric} mainly due to their strongly anharmonic lattice that implies a low 
 lattice thermal conductivity\cite{delaire2011giant,li2014phonon,iizumi1975phase,o2017inelastic,ribeiro2018strong}. PbTe is an appropiate example of potential technological relevance of thermoelectric monochalcogenides: it shows 
-a high $ZT$ in the $600-800$ K temperature range\cite{ravich2013semiconducting}, as high as $2.2$ when nanostructures\cite{hsu2004cubic}, and has been successfully applied in spacecrafts\cite{rowe2018thermoelectrics}. In the last 
+a high $ZT$ in the $600-800$ K temperature range\cite{ravich2013semiconducting}, as high as $2.2$ when nanostructured\cite{hsu2004cubic}, and has been successfully applied in spacecrafts\cite{rowe2018thermoelectrics}. In the last 
 years SnSe has attracted a great deal of attention since it was measured to be the most efficient intrinsic thermoelectric material\cite{zhao2014ultralow}. Its figure of merit soars to $2.6$ after a structural phase 
 transition\cite{zhao2014ultralow,adouby1998structure,chattopadhyay1986neutron,von1981high,chatterji2018soft} at around $800$ K from the low-symmetry $Pnma$ phase to the high-symmetry $Cmcm$. See Fig. \ref{pnma-cmcm} for the crystal 
-structure in the two phases.
+structure of the two phases.
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.8\linewidth]{Figures/pnma-cmcm.pdf}
@@ -61,10 +61,18 @@ $\kappa_{l}$ agrees with experiments\cite{ibrahim2017reinvestigation} only with 
 
 The $Cmcm$ and $Pnma$ phases are orthorhombic and their structure  is shown in Fig. \ref{pnma-cmcm}. The $Cmcm$ phase 
 has a centering in the $XZ$ plane of the rectangular conventional cell and contains 4 atoms in the primitive cell. 
-The primitive cell of the $Pnma$ phase is the conventional cell and contains $8$ atoms. The primitive lattice vectors 
+The primitive cell of the $Pnma$ phase contains $8$ atoms. The primitive lattice vectors 
 of the $Cmcm$ structure are: $\mathbf{a}_{1}=(a/2,0,c/2)$, $\mathbf{a}_{2}=(-a/2,0,c/2)$ and
 $\mathbf{a}_{3}=(0,b,0)$, where $a$ (long axis), $b$ and $c$ are the lattice constants of the conventional cell. \\
 
+The reciprocal lattice of the $Cmcm$ phase is shown in Fig. \ref{1bzsnse}.
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.8\linewidth, angle=-90]{Figures/brillouinsnse.pdf}
+\caption{1BZ of $Cmcm$ SnSe. The figure is taken from the Bilbao crystallographic server.}
+\label{1bzsnse}
+\end{center}
+\end{figure}
 The reciprocal lattice vectors of the $Cmcm$ primitive 1BZ are $\mathbf{b}_{1}=2\pi(1/a,0,1/c)$, 
 $\mathbf{b}_{2}=2\pi(-1/a,0,1/c)$ and $\mathbf{b}_{3}=2\pi(0,1/b,0)$. The high symmetry points and their coordinates 
 used in phonon dispersion figures are listed in table \ref{qpoints}.
@@ -97,15 +105,18 @@ with respect to the reciprocal lattice vectors of the primitive cell.}
 Our calculations are based on DFT using the QUANTUM-ESPRESSO\cite{giannozzi2009quantum} software package. Harmonic phonons were calculated within DFPT and perturbative 3BFC were calculated within DFPT or finite 
 differences\cite{li2014shengbte}. Anharmonic phonons and nonperturbative 3BFC were calculated using the SSCHA. For the exchange-correlation interaction we use the Perdew-Burke-Ernzerhof (PBE) generalized gradient 
 approximation and the local density approximation (LDA) with ultrasoft (US) and Projector Augmented Wave method (PAW) pseudopotentials respectively. Due to limitations in the implementation of perturbative 3BFC 
-within DFPT we use norm-conserving (NC) pseudopotentials. We use a cutoff energy of 70 Ry and a grid of $16\times16\times16$ $\boldsymbol{k}$ points to sample the first Brillouin zone. For the harmonic phonon calculations 
-we use a $6\times6\times6$ supercell and a $2\times2\times2$ one for the 3BFC. For the SSCHA calculation we use a 
-$2\times2\times2$ supercell. Then, for the anharmonic phonon dispersion, we interpolate the difference between the 
-harmonic and anharmonic force-constants in the $2\times2\times2$ supercell to the $6\times6\times6$ and we add it to 
-the $6\times6\times6$ harmonic force-constants (see appendix \ref{appendixB} for more details). For the line width 
-calculations we use a $20\times20\times20$ $\boldsymbol{q}$ points grid obtained by Fourier interpolation with a 
-smearing of $1$ cm$^{-1}$. For the thermal conductivity calculation we use a $10\times10\times10$ grid of 
-$\boldsymbol{q}$ points to sample the first Brillouin zone. We have done calculations in denser grids to test 
-these parameters.
+within DFPT we use norm-conserving (NC) pseudopotentials only for the perturbative 3BFC calculation. We use a cutoff 
+energy of 70 Ry and a grid of $16\times16\times16$ $\boldsymbol{k}$ points to sample the first Brillouin zone. For 
+the harmonic phonon calculations we use a $6\times6\times6$ supercell and a $2\times2\times2$ one for the 3BFC. 
+We impose the acoustic sum rule to the third-order force-constants with an iterative method prior to their Fourier
+interpolation\cite{paulatto2013anharmonic,aseginolaza2019phonon}. For the SSCHA calculation we use a 
+$2\times2\times2$ supercell. Then, for the anharmonic phonon dispersion, we 
+interpolate the difference between the harmonic and anharmonic force-constants in the $2\times2\times2$ supercell to 
+the $6\times6\times6$ and we add it to the $6\times6\times6$ harmonic force-constants (see appendix \ref{appendixB} 
+for more details). For the line width calculations we use a $20\times20\times20$ $\boldsymbol{q}$ points grid 
+obtained by Fourier interpolation with a smearing of $1$ cm$^{-1}$. For the thermal conductivity calculation we use 
+a $10\times10\times10$ grid of $\boldsymbol{q}$ points to sample the first Brillouin zone. We have done calculations 
+in denser grids to test these parameters. We have done SSCHA calculations using different lattice volumes. When we talk about the 'theory' lattice we are referring to the relaxed lattice at DFT level. When we talk about the 'exp' (experimental) lattice we refer to the experimental lattice parameters at the transition temperature between the $Cmcm$ and $Pnma$ phases. The 'stretched' lattice refers to a stretched lattice with respect to the 'theory' in the PBE case. The lattice parameters and the experimental references are listed in table \ref{cell-parameters}.
 
 \section{Phase transition}
 
@@ -168,7 +179,8 @@ $\boldsymbol{\mathcal{R}}$ centroids. The SSCHA relaxation is shown in Fig. \ref
 \end{center}
 \end{figure}
 As we can see, the atomic positions relax to the high symmetry positions $0$, $1$, and $0.5$ with an error smaller than $0.04$ $a_{0}$. Thus, the $Pnma$ is not a local minimum of the free energy above $T_{c}$, ruling out the 
-first-order transition. Our result disagrees with the conclusions drawn in Ref. \cite{dewandre2016two}.
+first-order transition. Our result disagrees with the conclusions drawn in Ref. \cite{dewandre2016two}. \\
+
 First, because at the $T_{c}$ calculated in that reference, which is estimated by comparing the free energies of the 
 two structures, the $Y_{1}$ mode of the $Cmcm$ phase is stable, which implies this phase is a local minimum 
 at $T_{c}$, and, thus, the transition is of first-order type. And second, because it is argued that the instability 
@@ -179,7 +191,9 @@ $c/b<1$), which makes the transition a two-step process. We do not see this sudd
 The obtained transition temperature strongly depends on the exchange-correlation functional and volume, as it occurs in similar monochalcogenides\cite{ribeiro2018strong} and in the harmonic phonons (see appendix \ref{volume-effects}). 
 Within LDA $T_{c}$ ranges between $168$ K with 
 theoretical lattice parameters and $616$ K with experimental lattice parameters. Within PBE $T_{c}$ barely changes between the experimental and theoretical lattice parameters. We attribute this result to the fact that 
-the in-plane lattice parameters $b$ and $c$ are in good agreement with the experimental results within PBE, while LDA clearly underestimates them. The theoretical lattice parameters are estimated neglecting vibrational 
+the in-plane lattice parameters $b$ and $c$ are in good agreement with the experimental results within PBE, while LDA clearly underestimates them. \\
+
+The theoretical lattice parameters are estimated neglecting vibrational 
 contributions to the free energy. In order to estimate the role of the thermal expansion, we calculate the stress tensor including vibrational contributions at the anharmonic level as explained in 
 section \ref{scha-stress-section}. The in-plane contribution of the stress tensor calculated at the temperature closest to $T_{c}$, $P_{zz}$, shows that both theoretical LDA and PBE lattices should be stretched. Within LDA it 
 is clear that stretching the lattice increases $T_{c}$. Within PBE, when we take a stretched lattice to resuce $P_{zz}$, $T_{c}$ increases from $299$ K to $387$ K. In all cases the other in-plane component of the stress tensor, 
@@ -201,13 +215,14 @@ is the full width at half maximum divided by a factor of $1.5$). The calculation
 \label{spectrum-phonon-snse}
 \end{figure}
 The anharmonic line shift is large for most of the modes across the 1BZ. Within the harmonic approximation there are five unstable modes: two ($\Gamma_{1}$, $\Gamma_{2}$) at $\Gamma$, two ($Y_{1}$, $Y_{3}$) at $Y$ and one 
-($R_{1}$) at $R$. These instabilities appear when we do the harmonic calculation in the experimental cell, in the theoretically relaxed cell only appear the instabilities $\Gamma_{1}$ and $Y_{1}$ (see appendix \ref{volume-effects}). The instabilities at $\Gamma$ would cause ferroelectric transitions\cite{skelton2016anharmonicity,hong2016electronic}, but they suffer an anharmonic renormalization that prevents it. $Y_{3}$ and $R_{1}$ are also stabilized by anharmonic effects. The $Y_{1}$ mode however remains unstable at $600$ K and it is stabilized after the transition (see Fig. \ref{spectral-snse}). In Fig. \ref{phonon-exp} we compare our harmonic and anharmonic phonons with available INS experimental results\cite{chatterji2018soft}. 
+($R_{1}$) at $R$. These instabilities appear when we do the harmonic calculation in the experimental cell, in the theoretically relaxed cell only appear the instabilities $\Gamma_{1}$ and $Y_{1}$ (see appendix \ref{volume-effects}). The instabilities at $\Gamma$ would cause ferroelectric transitions\cite{skelton2016anharmonicity,hong2016electronic}, but they suffer an anharmonic renormalization that prevents it. $Y_{3}$ and $R_{1}$ are also stabilized by anharmonic effects. The $Y_{1}$ mode however remains unstable at $600$ K and it is stabilized after the transition (see Fig. \ref{spectral-snse}). In Fig. \ref{phonon-exp} we compare our harmonic and anharmonic phonons with available INS experimental results\cite{chatterji2018soft} at 853 K. 
 \begin{figure}[h]
 \includegraphics[width=\linewidth]{Figures/exp-vs-theory.eps}
-\caption[Comparison of phonons in the Lorentzian approximation and INS experiments.]{Harmonic and anharmonic phonons in the Lorentzian approximation ($\Omega_{\mu}(\mathbf{q})$). We include experimental points\cite{chatterji2018soft}.}
+\caption[Comparison of phonons in the Lorentzian approximation and INS experiments.]{Harmonic and anharmonic phonons in the Lorentzian approximation ($\Omega_{\mu}(\mathbf{q})$). We include experimental points\cite{chatterji2018soft} 
+at 853 K.}
 \label{phonon-exp}
 \end{figure}
-As we can see, we get a good agreement with the experimental points. In we have a look to the lowest energy acoustic branch, we can see that the anharmonic phonons agree very well with the experimental values. In this case the harmonic result completely fails as it is imaginary at the $Y$ point. We also get a fairly good agreement in the $25-100$ cm$^{-1}$ energy range. The worst agreement appears in the highest energy optical modes, where we underestimate the values. \\
+As we can see, we get a good agreement with the experimental points. If we have a look to the lowest energy acoustic branch, we can see that the anharmonic phonons agree very well with the experimental values. In this case the harmonic result completely fails as it is imaginary at the $Y$ point. We also get a fairly good agreement in the $25-100$ cm$^{-1}$ energy range. The worst agreement appears in the highest energy optical modes, where we underestimate the values. \\
 
 In highly anharmonic materials\cite{ribeiro2018strong,li2014phonon,bianco2018high,delaire2011giant,paulatto2015first}, the spectral functions show broad peaks, shoulders and satellite peaks, strongly deviating from the Lorentzian 
 picture. In Fig. \ref{spectral-snse} we show the spectral function keeping the full frequency dependence (see Eq. \ref{cross-section-new}) on the self-energy, without assuming the Lorentzian lineshape.
@@ -259,10 +274,12 @@ and Zhao et al.\cite{zhao2014ultralow}. We use the $\Omega^{(S)}_{\mu}(\mathbf{q
 \label{thermal-snse}
 \end{figure}
 The thermal conductivity of SnSe is very low, mainly because the contribution of optical modes is strongly suppressed by the large anharmonicity and the contribution of acoustic modes is also reduced due to the large scattering among 
-themselves and with the $\Gamma_1$ mode (further detail in appendic \ref{thermal-properties}). We compare our results with the values obtained by Zhao et al.\cite{zhao2014ultralow} above the transition at $800$ K. We also include in the figure the results 
+themselves and with the $\Gamma_1$ mode (further details in appendix \ref{thermal-properties}). We compare our results with the values obtained by Zhao et al.\cite{zhao2014ultralow} above the transition at $800$ K. We also include in the figure the results 
 obtained by Ibrahim et al.\cite{ibrahim2017reinvestigation} above $600$ K (only the in-plane $\kappa_l$ is reported at these temperatures) in the $Pnma$ phase. Even if the results belong to different phases, comparing our 
 calculations for the $Cmcm$ phase with those obtained in the latter work is insightful because the thermal conductivity of these two phases is very similar close to the transition, as expected in a second-order phase 
-transition. Though direct comparison should be taken carefully for this reason, the lattice thermal conductivity is in better agreement with experimental results using $\overset{(3)}{\boldsymbol{\Phi}}$ instead 
+transition. \\
+
+Though direct comparison should be taken carefully for this reason, the lattice thermal conductivity is in better agreement with experimental results using $\overset{(3)}{\boldsymbol{\Phi}}$ instead 
 of $\overset{(3)}{\boldsymbol{\phi}}$, which overestimates the lattice thermal conductivity along the in-plane directions. This is consistent with the larger phonon line widths obtained with the nonperturbative 3BFCs. The 
 agreement for the in-plane $\kappa_{yy} \sim \kappa_{zz}$ with the measurements by Ibrahim et al.\cite{ibrahim2017reinvestigation} is good in the nonperturbative limit, contrary to previous calculations that 
 underestimate it\cite{skelton2016anharmonicity}. The calculated out-of-plane $\kappa_{xx}$ is also in good agreement with the results by Zhao et al.\cite{zhao2014ultralow}, but we find that their ultralow results for the 
@@ -272,7 +289,7 @@ conductivity measured by Zhao et al. may have non-intrinsic effects as it has al
 \section{Conclusions}
 
 In conclusion, we show that the vibrational properties of SnSe in the $Cmcm$ phase are dominated by huge nonperturbative anharmonic effects. We show how the collapse of the $Y_1$ mode is responsible for the second-order 
-phase transition. We verify that the transition is actually second-order by making a SSCHA atomic relaxation starting from the low symmetry phase and verifying that the system goes to the high symmetry phase, clarifying that the low symmetry phase is not a local minimum in the free energy. The calculated transition temperature is volume and functional dependent, we get the best agreement with experiments by using the experimental lattice parameters within LDA. The spectral functions of in-plane modes are characterized by anomalous features deviating from the Lorentzian-like shape. These results will be crucial to interpret future INS experiments for the high-temperature phase. The calculated in-plane thermal conductivity is in good agreement with the experiments by Ibrahim et al.\cite{ibrahim2017reinvestigation}, but not with those by Zhao et al.\cite{zhao2014ultralow} which show low anisotropy. These results suggest that the isotropic ultralow values by Zhao et al. could be the observation of a non-intrinsic property. Our results show for the first time that the inclusion of nonperturbative effects is crucial for obtaining third-order force-constants that yield a lattice thermal conductivity in agreement with experiments.
+phase transition. We verify that the transition is actually second-order by making a SSCHA atomic relaxation starting from the low symmetry phase and verifying that the system goes to the high symmetry phase, clarifying that the low symmetry phase is not a local minimum in the free energy. The calculated transition temperature is volume and functional dependent. We get the best agreement with experiments by using the experimental lattice parameters within LDA. The spectral functions of in-plane modes are characterized by anomalous features deviating from the Lorentzian-like shape. These results will be crucial to interpret future INS experiments for the high-temperature phase. The calculated in-plane thermal conductivity is in good agreement with the experiments by Ibrahim et al.\cite{ibrahim2017reinvestigation}, but not with those by Zhao et al.\cite{zhao2014ultralow} which show low anisotropy. These results suggest that the isotropic ultralow values by Zhao et al. could be the observation of a non-intrinsic property. Our results show for the first time that the inclusion of nonperturbative effects is crucial for obtaining third-order force-constants that yield a lattice thermal conductivity in agreement with experiments.
 
 \section{Experimental results after publication of our work}
 

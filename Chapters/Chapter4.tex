@@ -6,8 +6,8 @@
 
 %----------------------------------------------------------------------------------------
 
-The thermal conductivity of solids is mainly constituted by the electronic and lattice thermal conductivities\cite{tritt2005thermal}. The electronic thermal conductivity accounts for the heat conducted by the free 
-electrons and the lattice thermal conductivity accounts for the heat conduction of phonons. In metallic materials with free electrons, the thermal conductivity to electrical conductivity ratio at low temperature is given by the 
+The thermal conductivity of solids is mainly given by the electronic and lattice contributions\cite{tritt2005thermal}. The electronic thermal conductivity accounts for the heat conducted by the free 
+electrons and the lattice thermal conductivity accounts for the phonon heat conduction. In metallic materials with free electrons, the thermal conductivity to electrical conductivity ratio at low temperatures is given by the 
 Wiedemann-Franz law and it states that it is proportional to the Lorenz number multiplied by the temperature\cite{ashcroft1976solid}. In these kind of materials the two contributions, electronic and lattice thermal conductivities, are 
 of the same order of magnitude and both need to be calculated in order to get a good approximation of the total 
 thermal conductivity. Instead, in insulators and  intrinsic semiconductors there are no free electrons and the 
@@ -36,14 +36,15 @@ the perturbed phonon population $n_{\mathbf{q}\mu}$ allows the calculation of th
  \label{bte}
  -v_{\mu}(\mathbf{q})\frac{\partial T}{\partial x}\left(\frac{\partial n_{\mathbf{q}\mu}}{\partial T}\right)+\frac{\partial n_{\mathbf{q}\mu}}{\partial t}\vline_{_{_{_{_{_{_{_{_{scatt}}}}}}}}}=0,
 \end{equation} 
-and it is named the Boltzmann transport equation (BTE). In Eq. \ref{bte} the first term indicates the phonon diffusion due to the temperature gradient and the second term the scattering rate due to all the scattering 
+and it is named, Boltzmann transport equation (BTE). In Eq. \ref{bte} the group velocity is supposed to be in the $x$ Cartesian direction, that is why we omit the Cartesian index. The first term indicates the phonon diffusion due to the temperature gradient and the second term the scattering rate due to all the scattering 
 processes, which can be intrinsic or extrinsic. The intrinsic scattering arises in perfect and infinite crystalline materials and is created by the anharmonic phonon-phonon scattering. The main contribution of 
-the intrinsic scattering arises from the three-phonon scattering processes shown in Fig. \ref{three-phonon-scattering} and there are two types: the first type is the normal scattering where the momenta of the three 
+the intrinsic scattering arises from the three-phonon scattering processes shown in Fig. 
+\ref{three-phonon-scattering}. There are two: the first is the normal scattering where the momenta of the three 
 phonons that interact are in the 1BZ
 \begin{equation}
 \mathbf{q}_{1}+\mathbf{q}_{2}+\mathbf{q}_{3}=0
 \end{equation} 
-and, therefore, the crystal and total momentum are conserved. The second type is the umklapp scattering where the crystal momentum is conserved but not the total momentum and one of the three phonon momenta is out of the 1BZ
+and, therefore, the crystal and total momentum are conserved. The second is the umklapp scattering, where the crystal momentum is conserved but not the total momentum, and one of the three phonon momenta is out of the 1BZ
 \begin{equation}
 \mathbf{q}_{1}+\mathbf{q}_{2}+\mathbf{q}_{3}=\mathbf{G},
 \end{equation}
@@ -114,8 +115,8 @@ where a phonon mode $\mathbf{q}\mu$ decays in two phonons $\mathbf{q}_{1}\mu_{1}
 \end{fmfgraph*}
 \end{fmffile}
 \caption[Feynman diagrams for three phonon scattering events]{Feynman diagrams for three phonon scattering events. The one in the left corresponds to $P_{\mathbf{q}_{1}\mu_{1},\mathbf{q}_{2}\mu_{2}}^{\mathbf{q}_{3}\mu_{3}}$, where 
-two phonons collide $\mathbf{q}_{1}\mu_{1},\mathbf{q}_{2}\mu_{2}$ to create a new one $\mathbf{q}_{3}\mu_{3}$, and the one in the right corresponds to $P_{\mathbf{q}_{1}\mu_{1}}^{\mathbf{q}_{2}\mu_{2},\mathbf{q}_{3}\mu_{3}}$, where 
-one phonon $\mathbf{q}_{1}\mu_{1}$ is splitted in two phonon modes $\mathbf{q}_{2}\mu_{2},\mathbf{q}_{3}\mu_{3}$.}
+two phonons collide ($\mathbf{q}_{1}\mu_{1},\mathbf{q}_{2}\mu_{2}$) to create a new one ($\mathbf{q}_{3}\mu_{3}$), and the one in the right corresponds to $P_{\mathbf{q}_{1}\mu_{1}}^{\mathbf{q}_{2}\mu_{2},\mathbf{q}_{3}\mu_{3}}$, where 
+one phonon ($\mathbf{q}_{1}\mu_{1}$) is splitted in two phonon modes ($\mathbf{q}_{2}\mu_{2},\mathbf{q}_{3}\mu_{3}$).}
 \label{three-phonon-scattering}
 \end{figure}
 The two scattering rates have the forms
@@ -198,7 +199,7 @@ calculating the lattice thermal conductivity was proposed\cite{fugallo2013ab} an
 
 \section{Exact solution of the linearized BTE}
 
-An exact way of solving the linearized BTE can be found by using the properties of the matrix $\mathbf{A}$ and the variational principle. The exact solution of the BTE is the vector $\mathbf{f}^{EX}$, which makes stationary 
+An exact way of solving the linearized BTE can be found by using the properties of the matrix $\mathbf{A}$ and the variational principle. The exact solution of the BTE is the vector $\mathbf{f}^{EX}$, which maximizes or minimizes  
 the quadratic form\cite{klemens1958thermal}
 \begin{equation}
  \mathcal{P}(\mathbf{f})=\frac{1}{2}\mathbf{f}\cdot\mathbf{A}\mathbf{f}-\mathbf{b}\cdot\mathbf{f},
