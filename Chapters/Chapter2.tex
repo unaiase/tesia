@@ -13,7 +13,7 @@ one and solve it. First of all, we will see what is the advantage of transformin
 
 \section{Independent electron approximation}
 
-The simplest mean-field approximation for the electron-electron interaction is actually setting it to $0$ or the so called independent electron approximation. By neglecting this term, the electrons do not see each other and we are 
+The simplest mean-field approximation for the electron-electron interaction is setting it to $0$, the so called independent electron approximation. By neglecting this term, the electrons do not see each other and we are 
 left with a system of $N$ non-interacting particles under an external potential
 \begin{equation}
  V_{ext}(\mathbf{x})=\sum_{j}^{M}\frac{Z_{j}}{|\mathbf{x}-\mathbf{R}_{j}|},
@@ -41,13 +41,13 @@ with $\alpha\equiv\alpha_{1},\alpha_{2}\dots\alpha_{N}$ and $\langle\mathbf{r}_{
 $\alpha_{i}^{th}$ state. \\
 
 This derivation shows that transforming the many-body system into a single-particle one is very convenient and makes the solution for many-electron systems possible. However, neglecting the electron-electron interaction 
-is a very bad approximation\cite{ashcroft1976solid} because it is responsible for many physical properties, in this work we will apply DFT to get a more accurate mean-field theory for the electronic system.
+is a very bad approximation\cite{ashcroft1976solid} because it is responsible for many physical properties. In this work we will apply DFT to get a more accurate mean-field theory for the electronic system.
 
-\section{Density Functional Theory}
+\section{Density functional theory}
 \label{density-functional-theory}
 
 The formalism of DFT\cite{hohenberg1964inhomogeneous,kohn1965self} was mainly developed in the $60's$ by Kohn, Hohenberg, and Sham and it became very popular in the $90's$ when the computational power got strong enough for its 
-implementation. Since two decades it is one of the state of the art methods for studying solid state and molecular chemistry systems and Kohn and Sham were awarded with the Nobel Prize in $1998$. \\
+implementation. Since two decades it is one of the state of the art methods for studying solid state and molecular systems. Kohn and Sham were awarded with the Nobel Prize in $1998$ for their contributions to DFT. \\
 
 The main ingredient of DFT is the ground state electronic density
 \begin{multline}
@@ -126,8 +126,8 @@ Now we can rewrite the total energy functional as
  E^{e}[n_{0}]=T_{e}^{KS}[n_{0}]+E_{ext}[n_{0}]+E_{H}[n_{0}]+E_{X}[n_{0}]+T_{C}[n_{0}]+E_{e,e,C}[n_{0}].
 \end{equation}
 Correlation energies arise due to the many-body character of the system and can only be calculated exactly by solving the many-body Schr\"odinger equation\cite{ceperley1980ground}. The only terms that need an approximation are the 
-correlation energies $T_{C}[n_{0}]$ and $E_{e,e,C}[n_{0}]$, however, the calculation of $E_{X}[n_{0}]$ is more expensive than the calculations of $T_{e}^{KS}[n_{0}]$, $E_{ext}[n_{0}]$ and $E_{H}[n_{0}]$. Thus, it 
-is very common in DFT to give an approximate functional for the exchange energy as well what in the end leaves the total energy functional as
+correlation energies $T_{C}[n_{0}]$ and \\ $E_{e,e,C}[n_{0}]$, however, the calculation of $E_{X}[n_{0}]$ is more expensive than the calculations of $T_{e}^{KS}[n_{0}]$, $E_{ext}[n_{0}]$ and $E_{H}[n_{0}]$. Thus, it 
+is very common in DFT to give an approximate functional for the exchange energy as well. In the end the total energy functional can be written as
 \begin{equation}
  E^{e}[n_{0}]=T_{e}^{KS}[n_{0}]+E_{ext}[n_{0}]+E_{H}[n_{0}]+E_{xc}[n_{0}],
 \end{equation}
@@ -158,9 +158,11 @@ spin degeneracy because in this work we have not included spin dependent terms i
 \begin{multline}
  V^{KS}(\mathbf{x})=V_{ext}(\mathbf{x})+\int{d\mathbf{x}\frac{n_{0}(\mathbf{x})}{|\mathbf{x}-\mathbf{x}'|}}+\frac{\delta E_{xc}[n_{0}]}{\delta n_{0}(\mathbf{x})}=V_{ext}(\mathbf{x})+V_{H}(\mathbf{x})+V_{xc}(\mathbf{x}).
 \end{multline}
+\\
+
 With the knowledge of the functional form of the exchange-correlation energy we would get the ground state density and energy exactly. However, the functional is not known and approximations are necessary. Since the first DFT 
 implementations many functionals \cite{perdew1981self,perdew1996generalized} for $E_{xc}$ have been proposed with their benefits and pathologies. The analysis and development of exchange-correlation functionals is a science on
-itself and it is out of the scope of this thesis, that is why we will not go further in this topic. In this work we have made use of the most simple and common functionals, the 
+itself and it is out of the scope of this thesis. For this reason we will not go further in this topic. In this work we have made use of the most simple and common functionals, the 
 LDA\cite{perdew1981self} (local density approximation) and GGA\cite{perdew1996generalized} (generalized gradient approximation). The LDA takes the functional of the homogeneous electron gas\cite{pyne1992iterative} by assuming that 
 the electronic density of the system is homogeneous. Thus, the $E_{xc}$ at each point depends only on the density at that point. The GGA not only considers the density of the system at each point but includes a gradient 
 correction. In this work we have used the PBE\cite{perdew1996generalized} parametrization of the GGA. These approximations seem too simple but provide surprisingly good results as the density of the valence electrons in normal 
@@ -198,7 +200,7 @@ contribute to the plane wave expansion and the Kohn-Sham state can be written as
 where $\langle\mathbf{x}|\phi_{n\mathbf{k}}\rangle=\phi_{n\mathbf{k}}(\mathbf{x})$. Therefore, for a given $\mathbf{k}$ point within the 1BZ, the single-particle wave functions can be expanded as in 
 Eq. \ref{planewave-expansion}. \\
 
-Once we have decided to expand the electronic wave functions in a plane wave basis, $H^{KS}$ needs to be diagonalized at every $\mathbf{k}$ point allowed by the Born-von Karman boundary conditions within the 1BZ. The 
+Once we have decided to expand the electronic wave functions in a plane wave basis, $H^{KS}$ has to be diagonalized at every $\mathbf{k}$ point allowed by the Born-von Karman boundary conditions within the 1BZ. The 
 eigenvalues obtained at each $\mathbf{k}$ point yield the single-particle energies, or band energies, $\epsilon_{n\mathbf{k}}$. In order to get the band energies for a given $\mathbf{k}$ point, the matrix that needs 
 to be diagonalized looks like
 \begin{equation}
@@ -242,6 +244,8 @@ self-consistent way as explained in Fig. \ref{self-consistent-cycle}
 \caption[DFT self-consistent cycle]{Flowchart of the self-consistent cycle for solving the Kohn-Sham equation. $\Delta E$ and $\epsilon$ are the energy difference between current cycle and the previous and the chosen threshold, respectively.}
 \label{self-consistent-cycle}
 \end{figure}
+\\
+
 First of all we need a guess for the electronic density, which, for instance, can be the sum of the atomic electronic densities. With this density we can build the 
 Kohn-sham potential and solve the Kohn-Sham equations. With the eigenfunctions of the solution we can build a new density and repeat the process. We will consider that the total energy of the system is converged when 
 the difference in energy between two steps, $\Delta E$, is smaller than the threshold energy $\epsilon$. \\
@@ -269,13 +273,13 @@ among themselves. On top of that, the core electrons have a non-negligible contr
 %oscillation, we would need many $\mathbf{G}$ vectors in Eq. \ref{planewave-expansion} to expand their wave functions. These oscillations make also the valence electronic wave functions oscillate due to the need of 
 %orthogonality. \\
 
-In order to account for the core electrons in the external potential and make the valence electronic wave functions smother close to the nucleus, pseudopotentials are used. First of all the electronic wave functions of the 
+In order to account for the core electrons in the external potential and make the valence electronic wave functions smoother close to the nuclei, pseudopotentials are used. First of all the electronic wave functions of the 
 atoms are calculated within DFT. Once we have all the wave functions, we have to decide which ones are core and which ones valence electrons. We take the valence electronic wave functions $\phi_{i}(\mathbf{x})$ and we 
 create new wave functions $\phi_{i}^{ps}(\mathbf{x})$ which are smother than the original ones below a given radius $R_{c}$. With this pseudo wave function of the valence electrons we will solve the Schr\"{o}dinger equation in 
 Eq. \ref{kohn-sham} and we will get the potential $v_{i}^{ps}(\mathbf{x})$ for each orbital channel. That pseusopotential is the one we will use to build $v_{ext}$, which takes into account the inner electrons of 
 the ion. \\
 
-The smooth part of the pseudo wave function is non-unique and it is the difference among different types of pseudopotentials. In this work we have applied 
+The smooth part of the pseudo wave function is non-unique and it is different for different pseudopotentials. In this work we have applied 
 norm-conserving\cite{hamann1979norm,troullier1991efficient} (NC), ultrasoft\cite{vanderbilt1990soft} (US), and projector augmented\cite{blochl1994projector} (PAW) pseudopotentials. In NC pseudopotentials the 
 charge enclosed by the core radius in the all-electron wave function is preserved in the pseudo wave function. US pseudopotentials relax the norm-conserving constraint allowing for a smoother core 
 part of the wave function and, thus, requiring less plane waves, yet compromising transferability from one system to another and making more testing necessary to avoid spurious results. PAW pseudopotentials have 

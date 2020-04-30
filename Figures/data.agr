@@ -90,7 +90,7 @@
 @timestamp rot 0
 @timestamp font 0
 @timestamp char size 1.000000
-@timestamp def "Wed Nov  6 14:21:52 2019"
+@timestamp def "Thu Apr 30 11:32:59 2020"
 @with string
 @    string on
 @    string loctype view
@@ -190,7 +190,7 @@
 @    xaxis  bar color 1
 @    xaxis  bar linestyle 1
 @    xaxis  bar linewidth 1.0
-@    xaxis  label "Q (Order parameter)"
+@    xaxis  label "Order parameter"
 @    xaxis  label layout para
 @    xaxis  label place auto
 @    xaxis  label char size 1.480000
@@ -251,7 +251,7 @@
 @    yaxis  bar color 1
 @    yaxis  bar linestyle 1
 @    yaxis  bar linewidth 1.0
-@    yaxis  label "F (Free energy)"
+@    yaxis  label "Free energy"
 @    yaxis  label layout para
 @    yaxis  label place auto
 @    yaxis  label char size 1.480000

@@ -13,7 +13,7 @@ In order to study the dynamics of ions we have to solve the nuclear Schr\"odinge
 \ref{schrodinger-nuclei}. As we saw in Eq. \ref{nuclei}, the ions move in a potential given by the previously 
 calculated electronic total ground state energy which is usually named Born-Oppenheimer Energy Surface (BOES). \\
 
-The BOES has around $10^{23}$ degrees of freedom and it is an extremely complex energy landscape, therefore, the nuclear Hamiltonian is unsolvable unless the problem is simplified by applying approximations. The first non-trivial 
+The BOES has around $10^{23}$ degrees of freedom and it is an extremely complex energy landscape. The nuclear Hamiltonian is unsolvable unless the problem is simplified by applying approximations. The first non-trivial 
 approximation we can adopt to solve this problem is the harmonic approximation, which is a low-order expansion of the BOES in the atomic displacements and is justified by the fact that in many solids the atomic displacements are 
 much smaller than the interatomic distances\cite{ashcroft1976solid}.
 
@@ -54,11 +54,11 @@ tensor can be defined as
 \label{bo-stress}
  P_{\alpha\beta}^{BO}(\mathbf{R})=-\frac{1}{\Omega}\frac{\partial U(\mathbf{R})}{\partial\epsilon_{\alpha\beta}}\vline_{_{_{_{_{_{_{_{\boldsymbol{\epsilon}=0}}}}}}}},
 \end{equation} 
-where $\epsilon_{\alpha\beta}$ is the strain tensor. From now on we will suppose that the BOES is defined for a given stress tensor and $\mathbf{R}^{0}$ is the atomic configuration that minimizes that BOES. It is important to note 
+where $\epsilon_{\alpha\beta}$ is the strain tensor. From now on we will suppose that the BOES is defined for any stress tensor and $\mathbf{R}^{0}$ is the atomic configuration that minimizes that BOES. It is important to note 
 that the stress tensor in Eq. \ref{bo-stress} does not include any effect from the thermal or quantum fluctuations of the ions, it is just the derivative of the total electronic energy with respect to the strain tensor. \\
  
 Since we are at a local minimum of the BOES, the first-order term $U_{1}$ is zero by definition, thus, the lowest-order approximation we can do for the nuclear motion is to keep the terms up to second-order in the atomic 
-displacements. The lowest-order approximation is named harmonic approximation and the harmonic Hamiltonian reads
+displacements. The lowest-order approximation is named harmonic approximation. The harmonic Hamiltonian reads
 \begin{equation}
 \label{harmonic_hamiltonian}
  H^{I}(\mathbf{R})\simeq\sum_{\mathbf{T}s\alpha}\frac{(P_{s}^{\alpha}(\mathbf{T}))^{2}}{2m_{s}}+U(\mathbf{R}^{0})+U_{2}(\mathbf{R}).
@@ -67,9 +67,9 @@ We will name higher-order terms ($n>2$) anharmonic terms. It is convenient to Fo
 \begin{equation}
  \label{2bfc-fourier}
  \overset{(n)}{\phi}{}_{s_{1}\dots s_{n}}^{\alpha_{1}\dots\alpha_{n}}(\mathbf{T}_{1},\dots,\mathbf{T}_{n})=\frac{1}{N_{\mathbf{q}}^{n-1}}\sum_{\mathbf{q}_{1}\dots\mathbf{q}_{n}}e^{i(\mathbf{q}_{1}\cdot\mathbf{T}_{1}+\dots+\mathbf{q}_{
- n}\cdot\mathbf{T}_{n})}\times\overset{(n)}{\phi}{}_{s_{1}\dots s_{n}}^{\alpha_{1}\dots\alpha_{n}}(\mathbf{q}_{1},\dots,\mathbf{q}_{n}),
+ n}\cdot\mathbf{T}_{n})}\overset{(n)}{\phi}{}_{s_{1}\dots s_{n}}^{\alpha_{1}\dots\alpha_{n}}(\mathbf{q}_{1},\dots,\mathbf{q}_{n}),
 \end{equation}
-where $N_{\mathbf{q}}$ is the number of $\mathbf{q}$ points in the 1BZ or equivalently the number of allowed $\mathbf{T}$ lattice vectors. Due to the translational symmetry of the crystal, 2BFC have also translational invariance and only 
+where $N_{\mathbf{q}}$ is the number of $\mathbf{q}$ points in the 1BZ, or equivalently, the number of allowed $\mathbf{T}$ lattice vectors. Due to the translational symmetry of the crystal, 2BFC have also translational invariance and only 
 depend on $\mathbf{T}=\mathbf{T}_{1}-\mathbf{T}_{2}$. Therefore, only the terms with $\mathbf{q}_{1}=-\mathbf{q}_{2}$ are non-zero in 
 Eq. \ref{2bfc-fourier} and the equation can be rewritten
 \begin{equation}
@@ -86,6 +86,8 @@ where $\mathbf{q}=\mathbf{q}_{1}=-\mathbf{q}_{2}$. In the same way we can define
  \label{momentum-fourier}
  P_{s}^{\alpha}(\mathbf{q})=\frac{1}{\sqrt{N_{\mathbf{q}}}}\sum_{\mathbf{T}}e^{-i\mathbf{q}\cdot\mathbf{T}}P_{s}^{\alpha}(\mathbf{T}).
 \end{equation}
+\\
+
 We will see that these definitions will allow us to diagonalize the ionic Hamiltonian. First of all we assume the following transformations with the bosonic ladder operators
 \begin{equation}
  \label{displacement-quantization}
@@ -137,7 +139,7 @@ is the Bose-Einstein distribution function. The zero point energy (ZPE) is defin
 \end{equation}
 and arises from the quantum fluctuations of the atoms at $T=0$ K.
 
-\section{Phonons from Density Functional Perturbation Theory}
+\section{Phonons from density functional perturbation theory}
 \label{dfpt-2bfc}
 
 We have seen that within the simplest approximation to study the motion of nuclei we need to calculate second derivatives of $U(\mathbf{R})$ at the minimum of the BOES or the 2BFC. We can start by calculating the 
@@ -209,28 +211,26 @@ f_{s_{1}}^{\alpha_{1}}(\mathbf{T}_{1})=-\sum_{\mathbf{T}_{2}s_{2}\alpha_{2}}\phi
 We can arrive to that expression just by taking the derivative of Eq. \ref{harmonic_hamiltonian}. The 2BFC can be 
 calculated as
 \begin{equation}
-\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2})=-\frac{f_{s_{1}}^{\alpha_{1}}(\mathbf{T}_{1})}{u_{s_{2}}^{\alpha_{2}}(\mathbf{T}_{2})},
+	\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2})=-\frac{\partial f_{s_{1}}^{\alpha_{1}}(\mathbf{T}_{1})}{\partial u_{s_{2}}^{\alpha_{2}}(\mathbf{T}_{2})}\simeq -\frac{f_{s_{1}}^{\alpha_{1}}[u_{s_{2}}^{\alpha_{2}}](\mathbf{T}_{1})}{u_{s_{2}}^{\alpha_{2}}},
  \label{forward}
 \end{equation}
 by displacing once at a time all the atoms of the lattice along the three Cartesian components by 
 $u_{s_{2}}^{\alpha_{2}}(\mathbf{T}_{2})$, and calculating the forces 
-$f_{s_{1}}^{\alpha_{1}}(\mathbf{T}_{1})$ induced on the atom at $\mathbf{R}_{s_{1}}(\mathbf{T}_{1})$. Eq. 
-\ref{forward} computes the 2BFC using forward differences. For numerical reasons it can be advantageous in some 
-cases to use central differences. \\
+$f_{s_{1}}^{\alpha_{1}}[u_{s_{2}}^{\alpha_{2}}](\mathbf{T}_{1})$ induced on the atom at $\mathbf{R}_{s_{1}}(\mathbf{T}_{1})$. Eq. \ref{forward} computes the 2BFC using forward differences. For numerical reasons it can be advantageous in some cases to use central differences. \\
 
 Since the crystal is invariant under translations of any lattice vector, it is only necessary to displace atoms in 
 one primitive cell and calculate the forces induced on all the other atoms of the crystal. From now on we will 
 assume that this is understood and put simply $\mathbf{T}_{2}=0$. \\
 
-It is really important to point that the 2BFC 
+It is important to point that the 2BFC 
 $\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2})$ in Eq. \ref{perturbative-nbfc} are the 
-2BFC in the infinite lattice, therefore, there is no restriction on the lattice vectors $\mathbf{T}$. However, the 
+2BFC in the infinite lattice. Therefore, there is no restriction on the lattice vectors $\mathbf{T}$. However, the 
 calculation of the 2BFC expressed in Eqs. \ref{forces_formula} and \ref{forward} can only be done in supercell 
 geometry. Using the supercell geometry we can only calculate the dynamical matrices at wavevectors that are 
 reciprocal lattice vectors of the superlattice, so, without further approximations the calculation of the infinite 
 lattice 2BFC is impossible. \\
 
-Our assumption will be the following: The infinite lattice 2BFC 
+Our assumption will be the following: the infinite lattice 2BFC 
 $\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2})$ vanishes when the separation 
 $|\mathbf{R}_{s_{1}}(\mathbf{T}_{1})-\mathbf{R}_{s_{2}}(\mathbf{T}_{2})|$ is such that the positions 
 $\mathbf{R}_{s_{1}}(\mathbf{T}_{1})$ and $\mathbf{R}_{s_{2}}(\mathbf{T}_{2})$ lie in different Wigner-Seitz (WS) 
@@ -241,50 +241,62 @@ $\mathbf{R}_{s_{1}}(\mathbf{T}_{1})$ is in a different WS cell; it is equal to t
 $\mathbf{R}_{s_{1}}(\mathbf{T}_{1})$ is within the same WS cell; and it is equal to the supercell value divided by 
 an integer $P$ if $\mathbf{R}_{s_{1}}(\mathbf{T}_{1})$ lies on the boundary of the same WS cell, where $P$ 
 is the number of WS cells having $\mathbf{R}_{s_{1}}(\mathbf{T}_{1})$ on their boundary. With this assumption, the 
-2BFC will converge to the correct infinite lattice values as the dimensions of the supercell are systematically 
-increased. \\
+2BFC will converge to the correct infinite lattice values as the size of the supercell systematically increases. \\
 
 So far we have described a method to properly converge the 2BFC to the infinite lattice 2BFC by calculating the 
-forces in different supercell sizes. For that purpose, we need to move all the atoms one by one and calculate the 
-resulting forces in all the other atoms. However, it is not always necessary to 
-displace all the atoms in the primitive cell, since the use of symmetries can simplify this task. If there is a 
-symmetry operation $S$ that relates two atomic positions in the primitive cell and the whole crystal is invariant 
-under such transformation, then it is not necessary to move both atoms. Imagine we calculate the 2BFC 
+forces in different supercell sizes. For that purpose, we need to move all the atoms one by one in the three Cartesian directions and calculate the resulting forces in all the other atoms. This procedure gives a number of displacements for which, the forces must be computed. The number of displacements can be reduced by using the symmetries of the system. The symmetries include: translations, permutations, and space group symmetry operations. By using these symmetries many elements of the 2BFC matrix can be related, therefore, it is not necessary to calculate all of them explicitly. \\ 
+
+For example, let's take the case of spaace group symmetries $S$ and imagine we calculate the 2BFC 
 $\phi_{s1}(\mathbf{T}, 0)$. Then, if the atom $1$ and $2$ are related by the symmetry 
 operation $S$, we can write 
 \begin{equation}
-	\phi_{s2}(\mathbf{T},0)=\mathbf{B}(S)\phi_{\lambda_{s_{1}}(S)1}(\mathbf{T},0)\mathbf{B}(S^{-1}),
+\label{symm}
+\boldsymbol{\phi}_{s2}(\mathbf{T},0)=\mathbf{B}(S)\boldsymbol{\phi}_{\lambda_{s_{1}}(S)1}(\mathbf{T},0)\mathbf{B}(S^{-1}),
 \end{equation}
 where $\mathbf{B}(S)$ is the $3\times3$ matrix representing the point group part of $S$ in Cartesian coordinates and 
 $\lambda_{s}(S)$ indicates the atom of the crystal where the atom $\mathbf{R}_{s}(\mathbf{T})$ is brought because of 
-the action of the symmetry operation $S$. This procedure is repeated then for all the atoms of the primitive cell. \\
+the action of the symmetry operation $S$. In Eq. \ref{symm} we have made use of the matrix notation by using bold symbols. This procedure is repeated then for all the atoms of the primitive cell. A similar procedure can be applied for the translational symmetry and the permutation symmetry of the 2BFC. \\
 
-In principle each atom has to be displaced along the three Cartesian directions. It is sometimes convenient to
-displace the atoms along some special directions so as to maximize the number of symmetry operations still present 
-in the perturbed (once the atoms displaced) supercell. \\
+%However, it is not always necessary to 
+%displace all the atoms in the primitive cell, since the use of symmetries can simplify this task. If there is a 
+%symmetry operation $S$ that relates two atomic positions in the primitive cell and the whole crystal is invariant 
+%under such transformation, then it is not necessary to move both atoms. Imagine we calculate the 2BFC 
+%$\phi_{s1}(\mathbf{T}, 0)$. Then, if the atom $1$ and $2$ are related by the symmetry 
+%operation $S$, we can write 
+%\begin{equation}
+%	\phi_{s2}(\mathbf{T},0)=\mathbf{B}(S)\phi_{\lambda_{s_{1}}(S)1}(\mathbf{T},0)\mathbf{B}(S^{-1}),
+%\end{equation}
+%where $\mathbf{B}(S)$ is the $3\times3$ matrix representing the point group part of $S$ in Cartesian coordinates and 
+%$\lambda_{s}(S)$ indicates the atom of the crystal where the atom $\mathbf{R}_{s}(\mathbf{T})$ is brought because of 
+%the action of the symmetry operation $S$. This procedure is repeated then for all the atoms of the primitive cell. \\
 
-Using symmetries it is possible to reduce the number of displacementsr. If applying a point group 
-symmetry operation $W$ to the displacement vector $\mathbf{u}_{1}$ one obtains a vector $\mathbf{u}_{2}$ which is 
-linearly independent from $\mathbf{u}_{1}$, then the force field that would be induced by the displacement 
-$\mathbf{u}_{2}$ can be calculated by 
-\begin{equation}
-\mathbf{f}_{s_{1}s_{2}}^{2}(\mathbf{T}_{1},0)=\mathbf{B}(W)\mathbf{f}_{\lambda_{s_{1}}(W^{-1}),s_{2}}^{1}(\mathbf{T}_{1},0).
-\end{equation}
-$\mathbf{f}_{s_{1}s_{2}}^{2}(\mathbf{T}_{1},0)$ is the force on atom $\mathbf{R}_{s_{1}}(\mathbf{T}_{1})$ when 
-applied displacement $\mathbf{u}_{2}$ to atom $\mathbf{R}_{s_{2}}(0)$.
-If we can not find a linearly independent displacement using the previous idea one has to displace the atom along a 
-chosen independent direction and perform another calculation. This must be done until a set of three independent 
-directions is found. \\
+%In principle each atom has to be displaced along the three Cartesian directions. It is sometimes convenient to
+%displace the atoms along some special directions so as to maximize the number of symmetry operations still present 
+%in the perturbed (once the atoms displaced) supercell. \\
 
-In principle, well defined 2BFC are invariant under the point group symmetry operations of the 
-crystal. However, this is not automatically guaranteed by the procedure we have just described, because in general, 
-the crystal is not harmonic and therefore Eq. \ref{forward} is only an approximation. So, the 2BFC must be 
-symmetrized with respect to the point group operations of the crystal
-\begin{equation}
-\phi_{s_{1}s_{2}}(\mathbf{T}_{1},0)=\frac{1}{N_{W}}\sum_{W}\mathbf{B}(W)\phi_{\lambda_{s_{1}}(W),s_{2}}(\mathbf{T}_{1},0)\mathbf{B}(W)^{-1},
-\end{equation}
-$N_{W}$ being the number of point group operations. 
-The symmetrization of the 2BFC removes all even-order anharmonicities. It must be pointed that the harmonic 
+%Using symmetries it is possible to reduce the number of displacementsr. If applying a point group 
+%symmetry operation $W$ to the displacement vector $\mathbf{u}_{1}$ one obtains a vector $\mathbf{u}_{2}$ which is 
+%linearly independent from $\mathbf{u}_{1}$, then the force field that would be induced by the displacement 
+%$\mathbf{u}_{2}$ can be calculated by 
+%\begin{equation}
+%\mathbf{f}_{s_{1}s_{2}}^{2}(\mathbf{T}_{1},0)=\mathbf{B}(W)\mathbf{f}_{\lambda_{s_{1}}(W^{-1}),s_{2}}^{1}(\mathbf{T}_{1},0).
+%\end{equation}
+%$\mathbf{f}_{s_{1}s_{2}}^{2}(\mathbf{T}_{1},0)$ is the force on atom $\mathbf{R}_{s_{1}}(\mathbf{T}_{1})$ when 
+%applied displacement $\mathbf{u}_{2}$ to atom $\mathbf{R}_{s_{2}}(0)$.
+%If we can not find a linearly independent displacement using the previous idea one has to displace the atom along a 
+%chosen independent direction and perform another calculation. This must be done until a set of three independent 
+%directions is found. \\
+
+%In principle, well defined 2BFC are invariant under the point group symmetry operations of the 
+%crystal. However, this is not automatically guaranteed by the procedure we have just described, because in general, 
+%the crystal is not harmonic and therefore Eq. \ref{forward} is only an approximation. So, the 2BFC must be 
+%symmetrized with respect to the point group operations of the crystal
+%\begin{equation}
+%\phi_{s_{1}s_{2}}(\mathbf{T}_{1},0)=\frac{1}{N_{W}}\sum_{W}\mathbf{B}(W)\phi_{\lambda_{s_{1}}(W),s_{2}}(\mathbf{T}_{1},0)\mathbf{B}(W)^{-1},
+%\end{equation}
+%$N_{W}$ being the number of point group operations. 
+
+The symmetrization of the 2BFC removes all even-order anharmonicities. It must be pointed, that the harmonic 
 approximation becomes better and better as the displacement are made smaller and smaller. However, this can 
 not be taken to the limit because the smaller are the displacements the smaller are the induced forces and the level 
 of accuracy is always finite. So, one can not make too small displacements but usually a fraction of a percentage of 
@@ -319,11 +331,11 @@ induction $\boldsymbol{\mathsf{D}}$
 In the absence of free external charges, the Maxwell equations give
 \begin{equation}
  \label{rotational}
- rot\boldsymbol{\mathsf{E}}\sim i\mathbf{q}\times\boldsymbol{\mathsf{E}}=0,
+\boldsymbol{\nabla}\times\boldsymbol{\mathsf{E}}\sim i\mathbf{q}\times\boldsymbol{\mathsf{E}}=0,
 \end{equation}
 \begin{equation}
  \label{divergency}
- div\boldsymbol{\mathsf{D}}\sim i\mathbf{q}\cdot\boldsymbol{\mathsf{D}}=0.
+\boldsymbol{\nabla}\cdot\boldsymbol{\mathsf{D}}\sim i\mathbf{q}\cdot\boldsymbol{\mathsf{D}}=0.
 \end{equation}
 For transverse modes, where the electric field is perpendicular to the phonon momentum, Eq. \ref{rotational} gives $\boldsymbol{\mathsf{E}}_{T}=0$ ($\boldsymbol{\mathsf{E}}_{T}$ is the transversal component of the electric 
 field), and Eq. \ref{conjugate-force} $\mathbf{f}_{T}=-m\omega_{0}^{2}\mathbf{u}$. Therefore the transverse frequency is $\omega_{T}=\omega_{0}$. For longitudinal modes, where the electric field is parallel to the phonon 
@@ -332,7 +344,20 @@ longitudinal component of the electric field). Eq. \ref{conjugate-force} gives $
 is $\omega_{L}=\sqrt{\omega_{0}^{2}+4\pi Z^{*2}/(\Omega_{cell}\epsilon_{\infty}m)}$. These results clearly show that the frequency of longitudinal modes in the long-wavelength limit have an extra term that arises due to the 
 coupling with the electric field. The formalism can be generalized for crystals with any symmetry and in these cases the Born effective charges and the electronic dielectric constant will be tensors. \\
 
-The first-principles calculation of $\epsilon_{\infty}^{\alpha\beta}$ and $Z_{s}^{*\alpha\beta}$ can be started from the definition of the macroscopic electric polarization of the medium, 
+If we want to define the 2BFC in the long-wavelength limit, they can be split into the sum of an analytic and a nonanalytic contributions
+\begin{equation}
+ \phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}=\overset{an}{\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}}+\overset{na}{\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}},
+\end{equation}
+where the analytic part is the matrix obtained from DFPT, for instance, the perturbation being a zone-center phonon displacement at zero macroscopic electric field. The nonanalytic part has the general form
+\begin{equation}
+\label{nonanalytic}
+\overset{na}{\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}}=\frac{4\pi}{\Omega_{cell}}\frac{(\mathbf{q}\cdot\mathbf{Z}^{*}_{s_{1}})_{\alpha_{1}}(\mathbf{q}\cdot\mathbf{Z}^{*}_{s_{2}})_{\alpha_{2}}}{\mathbf{q}\cdot\boldsymbol{
+\epsilon}_{\infty}\cdot\mathbf{q}}.
+\end{equation}
+From Eq. \ref{nonanalytic} we can see that for the nonanalytic part of the 2BFC at $\mathbf{q}=0$ we need the macroscopic dielectric constant of the system and the Born effective charges, which can be calculated within
+the DFPT formalism explained in section \ref{dfpt-2bfc}\cite{gonze1997dynamical}. \\
+
+In order to have little bit of intuition on how to calculate these quantities, the first-principles calculation of $\epsilon_{\infty}^{\alpha\beta}$ and $Z_{s}^{*\alpha\beta}$ can be started from the definition of the macroscopic electric polarization of the medium, 
 \begin{equation}
  \mathsf{P}_{\alpha}=\frac{1}{\Omega_{cell}}\sum_{s\beta}\left[Z^{*\alpha\beta}_{s}u_{s}^{\beta}+\frac{\epsilon_{\infty}^{\alpha\beta}-\delta_{\alpha\beta}}{4\pi}\mathsf{E}_{\beta}\right],
 \end{equation}
@@ -345,25 +370,13 @@ while the electronic dielectric constant tensor is the derivative of the polariz
 \begin{equation}
  \epsilon_{\infty}^{\alpha\beta}=\delta_{\alpha\beta}+4\pi\frac{\partial\mathsf{P}_{\alpha}}{\partial\mathsf{E}_{\beta}}\vline_{_{_{_{_{_{_{_{\mathbf{u}_{s}(\mathbf{q}=0)=0}}}}}}}}.
 \end{equation}
-If we want to define the 2BFC in the long-wavelength limit, they can be split into the sum of an analytic and a nonanalytic contributions
-\begin{equation}
- \phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}=\overset{an}{\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}}+\overset{na}{\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}},
-\end{equation}
-where the analytic part is the matrix obtained from DFPT, for instance, the perturbation being a zone-center phonon displacement at zero macroscopic electric field. The nonanalytic part has the general form
-\begin{equation}
-\label{nonanalytic}
-\overset{na}{\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}}=\frac{4\pi}{\Omega_{cell}}\frac{(\mathbf{q}\cdot\mathbf{Z}^{*}_{s_{1}})_{\alpha_{1}}(\mathbf{q}\cdot\mathbf{Z}^{*}_{s_{2}})_{\alpha_{2}}}{\mathbf{q}\cdot\boldsymbol{
-\epsilon}_{\infty}\cdot\mathbf{q}}.
-\end{equation}
-From Eq. \ref{nonanalytic} we can see that for the nonanalytic part of the 2BFC at $\mathbf{q}=0$ we need the macroscopic dielectric constant of the system and the Born effective charges, which can be calculated within 
-the DFPT formalism explained in section \ref{dfpt-2bfc}\cite{gonze1997dynamical}. \\
+\\
 
 For a better understanding, in Fig. \ref{LOTOsplitting} we show the ab initio phonon spectrum of $SnS$.
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=0.8\linewidth]{Figures/charges.eps}
-\caption[$SnS$ phonon spectrum with efective charges]{Ab initio phonon dispersion of $SnS$ including the coupling of the longitudinal optic modes with the macroscopic electric field (black circles) and without 
-including it (red lines).}
+\includegraphics[width=0.9\linewidth]{Figures/charges.eps}
+\caption[$SnS$ phonon spectrum]{Ab initio phonon dispersion of $SnS$ including the coupling of the longitudinal optic modes with the macroscopic electric field (black circles) and without including it (red lines). The LO modes are denoted with arrows.}
 \label{LOTOsplitting}
 \end{center}
 \end{figure}
@@ -371,7 +384,8 @@ As we can see, in practice, the correction for the longitudinal optic modes in t
 is that for different directions in the 1BZ the frequency of the longitudinal modes is different.
 
 \section{Anharmonic effects in solids}
-The harmonic approximation allows to write the ionic Hamiltonian in a diagonal basis and, therefore, provides well defined quasiparticles named phonons which do not interact among themselves. For that purpose 
+The harmonic approximation allows to diagonalize the ionic Hamiltonian and, therefore, provides well defined 
+quasiparticles named phonons which do not interact among themselves. For that purpose 
 we have seen that we need to truncate the Taylor expansion of the external potential at the second-order within the small atomic displacements assumption. This assumption seems to be valid in most solids 
 for temperatures below the melting point, specially for obtaining phonon frequencies and its associated physical properties\cite{born1954dynamical}. However, the non-interacting picture has limitations and it 
 is not able to explain many physical phenomena that arise due to the anharmonic terms in Eq. \ref{taylor-expansion}. Probably, one of the most representative examples of anharmonicity is the non-zero thermal 
@@ -388,12 +402,12 @@ presence of very light atoms\cite{borinaga2017anharmonicity} or when the crystal
 ferroelectrics\cite{ribeiro2018strong,zhang2011anomalous} or in materials that show charge density wave transitions\cite{kidd2002electron,leroux2015strong}. \\
 
 When perturbation theory breaks down one needs to apply non-pertubative methods. One way of including anharmonic effects at a non-pertubative level is to use molecular dynamics 
-simulations\cite{hellman2013temperature,hellman2013temperature1,hellman2011lattice,ljungberg2013temperature,magduau2013identification,wang1990tight,zhang2014phonon,de2009thermal}, which usually require long simulation
-times and, as they follow Newtonian dynamics, their applications are limited to temperatures above the Debye temperature. The Newtonian limitation can be overcome by applying path integral molecular 
+simulations\cite{hellman2013temperature,hellman2013temperature1,hellman2011lattice,ljungberg2013temperature,magduau2013identification,wang1990tight,zhang2014phonon,de2009thermal}. This method usually requires long simulation
+times and, as it follows Newtonian dynamics, its applications are limited to temperatures above the Debye temperature. The Newtonian limitation can be overcome by applying path integral molecular 
 dynamics\cite{ceperley1995path} which are even more computationally expensive as they require to simulate the quantum fluctuations. There is another family of 
 methods\cite{errea2014anharmonic,errea2013first,errea2011anharmonic,monserrat2013anharmonic,tadano2015self,georgescu2012self,brown2013self,patrick2015anharmonic,} that have been developed mainly inspired by the 
 self-consistent harmonic approximation (SCHA) formulated by Hooton\cite{hooton1955li}. The SCHA uses the variational Gibbs-Bogoliubov (GB) principle to approximate the free energy of the ionic Hamiltonian with 
-the free energy calculated with a trial harmonic density matrix for the same system, which does not necessarily coincide with the harmonic density matrix obtained from the harmonic approximation. \\
+the free energy calculated with a trial harmonic density matrix for the same system, which does not coincide with the harmonic density matrix obtained from the harmonic approximation. \\
 
 In this thesis we have applied the perturbative method\cite{paulatto2013anharmonic} and a stochastic implementation of the SCHA, the so called stochastic self-consistent 
 harmonic approximation (SSCHA)\cite{errea2013first,errea2014anharmonic,bianco2017second,monacelli2018pressure}. In 
@@ -404,12 +418,12 @@ the following sections we will discuss both of them.
 
 In this section we will see what is the correction that the lowest-order perturbation theory makes to the harmonic 
 result. We will see that this approximation not only gives an anharmonic line shift to the harmonic 
-frequencies, but also an anharmonic line width, which makes clear that the non-interacting phonons do not diagonalize the anharmonic Hamiltonian and they will no longer have an infinite lifetime. Therefore, this 
+frequencies, but also an anharmonic line width, which makes clear that the phonons do not diagonalize the anharmonic Hamiltonian and they will no longer have an infinite lifetime. Therefore, this 
 theory will allow us to calculate properties, such as, the lattice thermal conductivity and the phonon spectral function measured in inelastic scattering experiments. \\
 
 We will name the harmonic Hamiltonian $H^{(0)}$ and we will treat the anharmonic part as a small perturbation of $H^{(0)}$. With $G_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2};z)$ and 
 $G_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}(0)}(\mathbf{T}_{1},\mathbf{T}_{2};z)$ we indicate the Green's functions of the total ionic Hamiltonian $H^{I}$ and $H^{(0)}$ for the variable $\sqrt{m_{s}}u_{s}^{\alpha}(\mathbf{T})$, 
-respectively. The Green's function of the Harmonic Hamiltonian is given by
+respectively. We define the Green's function in time space as $\overset{-1}{G}{}_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}(0)}(\mathbf{T}_{1},\mathbf{T}_{2};t)=\langle\sqrt{m_{s_{1}}}u_{s_{1}}^{\alpha_{1}}(\mathbf{T_{1}},0)\sqrt{m_{s_{2}}}u_{s_{2}}^{\alpha_{2}}(\mathbf{T_{2}},t)\rangle$.The Green's function of the Harmonic Hamiltonian is given by
 \begin{equation}
  \overset{-1}{G}{}_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}(0)}(\mathbf{T}_{1},\mathbf{T}_{2};z)=z^{2}\delta_{s_{1}s_{2}}\delta_{\alpha_{1}\alpha_{2}}\delta_{\mathbf{T}_{1}\mathbf{T}_{2}}-D_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{
  T}_{1},\mathbf{T}_{2}).
@@ -486,11 +500,11 @@ free energy within the QHA the $T_{O}$ diagram vanishes. These equilibrium atomi
 phonon in the limit of $\mathbf{q}\rightarrow\Gamma$ and accounts for the cell parameters relaxation. It can also be calculated within the QHA.  
 \\
 
-From $\boldsymbol{G}(z)$ we can calculate the one-phonon spectral function as $\tilde{\sigma}=-2ImTr[\boldsymbol{G}(\omega+i0^{+})]$. Peaks in the spectral function as a function of $\omega$ signal the presence of 
+From $\boldsymbol{G}(z)$ we can calculate the one-phonon spectral function as \\ $\tilde{\sigma}=-2ImTr[\boldsymbol{G}(\omega+i0^{+})]$. Note that in the previous expression we have applied the change $z\rightarrow\omega+i0^{+}$. Peaks in the spectral function as a function of $\omega$ signal the presence of 
 collective vibrational excitations, phonon quasiparticles, having certain energies. The sharper are the peaks the more lasting are these quasiparticles, their lifetime being inversely proportional to the width. A broad 
-spectral function means that anharmonicity has removed the existence of quasiplarticles with definite identity. This kind of information can be probed with inelastic scattering experiments, for example.  \\ 
+spectral function means that anharmonicity has removed the existence of quasiparticles with definite identity. This kind of information can be probed with inelastic scattering experiments, for example.  \\ 
 
-We take advantage of the lattice periodicity also in this case and Fourier transforming with respect to lattice indices, we consider separated spectral functions $-2ImTr[\boldsymbol{G}(\boldsymbol{q},\omega+i0^{+})]$ for 
+We take advantage of the lattice periodicity also in this case and, Fourier transforming with respect to lattice indices, we consider separated spectral functions $-2ImTr[\boldsymbol{G}(\boldsymbol{q},\omega+i0^{+})]$ for 
 each $\boldsymbol{q}$ point in the 1BZ. We find convenient to multiply the spectral function by $\omega/2\pi$
 \begin{equation}
 \label{sigma-nodiagonal}
@@ -508,20 +522,13 @@ The spectral function is then given by
 \tilde{\sigma}(\mathbf{q},\omega)=\sum_{\mu}\frac{1}{2}\left[\frac{1}{\pi}\frac{-Im\mathcal{Z}_{\mu}(\mathbf{q},\omega)}{[\omega-Re\mathcal{Z}_{\mu}(\mathbf{q},\omega)]^{2}+[Im\mathcal{Z}_{\mu}(\mathbf{q},\omega)]^{
 2}}\right]+\\\sum_{\mu}\frac{1}{2}\left[\frac{1}{\pi}\frac{Im\mathcal{Z}_{\mu}(\mathbf{q},\omega)}{[\omega+Re\mathcal{Z}_{\mu}(\mathbf{q},\omega)]^{2}+[Im\mathcal{Z}_{\mu}(\mathbf{q},\omega)]^{2}}\right]
 \end{multline}
-with $\mathcal{Z}_{\mu}(\mathbf{q},\omega)=\sqrt{\omega_{\mu}^{2}(\mathbf{q})+\Pi_{\mu}(\mathbf{q},\omega+i0^{+})}$, where we consider the principal value of the square root.  
-The spectral function calculated in Eq. \ref{cross-section-new} does not have any given line shape. Depending on the line shape of the spectral function we can divide the phonon quasiparticles into three groups: harmonic, weakly 
-anharmonic and strongly or full anharmonic materials. In Fig. \ref{instoy} we qualitatively describe the cross section of the three groups.
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=0.8\linewidth]{Figures/ins-toy.eps}
-\caption[Spectral function for different levels of anharmonicity]{The spectral function is shown for three different situations. The harmonic case is represented with a Dirac's delta, the weakly anharmonic one with a 
-Lorentzian and the strongly anharmonic one with a shoulder added to a Lorentzian.}
-\label{instoy}
-\end{center}
-\end{figure}
-The first group is the harmonic group where the anharmonic self-energy is zero. In this case the cross section is just a sum of Dirac's deltas that are centered in the harmonic frequencies. The second group is the weakly
-anharmonic group. In this case $\Pi_{\mu}(\mathbf{q},\omega)$ is small compared to $\omega_{\mu}(\mathbf{q})$ and it is justified to approximate 
-$\Pi_{\mu}(\mathbf{q},\omega)\sim\Pi_{\mu}(\mathbf{q},\omega_{\mu}(\mathbf{q}))$, which turns $\tilde{\sigma}(\mathbf{q},\omega)$ into a sum of Lorentzian functions
+with $\mathcal{Z}_{\mu}(\mathbf{q},\omega)=\sqrt{\omega_{\mu}^{2}(\mathbf{q})+\Pi_{\mu}(\mathbf{q},\omega+i0^{+})}$, where we consider the positive value of the square root.  
+The spectral function calculated in Eq. \ref{cross-section-new} does not have any given line shape. \\
+
+%Depending on the line shape of the spectral function we can divide the phonon quasiparticles into three groups: harmonic, weakly 
+%anharmonic and strongly or full anharmonic materials. In Fig. \ref{instoy} we qualitatively describe the cross section of the three groups.
+The equations given by perturbation theory only hold when the corrections to the harmonic frequencies are much smaller than the harmonic value. In this case $\Pi_{\mu}(\mathbf{q},\omega)$ is small compared to $\omega_{\mu}^{2}(\mathbf{q})$ and it is justified to approximate 
+$\Pi_{\mu}(\mathbf{q},\omega)\sim\Pi_{\mu}(\mathbf{q},\omega_{\mu}(\mathbf{q}))$, which turns $\tilde{\sigma}(\mathbf{q},\omega)$ into a sum of Lorentzian functions. 
 \begin{multline}
  \tilde{\sigma}(\mathbf{q},\omega)=\sum_{\mu}\frac{1}{2}\left[\frac{1}{\pi}\frac{\Gamma_{\mu}(\mathbf{q})}{[\omega-\omega_{\mu}(\mathbf{q})-\Delta_{\mu}(\mathbf{q})]^{2}+[\Gamma_{\mu}(\mathbf{q})]^{2}}\right]\\+\sum_{
  \mu}\frac{1}{2}\left[\frac{1}{\pi}\frac{\Gamma_{\mu}(\mathbf{q})}{[\omega+\omega_{\mu}(\mathbf{q})+\Delta_{\mu}(\mathbf{q})]^{2}+[\Gamma_{\mu}(\mathbf{q})]^{2}}\right],
@@ -538,16 +545,26 @@ where
  \label{linewidth}
  \Gamma_{\mu}(\mathbf{q})=-Im\mathcal{Z}_{\mu}(\mathbf{q},\omega_{\mu}(\mathbf{q}))
 \end{equation}
-are shift (with respect to the harmonic frequency) and half-width at half-maximum (HWHM) of mode $\mu$, respectively. 
-In this limit, the lifetime of a phonon $\mu\mathbf{q}$ is defined as the inverse line width (full width at half 
+are shift (with respect to the harmonic frequency) and half-width at half-maximum (HWHM) of mode $\mu$, respectively.
+In this limit, the lifetime of a phonon $\mu\mathbf{q}$ is defined as the inverse line width (full width at half
 maximum, FWHM)
 \begin{equation}
 \label{lifetime}
  \tau_{\mu}(\mathbf{q})=\frac{1}{2\Gamma_{\mu}(\mathbf{q})}.
 \end{equation}
-This group has well defined phonons with their frequencies and line widths. The third group is the strongly or full anharmonic group where the self-energy is not small compared to the dynamical frequencies. In this case the spectral
-functions are not Lorentzians and they can show strongly anharmonic features such as: shoulders, satellite peaks$\dots$ The spectral function of these kind of materials can be very difficult to study from an experimental
-point of view, since more peaks than modes can appear or two modes can appear as only one. \\
+This group has well defined phonons with their frequencies and line widths. 
+In Fig. \ref{instoy} we qualitatively describe the Lorentzian cross section.
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.9\linewidth]{Figures/ins-toy1.eps}
+\caption[Lorentzian and harmonic spectral functions]{Lorentzian and harmonic spectral functions. The harmonic spectral function is a Dirac's delta. The Lorentzian has a well defined full width at half maximum (FWHM) and a well defined energy $\Omega_{\mu}(\boldsymbol{q})$.}
+\label{instoy}
+\end{center}
+\end{figure}
+We can see that how anharmonicity within perturbation theory provides two anharmonic properties. A line shift with respect to the harmonic value and a line width, which does not exist within the harmonic theory. \\
+%The third group is the strongly or full anharmonic group where the self-energy is not small compared to the dynamical frequencies. In this case the spectral
+%functions are not Lorentzians and they can show strongly anharmonic features such as: shoulders, satellite peaks$\dots$ The spectral function of these kind of materials can be very difficult to study from an experimental
+%point of view, since more peaks than modes can appear or two modes can appear as only one. \\
 
 As we can see from Eqs. \ref{loop-diagram}, \ref{bubble-diagram}, and \ref{tadpole-diagram} in order to account for the phonon-phonon interactions at the lowest-order in perturbation theory we need to calculate 
 the $\overset{(3)}{D}{}_{s_{1},s_{2},s_{3}}^{\alpha_{1}\alpha_{2}\alpha_{3}}(\mathbf{T}_{1},\mathbf{T}_{2},\mathbf{T}_{3})$ and $\overset{(4)}{D}{}_{s_{1}s_{1},s_{3}s_{4}}^{\alpha_{1}\alpha_{2}\alpha_{3}\alpha_{4}}(\mathbf{T}_{1},\mathbf{T}_{2},\mathbf{T}_{3},\mathbf{T}_{4})$ anharmonic dynamical matrices. The straightforward way of calculating these 
