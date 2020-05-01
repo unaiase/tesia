@@ -123,11 +123,11 @@ the $6\times6\times6$ and we add it to the $6\times6\times6$ harmonic force-cons
 for more details). For the line width calculations we use a $20\times20\times20$ $\boldsymbol{q}$ points grid 
 obtained by Fourier interpolation with a smearing of $1$ cm$^{-1}$. For the thermal conductivity calculation we use 
 a $10\times10\times10$ grid of $\boldsymbol{q}$ points to sample the first Brillouin zone. We have done calculations 
-in denser grids to test these parameters. We have done SSCHA calculations using different lattice volumes. When we talk about the 'theory' lattice we are referring to the relaxed lattice at DFT level. When we talk about the 'exp' (experimental) lattice we refer to the experimental lattice parameters at the transition temperature between the $Cmcm$ and $Pnma$ phases. The 'stretched' lattice refers to a stretched lattice with respect to the 'theory' in the PBE case. The lattice parameters and the experimental references are listed in table \ref{cell-parameters}. We have only included 
-the the effective charges in the calculation of the harmonic phonons in Fig. \ref{harmonic-volume}. We have seen 
-that the effect of the effective charges is negligible in the thermal conductivity. In order to account for the 
-effective charges within the SSCHA we include the effective charges in the dynamical matrices after the SSCHA 
-minimization.
+in denser grids to test these parameters. We have done SSCHA calculations using different lattice volumes. When we talk about the "theory" (theoretical) lattice we are referring to the relaxed lattice at DFT level. When we talk about the "exp" (experimental) lattice we refer to the experimental lattice parameters at the transition temperature between the $Cmcm$ and $Pnma$ phases. The "stretched" lattice refers to a stretched lattice with respect to the "theory" in the PBE case. The lattice parameters and the experimental references are listed in table \ref{cell-parameters}. We have 
+only included the effective charges in the calculation of the harmonic phonons in Figs. \ref{harmonic-volume} and 
+\ref{exchangebc}. We have seen that the effect of the effective charges is negligible in the thermal conductivity. 
+In order to account for the effective charges within the SSCHA, we include the effective charges in the dynamical 
+matrices after the SSCHA minimization.
 
 \section{Phase transition}
 
@@ -191,7 +191,7 @@ minimization step.}
 \end{center}
 \end{figure}
 As we can see, the $z$ free Wyckoff parameters of the 4c Wyckoff positions of the $Pnma$ phase relaxes to the 
-high symmetry positions $0$, $1$, and $0.5$. The new wyckoff position is the 4c wyckoff position of the $Cmcm$ 
+high symmetry positions $0$ and $0.5$. The new wyckoff position is the 4c wyckoff position of the $Cmcm$ 
 phase. The error in this relaxation is smaller than $0.04$ $a_{0}$. Thus, the $Pnma$ is not a local minimum of the 
 free energy above $T_{c}$, ruling out the first-order transition. Our result disagrees with the conclusions drawn in 
 Ref. \cite{dewandre2016two}. \\
@@ -219,7 +219,7 @@ change. \\
 
 The obtained transition temperature strongly depends on the exchange-correlation functional and volume, as it occurs 
 in similar monochalcogenides\cite{ribeiro2018strong} and in the harmonic phonons.
-In Fig. \ref{harmonic-volume} we can see the LDA and PBE phonon spectra in the theoretical and experimental 
+In Fig. \ref{harmonic-volume} we can see the LDA and PBE harmonic phonon spectra in the theoretical and experimental 
 structures.
 \begin{figure}[th]
 \begin{center}
@@ -243,9 +243,10 @@ PBE, while LDA clearly underestimates them. \\
 The theoretical lattice parameters are estimated neglecting vibrational 
 contributions to the free energy. In order to estimate the role of the thermal expansion, we calculate the stress tensor including vibrational contributions at the anharmonic level as explained in 
 section \ref{scha-stress-section}. The in-plane contribution of the stress tensor calculated at the temperature closest to $T_{c}$, $P_{zz}$, shows that both theoretical LDA and PBE lattices should be stretched. Within LDA it 
-is clear that stretching the lattice increases $T_{c}$. Within PBE, when we take a stretched lattice to resuce $P_{zz}$, $T_{c}$ increases from $299$ K to $387$ K. In all cases the other in-plane component of the stress tensor, 
-$P_{yy}$, is very similar to $P_{zz}$. The LDA transition temperature with the experimental lattice parameters yields the transtion temperature in closes agreement with experiments ($T_{c}\simeq800$ K). The underestimation of the 
-transition temperature may be due to the approximated exchange-correlation or the finite supercell size taken for the SSCHA. \\
+is clear that stretching the lattice increases $T_{c}$. Within PBE, when we take a stretched lattice to reduce $P_{zz}$, $T_{c}$ increases from $299$ K to $387$ K. In all cases the other in-plane component of the stress tensor, 
+$P_{yy}$, is very similar to $P_{zz}$. The LDA transition temperature with the experimental lattice parameters yields the transition temperature in closes agreement with experiments ($T_{c}\simeq800$ K). The underestimation of the 
+transition temperature may be due to the approximated exchange-correlation or the finite $2\times2\times2$ supercell 
+size taken for the SSCHA. \\
 
 \section{Phonons in $Cmcm$ SnSe}
 
@@ -262,7 +263,9 @@ is the full width at half maximum divided by a factor of $1.5$). The calculation
 \label{spectrum-phonon-snse}
 \end{figure}
 The anharmonic line shift is large for most of the modes across the 1BZ. Within the harmonic approximation there are five unstable modes: two ($\Gamma_{1}$, $\Gamma_{2}$) at $\Gamma$, two ($Y_{1}$, $Y_{3}$) at $Y$ and one 
-($R_{1}$) at $R$. These instabilities appear when we do the harmonic calculation in the experimental cell, in the theoretically relaxed cell only appear the instabilities $\Gamma_{1}$ and $Y_{1}$. The instabilities at $\Gamma$ would cause ferroelectric transitions\cite{skelton2016anharmonicity,hong2016electronic}, but they suffer an anharmonic renormalization that prevents it. $Y_{3}$ and $R_{1}$ are also stabilized by anharmonic effects. The $Y_{1}$ mode however remains unstable at $600$ K and it is stabilized after the transition (see Fig. \ref{spectral-snse}). In Fig. \ref{phonon-exp} we compare our harmonic and anharmonic phonons with available INS experimental results\cite{chatterji2018soft} at 853 K. 
+($R_{1}$) at $R$. These instabilities appear when we do the harmonic calculation in the experimental cell, in the theoretically relaxed cell only appear the instabilities $\Gamma_{1}$ and $Y_{1}$. The instabilities at $\Gamma$ would cause ferroelectric transitions\cite{skelton2016anharmonicity,hong2016electronic}, but they suffer an anharmonic renormalization that prevents it. $Y_{3}$ and $R_{1}$ are also stabilized by anharmonic effects. The $Y_{1}$ mode however remains unstable at $600$ K and it is stabilized after the transition (see Fig. \ref{spectral-snse}). \\
+
+In Fig. \ref{phonon-exp} we compare our harmonic and anharmonic phonons with available INS experimental results\cite{chatterji2018soft} at 853 K. 
 \begin{figure}[h]
 \includegraphics[width=\linewidth]{Figures/exp-vs-theory.eps}
 \caption[Comparison of phonons in the Lorentzian approximation and INS experiments.]{Harmonic and anharmonic phonons in the Lorentzian approximation ($\Omega_{\mu}(\mathbf{q})$). We include experimental points\cite{chatterji2018soft} 
@@ -352,8 +355,9 @@ provide an important scattering channel for lowering the thermal conductivity an
 thermoelectric material. \\
 
 We compare our results with the values obtained by Zhao et al.\cite{zhao2014ultralow} above the transition at $800$ K. We also include in the figure the results obtained by Ibrahim et al.\cite{ibrahim2017reinvestigation} above $600$ K (only the in-plane $\kappa_l$ is reported at these temperatures) in the $Pnma$ phase. Even if the results belong to different phases, comparing our calculations for the $Cmcm$ phase with those obtained in the latter work is insightful because the thermal conductivity of these two phases is very similar close to the transition, as expected in a second-order phase transition. We include the measurement by Wei et al.\cite{wei2019thermoelectric} as well. They show 
-measurements for both phases. We do not distinguish between the two in-plane measurement of Wei et al. as the 
-difference is difficult to extract from their data. They measure the phase transition at around $800$ K. \\
+measurements for both phases. We do not distinguish between the two in-plane measurements of Wei et al. as the 
+difference is difficult to extract from their data. They measure the phase transition at around $800$ K in agreement 
+with Zhao et al. \\
 
 Though direct comparison should be taken carefully in the comparison with the results by Ibrahim et al., the lattice 
 thermal conductivity is in better agreement with experimental results using $\overset{(3)}{\boldsymbol{\Phi}}$ 
