@@ -57,12 +57,12 @@ Gaussian smearing of $1$ cm$^{-1}$ for the Dirac deltas.
 
 Within the semiclassical Boltzmann transport theory\cite{scheidemantel2003transport} the electrical conductivity and the Seebeck coefficient can be calculated respectively as
 \begin{eqnarray}
- \sigma(T,\mu) & = & e^2 \int_{-\infty}^{\infty} d\varepsilon \left[-\frac{\partial f(T,\mu,\varepsilon)}{\partial\epsilon}\right] \Sigma(\varepsilon) 
+ \sigma(T,\mu) & = & \int_{-\infty}^{\infty} d\varepsilon \left[-\frac{\partial f(T,\mu,\varepsilon)}{\partial\epsilon}\right] \Sigma(\varepsilon) 
  \label{eq-sigma}\\
- S(T,\mu) & = & \frac{e}{T\sigma(T,\mu)} \int_{-\infty}^{\infty} d\varepsilon \left[-\frac{\partial f(T,\mu,\varepsilon)}{\partial\epsilon}\right] \Sigma(\varepsilon) (\varepsilon - \mu), \nonumber \\
+ S(T,\mu) & = & \frac{1}{T\sigma(T,\mu)} \int_{-\infty}^{\infty} d\varepsilon \left[-\frac{\partial f(T,\mu,\varepsilon)}{\partial\epsilon}\right] \Sigma(\varepsilon) (\varepsilon - \mu), \nonumber \\
 \label{eq-s}
 \end{eqnarray}
-where $e$ is the electron charge,  $\mu$ the chemical potential, $ f(T,\mu,\varepsilon)$ the Fermi-Dirac distribution function, and $\Sigma(\varepsilon)$ the transport distribution function. The latter is defined as
+where $\mu$ the chemical potential, $ f(T,\mu,\varepsilon)$ the Fermi-Dirac distribution function, and $\Sigma(\varepsilon)$ the transport distribution function. The latter is defined as
 \begin{equation}
 \Sigma(\varepsilon) = \frac{1}{\Omega_{cell} N_{\mathbf{k}}} \sum_{n\mathbf{k}} \tau^e_{n\mathbf{k}}  |\mathbf{v}_{n\mathbf{k}}|^{2} \delta( \varepsilon-\varepsilon_{n\mathbf{k}} ), 
 \label{eq-tdf}
@@ -86,13 +86,16 @@ chemical potential. The $0$ value corresponds to the middle of the gap in both f
 It shows that the electronic properties of these materials are very similar because their electronic band structures are basically the same as expected for isoelectronic compounds with the same atomic structure. The major
 difference is that the indirect (the conduction and valence bands that constitute the gap are denoted with an arrow in Figure \ref{bands} (a)) energy gap ($0.45$ eV for SnSe and $0.7$ eV for SnS) is bigger in the case of SnS, in
 agreement with experiments\cite{vidal2012band,zhao2014ultralow} and previous calculations\cite{guo2015first}. As expected, the calculated electronic gaps within LDA underestimate the experimental values ($0.86-0.948$ eV for SnSe
-and $0.9-1.142$ eV for SnS). Using these band structures we have calculated the Seebeck coefficient, which within the approximation of a constant electronic relaxation time it is independent of it, and the electrical conductivity 
+and $0.9-1.142$ eV for SnS). \\
+
+Using these band structures we have calculated the Seebeck coefficient, which within the approximation of a constant electronic relaxation time it is independent of it, and the electrical conductivity 
 over the electronic relaxation time $\sigma/\tau^{e}$. The Seebeck coefficient is very similar for both materials, but $\sigma/\tau^{e}$ is slightly larger in the case of SnSe due to the smaller electronic gap. Using these two
 quantities we have calculated  $P_{F}/\tau^{e}$, shown in Figure \ref{bands} (b). As we can see, $P_{F}/\tau^{e}$ is very similar for both materials, but slightly higher in the case of SnSe.
 This is in qualitative agreement with the calculations in the low temperature phases of SnS and SnSe\cite{guo2015first}, where the electrical conductivities and Seebeck coefficients of both materials are similar
 in the low temperature phase. This justifies, in qualitative terms, the same constant relaxation time for both materials in the high temperature phase. As we can see,  $P_{F}/\tau^{e}$ increases with temperature and the
 difference between the maxima of SnSe and SnS is less than $5\%$ at $1000$ K. The application of a scissor operator to match the band gaps with the experimental ones just slightly changes the doping level needed to reach the
-maximum power factor.
+maximum power factor. \\
+
 These results make clear that regarding the electronic transport properties these two materials are very similar in the high temperature phase provided that the relaxation time for the electrons is similar for both
 materials, which is expected for isoelectronic and isostructural compounds.
 
@@ -106,7 +109,7 @@ the $Cmcm$ ($Q=0$) phase. As the distortion is dominated by the $Y_{1}$ phonon, 
 Figure \ref{transition-sns} shows $\Omega^{(F)2}_{Y_{1}}(T)$ within the LDA and PBE approximations.
 \begin{figure}[h]
 \includegraphics[width=\linewidth]{Figures/freq-sns.eps}
-	\caption[Phonon collapse in SnS.]{$\Omega^{(F)2}_{Y_{1}}$ as a function of temperature within LDA and PBE approximations using the experimental lattice parameters (circles). The solid lines correspond to a polynomial fit. We include the pressure component
+\caption[Phonon collapse in SnS.]{$\Omega^{(F)2}_{Y_{1}}$ as a function of temperature within LDA and PBE approximations using the experimental lattice parameters (circles). The solid lines correspond to a polynomial fit. We include the pressure component
 $P_{zz}$, which is the pressure in the direction where the atoms move in the transition.  This pressure is calculated including the anharmonic vibrational energy within the SSCHA.}
 \label{transition-sns}
 \end{figure}
@@ -134,7 +137,8 @@ the points $\Gamma$ and $Y$, respectively. Solid lines correspond to individual 
 \end{center}
 \end{figure}
 The phonon spectrum suffers from a huge anharmonic renormalization. The harmonic spectrum shows broad instabilities, which are stabilized by anharmonicity.
-The harmonic phonons of SnS in the relaxed structure show only two instabilities, $\Gamma_{2}$ and $Y_{1}$. The volume increase in the experimental cell is responsible for the
+%The harmonic phonons of SnS in the relaxed structure show only two instabilities, $\Gamma_{2}$ and $Y_{1}$. 
+The volume increase in the experimental cell is responsible for the
 appearance of additional instabilities that are stabilized by anharmonic effects.
 The $Y_{1}$ mode is unstable below the transition temperature, but it is
 stabilized after the transition. By having a look at the the phonon linewidths, we can see that two modes at the $\Gamma$ point ($\Gamma_{1}$ and $\Gamma_{2}$) not only suffer a strong anharmonic renormalization, but they also
@@ -179,4 +183,6 @@ similar power factor is expected for these isoelectronic and isostructural compo
 phonon. We have also seen that SnS shows a strongly anharmonic phonon spectrum. Many phonon modes have a very large linewidth and show non-Lorentzian profiles in the spectral function. Finally, we have calculated the lattice thermal
 conductivity of $Cmcm$ SnS and we have seen that nonperturbative anharmonicity substantially corrects the third order force-constants. The thermal conductivity of both materials is very similar and
 ultralow. Therefore, by comparing the electronic and vibrational transport properties of SnS and SnSe in the $Cmcm$ high-temperature phase, we conclude both should be good thermoelectrics. Thus, we suggest that SnS may be an
-earth-abundant very efficient high-temperature thermoelectric material. As shown in the last section of chapter \ref{Chapter5}, the maximum $ZT$ of $Cmcm$ SnSe is around $1$. Actually, this $ZT$ is very similar to the $ZT$ measure for SnS by Wenke et al\cite{he2018remarkable}. These results reinforce our conclusions, as they show that SnSe and SnS show very similar thermoelectric properties, given by very similar electronic and vibrational properties. 
+earth-abundant very efficient high-temperature thermoelectric material. As shown in the last section of chapter \ref{Chapter5}, the maximum $ZT$ of $Cmcm$ SnSe is around $1$. Actually, this $ZT$ is very similar to the $ZT$ measure for SnS by Wenke et al\cite{he2018remarkable} for the low temperature $Pnma$ phase. These results reinforce our 
+conclusions, as they show that SnSe and SnS show very similar thermoelectric properties, given by very similar 
+electronic, vibrational, and thermal properties. 
