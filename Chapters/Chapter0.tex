@@ -16,11 +16,59 @@ increase the thermoelectric efficiency. Even though these research lines have a 
 to find materials or mechanisms to apply these materials in an industrial way. The state of the art materials have 
 very low efficiencies, which make them only useful in very specific applications. \\
 
-What is the problem? ELECTRICITY/HEAT. \\
+The efficiency of a thermoelectric material is measured by the figure of merit $ZT=S^{2}\sigma T/\kappa$. $S$ is the
+Seebeck coefficient, $\sigma$ the electrical conductivity and $\kappa$ the thermal conductivity. With a $ZT$ of 3 
+in a broad temperature range, the thermoeletric materials would be competetitive against the heat engines in terms of
+heat transformation into electricity. In Fig. \ref{ztvst} we show the $ZT$ of record materials as a function of the 
+year when they were discovered or synthesized.
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.9\linewidth]{Figures/ztvstemp.png}
+\caption[Record $ZT$ materials]{Record $ZT$ materials as a function of the year.}
+\label{ztvst}
+\end{center}
+\end{figure}
+As we can see, there is not material with a $ZT$ of three. Even though there are some materials with a $ZT$ of 2 or 
+higher, usually this only happens for very narrow temperature ranges. This limits the applications of these 
+materials. \\
 
-EXPLAIN CURRENT TREND TO DECREASE THERMAL CONDUCTIVITY. \\
+The main problem behind the increase of the $ZT$ is the fact that the physical magnitudes that are involved are 
+correlated. This correlation goes against high $ZT$s. In Fig. \ref{decouple} we show a cartoon of the physical 
+magnitudes as a function of the doping for a given temperature.
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.9\linewidth]{Figures/decoupling.png}
+\caption[Thermoelectric physical magnitudes]{Electrical conductivity and  Seebeck coefficient as a function of the 
+carrier concentration in a typical semiconductor.}
+\label{decouple}
+\end{center}
+\end{figure}
+The power factor $PF$ is the product of the squared Seebeck coefficient and the electrical conductivity. The idea 
+behind a good thermoelectric material is very simple. We need materials with a high power factor and low thermal 
+conductivity, the so called electron crystals and phonon glasses. However, if we have a look to Fig. \ref{decouple}
+we can see that the power factor has a clear limitation. The electrical conductivity increases as a function of the 
+carrier concentration, however, the Seebeck coefficient has the opposite trend, which makes the PF to have a peak 
+that cannot be increased. On top of this, the thermal conductivity of typical semiconductors increases as a 
+function of the carrier concentration. This further decreases the carrier concentration at which the maximum $ZT$ 
+arises. \\
 
-EXPLAIN WHAT ARE THE MAIN CHALLENGES IN INTERESTING THERMOELECTRIC CLOSE TO PHASE TRANSITIONS. \\
+In the last years, it has been shown that intrinsic semiconductors with an intrinsically low thermal conductivity 
+are materials with a very high $ZT$. The total thermal conductivity is the sum of electronic and lattice thermal 
+conductivities. In intrinsics semiconductor, the main contribution to the thermal conductivity comes from the 
+lattice. Therefore, the challenge is to find intrinsic semiconductors with an instrinsically low lattice thermal 
+conductivity. The best thermoelectric material in this family is SnSe with a $ZT_{max}$ of 2.6. This material is 
+not only the best thermoelectric in this family, but the best thermoelectric material overall. \\
+
+At this point, theoretical material science plays a crucial role. Theory could reduce the experimental effort by 
+searching for materials with an intrinsically low lattice thermal conductivity. The calculation of the lattice 
+thermal conductivity is a complicated task and it is computationally demanding. Anyway, nowadays it is included in 
+the toolkit of any theoretical material scientist. However, it has been found, that the intrinsically low lattice 
+thermal conductivity is associated, in many cases, to a strongly anharmonic lattice. This is the case, for instance, 
+in SnSe. The strong anharmonicity not only causes low thermal conductivity, it also creates interesting properties,
+such as, structural  phase transition. These structural phase transition, in many cases, make the thermoelectric 
+materials more efficient. However, The structural phase transitions make materials unstable within the harmonic 
+approximation, on top of which, all the theory for calculating the lattice thermal conductivity is built by using 
+perturbation theory.
 
 EXPLAIN WHAT WE CAN DO HERE. \\
 
