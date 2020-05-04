@@ -8,33 +8,43 @@
 %----------------------------------------------------------------------------------------
 
 Thermoelectricity is a material property with an endless application list. It can be used to generate electricity 
-from a temperature gradient, which can be waste heat coming from a combustion engine. It can be also applied in the 
-reverse way to transform a voltage into a temperature gradient. This application is mainly exploited in the 
-microchip cooling technology. A research line in the thermoelectric community is to find materials with a higher 
-thermoelectric efficiency. Another research line tries to find and understand physical and chemical mechanisms that 
-increase the thermoelectric efficiency. Even though these research lines have a long history, the main challenge is 
-to find materials or mechanisms to apply these materials in an industrial way. The state of the art materials have 
-very low efficiencies, which make them only useful in very specific applications. \\
+from a temperature gradient\cite{li2009thermoelectric,yang2006thermoelectric}, which can potentially be the be waste heat coming from a combustion engine. It can be 
+also applied in the reverse way to transform a voltage into a temperature gradient. This application is mainly 
+exploited in the microchip cooling technology\cite{disalvo1999thermoelectric,zhao2014review}. The two fundamental 
+research lines in the thermoelectric community are the following: 
+\begin{enumerate}
+\item Find and synthesize materials with a higher thermoelectric efficiency.
+\item Find and understand physical and chemical mechanisms that increase the thermoelectric efficiency. 
+\end{enumerate}	
+Even though these research lines have a long history, the main challenge is to find materials or mechanisms to apply 
+these materials in an industrial way. The state of the art materials have very low efficiencies, which make them 
+only useful in very specific applications. \\
 
 The efficiency of a thermoelectric material is measured by the figure of merit $ZT=S^{2}\sigma T/\kappa$. $S$ is the
 Seebeck coefficient, $\sigma$ the electrical conductivity and $\kappa$ the thermal conductivity. With a $ZT$ of 3 
-in a broad temperature range, the thermoelectric materials would be competetitive against the heat engines in terms of
-heat transformation into electricity. In Fig. \ref{ztvst} we show the $ZT$ of record thermoelectric materials as a 
-function of the year when they were discovered or synthesized.
+in a broad temperature range, the thermoelectric materials would be competetitive against heat engines in terms of
+heat transformation into electricity\cite{zhang2015thermoelectric}. In Fig. \ref{ztvst} we show the maximum figure 
+of merit $ZT_{max}$ of record thermoelectric materials as a function of the year when they were discovered or 
+synthesized.
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.9\linewidth]{Figures/ztvstemp.png}
-\caption[Record $ZT$ materials]{Record $ZT$ materials as a function of the year.}
+\caption[Record $ZT$ materials]{Record $ZT$ materials as a function of the year. The figure is taken from 
+reference\cite{zhang2015thermoelectric}.}
 \label{ztvst}
 \end{center}
 \end{figure}
-As we can see, there is no material with a $ZT_{max}$ as high as three. Even though there are some materials with a 
-$ZT$ of 2 or higher, usually this only happens for very narrow temperature ranges. This limits the applications of 
-these materials. \\
+As we can see, there is no material with a $ZT_{max}$ as high as 3. Even though there are some materials with a 
+$ZT_{max}$ of 2 or higher, usually this only happens for very narrow temperature ranges\cite{zhao2014ultralow}. This 
+limits the applications of these materials. \\
 
-The main problem behind the increase of the $ZT$ is the fact that the physical magnitudes that are involved are 
-correlated. This correlation goes against high $ZT$s. In Fig. \ref{decouple} we show a cartoon of the physical 
-magnitudes as a function of the doping for a given temperature.
+The power factor $PF$ is the product of the squared Seebeck coefficient and the electrical conductivity. The idea
+behind a good thermoelectric material is very simple. We need materials with a high power factor and low thermal
+conductivity, the so called electron crystals and phonon glasses. The main problem behind the increase of the $ZT$ 
+is the fact that the physical magnitudes that are involved are correlated among themselves. This correlation limits 
+the $ZT$. In Fig. \ref{decouple} we show a cartoon of the physical magnitudes that appear in the numerator of $ZT$ 
+as a function of the doping for a given temperature. We choose to plot the physical magnitudes as a function of the
+doping because it is one of the simplest manipulations to be applied. 
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.8\linewidth]{Figures/decoupling.png}
@@ -43,41 +53,41 @@ carrier concentration in a typical semiconductor.}
 \label{decouple}
 \end{center}
 \end{figure}
-The power factor $PF$ is the product of the squared Seebeck coefficient and the electrical conductivity. The idea 
-behind a good thermoelectric material is very simple. We need materials with a high power factor and low thermal 
-conductivity, the so called electron crystals and phonon glasses. However, if we have a look to Fig. \ref{decouple}
-we can see that the power factor has a clear limitation. The electrical conductivity increases as a function of the 
-carrier concentration, however, the Seebeck coefficient has the opposite trend, which makes the PF to have a peak 
-that cannot be increased. On top of this, the thermal conductivity of typical semiconductors increases as a 
-function of the carrier concentration. This further decreases the carrier concentration at which the maximum $ZT$ 
-but does not open any possibility to increase the $ZT$. \\
+If we have a look to Fig. \ref{decouple} we can see that the power factor has a clear limitation. The electrical 
+conductivity increases as a function of the carrier concentration, however, the Seebeck coefficient has the opposite 
+trend, which makes the $PF$ to have a peak that cannot be increased. On top of this, the thermal conductivity of 
+typical semiconductors increases as a function of the carrier concentration. This further decreases the carrier 
+concentration at which the maximum $ZT$ but does not open any possibility to increase the $ZT$. \\
 
 There are different ways to increase the thermoelectric efficiency of a material by physical and chemical 
 manipulation. Materials have been doped\cite{kim2013engineered,pei2011stabilizing,heremans2008enhancement} or
 nanostructured\cite{vineis2010nanostructured,minnich2009bulk} in order to get a high power factor combined with a 
-low thermal conductivity, yielding, i.e., $ZT\simeq 2.2$ in PbTe\cite{hsu2004cubic}. In the proximity to a phase 
-transition $ZT$ may also soar, as in the case of Cu$_{2}$Se\cite{liu2013ultrahigh}, where the thermal conductivity 
-is abruptly decreased close to the transition, reaching $ZT$ values as high as $2.5$. \\
+low thermal conductivity, yielding, i.e., $ZT\simeq 2.2$ in PbTe\cite{hsu2004cubic}. It has been shown that, in the 
+proximity to a phase transition $ZT$ may also soar, as in the case of Cu$_{2}$Se\cite{liu2013ultrahigh}. In these 
+cases the thermal conductivity abruptly decreases close to the transition, reaching $ZT$ values as high as $2.5$. \\
 
 In the last years, it has been shown that intrinsic semiconductors with an intrinsically low thermal conductivity 
-may be materials with a very high $ZT$. The total thermal conductivity is the sum of electronic and lattice thermal 
-conductivities. In intrinsics semiconductor, the main contribution to the thermal conductivity comes from the 
-lattice. Therefore, the challenge is to find intrinsic semiconductors with an instrinsically low lattice thermal 
-conductivity. The best thermoelectric material in this family is SnSe with a $ZT_{max}$ of 2.6. This material is 
-not only the best thermoelectric in this family, but the best thermoelectric material overall. \\
+may be materials with a very high $ZT$\cite{zhao2014ultralow,he2018remarkable}. The total thermal conductivity is 
+the sum of electronic and lattice thermal conductivities. In intrinsics semiconductor, the main contribution to the 
+thermal conductivity comes from the lattice as there are not many available charge carriers at normal temperatures. 
+Therefore, the challenge is to find intrinsic semiconductors with an instrinsically low lattice thermal conductivity. 
+The best thermoelectric material in this family is SnSe\cite{zhao2014ultralow} with a $ZT_{max}$ of 2.6. This 
+material is not only the best thermoelectric in this family, but the best thermoelectric material overall. \\
 
 At this point, theoretical material science plays a crucial role. Theory could reduce the experimental effort by 
 searching for materials with an intrinsically low lattice thermal conductivity. The first-principles calculation of 
-the lattice thermal conductivity is a complicated task and it is computationally demanding. Anyway, nowadays it is 
-included in the toolkit of any theoretical material scientist. However, it has been found, that the intrinsically 
-low lattice thermal conductivity is associated, in many cases, to a strongly anharmonic lattice. This is the case, 
-for instance, in SnSe. The strong anharmonicity not only causes low thermal conductivity, it also creates 
-interesting properties, such as, structural phase transitions. These structural phase transition, in many cases, 
-make the thermoelectric materials more efficient. However, materials that suffer structural phase transitions are 
-in many cases unstable within the harmonic approximation, on top of which, all the theory for calculating the 
-lattice thermal conductivity is built by using perturbation theory. The calculation of the transition temperature 
-in these phase transitions is, for the same reason, a complicated task. In the last years there have been several 
-methods and implementations that try to overcome these problems. \\
+the lattice thermal conductivity is a complicated task and it is computationally demanding\cite{broido2007intrinsic}. 
+Anyway, nowadays it is included in the toolkit\cite{giannozzi2009quantum} of any theoretical material scientist. 
+However, it has been found, that the intrinsically low lattice thermal conductivity is associated, in many cases, to 
+a strongly anharmonic lattice\cite{zhao2014ultralow,ribeiro2018strong}. This is the case, for instance, in SnSe. The 
+strong anharmonicity not only causes low thermal conductivity, it also creates interesting properties, such as, 
+structural phase transitions. These structural phase transition, in many cases, make the thermoelectric materials 
+more efficient\cite{liu2013ultrahigh}. However, materials that suffer structural phase transitions are, in many 
+cases, unstable within the harmonic approximation, on top of which, all the theory for calculating the 
+lattice thermal conductivity is built by using perturbation theory\cite{paulatto2013anharmonic}. The calculation of 
+the transition temperature is, for the same reason, a complicated task. In the last years there have been several 
+methods and implementations\cite{hellman2013temperature,ljungberg2013temperature,magduau2013identification} that try 
+to overcome these problems. \\
 
 The main purpose of this thesis is to understand and predict this structural phase transformation that occur in 
 thermoelectric materials and study what is the role they play in the thermoelectric efficiency. Once the structural 
@@ -85,14 +95,32 @@ and vibrational properties of these materials are studied, another purpose is to
 conductivity and understand what makes it so low in these materials with high $ZT$. For this purpose we have chosen 
 the most efficient thermoelectric material SnSe and its isoelectronic counterpart SnS. In order to account for the 
 anharmonic effects at a non-pertubative level we have applied the so called stochastic self-consistent harmonic 
-approximation (SSCHA). \\
+approximation\cite{errea2013first,errea2014anharmonic,bianco2017second,monacelli2018pressure} (SSCHA). \\
 
-In many cases, this structural phase transitions break the inversion symmetry of the material. This opens the door 
-to interesting physical properties, such as, ferroelectricity. It has been shown that both properties, high 
-thermoelectric efficiency and ferroelectricity, can coexist in the same material as it happen in SnTe. There is a 
-experimental work showing that the dimensionality could dramatically change the transition temperature to the 
-ferroelectric state. In the same work they show that in this material has a robust ferroelectric state that can be 
-switched with an electric field. This kind of materials are very interesting for industrial applications. We have 
-tried to understand this ferroelectric phase transition in monolayer SnSe. \\
+In many cases, this structural phase transitions break the inversion symmetry of the 
+material\cite{ribeiro2018strong,chang2016discovery}. This opens the door to interesting physical properties, such 
+as, ferroelectricity. It has been shown that both properties, high thermoelectric efficiency and ferroelectricity, 
+can coexist in the same material as it happen in SnTe\cite{ribeiro2018strong,zhang2013high}. There is an 
+experimental work\cite{chang2016discovery} showing that the dimensionality could dramatically change the transition 
+temperature to the ferroelectric state. In the same work\cite{chang2016discovery} they show that 
+monolayer SnTe has a robust ferroelectric state that can be switched with an electric field. Thin film ferroelectrics 
+are key for modern device applications\cite{lallart2011ferroelectrics}. However, it is known that there is a critical 
+thickness for thin ferroelectrics, below which the depolarization field destroys the ferroelectric 
+state\cite{batra1973new,zhong1994giant,dawber2005physics}. This effect decreases the transition temperature to the 
+ferroelectric state as a function of the sample thickness\cite{fong2004ferroelectricity,fong2006stabilization} and 
+sets a fundamental limit for technological applications. Monolayer SnSe could suffer a similar phase transition. In 
+this thesis we have tried to understand the ferroelectric phase transition in monolayer 
+SnSe\cite{chang2020controlled}. We have also tried to study the thermal properties of monolayer SnSe. \\
 
-Where do I include the intro for the anharmonic effects in the ZA mode of graphene?
+The out-of-plane vibrational modes play a crucial role in the heat transfer in two dimensional materials. 
+The understanding of the mechanical and thermal properties of any 2D material is far from trivial. Even the 
+possibility of having crystalline order in 2D has been long 
+questioned\cite{landau_statistical_physics,mermin1968crystalline}. It has been theoretically shown that the harmonic 
+approximation fails in the understanding of the out-of-plane mode, leading to unphysical consequences. Motivated by 
+this and the frustrated attempts to calculate the lattice thermal conductivity in monolayer SnSe, which could be 
+affected by the mentioned problems, we have studied the anharmonic effects in the out-of-plane phonon modes of 
+graphene. \\
+
+Long made short, the main purpose of this thesis is to study the anharmonic effects in materials where the harmonic 
+approximation and perturbation theory break down. For that purpose we have chosen technologically relevant 
+candidates, such as, very efficient thermoelectric materials, 2D ferroelectrics, and graphene.
