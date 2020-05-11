@@ -173,13 +173,13 @@ $3\times3$ supercells. We have tested all the calculations with denser grids and
 
 In order to calculate phonon spectra in unstrained graphene at any temperature, we calculate the SSCHA stress tensor 
 following the procedure in section \ref{scha-stress-section} and pick the lattice parameter that sets it to zero at 
-each temperature. For that purpose, we calculate the stress in ranges of $0.0005$ \AA and then we interpolate the 
-result, which is fitted very good with a linear function. The lattice parameter calculated in this way includes 
-anharmonic effects as well as the effect of quantum and thermal fluctuations. In order to properly account for 
-thermal expansion, all the phonon spectra shown in this work that are obtained with the atomistic potential are 
-calculated with the lattice parameter that gives a null SSCHA stress at each temperature. The harmonic spectra on the 
-contrary is always calculated at the lattice parameter that minimizes $U$. The temperature dependence of the lattice 
-parameter and the thermal expansion coefficient are shown in Fig. \ref{lattice}.
+each temperature. For that purpose, we calculate the stress in ranges of $0.0005$ \AA \hspace{0.1cm} and then we 
+interpolate the result, which is fitted very accurately with a linear function. The lattice parameter calculated in 
+this way includes anharmonic effects as well as the effect of quantum and thermal fluctuations. In order to properly 
+account for thermal expansion, all the phonon spectra shown in this work that are obtained with the atomistic 
+potential are calculated with the lattice parameter that gives a null SSCHA stress at each temperature. The harmonic 
+spectra on the contrary is always calculated at the lattice parameter that minimizes $U$. The temperature dependence 
+of the lattice parameter and the thermal expansion coefficient are shown in Fig. \ref{lattice}.
 \begin{figure}[ht]
 \includegraphics[width=0.99\linewidth]{Figures/lattice.eps}
 \caption[Lattice parameter of graphene as a function of temperature]{a) Lattice parameter of graphene as a function 
@@ -204,10 +204,38 @@ fluctuations associated to the high-energy optical modes (the highest energy pho
 around 2000 K to be thermally populated). Actually, the classical result approaches the quantum at high temperatures. 
 This remarks the importance of considering quantum effects in the evaluation of thermodynamical properties of 
 graphene. Our classical results and the MD calculations of Rowe et al.\cite{rowe2018development} are in agreement 
-(within their error of $0.003$ \AA) at low temperatures. However, at high temperatures they deviate and our 
-calculations approach the quantum result as it should be. The difference may be due to the non-trivial calculation of 
-the lattice parameter within MD. We have also included the quasiharmonic (QHA) result. The lattice parameter within 
-the QHA is calculated by calculating the harmonic free energy for different temperatures and lattice paramters. The 
+(within their error of $0.003$ \AA) at low temperatures. However, at high temperatures, our classical results and 
+the ones of Rowe et al. deviate. \\
+
+It has been shown that at high temperatures graphene may be in a corrugated 
+state\cite{pozzo2011thermal,los2009scaling}. The corrugation is not captured in our formalism as the centroids are 
+forced to stay in the plane of the membrane. In order to clarify this disagreement we have performed MD calculation 
+with the same potential at 2000 K. We have performed MD calculation in the microcanonical ensemble at fixed lattice 
+parameters 2.465 \AA, 2.47 \AA, and 2.48 \AA. The result with $a=2.48$ \AA \hspace{0.1cm} is shown in Fig. \ref{md1}.
+\begin{figure}[ht]
+\includegraphics[width=0.99\linewidth]{Figures/md1.eps}
+\caption[Molecular dynamics run.]{Temperature and in-plane pressure Cartesian components as a function of
+the step number. Each steps corresponds to 0.001 ps. The Temperatures is in K and the pressure in Bars. The lattice 
+parameter is fixed to 2.48 \AA. The simulation is done in the microcanonical ensemble.}
+\label{md1}
+\end{figure}
+We start the MD simulation from a SSCHA configuration at 4000 K. Due to the equipartition theorem, the system reaches
+a temperature of 2000 K and stays stable. We can see in the figure that the temperature and pressure are stable. By 
+taking averages, we can calculate the pressure for different lattice parameters and see at what lattice parameter 
+the pressure is 0. We show the results in Fig. \ref{md2}. 
+\begin{figure}[ht]
+\includegraphics[width=0.99\linewidth]{Figures/md2.eps}
+\caption[Molecular dynamics results.]{SSCHA and MD in-plane pressure as a function of the lattice parameter at 
+2000 K. The results of Rowe et al. is included as a vertical line.}
+\label{md2}
+\end{figure}
+As we can see, our MD results agree with the result of Rowe et al. This suggests that graphene is in a corrugated 
+state at high temperatures and the corrugation is not captured within our framework. As we will see later, we see 
+the flat phase is metastable and, therefore, we suggest that there may be a first-order phase transition at high 
+temperatures from the flat to the corrugated state. \\
+
+In Fig. \ref{lattice} we have also included the quasiharmonic (QHA) result. The lattice parameter within 
+the QHA is calculated by calculating the harmonic free energy for different temperatures and lattice parameters. The 
 lattice parameter dependence comes from the different harmonic phonons at different lattice parameters. Then, we take 
 the lattice parameter that minimizes the harmonic free energy at each temperature. It is worth noting that this 
 approximation is not valid to calculate the thermal expansion of graphene due to the imaginary phonon frequencies 
