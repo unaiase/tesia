@@ -90,9 +90,15 @@ somewhat cures the pathologies. This conclusion has been drawn by Monte Carlo si
 potentials\cite{wang2016anharmonic,los2009scaling,katsnelson2013graphene,zakharchenko2009finite} and by using a 
 membrane continuum  Hamiltonian that mimics the interaction among acoustic 
 modes\cite{mariani2008flexural,amorim2014thermodynamics,de2012bending}. Anharmonic phonons expected experimentally 
-should be calculated from the free energy Hessian, i.e., diagonalizing the  $[\frac{\partial F}{\partial \mathcal{R}_a \partial \mathcal{R}_b}]_{0}/\sqrt{m_am_b}$ matrix, where $F$ is the free energy calculated including anharmonic 
+should be calculated from the phonon spectral function. For low energy modes, as it happens for the ZA mode, the 
+phonons defined from the spectral function can be approximated from the
+free energy Hessian, i.e., diagonalizing the  $[\frac{\partial F}{\partial \mathcal{R}_a \partial \mathcal{R}_b}]_{0}/\sqrt{m_am_b}$ matrix, where $F$ is the free energy calculated including anharmonic 
 effects and $\boldsymbol{\mathcal{R}}$ the centroid positions that determine the most probable ionic 
-positions\cite{bianco2017second}. If this is the case, as $F$ obeys the same symmetry properties as $U$, a similar 
+positions\cite{bianco2017second}. As shown in section \ref{pertubative-limit-sscha}, the phonons given by the free 
+energy Hessian are equivalent to the phonons calculated from the spectral function in the static limit. We will name 
+the phonons defined from the phonon spectral function "Physical" phonons and the phonons defined from the free 
+energy Hessian "Physical static" phonons. 
+If phonons are calculate from the free energy Hessian, as $F$ obeys the same symmetry properties as $U$, a similar 
 $\sim q^2$ dispersion would be expected for the ZA mode even if anharmonic effects are included in the calculation 
 of $F$. Actually, measurements done with helium diffraction show a ZA mode with a quadratic 
 dispersion\cite{al2016acoustic,al2015helium,al2018resolving}, though the linearization regime may not be seen and 
@@ -100,7 +106,7 @@ substrate effects may be important. The remaining question is thus whether the Z
 dispersion, and, if it is so, how the mechanical stability and thermal properties of graphene can be explained. \\
 
 In this work we show that a quadratic dispersion of the ZA mode is actually expected for graphene provided that it 
-is calculated from the Hessian of the anharmonic free energy $F$, and that it is compatible with the absence of 
+is calculated from the phonon spectral function, and that it is compatible with the absence of 
 divergences. We estimate $F$ within the self-consistent harmonic approximation (SCHA). We apply the SCHA in its 
 stochastic implementation (SSCHA) making use of a machine learning atomistic potential trained with density 
 functional theory\cite{rowe2018development}. We also solve the SCHA equations in a membrane continuum Hamiltonian 
@@ -151,8 +157,8 @@ results are shown in Figs. \ref{benchmark-spectrum} and \ref{benchmark}.
 \begin{figure}[ht]
 \includegraphics[width=0.49\linewidth]{Figures/bm1.eps}
 \includegraphics[width=0.49\linewidth]{Figures/bm2.eps}
-\caption[Harmonic, SSCHA and physical frequencies (static) using the DFT and machine learning (ML) forces.]{Harmonic, 
-	SSCHA and physical frequencies (static) using the DFT and machine learning (ML) forces. The left panel shows 
+\caption[Harmonic, SSCHA and physical static frequencies using the DFT and machine learning (ML) forces.]{Harmonic, 
+	SSCHA and physical static frequencies using the DFT and machine learning (ML) forces. The left panel shows 
 	the in-plane optical frequency at the $\Gamma$ point and the right panel the out-of-plane one.}
 \label{benchmark}
 \end{figure}
@@ -245,18 +251,17 @@ expansion at all temperatures\cite{mounet2005first}.
 
 \section{Graphene phonons}
 
-In Fig. \ref{spectrum-graphene} we compare the harmonic phonon spectra with the one obtained from the SSCHA dynamical 
-matrix $\boldsymbol{D}^{(S)}$ as well as the spectra obtained from the Hessian of the SSCHA free 
-energy $\boldsymbol{D}^{(F)}$. 
+In Fig. \ref{spectrum-graphene} we compare the ZA harmonic phonon spectra with the one obtained from the SSCHA 
+dynamical matrix $\boldsymbol{D}^{(S)}$ as well as the spectra obtained from the SSCHA spectral function. 
 \begin{figure*}[ht]
 \includegraphics[width=0.32\linewidth]{Figures/T0.eps}
 \includegraphics[width=0.32\linewidth]{Figures/T300.eps}
 \includegraphics[width=0.32\linewidth]{Figures/T2000.eps}
-	\caption[Graphene harmonic and anharmonic phonons]{Harmonic phonon spectra together with the SSCHA phonons 
-	$\boldsymbol{D}^{(S)}$ (labeled as ``SSCHA'') and those obtained from the Hessian of the SSCHA free energy 
-	$\boldsymbol{D}^{(F)}$ as (labeled as ``Physical''). Results at 0 K (a), 300 K (b), and 2000 K (c) are shown. 
-	(d), (e) and (f) show only the dispersion of the ZA mode close to $\Gamma$ in logarithmic scale at 0 K, 300 
-	K, and 2000 K, respectively. In the small panels the dispersion corresponds to the $\Gamma$M direction. For 
+	\caption[Graphene harmonic and anharmonic ZA phonons]{Harmonic ZA phonon spectra in logarithmic scale 
+	together with the SSCHA phonons $\boldsymbol{D}^{(S)}$ (labeled as ``SSCHA'') and those obtained from the 
+	phonon spectral function (labeled as ``Physical''). Results at 0 K (a), 300 K (b), and 2000 K (c) are shown. 
+	(d), (e) and (f) show the frequency divided by the squared momentum. The dispersion corresponds to the 
+	$\Gamma$M direction. For 
 	reference, the M point is at $1.4662$ $\AA^{-1}$ at $0$ K, at $1.4671$ $\AA^{-1}$ at $300$ K, and at $1.4652$ 
 	$\AA^{-1}$ at $2000$ K. The harmonic result (solid black) is computed at the lattice parameter that minimizes 
 	$U$, while the other results include thermal expansion (see Fig. \ref{lattice}). The dashed black lines 
@@ -265,12 +270,12 @@ energy $\boldsymbol{D}^{(F)}$.
 \label{spectrum-graphene}
 \end{figure*}
 The main conclusion is that while the dispersion of the ZA modes obtained from $\boldsymbol{D}^{(S)}$ is linearized, 
-the physical phonons given by the Hessian of $F$ ($\boldsymbol{D}^{(F)}$) become close to a quadratic dispersion and 
-approach the harmonic dispersion, as expected by symmetry. The SSCHA ZA frequencies suffer a blue-shift with respect 
-to the harmonic ones, but are red-shifted once the Hessian is calculated. Both shifts are bigger when the temperature 
-is increased, but the quadratic behavior of the ZA modes is always recovered regardless of the temperature. With 
-respect to the optical modes, we observe that the frequencies red-shift with increasing temperature in agreement with 
-experiments and theory\cite{calizo2007temperature,bonini2007phonon}. It is noteworthy that the phonon frequencies 
+the physical phonons become close to a quadratic dispersion and approach the harmonic dispersion, as expected by 
+symmetry. The SSCHA ZA frequencies suffer a blue-shift with respect to the harmonic ones, but are red-shifted once 
+the spectral function is calculated. Both shifts are bigger when the temperature is increased, but the quadratic 
+behavior of the ZA modes is always recovered regardless of the temperature. The quadratic dispersion is clear 
+from panels (d), (e), and (f) where the frequency is divide by the squared momentum, therefore, the lines with a
+quadratic dispersion become flat. It is noteworthy that the phonon frequencies 
 obtained from the Hessian of $F$ should only be understood as the physical phonons in the static 
 limit (see sections \ref{perturbation-theory-third}, \ref{pertubative-limit-sscha}, and \ref{dynamical-sscha}). 
 However, as shown in Fig. \ref{static-dynamic}, 
@@ -278,13 +283,23 @@ However, as shown in Fig. \ref{static-dynamic},
 \includegraphics[width=0.32\linewidth]{Figures/T0-za.eps}
 \includegraphics[width=0.32\linewidth]{Figures/T300-za.eps}
 \includegraphics[width=0.32\linewidth]{Figures/T2000-za.eps}
-	\caption[Graphene harmonic and anharmonic ZA phonons]{Harmonic, SSCHA, and physical phonons (static and 
-	dynamic) calculated at 0 K a), 300 K b), and 2000 K c).}
+        \caption[Graphene harmonic and anharmonic ZA phonons]{Harmonic, SSCHA, and physical phonons (static and 
+        dynamic) calculated at 0 K a), 300 K b), and 2000 K c).}
 \label{static-dynamic}
 \end{figure}
 the static phonons ($\Omega^{(F)}_{\mu}(\boldsymbol{q})$) agree with those derived from the dynamical (see section 
 \ref{dynamical-sscha}) theory ($\Omega_{\mu}(\boldsymbol{q})$) and are thus good representatives of the physical 
 phonons expected experimentally. \\
+
+With respect to the optical modes, 
+\begin{figure}[ht]
+\includegraphics[width=0.49\linewidth]{Figures/e2g.eps}
+\includegraphics[width=0.49\linewidth]{Figures/e2g.eps}
+        \caption[E2g mode temperature dependent frequency shift]{.}
+\label{e2g}
+\end{figure}
+we observe that the frequencies red-shift with increasing temperature in agreement 
+with experiments and theory\cite{calizo2007temperature,bonini2007phonon}.  
 
 \section{Mean square displacements and linewidths}
 
