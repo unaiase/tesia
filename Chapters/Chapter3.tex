@@ -906,9 +906,15 @@ The diagramatic representation in Fig. \ref{green-ansatz} is translated into the
 This ansatz is justified by the fact that in the lowest-order perturbative limit it gives the same result 
 as the perturbation theory in section \ref{perturbation-theory-third}. Within this assumptions, the SSCHA self-energy can be written as\cite{bianco2017second}
 \begin{equation}
- \boldsymbol{\Pi}^{(S)}(z)=\overset{(B)}{\boldsymbol{\Pi}}{}^{(S)}(z)=\boldsymbol{M}^{-\frac{1}{2}}\overset{(3)}{\boldsymbol{\Phi}}\boldsymbol{\Lambda}(z)\overset{(3)}{\boldsymbol{\Phi}}\boldsymbol{M}^{-\frac{1}{2}},
+	\label{full-sscha-se}
+	\boldsymbol{\Pi}^{(S)}(z)=\boldsymbol{M}^{-\frac{1}{2}}\overset{(3)}{\boldsymbol{\Phi}}\boldsymbol{\Lambda}(z)[\boldsymbol{1}-\overset{(4)}{\boldsymbol{\Phi}}\boldsymbol{\Lambda}(z)]^{-1}\overset{(3)}{\boldsymbol{\Phi}}\boldsymbol{M}^{-\frac{1}{2}},
 \end{equation} 
-where $M_{ab}=\delta_{ab}m_{a}$ is the mass matrix. With this self-energy, basically, we get an analogous theory of the perturbation theory, but instead of having harmonic frequencies $\omega_{\mu}(\mathbf{q})$ we 
+where $M_{ab}=\delta_{ab}m_{a}$ is the mass matrix. As in the static case, we can neglect the fourth-order term and 
+rewrite the remaining self-energy, which is the bubble self-energy
+\begin{equation}
+ \boldsymbol{\Pi}^{(S)}(z)\simeq\overset{(B)}{\boldsymbol{\Pi}}{}^{(S)}(z)=\boldsymbol{M}^{-\frac{1}{2}}\overset{(3)}{\boldsymbol{\Phi}}\boldsymbol{\Lambda}(z)\overset{(3)}{\boldsymbol{\Phi}}\boldsymbol{M}^{-\frac{1}{2}},
+\end{equation}
+With this self-energy, basically, we get an analogous theory of the perturbation theory, but instead of having harmonic frequencies $\omega_{\mu}(\mathbf{q})$ we 
 have the auxiliary phonon frequencies $\Omega^{(S)}_{\mu}(\mathbf{q})$ and instead of having the perturbative 3BFC $\overset{(3)}{\phi}{}_{s_{1}s_{2}s_{2}}^{\alpha_{1}\alpha_{2}\alpha_{3}}(\mathbf{T}_{1},\mathbf{
  T}_{2},\mathbf{T}_{3})$ we have the non-perturbative ones $\overset{(3)}{\Phi}{}_{s_{1}s_{2}s_{2}}^{\alpha_{1}\alpha_{2}\alpha_{3}}(\mathbf{T}_{1},\mathbf{T}_{2},\mathbf{T}_{3})$. By setting $z=0$ we recover the static limit and these 
  phonons are equivalent to the ones defined from the free energy Hessian ($\boldsymbol{D}^{(F)}$) in 

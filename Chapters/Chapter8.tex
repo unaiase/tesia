@@ -400,16 +400,16 @@ $\Phi_{ZA}(\boldsymbol{q})=\kappa|\boldsymbol{q}|^{4}+\gamma|\boldsymbol{q}|^{2}
 given in appendix \ref{appendixA}. Therefore, we have shown that the SCHA flexural acoustic (ZA) modes have a linear 
 dispersion close to the point $\Gamma$. \\
 
-For calculating the physical phonons, given by the second derivative of the free energy, an analogous formula to 
-Eq. \ref{free-energy-hessian} can be found within the membrane formalism (see appendix \ref{appendixA}). By applying 
-this formula we arrive to the following expression for the physical 2BFC at $T=0$
+For calculating the physical static phonons, given by the second derivative of the free energy, an analogous formula 
+to Eq. \ref{free-energy-hessian} can be found within the membrane formalism (see appendix \ref{appendixA}). By 
+applying this formula we arrive to the following expression for the physical 2BFC at $T=0$
 \begin{equation}
  \Phi_{ZA}^{(F)}(\boldsymbol{q})=\kappa|\boldsymbol{q}|^{2}+(\gamma-\sigma)|\boldsymbol{q}|^{2}+
  O(|\boldsymbol{q}|^{4}).
 \end{equation} 
 The formula of $\sigma$ is given in the appendix. The positive number $\sigma$ makes the linear term in the physical 
 phonon frequencies $40\%$ smaller than in the SCHA case, however, it does not remove it. Actually, it can be argued 
-that this non-zero linear term in the physical frequencies arises because the potential in 
+that this non-zero linear term in the physical static frequencies arises because the potential in 
 Eq. \ref{membrane-potential-tommaso} is not rotationally invariant. In order to clarify these results we have 
 applied the SCHA numerically in the full potential. \\
 
@@ -445,8 +445,9 @@ We have solved these equation by using the Newton-Raphson method\cite{ypma1995hi
 points. The results are shown in Fig. \ref{membrane-results}. 
 \begin{figure}[h]
 \includegraphics[width=\linewidth]{Figures/membrane.eps}
-\caption[ZA harmonic and anharmonic phonons in the membrane model.]{a) Frequency of the ZA mode in the harmonic 
-	approximation, within the SCHA and obtained from the Hessian of the SCHA (labeled as ``Physical'') at 0 K in 
+\caption[ZA harmonic and anharmonic phonons in the membrane model.]{a) Frequency of the ZA mode divided by the 
+	squared momentum in the harmonic approximation, within the SCHA and obtained from the Hessian of the SCHA 
+	(labeled as ``Physical static'') at 0 K in 
 	the membrane model. We name rotationally invariant (RI) the results considering the full potential in 
 	Eq. \ref{membrane-potential}. We name no rotationally invariant (No RI) the results neglecting the last three 
 	terms in Eq. \ref{membrane-potential}. b) Frequency of the ZA mode in the harmonic approximation, within the 
@@ -473,7 +474,47 @@ Finally, it is important to remark that a fully rotationally invariant potential
 dispersion (see Fig. \ref{membrane-results}(b)). If the last three terms in Eq. \ref{membrane-potential} are 
 neglected, which breaks the rotational symmetry of the potential, the quadratic dispersion is not recovered. This 
 means that it is very important to keep these terms in the potential to correctly estimate the mechanical properties 
-of membranes even if they are usually neglected\cite{mariani2008flexural,amorim2014thermodynamics,de2012bending}. 
+of membranes even if they are usually neglected\cite{mariani2008flexural,amorim2014thermodynamics,de2012bending}. \\
+
+In Fig. \ref{lw-membrane} we shown the linewidths of the LA and TA modes calculated within the membrane model. We 
+also include the atomistic results for comparison
+\begin{figure}[ht]
+\includegraphics[width=0.8\linewidth]{Figures/lwmembrane.eps}
+\caption{Linewidth.}
+\label{lw-membrane}
+\end{figure}
+The results clearly show that the linearization of the SCHA frequencies dramatically changes the linewidth of the LA 
+and TA modes at small momenta by making them smaller as momentum decreases. This results is equivalent in the 
+atomistic case. When the ratio between the FWHM and the frequency of the mode is 1 or bigger, the quasiparticle 
+picture is lost. According to our calculations in Fig. \ref{lw-membrane}(b) this value is reached in the 0.001-0.002 
+\AA$^{-1}$ momentum range when the linewdith is calculated on top of the harmonic dispersion. We shadow the region 
+where the membrane LA mode is not well defined. However, when the linewidth is calculated within the SCHA, the ratio 
+never gets bigger than 0.05. These results recover the quasiparticle picture for these modes and are in agreement 
+with experiments\cite{wang2008brillouin} where they clearly see that in this momentum range (0.001-0.002
+\AA$^{-1}$) the quasiparticle picture is hold. \\
+
+In the last part of this section we will prove that neglecting the fourth-order tensor in the SSCHA self-energy and 
+assuming the Lorentzian approximation are good approximations. For studying the effect of the fourth-order tensor 
+in the SSCHA self-energy we Taylor expand Eq. \ref{full-sscha-se}
+\begin{multline}
+ \boldsymbol{\Pi}(z)=\mathbf{M}^{-\frac{1}{2}}\overset{(3)}{\mathbf{\Phi}}\mathbf{\Lambda}(z)[\mathbf{1}-\overset{(4)}{\mathbf{\Phi}}\mathbf{\Lambda}(z)]^{-1}
+ \overset{(3)}{\mathbf{\Phi}}\mathbf{M}^{-\frac{1}{2}}\simeq\\\mathbf{M}^{-\frac{1}{2}}\overset{(3)}{\mathbf{\Phi}}\mathbf{\Lambda}(z)\overset{(3)}{\mathbf{\Phi}}\mathbf{M}^{-\frac{1}{2}}+\mathbf{M}^{-\frac{1}{2}}\overset{(3)}{\mathbf{\Phi}}\mathbf{\Lambda}(z)\overset{(4)}{\mathbf{\Phi}}\mathbf{\Lambda}(z)\overset{(3)}{\mathbf{\Phi}}\mathbf{M}^{-\frac{1}{2}}+\dots,
+\end{multline}
+and we calculate the contribution of the term containing the fourth-order tensor to the linewidth. We also calculate 
+the spectral function with and without including the frequency dependence of the self energy. We show the results in 
+Fig. \ref{lw_membrane}.
+\begin{figure}[ht]
+\includegraphics[width=0.49\linewidth]{Figures/v4-membrane.eps}
+\includegraphics[width=0.45\linewidth]{Figures/spf-lorentzian-membrane.eps}
+\caption{(a) Linewidth (full width at half maximum, FWHM) contribution of the term containing the fourth-order 
+	tensor of the LA mode calculated in the membrane model at 100 K using the harmonic and SCHA phonons. The 
+	value of the smearing is in the legend. (b) Spectral function of the LA mode with momentum 0.01 \AA$^{-1}$ 
+	with and without considering the frequency dependence of the self energy.}
+\label{lw_membrane}
+\end{figure}
+The figure clearly shows that the contribution of the fourth-order tensor is at least one order of magnitude smaller 
+than the main term and, what it is more important, it also decays as momentum decreases. The figure also shows that 
+the Lorentzian approximation is justified for the acoustic modes in graphene.
 
 \section{Conclusions}
 
