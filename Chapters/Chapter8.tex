@@ -68,20 +68,25 @@ The quadratic dispersion also creates spurious divergences in physical propertie
 the harmonic result. The phonon linewidths of the in-plane acoustic longitudinal (LA) and transverse (TA) phonons 
 calculated perturbatively do not vanish as the momentum decreases\cite{paulatto2013anharmonic}, precisely, because of 
 the $\sim q^2$ dispersion of the ZA modes\cite{bonini2012acoustic}. The linewidths of the LA and TA modes are shown 
-in Fig. \ref{lata-harmonic-lw}. 
+in Fig. \ref{lata-harmonic-lw} (a). 
 \begin{figure}[h]
 \includegraphics[width=0.8\linewidth]{Figures/lw-graphene-harmonic.eps}
-\caption[Graphene harmonic linewidths]{Linewidths (full width at half maximum, FWHM) of the LA and TA modes 
-	calculated using the harmonic phonon spectrum for the three phonon scattering processes and 3BFC calculated 
-	within the SSCHA at $0$ K.}
+	\caption[Graphene harmonic linewidths]{(a) Linewidths (full width at half maximum, FWHM) of the LA and TA 
+	modes calculated using perturbation theory on top of the harmonic phonons at 300 K. (b) FWHM divided by the 
+	phonon frequency. We shadow the region where $FWHM/\omega>1$. All the calculations are done in the membrane 
+	model in Eq. \ref{membrane-potential}.}
 \label{lata-harmonic-lw}
 \end{figure}
 The figure clearly shows how the linewidths do not vanish at small momenta. This yields to the conclusion that for 
-small enough momentum phonons do not live long enough for vibrating one period and the quasiparticle picture is lost. 
+small enough momentum phonons do not live long enough for vibrating one period and the quasiparticle picture is lost.
 Consequently, the thermal conductivity calculated with the perturbative phonon 
-lifetimes\cite{fugallo2013ab,fugallo2014thermal} does not converge with the sample size\cite{bonini2012acoustic}.
-The application of strain linearizes the dispersion of the ZA phonons and makes the linewidth of the LA and TA 
-phonon modes vanish together with their frequency at small momenta, keeping the phonon 
+lifetimes\cite{fugallo2013ab,fugallo2014thermal} does not converge with the sample size\cite{bonini2012acoustic}. In 
+Fig. \ref{lata-harmonic-lw} (b) we can see the FWHM divided by the phonon frequency. When this number is around 1 the 
+phonon picture is lost. Therefore, the longitudinal and transversal acoustic phonons with a frequency smaller than 
+$\simeq1$ cm$^{-1}$ do not propagate in graphene. The mentioned region is shadowed in the figure. This means that 
+sound does not propagate in graphene because the highest frequency that the human ear can heard is around $10^{-4}$ 
+cm$^{-1}$. The application of strain linearizes the dispersion of the ZA phonons and makes the linewidth of the LA 
+and TA phonon modes vanish together with their frequency at small momenta, keeping the phonon 
 picture\cite{bonini2012acoustic}. \\
 
 It has been argued\cite{wang2016anharmonic,los2009scaling,katsnelson2013graphene,zakharchenko2009finite,mariani2008flexural,amorim2014thermodynamics,de2012bending} that the anharmonic coupling between in-plane and out-of-plane phonon 
@@ -201,7 +206,7 @@ of the lattice parameter and the thermal expansion coefficient are shown in Fig.
 \end{figure}
 We include the results of Rowe et al.\cite{rowe2018development}, which do not account for quantum effects as they 
 are done with molecular dynamics (MD). They use the same potential as we do. For comparison we also include SSCHA 
-calculations in he classical limit and within the quasiharmonic approximation\cite{bonini2007phonon} (QHA). Our 
+calculations in the classical limit and within the quasiharmonic approximation\cite{bonini2007phonon} (QHA). Our 
 quantum calculations correctly capture the negative thermal expansion of graphene up to $\sim$ 750 K that has been 
 estimated in previous theoretical works\cite{rowe2018development,zakharchenko2009finite}. Our quantum calculations 
 show a larger lattice parameter and a more pronounced thermal expansion (in absolute value) at low temperatures. This 
@@ -285,9 +290,9 @@ quadratic dispersion become flat. We show in Fig. \ref{static-dynamic}
         dynamic) calculated at 0 K a), 300 K b), and 2000 K c).}
 \label{static-dynamic}
 \end{figure}
-the static phonons ($\Omega^{(F)}_{\mu}(\boldsymbol{q})$) agree with those derived from the dynamical (see section 
-\ref{dynamical-sscha}) theory ($\Omega_{\mu}(\boldsymbol{q})$) and are thus good representatives of the physical 
-phonons expected experimentally. \\
+that the static phonons ($\Omega^{(F)}_{\mu}(\boldsymbol{q})$) agree with those derived from the dynamical (see 
+section \ref{dynamical-sscha}) theory ($\Omega_{\mu}(\boldsymbol{q})$) and are thus good representatives of the 
+physical phonons expected experimentally. \\
 
 In Fig. \ref{e2g} we make a similar study for the highest energy optical $E2_{g}$ mode at the $\Gamma$ point. This 
 mode is interesting because the theoretical results can be compared to Raman experiments\cite{linas2015interplay}. 
@@ -486,12 +491,13 @@ also include the atomistic results for comparison
 The results clearly show that the linearization of the SCHA frequencies dramatically changes the linewidth of the LA 
 and TA modes at small momenta by making them smaller as momentum decreases. This results is equivalent in the 
 atomistic case. When the ratio between the FWHM and the frequency of the mode is 1 or bigger, the quasiparticle 
-picture is lost. According to our calculations in Fig. \ref{lw-membrane}(b) this value is reached in the 0.001-0.002 
+picture is lost. According to our calculations in Fig. \ref{lw-membrane} (b) this value is reached in the 0.001-0.002 
 \AA$^{-1}$ momentum range when the linewdith is calculated on top of the harmonic dispersion. We shadow the region 
 where the membrane LA mode is not well defined. However, when the linewidth is calculated within the SCHA, the ratio 
 never gets bigger than 0.05. These results recover the quasiparticle picture for these modes and are in agreement 
 with experiments\cite{wang2008brillouin} where they clearly see that in this momentum range (0.001-0.002
-\AA$^{-1}$) the quasiparticle picture is hold. \\
+\AA$^{-1}$) the quasiparticle picture is hold. It also means that sound can propagate in graphene, which does not 
+happen within the harmonic approximation. \\
 
 In the last part of this section we will prove that neglecting the fourth-order tensor in the SSCHA self-energy and 
 assuming the Lorentzian approximation are good approximations. For studying the effect of the fourth-order tensor 
@@ -519,9 +525,10 @@ the Lorentzian approximation is justified for the acoustic modes in graphene.
 \section{Conclusions}
 
 In conclusion, we show that anharmonic effects are crucial to mechanically stabilize graphene and to guarantee its 
-phonon modes make physical sense at small momenta. Moreover, we determine that, despite the relevance of anharmonic 
-effects, the out-of-plane acoustic modes should show a quadratic dispersion experimentally. We estimate anharmonic 
-effects within the self-consistent harmonic approximation both with an atomistic machine learning potential and with 
-a membrane model, obtaining consistent results in both cases. Our results show how all the divergences of the 
-harmonic and quasiharmonic approximations are cured by anharmonicity. These conclusions can be extrapolated to any 
-strictly 2D material and will have a large impact on the understanding if their mechanical and thermal properties.
+phonon modes make physical sense and propagate sound at small momenta. Moreover, we determine that, despite the 
+relevance of anharmonic effects, the out-of-plane acoustic modes should show a quadratic dispersion experimentally. 
+We estimate anharmonic effects within the self-consistent harmonic approximation both with an atomistic machine 
+learning potential and with a membrane model, obtaining consistent results in both cases. Our results show how all 
+the divergences of the harmonic and quasiharmonic approximations are cured by anharmonicity. These conclusions can 
+be extrapolated to any strictly 2D material and will have a large impact on the understanding if their mechanical 
+and thermal properties.
