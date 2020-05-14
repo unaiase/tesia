@@ -46,7 +46,7 @@ cannot change the energy of the system, 2BFC fulfill the following equality
 \label{acoustic-sum-rule}
 \sum_{\mathbf{T}_{1},\alpha_{1},s_{1}}\phi_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2})=0,
 \end{equation}
-which is named acoustic sum rule (ASR). \\
+which is named acoustic sum rule (ASR). The ASR can be generalized to any nBFC. \\
 
 In principle, the ionic configuration $\mathbf{R}$ depends on the three lattice vectors of the system $\mathbf{R}\equiv\mathbf{R}(\{\mathbf{a}_{i}\})$ $i=1,2,3$ and, therefore, the BOES also depends on them. The Born-Oppenheimer stress 
 tensor can be defined as
@@ -69,7 +69,7 @@ We will name higher-order terms ($n>2$) anharmonic terms. It is convenient to Fo
  \overset{(n)}{\phi}{}_{s_{1}\dots s_{n}}^{\alpha_{1}\dots\alpha_{n}}(\mathbf{T}_{1},\dots,\mathbf{T}_{n})=\frac{1}{N_{\mathbf{q}}^{n-1}}\sum_{\mathbf{q}_{1}\dots\mathbf{q}_{n}}e^{i(\mathbf{q}_{1}\cdot\mathbf{T}_{1}+\dots+\mathbf{q}_{
  n}\cdot\mathbf{T}_{n})}\overset{(n)}{\phi}{}_{s_{1}\dots s_{n}}^{\alpha_{1}\dots\alpha_{n}}(\mathbf{q}_{1},\dots,\mathbf{q}_{n}),
 \end{equation}
-where $N_{\mathbf{q}}$ is the number of $\mathbf{q}$ points in the 1BZ, or equivalently, the number of allowed $\mathbf{T}$ lattice vectors. Due to the translational symmetry of the crystal, 2BFC have also translational invariance and only 
+where $N_{\mathbf{q}}$ is the number of $\mathbf{q}$ points in the 1BZ, or equivalently, the number of allowed $\mathbf{T}$ lattice vectors. Due to the translational symmetry of the crystal, 2BFC have translational invariance and only 
 depend on $\mathbf{T}=\mathbf{T}_{1}-\mathbf{T}_{2}$. Therefore, only the terms with $\mathbf{q}_{1}=-\mathbf{q}_{2}$ are non-zero in 
 Eq. \ref{2bfc-fourier} and the equation can be rewritten
 \begin{equation}
@@ -328,7 +328,7 @@ induction $\boldsymbol{\mathsf{D}}$
 	\boldsymbol{\mathsf{D}}\equiv -\frac{4\pi}{\Omega_{cell}}\frac{\partial E}{\partial \boldsymbol{\mathsf{E}}}=\frac{4\pi}{\Omega_{cell}}Z^{*}\mathbf{u}+\epsilon_{\infty}\boldsymbol{\mathsf{E}}.
 \end{equation}
 
-In the absence of free external charges, the Maxwell equations give
+In the absence of free external charges, Maxwell's equations give
 \begin{equation}
  \label{rotational}
 \boldsymbol{\nabla}\times\boldsymbol{\mathsf{E}}\sim i\mathbf{q}\times\boldsymbol{\mathsf{E}}=0,
@@ -545,14 +545,14 @@ where
  \label{linewidth}
  \Gamma_{\mu}(\mathbf{q})=-Im\mathcal{Z}_{\mu}(\mathbf{q},\omega_{\mu}(\mathbf{q}))
 \end{equation}
-are shift (with respect to the harmonic frequency) and half-width at half-maximum (HWHM) of mode $\mu$, respectively.
-In this limit, the lifetime of a phonon $\mu\mathbf{q}$ is defined as the inverse line width (full width at half
-maximum, FWHM)
+are the shifted frequnecy (with respect to the harmonic frequency) and half-width at half-maximum (HWHM) of mode 
+$\mu$, respectively. In this limit, the lifetime of a phonon $\mu\mathbf{q}$ is defined as the inverse line width 
+(full width at half maximum, FWHM)
 \begin{equation}
 \label{lifetime}
  \tau_{\mu}(\mathbf{q})=\frac{1}{2\Gamma_{\mu}(\mathbf{q})}.
 \end{equation}
-This group has well defined phonons with their frequencies and line widths. 
+These are well defined phonons with their frequencies and line widths. 
 In Fig. \ref{instoy} we qualitatively describe the Lorentzian cross section.
 \begin{figure}[h]
 \begin{center}
@@ -561,7 +561,7 @@ In Fig. \ref{instoy} we qualitatively describe the Lorentzian cross section.
 \label{instoy}
 \end{center}
 \end{figure}
-We can see that how anharmonicity within perturbation theory provides two anharmonic properties. A line shift with respect to the harmonic value $\Omega_{\mu}(\mathbf{q})-\omega_{\mu}(\mathbf{q})$ and a line width $2\Gamma_{\mu}(\mathbf{q})$ (FWHM), which does not exist within the harmonic theory. \\
+We can see that anharmonicity within perturbation theory provides two anharmonic properties. A line shift with respect to the harmonic value $\Omega_{\mu}(\mathbf{q})-\omega_{\mu}(\mathbf{q})$ and a line width $2\Gamma_{\mu}(\mathbf{q})$ (FWHM), which does not exist within the harmonic theory. \\
 
 As we can see from Eqs. \ref{loop-diagram}, \ref{bubble-diagram}, and \ref{tadpole-diagram} in order to account for the phonon-phonon interactions at the lowest-order in perturbation theory we need to calculate 
 the $\overset{(3)}{D}{}_{s_{1},s_{2},s_{3}}^{\alpha_{1}\alpha_{2}\alpha_{3}}(\mathbf{T}_{1},\mathbf{T}_{2},\mathbf{T}_{3})$ and $\overset{(4)}{D}{}_{s_{1}s_{1},s_{3}s_{4}}^{\alpha_{1}\alpha_{2}\alpha_{3}\alpha_{4}}(\mathbf{T}_{1},\mathbf{T}_{2},\mathbf{T}_{3},\mathbf{T}_{4})$ anharmonic dynamical matrices. The straightforward way of calculating these 
@@ -784,7 +784,8 @@ term that takes into account the work necessary to move the centroids according 
 The last term in Eq. \ref{stress-fluctuations} makes fluctuations on pressure disappear in pure harmonic crystals\cite{monacelli2018pressure}, that is why we say that $P_{\alpha\beta}^{BO}$ does not include the effect
 of fluctuations. \\
 
-The SSCHA stress tensor can be calculated with the knowledge of the BOES, the atomic forces and the BO stress tensor and the stochastic framework in Eq. \ref{stochastic} is also valid for the stress calculation. 
+The SSCHA stress tensor can be calculated with the knowledge of the BOES, the atomic forces and the BO stress tensor. 
+The stochastic framework in Eq. \ref{stochastic} is also valid for the stress calculation. 
 
 \subsection{The free energy Hessian and second-order phase transitions within the SSCHA}
 \label{free-energy-section}
@@ -798,8 +799,9 @@ transitions\cite{lifshitz1980landau}, at high temperature the free energy has a 
 becomes a saddle point at the transition temperature $T_{c}$. Therefore, the free energy Hessian evaluated at $\boldsymbol{\mathcal{R}}_{hs}$, $\partial^{2}F/\partial\boldsymbol{\mathcal{R\partial\boldsymbol{\mathcal{
 R}}}}|_{\boldsymbol{\mathcal{R}}_{hs}}$, at high temperature is positive definite but it develops one or multiple negative eigendirections at $T_{c}$. \\
 
-In Fig. \ref{transition} we can see a schematic representation of the free energy with respect to the order parameter $Q$ (a particular position of the centroids in this case) for different temperatures for a system with a 
-second-order phase transition.
+In Fig. \ref{transition} we can see a schematic representation of the free energy $\mathcal{F}$ with respect to the 
+order parameter $Q$ (a particular position of the centroids in this case) for different temperatures for a system 
+with a second-order phase transition.
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.8\linewidth]{Figures/data.eps}
@@ -931,5 +933,6 @@ At this points we can recalculate the spectral function by using the 3BFC given 
 In this case the spectral functions are not Lorentzians and they can show strongly anharmonic features such as: shoulders, satellite peaks$\dots$ As the Lorentzian picture is lost, $\Gamma_{\mu}(\mathbf{q})$ and $\Omega_{\mu}(\mathbf{q})$ are not good representatives of that phonon. The spectral function of these kind of materials can be very difficult to study from an experimental point of view, since more peaks than modes can appear or two modes can appear as only one. It is important to remark that even in non-perturbative anharmonicity is important in a system the Lorentzian approximation may hold. \\
 
 The SSCHA has proven to be an extremely powerful method for including anharmonic effects at a non-perturbative level. It has been successfully applied in bulk and monolayer materials including 
-superconductors\cite{errea2013first,errea2016quantum}, materials undergoing charge density wave\cite{leroux2015strong,bianco2019quantum} and ferroelectric\cite{ribeiro2018strong} transitions, thermoelectric 
-materials\cite{aseginolaza2019phonon}\dots
+superconductors\cite{errea2013first,errea2016quantum}, materials undergoing charge density wave 
+transitions\cite{leroux2015strong,bianco2019quantum} and ferroelectric transitions\cite{ribeiro2018strong}, 
+thermoelectric materials\cite{aseginolaza2019phonon}\dots
