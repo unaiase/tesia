@@ -45,7 +45,7 @@ use a $30\times30\times30$ sampling of the first Brillouin zone. We use experime
 work\cite{aseginolaza2019phonon}. The experimental lattice parameters taken from Refs.\cite{adouby1998structure,chattopadhyay1986neutron} are $a=22.13$ a$_{0}$, $b=8.13$ a$_{0}$, $c=8.13$ a$_{0}$ for SnSe
 and $a=21.69$ a$_{0}$, $b=7.84$ a$_{0}$, $c=7.84$ a$_{0}$ (a$_{0}$ is the Bohr length) for SnS. The structures of the high temperature $Cmcm$ and low temperature $Pnma$ phases are shown in Figure \ref{pnma-cmcm}.
 Anharmonic phonons and nonperturbative third-order force-constants are calculated within the SSCHA using a $2\times2\times2$ supercell. For the SSCHA calculation we use forces calculated within DFT. Once we get the anharmonic
-force-constants, we substract the harmonic ones and interpolate the difference to a $6\times6\times6$ grid. Then, we add this interpolated difference to the harmonic dynamical matrices in a $6\times6\times6$ grid, which yields
+force-constants, we subtract the harmonic ones and interpolate the difference to a $6\times6\times6$ grid. Then, we add this interpolated difference to the harmonic dynamical matrices in a $6\times6\times6$ grid, which yields
 anharmonic force-constants in a fine grid (see appendix \ref{appendixB} for more details). By Fourier interpolating 
 the latter we can calculate phonon frequencies at any point in the Brillouin zone. We impose the acoustic sum rule 
 to the third-order force-constants with an iterative method prior to their Fourier 
@@ -141,7 +141,7 @@ The phonon spectrum suffers from a huge anharmonic renormalization. The harmonic
 The volume increase in the experimental cell is responsible for the
 appearance of additional instabilities that are stabilized by anharmonic effects.
 The $Y_{1}$ mode is unstable below the transition temperature, but it is
-stabilized after the transition. By having a look at the the phonon line widths, we can see that two modes at the $\Gamma$ point ($\Gamma_{1}$ and $\Gamma_{2}$) not only suffer a strong anharmonic renormalization, but they also
+stabilized after the transition. By having a look at the phonon line widths, we can see that two modes at the $\Gamma$ point ($\Gamma_{1}$ and $\Gamma_{2}$) not only suffer a strong anharmonic renormalization, but they also
 have a  large line width compared to the rest of the modes in the first Brillouin zone. These modes describe optical in-plane atomic displacements (see Figure \ref{patterns}, $\Gamma_{2}$ has the same atomic displacements
 as $\Gamma_{1}$ but in the other in-plane direction), which are the same atomic displacements of $Y_{2}$ and $Y_{3}$ at the point $Y$ with a different periodicity due to the different momentum. The $Y_2$ and $Y_3$ in-plane modes
 also show a very large line width. On the contrary, the line width of mode $Y_{1}$ is not so large even if it is responsible for the phase transition (see Figure \ref{patterns}). \\
@@ -171,7 +171,7 @@ the nonperturbative anharmonicity is very important to calculate the thermal con
 very similar ultralow values, below $\approx 1.0$ Wm$^{-1}$K$^{-1}$. In-plane results are slightly higher for SnSe and out-of-plane calculations higher for SnS.
 In-plane results are against physical intuition as materials with heavier elements are supposed to have lower thermal conductivity. However, the same counterintuitive effect has been calculated for the low-temperature $Pnma$ phase 
 as well \cite{skelton2017lattice,guo2015first}.
-Experimentally the situation for the the $Pnma$ phase is not so clear as, even if there is a work \cite{wasscher1963simple} where it is shown that the thermal conductivity of SnSe is higher than the one of SnS, more recent experiments do not agree in the value of the thermal conductivity  \cite{he2018remarkable,tan2014thermoelectrics}.
+Experimentally the situation for the $Pnma$ phase is not so clear as, even if there is a work \cite{wasscher1963simple} where it is shown that the thermal conductivity of SnSe is higher than the one of SnS, more recent experiments do not agree in the value of the thermal conductivity  \cite{he2018remarkable,tan2014thermoelectrics}.
 In our calculations both materials show a clear anisotropy between in-plane and out-of-plane calculations in agreement
 with experimental results\cite{ibrahim2017reinvestigation} for the low-temperature phase close to the phase transition. Our calculations show that SnS and SnSe have very similar thermal conductivities in the three Cartesian
 directions
