@@ -28,11 +28,11 @@ efficient heat dissipation. \\
 
 The understanding of the mechanical and thermal properties of graphene, and in general of any 2D material, 
 is, however, far from trivial. Even the possibility of having crystalline order in 2D has been long 
-questioned\cite{landau_statistical_physics,mermin1968crystalline}. Indeed, the mean square displacement calculated 
-in the harmonic approximation diverges in the long wave-length limit, which means that the larger the sample of a 2D 
-material the bigger the atomic displacements, which prevents any crystalline order\cite{landau_statistical_physics}. 
-In Fig. \ref{rms_harmonic} we show the atomic displacements of carbon atoms in graphene as a function of the sample 
-size, or the supercell used for the calculation.
+questioned\cite{landau_statistical_physics,mermin1968crystalline}. Indeed, the root mean square displacement 
+calculated in the harmonic approximation diverges in the long wave-length limit, which means that the larger the 
+sample of a 2D material the bigger the atomic displacements, which prevents any crystalline 
+order\cite{landau_statistical_physics}. In Fig. \ref{rms_harmonic} we show the atomic displacements of carbon atoms 
+in graphene as a function of the sample size, or the supercell used for the calculation.
 \begin{figure}[h]
 \includegraphics[width=0.8\linewidth]{Figures/rms-harmonic.eps}
 \caption[Root mean square atomic displacements of carbon atoms in graphene calculated using the harmonic 
@@ -40,8 +40,8 @@ size, or the supercell used for the calculation.
 	dispersion as a function of the supercell size for different temperatures.}
 \label{rms_harmonic}
 \end{figure}
-As the figure clearly shows, the mean square atomic displacements diverge at finite temperatures as a function of 
-the sample size. Mermin's theorem\cite{mermin1968crystalline} proves that, even without assuming the harmonic 
+As the figure clearly shows, the root mean square atomic displacements diverge at finite temperatures as a function 
+of the sample size. Mermin's theorem\cite{mermin1968crystalline} proves that, even without assuming the harmonic 
 approximation, long-range crystalline order is not possible in a two-dimensional crystal described by a pair 
 potential. Experimentally, however, crystalline order has been observed in suspended 
 graphene\cite{meyer2007structure}, although it shows ripples that seem to be intrinsic\cite{fasolino2007intrinsic}. \\
@@ -96,7 +96,7 @@ potentials\cite{wang2016anharmonic,los2009scaling,katsnelson2013graphene,zakharc
 membrane continuum  Hamiltonian that mimics the interaction among acoustic 
 modes\cite{mariani2008flexural,amorim2014thermodynamics,de2012bending}. Anharmonic phonons expected experimentally 
 should be calculated from the phonon spectral function. For low energy modes, as it happens for the ZA mode, the 
-phonons defined from the spectral function can be approximated from the
+phonon peaks of the spectral function coincide with the phonons defined from the
 free energy Hessian, i.e., diagonalizing the  $[\frac{\partial F}{\partial \mathcal{R}_a \partial \mathcal{R}_b}]_{0}/\sqrt{m_am_b}$ matrix, where $F$ is the free energy calculated including anharmonic 
 effects and $\boldsymbol{\mathcal{R}}$ the centroid positions that determine the most probable ionic 
 positions\cite{bianco2017second}. As shown in section \ref{pertubative-limit-sscha}, the phonons given by the free 
@@ -193,15 +193,16 @@ spectra on the contrary is always calculated at the lattice parameter that minim
 of the lattice parameter and the thermal expansion coefficient are shown in Fig. \ref{lattice}.
 \begin{figure}[ht]
 \includegraphics[width=0.99\linewidth]{Figures/lattice.eps}
-\caption[Lattice parameter of graphene as a function of temperature]{a) Lattice parameter of graphene as a function 
-	of temperature obtained with the SSCHA using a machine learning atomistic potential. Both quantum (black) and 
-	classical (blue) calculations are included. The classical result is calculated setting $\hbar=0$ in the SSCHA 
-	free energy. The temperature-independent frozen nuclei (FN) result corresponds to the lattice parameter that 
-	minimizes the Born Oppenheimer potential $U$. Results obtained by Rowe et al.\cite{rowe2018development} are 
-	also included for comparison. Solid black and blue lines correspond to cubic fits. The black dashed line 
-	corresponds to the quasiharmonic result (QHA). b) Thermal expansion coefficient (CTE) calculated as 
-	$CTE=\frac{1}{A}\frac{\partial A}{\partial T}$, $A$ being the area of the membrane. Red line is directly 
-	taken from \cite{rowe2018development}. Black and blue lines are calculated using the cubic fits in a).}
+	\caption[Lattice parameter of graphene as a function of temperature]{(a) Lattice parameter of graphene as a 
+	function of temperature obtained with the SSCHA using a machine learning atomistic potential. Both quantum 
+	(black) and classical (blue) calculations are included. The classical result is calculated setting $\hbar=0$ 
+	in the SSCHA free energy. The temperature-independent frozen nuclei (FN) result corresponds to the lattice 
+	parameter that minimizes the Born Oppenheimer potential $U$. Results obtained by Rowe et 
+	al.\cite{rowe2018development} are also included for comparison. Solid black and blue lines correspond to 
+	cubic fits. The black dashed line corresponds to the quasiharmonic result (QHA). (b) Thermal expansion 
+	coefficient (CTE) calculated as $CTE=\frac{1}{A}\frac{\partial A}{\partial T}$, $A$ being the area of the 
+	membrane. Red line is directly taken from \cite{rowe2018development}. Black and blue lines are calculated 
+	using the cubic fits in (a).}
 \label{lattice}
 \end{figure}
 We include the results of Rowe et al.\cite{rowe2018development}, which do not account for quantum effects as they 
@@ -287,7 +288,7 @@ quadratic dispersion become flat. We show in Fig. \ref{static-dynamic}
 \includegraphics[width=0.32\linewidth]{Figures/T300-za.eps}
 \includegraphics[width=0.32\linewidth]{Figures/T2000-za.eps}
         \caption[Graphene harmonic and anharmonic ZA phonons]{Harmonic, SSCHA, and physical phonons (static and 
-        dynamic) calculated at 0 K a), 300 K b), and 2000 K c).}
+	dynamic) calculated at 0 K (a), 300 K (b), and 2000 K (c).}
 \label{static-dynamic}
 \end{figure}
 that the static phonons ($\Omega^{(F)}_{\mu}(\boldsymbol{q})$) agree with those derived from the dynamical (see 
@@ -312,7 +313,7 @@ this mode the difference between the SCHA and physical frequencies is not so cru
 is crucial to include the dynamical effects, otherwise the shift is overestimated. The thermal expansion provides 
 a positive shift at low temperatures. 
 
-\section{Mean square displacements and line widths}
+\section{Root mean square displacements and line widths}
 
 Even if the anharmonic correction to the phonon spectra may look small in Fig. \ref{spectrum-graphene}, it has a 
 huge impact on the mechanical and thermal properties of graphene. As shown in Fig. \ref{problems} (a), 
@@ -327,10 +328,10 @@ huge impact on the mechanical and thermal properties of graphene. As shown in Fi
 	the machine learning atomistic potential.}
 \label{problems}
 \end{figure*}
-when calculating the mean square atomic displacement with the SSCHA density matrix as 
-$\langle \mathbf{u}^2 \rangle_{\rho_{\mathcal{H}}}$, the dramatic divergences with the sample size obtained in the 
-harmonic case are critically suppressed, clearly showing the contribution of anharmonicity to the crystalline order 
-of graphene. The divergences are suppressed precisely because the SSCHA phonon frequencies obtained from 
+when calculating the root mean square atomic displacement with the SSCHA density matrix as 
+$\sqrt{\langle \mathbf{u}^2 \rangle}_{\rho_{\mathcal{H}}}$, the dramatic divergences with the sample size obtained 
+in the harmonic case are critically suppressed, clearly showing the contribution of anharmonicity to the crystalline 
+order of graphene. The divergences are suppressed precisely because the SSCHA phonon frequencies obtained from 
 $\boldsymbol{D}^{(S)}$ that build $\rho_{\mathcal{H}}$ are linear at small momenta (see 
 Fig. \ref{spectrum-graphene}). Thus, even if the phonons obtained from the SSCHA free energy Hessian 
 $\boldsymbol{D}^{(F)}$ are quadratic, the fact that the density matrix used to compute thermodynamic properties is 
@@ -342,10 +343,10 @@ clearly show that the linearization of the SSCHA frequencies dramatically change
 modes at small momenta by making them smaller as momentum decreases. This result recovers the quasiparticle picture 
 for these modes. Similar results are obtained in Ref. \cite{bonini2012acoustic}. However, in this work line widths of 
 LA and TA modes at small momenta only vanish when strain is applied. Somewhat strain has an analogous effect to 
-anharmonicity by linearizing the ZA dispersion. The problem is that strain linearizes both SSCHA and physical 
-phonons. We show here that there is no need of strain to have physically well-defined phonon line widths provided by 
+anharmonicity by linearizing the ZA dispersion. The problem is that strain linearizes physical phonons. We show here 
+that there is no need of strain to have physically well-defined phonon line widths provided by 
 linear SCHA phonons together with quadratic physical phonons. Anharmonicity is responsible for it. The sound 
-propagation in graphene and the ration FWHM$/\omega$ will be discussed in the next section together with the results 
+propagation in graphene and the ratio FWHM$/\omega$ will be discussed in the next section together with the results 
 in the membrane model.
 
 \section{SCHA applied to a continuum membrane Hamiltonian}
@@ -452,14 +453,14 @@ We have solved these equation by using the Newton-Raphson method\cite{ypma1995hi
 points. The results are shown in Fig. \ref{membrane-results}. 
 \begin{figure}[h]
 \includegraphics[width=\linewidth]{Figures/membrane.eps}
-\caption[ZA harmonic and anharmonic phonons in the membrane model.]{a) Frequency of the ZA mode divided by the 
-	squared momentum in the harmonic approximation, within the SCHA and obtained from the Hessian of the SCHA 
-	(labeled as ``Physical static'') at 0 K in 
-	the membrane model. We name rotationally invariant (RI) the results considering the full potential in 
-	Eq. \ref{membrane-potential}. We name no rotationally invariant (No RI) the results neglecting the last three 
-	terms in Eq. \ref{membrane-potential}. b) Frequency of the ZA mode in the harmonic approximation, within the 
-	SCHA and obtained from the Hessian of the SCHA at $0$ K and $300$ K in the membrane model. We also include 
-	the SCHA and physical phonons at $300$ K without considering thermal expansion (NTE).}
+	\caption[ZA harmonic and anharmonic phonons in the membrane model.]{(a) Frequency of the ZA mode divided by 
+	the squared momentum in the harmonic approximation, within the SCHA and obtained from the Hessian of the SCHA
+	(labeled as ``Physical static'') at 0 K in the membrane model. We name rotationally invariant (RI) the 
+	results considering the full potential in Eq. \ref{membrane-potential}. We name no rotationally invariant (No 
+	RI) the results neglecting the last three terms in Eq. \ref{membrane-potential}. (b) Frequency of the ZA mode 
+	in the harmonic approximation, within the SCHA and obtained from the Hessian of the SCHA at $0$ K and $300$ K
+	in the membrane model. We also include the SCHA and physical phonons at $300$ K without considering thermal 
+	expansion (NTE).}
 \label{membrane-results}
 \end{figure}
 All conclusions drawn with the atomistic model are confirmed and put in solid grounds. Again the ZA phonons obtained 
@@ -469,7 +470,7 @@ calculations\cite{mariani2008flexural,amorim2014thermodynamics,de2012bending}. H
 calculated from the free energy Hessian, the ZA phonon frequencies get basically on top of the harmonic values 
 recovering a quadratic dispersion. This means that the physical phonons have a quadratic dispersion for small momenta 
 in an unstrained membrane, as it is expected by symmetry. We also show that accounting correctly for the thermal 
-expansion is crucial to recover the $\sim q^2$ behavior as shown in Fig. \ref{membrane-results}(b). The membrane 
+expansion is crucial to recover the $\sim q^2$ behavior as shown in Fig. \ref{membrane-results} (b). The membrane 
 potential is able to capture the negative thermal expansion at small temperatures, as it is shown in 
 Fig. \ref{cte-membrane}. 
 \begin{figure}[ht]
@@ -478,7 +479,7 @@ Fig. \ref{cte-membrane}.
 \label{cte-membrane}
 \end{figure}
 Finally, it is important to remark that a fully rotationally invariant potential is needed to recover the quadratic 
-dispersion (see Fig. \ref{membrane-results}(b)). If the last three terms in Eq. \ref{membrane-potential} are 
+dispersion (see Fig. \ref{membrane-results} (b)). If the last three terms in Eq. \ref{membrane-potential} are 
 neglected, which breaks the rotational symmetry of the potential, the quadratic dispersion is not recovered. This 
 means that it is very important to keep these terms in the potential to correctly estimate the mechanical properties 
 of membranes even if they are usually neglected\cite{mariani2008flexural,amorim2014thermodynamics,de2012bending}. \\
