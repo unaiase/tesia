@@ -110,12 +110,12 @@ the dynamical matrices in normal coordinates are defined as
 \begin{equation}
  \label{third-order}
 \overset{(3)}{D}{}^{(S)}_{\alpha\beta\gamma}(\boldsymbol{q},\boldsymbol{k},\boldsymbol{p})=\frac{1}{\rho^{3/2}}\left\langle\frac{\partial^{3}V}{\partial\alpha(\boldsymbol{q})\partial\beta(\boldsymbol{k})\partial\gamma(\boldsymbol{
- p})}\right\rangle_{\mathcal{H}}\sqrt{G_{\beta\gamma}(\boldsymbol{k},\boldsymbol{p})},
+p})}\right\rangle_{\rho_{\mathcal{H}}}\sqrt{G_{\beta\gamma}(\boldsymbol{k},\boldsymbol{p})},
 \end{equation}
 \begin{equation}
  \label{fourth-order}
 \overset{(4)}{D}{}^{(S)}_{\alpha\beta\gamma\epsilon}(\boldsymbol{q},\boldsymbol{q}',\boldsymbol{k},\boldsymbol{k}')=\frac{1}{\rho^{2}}\left\langle\frac{\partial^{4}V}{\partial\alpha(\boldsymbol{q})\partial\beta(\boldsymbol{
- q}')\partial\gamma(\boldsymbol{k})\partial\epsilon(\boldsymbol{k}')}\right\rangle_{\mathcal{H}}\sqrt{G_{\alpha\beta}(\boldsymbol{q},\boldsymbol{k})G_{\gamma\epsilon}(\boldsymbol{q}',\boldsymbol{k}')}.
+q}')\partial\gamma(\boldsymbol{k})\partial\epsilon(\boldsymbol{k}')}\right\rangle_{\rho_{\mathcal{H}}}\sqrt{G_{\alpha\beta}(\boldsymbol{q},\boldsymbol{k})G_{\gamma\epsilon}(\boldsymbol{q}',\boldsymbol{k}')}.
 \end{equation}
 The matrix $G_{\alpha\beta}(\boldsymbol{q},\boldsymbol{k})$ is defined as
 \begin{equation}
@@ -138,27 +138,27 @@ D_{hh}^{corr}(-\boldsymbol{q},\boldsymbol{q})=4\sum_{\alpha\beta}\sum_{\boldsymb
 \end{equation}
 where now the subindexes only run in $\alpha,\beta=u_{LA},u_{TA}$. Now, we can calculate the statistical averages
 \begin{equation}
- \left\langle\frac{\partial^{3}V}{\partial h(\boldsymbol{k}_{1})\partial h(\boldsymbol{k}_{2})\partial u_{LA}(\boldsymbol{k}_{3})}\right\rangle_{\mathcal{H}}=\frac{1+\delta a}{\sqrt{\Omega}}\delta_{\boldsymbol{k}_{1}+\boldsymbol{
+	\left\langle\frac{\partial^{3}V}{\partial h(\boldsymbol{k}_{1})\partial h(\boldsymbol{k}_{2})\partial u_{LA}(\boldsymbol{k}_{3})}\right\rangle_{\rho_{\mathcal{H}}}=\frac{1+\delta a}{\sqrt{\Omega}}\delta_{\boldsymbol{k}_{1}+\boldsymbol{
  k}_{2}+\boldsymbol{k}_{3},0}\left[\lambda|\boldsymbol{k}_{3}|\boldsymbol{k}_{1}\cdot\boldsymbol{k}_{2}+2\mu\frac{(\boldsymbol{k}_{3}\cdot\boldsymbol{k}_{1})(\boldsymbol{k}_{3}\cdot\boldsymbol{k}_{2})}{|\boldsymbol{k}_{3}|}\right],
 \end{equation}
 \begin{equation}
- \left\langle\frac{\partial^{3}V}{\partial h(\boldsymbol{k}_{1})\partial h(\boldsymbol{k}_{2})\partial u_{TA}(\boldsymbol{k}_{3})}\right\rangle_{\mathcal{H}}=\frac{\mu(1+\delta a)}{\sqrt{\Omega}}\delta_{\boldsymbol{k}_{
+	\left\langle\frac{\partial^{3}V}{\partial h(\boldsymbol{k}_{1})\partial h(\boldsymbol{k}_{2})\partial u_{TA}(\boldsymbol{k}_{3})}\right\rangle_{\rho_{\mathcal{H}}}=\frac{\mu(1+\delta a)}{\sqrt{\Omega}}\delta_{\boldsymbol{k}_{
  1}+\boldsymbol{k}_{2}+\boldsymbol{k}_{3},0}\left[\frac{(\boldsymbol{k}_{3}\cdot\boldsymbol{k}_{1})(\boldsymbol{k}_{3\perp}\cdot\boldsymbol{k}_{2})+(\boldsymbol{k}_{3}\cdot\boldsymbol{k}_{2})(\boldsymbol{k}_{3\perp}\cdot
  \boldsymbol{k}_{1})}{|\boldsymbol{k}_{3}|}\right],
 \end{equation}
 \begin{multline}
-\left\langle\frac{\partial^{4}V}{\partial h(\boldsymbol{k}_{1})\partial h(\boldsymbol{k}_{2})\partial u_{LA}(\boldsymbol{k}_{3})\partial u_{LA}(\boldsymbol{k}_{4})}\right\rangle_{\mathcal{H}}=\frac{1}{\Omega}\delta_{\boldsymbol{
+	\left\langle\frac{\partial^{4}V}{\partial h(\boldsymbol{k}_{1})\partial h(\boldsymbol{k}_{2})\partial u_{LA}(\boldsymbol{k}_{3})\partial u_{LA}(\boldsymbol{k}_{4})}\right\rangle_{\rho_{\mathcal{H}}}=\frac{1}{2\Omega}\delta_{\boldsymbol{
  k}_{1}+\boldsymbol{k}_{2}+\boldsymbol{k}_{3}+\boldsymbol{k}_{4},0}\frac{\boldsymbol{k}_{3}\cdot\boldsymbol{k}_{4}}{|\boldsymbol{k}_{3}||\boldsymbol{k}_{4}|}[\lambda(\boldsymbol{k}_{3}\cdot\boldsymbol{k}_{4})(\boldsymbol{k}_{
  1}\cdot\boldsymbol{k}_{2})+\\\mu(\boldsymbol{k}_{3}\cdot\boldsymbol{k}_{1})(\boldsymbol{k}_{4}\cdot\boldsymbol{k}_{2})+\mu(\boldsymbol{k}_{3}\cdot\boldsymbol{k}_{2})(\boldsymbol{k}_{4}\cdot\boldsymbol{k}_{1})],
 \end{multline}
 \begin{multline}
- \left\langle\frac{\partial^{4}V}{\partial h(\boldsymbol{k}_{1})\partial h(\boldsymbol{k}_{2})\partial u_{TA}(\boldsymbol{k}_{3})\partial u_{TA}(\boldsymbol{k}_{4})}\right\rangle_{\mathcal{H}}=\frac{1}{\Omega}\delta_{\boldsymbol{
+	\left\langle\frac{\partial^{4}V}{\partial h(\boldsymbol{k}_{1})\partial h(\boldsymbol{k}_{2})\partial u_{TA}(\boldsymbol{k}_{3})\partial u_{TA}(\boldsymbol{k}_{4})}\right\rangle_{\rho_{\mathcal{H}}}=\frac{1}{2\Omega}\delta_{\boldsymbol{
  k}_{1}+\boldsymbol{k}_{2}+\boldsymbol{k}_{3}+\boldsymbol{k}_{4},0}\frac{\boldsymbol{k}_{3\perp}\cdot\boldsymbol{k}_{4\perp}}{|\boldsymbol{k}_{3}||\boldsymbol{k}_{4}|}[\lambda(\boldsymbol{k}_{3}\cdot\boldsymbol{k}_{4})(\boldsymbol{k}_{
  1}\cdot\boldsymbol{k}_{2})+\\\mu(\boldsymbol{k}_{3}\cdot\boldsymbol{k}_{1})(\boldsymbol{k}_{4}\cdot\boldsymbol{k}_{2})+\mu(\boldsymbol{k}_{3}\cdot\boldsymbol{k}_{2})(\boldsymbol{k}_{4}\cdot\boldsymbol{k}_{1})],
 \end{multline}
 and
 \begin{multline}
- \left\langle\frac{\partial^{4}V}{\partial h(\boldsymbol{k}_{1})\partial h(\boldsymbol{k}_{2})\partial u_{LA}(\boldsymbol{k}_{3})\partial u_{TA}(\boldsymbol{k}_{4})}\right\rangle_{\mathcal{H}}=\frac{1}{\Omega}\delta_{\boldsymbol{
+	\left\langle\frac{\partial^{4}V}{\partial h(\boldsymbol{k}_{1})\partial h(\boldsymbol{k}_{2})\partial u_{LA}(\boldsymbol{k}_{3})\partial u_{TA}(\boldsymbol{k}_{4})}\right\rangle_{\rho_{\mathcal{H}}}=\frac{1}{2\Omega}\delta_{\boldsymbol{
  k}_{1}+\boldsymbol{k}_{2}+\boldsymbol{k}_{3}+\boldsymbol{k}_{4},0}\frac{\boldsymbol{k}_{3}\cdot\boldsymbol{k}_{4\perp}}{|\boldsymbol{k}_{3}||\boldsymbol{k}_{4}|}[\lambda(\boldsymbol{k}_{3}\cdot\boldsymbol{k}_{4})(\boldsymbol{k}_{
  1}\cdot\boldsymbol{k}_{2})+\\\mu(\boldsymbol{k}_{3}\cdot\boldsymbol{k}_{1})(\boldsymbol{k}_{4}\cdot\boldsymbol{k}_{2})+\mu(\boldsymbol{k}_{3}\cdot\boldsymbol{k}_{2})(\boldsymbol{k}_{4}\cdot\boldsymbol{k}_{1})].
 \end{multline}
