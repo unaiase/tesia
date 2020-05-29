@@ -20,8 +20,8 @@
 The discovery of graphene\cite{novoselov2004electric,novoselov2005two,novoselov2005twoo,zhang2005experimental} proved 
 the existence of 2D materials and launched their science and technology. Graphene is already a reality in different 
 industrial products\cite{Kong2019path} that benefit from its fantastic properties. In particular, its mechanical and 
-thermal properties are crucial for many of its current and future applications. For instance, graphene's uneven 
-strength, stiffness, and lightness\cite{lee2008measurement} has been used to make stronger but lighter macroscopic 
+thermal properties are crucial for many of its current and future applications. For instance, uneven strength, 
+stiffness, and lightness\cite{lee2008measurement} of graphene have been used to make stronger but lighter macroscopic 
 objects, such as tennis rackets, shoes, and so on. Graphene, due to its very high thermal 
 conductivity\cite{ghosh2008extremely}, has been already incorporated into electronic devices like mobile phones for 
 efficient heat dissipation. \\
@@ -29,8 +29,8 @@ efficient heat dissipation. \\
 The understanding of the mechanical and thermal properties of graphene, and in general of any 2D material, 
 is, however, far from trivial. Even the possibility of having crystalline order in 2D has been long 
 questioned\cite{landau_statistical_physics,mermin1968crystalline}. Indeed, the root mean square displacement 
-calculated in the harmonic approximation diverges in the long wave-length limit, which means that the larger the 
-sample of a 2D material the bigger the atomic displacements, which prevents any crystalline 
+calculated within the harmonic approximation diverges in the long wave-length limit, which means that the larger the 
+sample of a 2D material the bigger the atomic displacements, preventing any crystalline 
 order\cite{landau_statistical_physics}. In Fig. \ref{rms_harmonic} we show the atomic displacements of carbon atoms 
 in graphene as a function of the sample size, or the supercell used for the calculation.
 \begin{figure}[h]
@@ -57,27 +57,27 @@ graphene is shown in Fig. \ref{harmonic-graphene}.
 \label{harmonic-graphene}
 \end{figure}
 We can see that the LA and TA modes have a linear dispersion close to the point $\Gamma$ as it happens in 3D 
-crystals. However, the ZA mode, which atomic displacements are directed in the out-of-plane direction, has a 
-quadratic dispersion. This is very clear in the plot in logarithmic scale where we have included a quadratic line for 
+crystals. However, the ZA mode, with atomic displacements along the out-of-plane direction, has a 
+quadratic dispersion. This is very clear in the logarithmic scale plot, where we have included a quadratic line for 
 reference. The quadratic dispersion is given by the rotational symmetry, together with the fact that in a strictly 
 two-dimensional system force constants involving an in-plane and an out-of-plane displacement 
 vanish\cite{katsnelson2013graphene}. The mathematical proof of the quadratic dispersion is given in 
 appendix \ref{quadratic-dispersion}. \\
 
 The quadratic dispersion also creates spurious divergences in physical properties calculated perturbativaly on top of 
-the harmonic result. The phonon line widths of the in-plane acoustic longitudinal (LA) and transverse (TA) phonons 
+the harmonic result. The phonon linewidths of the in-plane acoustic longitudinal (LA) and transverse (TA) phonons 
 calculated perturbatively do not vanish as the momentum decreases\cite{paulatto2013anharmonic}, precisely, because of 
-the $\sim q^2$ dispersion of the ZA modes\cite{bonini2012acoustic}. The line widths of the LA and TA modes are shown 
+the $\sim q^2$ dispersion of the ZA modes\cite{bonini2012acoustic}. The linewidths of the LA and TA modes are shown 
 in Fig. \ref{lata-harmonic-lw} (a). 
 \begin{figure}[h]
 \includegraphics[width=0.8\linewidth]{Figures/lw-graphene-harmonic.eps}
-	\caption[Graphene line widths calculated within perturbation theory]{(a) Line widths (full width at half 
+	\caption[Graphene linewidths calculated within perturbation theory]{(a) Linewidths (full width at half 
 	maximum, FWHM) of the LA and TA modes calculated using perturbation theory at 300 K. (b) FWHM divided by the 
 	phonon frequency. We shadow the region where $FWHM/\omega>1$. All the calculations are done in the membrane 
 	model in Eq. \ref{membrane-potential}.}
 \label{lata-harmonic-lw}
 \end{figure}
-The figure clearly shows how the line widths do not vanish at small momenta. This yields to the conclusion that for 
+The figure clearly shows how the linewidths do not vanish at small momenta. This yields to the conclusion that for 
 small enough momentum phonons do not live long enough for vibrating one period and the quasiparticle picture is lost.
 Consequently, the thermal conductivity calculated with the perturbative phonon 
 lifetimes\cite{fugallo2013ab,fugallo2014thermal} does not converge with the sample size\cite{bonini2012acoustic}. In 
@@ -85,7 +85,7 @@ Fig. \ref{lata-harmonic-lw} (b) we can see the FWHM divided by the phonon freque
 phonon picture is lost. Therefore, the longitudinal and transversal acoustic phonons with a frequency smaller than 
 $\simeq1$ cm$^{-1}$ do not propagate in graphene. The mentioned region is shadowed in the figure. This means that 
 sound does not propagate in graphene because the highest frequency that the human ear can heard is around $10^{-4}$ 
-cm$^{-1}$. The application of strain linearizes the dispersion of the ZA phonons and makes the line width of the LA 
+cm$^{-1}$. The application of strain linearizes the dispersion of the ZA phonons and makes the linewidth of the LA 
 and TA phonon modes vanish together with their frequency at small momenta, keeping the phonon 
 picture\cite{bonini2012acoustic}. \\
 
@@ -107,7 +107,7 @@ If phonons are calculated from the free energy Hessian, as $F$ obeys the same sy
 $\sim q^2$ dispersion would be expected for the ZA mode even if anharmonic effects are included in the calculation 
 of $F$. Actually, measurements done with helium diffraction show a ZA mode with a quadratic 
 dispersion\cite{al2016acoustic,al2015helium,al2018resolving}, though the linearization regime may not be seen and 
-substrate effects may be important. The remaining question is thus whether the ZA modes really have a quadratic 
+substrate effects may be important. The remaining question is thus, whether the ZA modes really have a quadratic 
 dispersion, and, if it is so, how the mechanical stability and thermal properties of graphene can be explained. \\
 
 In this work we show that a quadratic dispersion of the ZA mode is actually expected for graphene provided that it 
@@ -125,7 +125,7 @@ lattice in Cartesian coordinates are the following:
  \item $\mathbf{a}_{1}=a(1,0)$,
  \item $\mathbf{a}_{2}=a\left(-\frac{1}{2},\frac{\sqrt{3}}{2}\right)$,
 \end{itemize}
-where one atom is in the origin and the other in $a(0,1/\sqrt{3})$. Then, the reciprocal lattice is:
+where one atom is at the origin and the other in $a(0,1/\sqrt{3})$. Then, the reciprocal lattice is:
 \begin{itemize}
  \item $\mathbf{b}_{1}=\frac{2\pi}{a}\left(1,\frac{1}{\sqrt{3}}\right)$,
  \item $\mathbf{b}_{2}=\frac{2\pi}{a}\left(0,\frac{2}{\sqrt{3}}\right)$.
@@ -168,16 +168,16 @@ results are shown in Figs. \ref{benchmark-spectrum} and \ref{benchmark}.
 \label{benchmark}
 \end{figure}
 As we can see in Fig. \ref{benchmark-spectrum}, the two potentials provide very similar harmonic phonons, or what is 
-the same, very similar forces. Due to the different exchange correlation functional there is a slight offset in 
-Fig. \ref{benchmark}, however, the anharmonic line shifts in both $\boldsymbol{D}^{(S)}$ and $\boldsymbol{D}^{(F)}$ 
+the same, very similar forces. Due to the different exchange correlation functional, there is a slight offset in 
+Fig. \ref{benchmark}, however, the anharmonic lineshifts in both $\boldsymbol{D}^{(S)}$ and $\boldsymbol{D}^{(F)}$ 
 are very well captured within the empirical potential. \\
 
 For the self-consistent DFT calculations we have used a plane wave cutoff of $70$ Ry and a $700$ Ry cutoff for the 
 density. For the Brillouin zone integration we have used a Monkhorst pack grid\cite{monkhorst1976special} of 
-$32\times32$ points with a Gaussian smearing of $0.02$ Ry. For the line width calculations in the main text we have 
+$32\times32$ points with a Gaussian smearing of $0.02$ Ry. For the linewidth calculations in the main text we have 
 used a grid of $400\times400$ grid with a Gaussian smearing of $1$ cm$^{-1}$. For the stress calculation in order 
 to account for the thermal expansion we have used a $10\times10$ supercell. We have used the same supercell for 
-the SSCHA and physical frequency calculations. For the line width calculations we have used 3BFC calculated in 
+the SSCHA and physical frequency calculations. For the linewidth calculations we have used 3BFC calculated in 
 $3\times3$ supercells. We have tested all the calculations with denser grids and bigger supercells.
 
 \section{Graphene without stress}
@@ -213,11 +213,11 @@ estimated in previous theoretical works\cite{rowe2018development,zakharchenko200
 show a larger lattice parameter and a more pronounced thermal expansion (in absolute value) at low temperatures. This 
 is not surprising as classical calculations neglect quantum fluctuations and, consequently, underestimate the 
 fluctuations associated to the high-energy optical modes (the highest energy phonon modes require temperatures of 
-around 2000 K to be thermally populated). Actually, the classical result approaches the quantum at high temperatures. 
-This remarks the importance of considering quantum effects in the evaluation of thermodynamic properties of 
-graphene. Our classical results and the MD calculations of Rowe et al.\cite{rowe2018development} are in agreement 
-(within their error of $0.003$ \AA) at low temperatures. However, at high temperatures, our classical results and 
-the ones of Rowe et al. deviate. \\
+around 2000 K to be thermally populated). Actually, the classical result approaches the quantum one at high 
+temperatures. This remarks the importance of considering quantum effects in the evaluation of thermodynamic 
+properties of graphene. Our classical results and the MD calculations of Rowe et al.\cite{rowe2018development} are 
+in agreement (within their error of $0.003$ \AA) at low temperatures. However, at high temperatures, our classical 
+results and the ones of Rowe et al.\cite{rowe2018development} deviate. \\
 
 It has been shown that at high temperatures graphene may be in a corrugated 
 state\cite{pozzo2011thermal,los2009scaling}. The corrugation is not captured in our formalism as the centroids are 
@@ -247,13 +247,13 @@ the flat phase is metastable and, therefore, we suggest that there may be a firs
 temperatures from the flat to the corrugated state. \\
 
 In Fig. \ref{lattice} we have also included the quasiharmonic (QHA) result. The lattice parameter within 
-the QHA is calculated by calculating the harmonic free energy for different temperatures and lattice parameters. The 
+the QHA is obtained by calculating the harmonic free energy for different temperatures and lattice parameters. The 
 lattice parameter dependence comes from the different harmonic phonons at different lattice parameters. Then, we take 
 the lattice parameter that minimizes the harmonic free energy at each temperature. It is worth noting that this 
 approximation is not valid to calculate the thermal expansion of graphene due to the imaginary phonon frequencies 
 that appear close to $\Gamma$ for the ZA mode already at $500$ K. In the shadowed region in Fig. \ref{lattice} the 
-QHA is not valid. This result questions the results obtained with this approach that yield a negative thermal 
-expansion at all temperatures\cite{mounet2005first}.
+QHA is not valid. These features question the validity of the results obtained with this approach that yield a 
+negative thermal expansion at all temperatures\cite{mounet2005first}.
 
 \section{Graphene phonons}
 
@@ -265,9 +265,9 @@ function $\Omega_{\mu}(\boldsymbol{q})$.
 \includegraphics[width=0.32\linewidth]{Figures/T300.eps}
 \includegraphics[width=0.32\linewidth]{Figures/T2000.eps}
 	\caption[Graphene harmonic and anharmonic ZA phonons]{Harmonic ZA phonon spectra in logarithmic scale 
-	together with the SSCHA phonons $\boldsymbol{D}^{(S)}$ (labeled as ``SSCHA'') and those obtained from the 
-	phonon spectral function $\Omega_{\mu}(\boldsymbol{q})$ (labeled as ``Physical''). Results at 0 K (a), 300 K 
-	(b), and 2000 K (c) are shown. 	(d), (e) and (f) show the frequency divided by the squared momentum. The 
+	together with the SSCHA phonons, $\boldsymbol{D}^{(S)}$, (labeled as ``SSCHA'') and those obtained from the 
+	phonon spectral function, $\Omega_{\mu}(\boldsymbol{q})$, (labeled as ``Physical''). Results at 0 K (a), 300 
+	K (b), and 2000 K (c) are shown. (d), (e) and (f) show the frequency divided by the squared momentum. The 
 	dispersion corresponds to the 	$\Gamma$M direction. For 
 	reference, the M point is at $1.4662$ $\AA^{-1}$ at $0$ K, at $1.4671$ $\AA^{-1}$ at $300$ K, and at $1.4652$ 
 	$\AA^{-1}$ at $2000$ K. The harmonic result (solid black) is computed at the lattice parameter that minimizes 
@@ -281,7 +281,7 @@ the physical phonons become close to a quadratic dispersion and approach the har
 symmetry. The SSCHA ZA frequencies suffer a blue-shift with respect to the harmonic ones, but are red-shifted once 
 the spectral function is calculated. Both shifts are bigger when the temperature is increased, but the quadratic 
 behavior of the ZA modes is always recovered regardless of the temperature. The quadratic dispersion is clear 
-from panels (d), (e), and (f) where the frequency is divide by the squared momentum, therefore, the lines with a
+from panels (d), (e), and (f), where the frequency is divided by the squared momentum, therefore, the lines with a
 quadratic dispersion become flat. We show in Fig. \ref{static-dynamic}
 \begin{figure}[ht]
 \includegraphics[width=0.32\linewidth]{Figures/T0-za.eps}
@@ -309,21 +309,21 @@ mode is interesting because the theoretical results can be compared to Raman exp
 By looking at Fig. \ref{e2g} (a), we observe that both SCHA and physical frequencies red-shift with increasing 
 temperature in agreement with experiments and theory\cite{calizo2007temperature,bonini2007phonon}. Actually, for 
 this mode the difference between the SCHA and physical frequencies is not so crucial. By looking at Fig. \ref{e2g} 
-(b) we can see how big are the dynamical effects and the effect of thermal expansion. For this high energy mode it 
-is crucial to include the dynamical effects, otherwise the shift is overestimated. The thermal expansion provides 
+(b) we can see how big are the dynamical effects and the effect of the thermal expansion. For this high energy mode 
+it is crucial to include the dynamical effects, otherwise the shift is overestimated. The thermal expansion provides 
 a positive shift at low temperatures. 
 
-\section{Root mean square displacements and line widths}
+\section{Root mean square displacements and linewidths}
 
 Even if the anharmonic correction to the phonon spectra may look small in Fig. \ref{spectrum-graphene}, it has a 
 huge impact on the mechanical and thermal properties of graphene. As shown in Fig. \ref{problems} (a), 
 \begin{figure*}[ht]
 \includegraphics[width=0.49\linewidth]{Figures/rms.eps}
 \includegraphics[width=0.49\linewidth]{Figures/lw-graphene.eps}
-\caption[SSCHA root mean square atomic displacements and line widths]{(a) Root mean square atomic displacement of 
+\caption[SSCHA root mean square atomic displacements and linewidths]{(a) Root mean square atomic displacement of 
 	carbon atoms in graphene calculated using the harmonic and the SSCHA density matrices. The harmonic result 
 	is always computed at the lattice parameter that minimizes $U$, while the SSCHA results include thermal 
-	expansion (see Fig. \ref{lattice}). (b) Line widths (full width at half maximum) of LA and TA phonon modes 
+	expansion (see Fig. \ref{lattice}). (b) Linewidths (full width at half maximum) of LA and TA phonon modes 
 	at $300$ K calculated within perturbation theory and the SSCHA. Results in both figures are obtained with 
 	the machine learning atomistic potential.}
 \label{problems}
@@ -338,13 +338,13 @@ $\boldsymbol{D}^{(F)}$ are quadratic, the fact that the density matrix used to c
 built with linearized phonons is responsible for reducing the divergences. \\
 
 The SSCHA phonon frequencies obtained from $\boldsymbol{D}^{(S)}$ also provide an appropriate basis to calculate 
-phonon line widths\cite{bianco2017second,aseginolaza2019phonon}. The results presented in Fig. \ref{problems} (b) 
-clearly show that the linearization of the SSCHA frequencies dramatically changes the line width of the LA and TA 
+phonon linewidths\cite{bianco2017second,aseginolaza2019phonon}. The results presented in Fig. \ref{problems} (b) 
+clearly show that the linearization of the SSCHA frequencies dramatically changes the linewidth of the LA and TA 
 modes at small momenta by making them smaller as momentum decreases. This result recovers the quasiparticle picture 
-for these modes. Similar results are obtained in Ref. \cite{bonini2012acoustic}. However, in this work line widths of 
+for these modes. Similar results are obtained in Ref. \cite{bonini2012acoustic}. However, in this work linewidths of 
 LA and TA modes at small momenta only vanish when strain is applied. Somewhat strain has an analogous effect to 
 anharmonicity by linearizing the ZA dispersion. The problem is that strain linearizes physical phonons. We show here 
-that there is no need of strain to have physically well-defined phonon line widths provided by 
+that there is no need of strain to have physically well-defined phonon linewidths provided by 
 linear SCHA phonons together with quadratic physical phonons. Anharmonicity is responsible for it. The sound 
 propagation in graphene and the ratio FWHM$/\omega$ will be discussed in the next section together with the results 
 in the membrane model.
@@ -368,7 +368,7 @@ $\boldsymbol{u}(\boldsymbol{x})$ and $h(\boldsymbol{x})$ are the in-plane and ou
 fields, respectively, and $\boldsymbol{x}$ is the 2D position vector in the membrane. $\kappa$ is the bending 
 rigidity of the membrane and the tensor 
 $C^{ijkl}=\lambda\delta^{ij}\delta^{kl}+\mu(\delta^{ik}\delta^{jl}+\delta^{il}\delta^{jk})$ contains the Lame's 
-coefficients $\lambda$ and $\mu$ and Kronecker deltas. As it is a continuum model it only accounts for acoustic 
+coefficients, $\lambda$ and $\mu$, and Kronecker deltas. As it is a continuum model it only accounts for acoustic 
 modes and the second-order terms in the potential are the harmonic terms. The harmonic frequencies in normal 
 coordinates space are $\omega_{ZA}(q)=\sqrt{\phi_{ZA}(\boldsymbol{q})/\rho}$, 
 $\omega_{LA}(q)=\sqrt{(\phi_{LA}(\boldsymbol{q})/\rho}$, and 
@@ -383,7 +383,7 @@ $\delta a=(a-a_{0})a_{0}$, $a_{0}$ being the lattice parameter that minimizes $U
 
 It is not possible to apply the SCHA analytically in Eq. \ref{membrane-potential}. As far as we know, the simplest 
 approximation that allows applying the SCHA analytically is to neglect fourth-order terms including in-plane phonon 
-fields. In that case the potential can be written as
+fields. In that case, the potential can be written as
 \begin{multline}
 \label{membrane-potential-tommaso}
 U=\frac{1}{2}\int_{\Omega}d^{2}x[C^{ijkl}\partial_{i}u_{j}\partial_{k}u_{l}+\kappa(\partial^{2}h)^{2}+
@@ -484,24 +484,24 @@ neglected, which breaks the rotational symmetry of the potential, the quadratic 
 means that it is very important to keep these terms in the potential to correctly estimate the mechanical properties 
 of membranes even if they are usually neglected\cite{mariani2008flexural,amorim2014thermodynamics,de2012bending}. \\
 
-In Fig. \ref{lw-membrane} we shown the line widths of the LA and TA modes calculated within the membrane model. We 
+In Fig. \ref{lw-membrane} we show the linewidths of the LA and TA modes calculated within the membrane model. We 
 also include the atomistic results for comparison.
 \begin{figure}[ht]
 \includegraphics[width=0.8\linewidth]{Figures/lwmembrane.eps}
-	\caption[Atomistic and membrane line widths calculated within the SSCHA and within perturbation theory in 
-	graphene]{(a) Atomistic and membrane line widths calculated within the SSCHA and within perturbation theory 
-	at 300 K. (b) Membrane line widths at 300 K divided by the phonon frequency calculated within the SCHA and 
+	\caption[Atomistic and membrane linewidths calculated within the SSCHA and within perturbation theory in 
+	graphene]{(a) Atomistic and membrane linewidths calculated within the SSCHA and within perturbation theory 
+	at 300 K. (b) Membrane linewidths at 300 K divided by the phonon frequency calculated within the SCHA and 
 	perturbation theory.}
 \label{lw-membrane}
 \end{figure}
-The results clearly show that the linearization of the SCHA frequencies dramatically changes the line width of the LA 
+The results clearly show that the linearization of the SCHA frequencies dramatically changes the linewidth of the LA 
 and TA modes at small momenta by making them smaller as momentum decreases. This result is equivalent in the 
 atomistic case. When the ratio between the FWHM and the frequency of the mode is 1 or bigger, the quasiparticle 
 picture is lost. According to our calculations in Fig. \ref{lw-membrane} (b) this value is reached in the 0.001-0.002 
-\AA$^{-1}$ momentum range when the line width is calculated on top of the harmonic dispersion within perturbation 
-theory. We shadow the region where the membrane LA mode is not well defined. However, when the line width is 
+\AA$^{-1}$ momentum range when the linewidth is calculated on top of the harmonic dispersion within perturbation 
+theory. We shadow the region where the membrane LA mode is not well defined. However, when the linewidth is 
 calculated within the SCHA, the ratio never gets bigger than 0.05. These results recover the quasiparticle picture 
-for these modes and are in agreement with experiments\cite{wang2008brillouin} where they clearly see that in this 
+for these modes and are in agreement with experiments\cite{wang2008brillouin}, where they clearly see that in this 
 momentum range (0.001-0.002\AA$^{-1}$) the quasiparticle picture is hold. It also means that sound can propagate in 
 graphene, which does not happen within perturbation theory. \\
 
@@ -512,14 +512,14 @@ in the SSCHA self-energy we Taylor expand Eq. \ref{full-sscha-se}
  \boldsymbol{\Pi}(z)=\mathbf{M}^{-\frac{1}{2}}\overset{(3)}{\mathbf{\Phi}}\mathbf{\Lambda}(z)[\mathbf{1}-\overset{(4)}{\mathbf{\Phi}}\mathbf{\Lambda}(z)]^{-1}
  \overset{(3)}{\mathbf{\Phi}}\mathbf{M}^{-\frac{1}{2}}\simeq\\\mathbf{M}^{-\frac{1}{2}}\overset{(3)}{\mathbf{\Phi}}\mathbf{\Lambda}(z)\overset{(3)}{\mathbf{\Phi}}\mathbf{M}^{-\frac{1}{2}}+\mathbf{M}^{-\frac{1}{2}}\overset{(3)}{\mathbf{\Phi}}\mathbf{\Lambda}(z)\overset{(4)}{\mathbf{\Phi}}\mathbf{\Lambda}(z)\overset{(3)}{\mathbf{\Phi}}\mathbf{M}^{-\frac{1}{2}}+\dots,
 \end{multline}
-and we calculate the contribution of the term containing the fourth-order tensor to the line width. We also calculate 
+and we calculate the contribution of the term containing the fourth-order tensor to the linewidth. We also calculate 
 the spectral function with and without including the frequency dependence of the self energy. We show the results in 
 Fig. \ref{lw_membrane}.
 \begin{figure}[ht]
 \includegraphics[width=0.49\linewidth]{Figures/v4-membrane.eps}
 \includegraphics[width=0.45\linewidth]{Figures/spf-lorentzian-membrane.eps}
-	\caption[Fourth-order term contribution to the line width in graphene. Spectral function within the 
-	Lorentzian and non-Lorentzian approximations]{(a) Line width (full width at half maximum, FWHM) contribution 
+	\caption[Fourth-order term contribution to the linewidth in graphene. Spectral function within the 
+	Lorentzian and non-Lorentzian approximations]{(a) Linewidth (full width at half maximum, FWHM) contribution 
 	of the term containing the fourth-order tensor of the LA mode calculated in the membrane model at 100 K using 
 	the harmonic and SCHA phonons. The value of the smearing is in the legend. (b) Spectral function of the LA 
 	mode with momentum 0.01 \AA$^{-1}$ at 100 K with and without considering the frequency dependence of the 

@@ -29,16 +29,15 @@ limitation\cite{shirodkar2014emergence,fei2016ferroelectricity}.
 Bulk monochalcogenides studied in chapters \ref{Chapter5} and \ref{Chapter6} are inside the family of Van der Waals 
 materials, which in principle, could be exfoliated to get monolayer materials. Actually, it has been experimentally 
 shown that it is possible to synthesize monolayer SnSe\cite{li2013single,zhao2015controlled}. On top of this, it has 
-been shown in monolayer SnTe, another monochalcogenide material, that the monolayer materials can show a robust 
+been shown in monolayer SnTe, another monochalcogenide material, that monolayer materials can show a robust 
 ferroelectric state with a higher transition temperature than its bulk counterpart\cite{chang2016discovery}. These 
 properties make very interesting the theoretical study of the ferroelectric transition in SnSe. Actually, in a very 
 recent experimental work\cite{chang2020controlled}, they show how the polarization of monolayer SnSe can be switched 
 at room temperature. \\
 
-The thermoelectric properties of bulk SnSe have been explained in chapter \ref{Chapter5}. As can be seen in 
-Fig. \ref{pnma-cmcm-mono}, monolayer SnSe has the same structure of the bulk, but in the unit cell 
-it only contains one bilayer with four atoms in the unit cell (the bulk has two bilayers with 8 atoms, see 
-Fig. \ref{pnma-cmcm}). 
+Thermoelectric properties of bulk SnSe have been explained in chapter \ref{Chapter5}. As can be seen in 
+Fig. \ref{pnma-cmcm-mono}, monolayer SnSe has the same structure of the bulk, but the unit cell only contains one 
+bilayer with four atoms (the bulk has two bilayers with 8 atoms, see Fig. \ref{pnma-cmcm}). 
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.8\linewidth]{Figures/monolayer-structure.pdf}
@@ -51,17 +50,18 @@ The electronic band gap is bigger in the monolayer\cite{wang2015thermoelectric,h
 confinement effects. According to several theoretical studies\cite{wang2015thermoelectric,hu2017high} in the 
 monolayer low symmetry phase, the lattice thermal conductivity is of the same order of magnitude compared to the 
 bulk counterpart. These theoretical works show that, monolayer SnSe in the $Pnm2_{1}$ (low symmetry) structure could 
-have a higher thermoelectric figure of merit\cite{wang2015thermoelectric,hu2017high} than bulk $Pnma$ (low symmetry). This makes very interesting the study of the thermoelectric properties of monolayer SnSe in the $Pnmm$ (high 
+have a higher thermoelectric figure of merit\cite{wang2015thermoelectric,hu2017high} than bulk $Pnma$ (low symmetry). This makes very interesting the study of thermoelectric properties of monolayer SnSe in the $Pnmm$ (high 
 symmetry) structure as in the bulk the high symmetry $Cmcm$ phase is a better thermoelectric material at high 
 temperatures than the $Pnma$. \\
 
-Experimentally, there are no measurements for the ferroelectric phase transition temperature. However, monolayer 
-SnSe seems to crystallize in the $Pnm2_{1}$ structure at room temperature\cite{li2013single,chang2020controlled}, 
+Experimentally, there are no measurements for the ferroelectric phase transition temperature of monolayer SnSe. 
+However, it seems to crystallize in the $Pnm2_{1}$ structure at room 
+temperature\cite{li2013single,chang2020controlled}, 
 therefore, the ferroelectric transition temperature must be higher. According to theoretical studies applying 
 molecular dynamics simulations\cite{mehboudi2016structural,barraza2018tuning} the transition temperature is around 
 $200$ K. Another work applying DFT and an effective Hamiltonian claims\cite{fei2016ferroelectricity} that the 
 transition occurs at around $320$ K. Regarding the thermoelectric properties in monolayer SnSe in the $Pnmm$ 
-structure, there are no theoretical calculations of the lattice thermal conductivity as it has an imaginary phonon 
+structure, there are no theoretical calculations of the lattice thermal conductivity, as it has an imaginary phonon 
 frequency at the $\Gamma$ point within the harmonic approximation (see Fig. \ref{harmonic-mono}), which hinders the 
 calculation of $\kappa_{l}$. \\
 
@@ -109,14 +109,14 @@ The theoretical lattice parameters within LDA are $a=b=7.94$ $a_{0}$ and within 
 Our calculations are based on DFT using the QUANTUM-ESPRESSO\cite{giannozzi2009quantum} software package. Harmonic 
 phonons were calculated within DFPT. Anharmonic phonons were calculated within the SSCHA. For the 
 exchange-correlation interaction we use the Perdew-Burke-Ernzerhof (PBE) generalized gradient approximation and the 
-local density approximation (LDA) with ultrasoft (US) and Projector Augmented Wave method (PAW) pseudopotentials 
+local density approximation (LDA) with ultrasoft (US) and Projector Augmented Wave method (PAW) pseudopotentials, 
 respectively. We use a cutoff energy of 70 Ry and a grid of $16\times16$ $\boldsymbol{k}$ points to sample the first 
 Brillouin zone. For the harmonic phonon calculations we use a $6\times6$ supercell for both harmonic and SSCHA 
 calculations.
 
 \section{Ferroelectric phase transition}
 
-As in the bulk cases described in chapters \ref{Chapter5} and \ref{Chapter6}, 
+As in the bulk structures described in chapters \ref{Chapter5} and \ref{Chapter6}, 
 symmetry\cite{orobengoa2009amplimodes,perez2010mode} dictates that it is possible to have a second-order phase 
 transition between the $Pnmm$ and $Pnm2_{1}$ phases. In this case, The transition is dominated by the distortion 
 pattern associated to a mode ($\Gamma_{1}$) at the zone center. The distortion of this 
@@ -139,7 +139,7 @@ from the $Pnm2_{1}$ ($Q\ne0$, low symmetry) to the $Pnmm$ ($Q=0$, high symmetry)
 dominated by the $\Gamma_{1}$ phonon, $\partial^{2}F/\partial Q^{2}(T)$ is proportional to 
 $\Omega^{(F)2}_{\Gamma_{1}}(T)$, which can be calculated using Eq. \ref{free-energy-hessian}. \\
 
-In the bulk case, in both LDA and PBE approximations the $Y_{1}$ is unstable within the harmonic approximation, 
+In the bulk, in both LDA and PBE approximations the $Y_{1}$ is unstable within the harmonic approximation, 
 which is the typical scenario for a second-order phase transition. In Fig. \ref{harmonic-mono} we show the 
 harmonic phonon spectrum of monolayer SnSe in the $Pnmm$ structure within the LDA and PBE approximations. 
 \begin{figure}[h]
@@ -148,10 +148,10 @@ harmonic phonon spectrum of monolayer SnSe in the $Pnmm$ structure within the LD
 and PBE approximations in the theoretical structure.}
 \label{harmonic-mono}
 \end{figure}
-As we can see, the instability $\Gamma_{1}$ appears within PBE but not within LDA. This results again shows the huge 
+As we can see, the instability $\Gamma_{1}$ appears within PBE but not within LDA. This result again shows the huge 
 volume dependence of the vibrational properties of SnSe, which was also discussed in chapter \ref{Chapter5}. 
-According to this result, the second-order phase transition scenario only appears within PBE in the case of the 
-monolayer. From now on we will only show results within PBE. \\
+According to this result, the second-order phase transition scenario only appears within the PBE in the case of the 
+monolayer. From now on we will only show results within the PBE. \\
 
 Fig. \ref{freq-transition-mono} shows $\Omega^{(F)2}_{Y_{1}}(T)$ within the PBE approximation.
 \begin{figure}[h]
@@ -178,7 +178,7 @@ supercell we have used to calculate the transition temperature.
 
 \section{Problem for calculating lattice thermal conductivity}
 
-As shown in chapters \ref{Chapter3}, \ref{Chapter5}, and \ref{Chapter6} the SSCHA phonons ($\Omega^{(S)}_{\mu}$) are 
+As shown in chapters \ref{Chapter3}, \ref{Chapter5}, and \ref{Chapter6}, the SSCHA phonons ($\Omega^{(S)}_{\mu}$) are 
 a properly defined basis for the three phonon scattering phase space and provide an accurate lattice thermal 
 conductivity. In Fig. \ref{sscha-freq-mono} we show the SSCHA phonons of monolayer SnSe in the $Pnmm$ structure at 
 $300$ K, which is a temperature where the high symmetry phase is stable (see Fig. \ref{freq-transition-mono}).
@@ -188,29 +188,29 @@ $300$ K, which is a temperature where the high symmetry phase is stable (see Fig
 within PBE using the theoretical lattice parameters.}
 \label{sscha-freq-mono}
 \end{figure}
-As we can see there is a small instability in the lowest energy acoustic branch very close to the point $\Gamma$. 
+As we can see, there is a small instability in the lowest energy acoustic branch very close to the point $\Gamma$. 
 This small instability could be an artifact of the Fourier interpolation, which is needed to get information about 
 the acoustic branches at very small momenta. It could also be that the lattice parameter is too small once the 
 fluctuations of the ions are taken into account. In principle, if we would be able to do a calculation in an 
 infinitely big supercell and relax the lattice parameters including the ionic fluctuations, the problem would 
-disappear, obviously, this is not possible. However, we could ask ourselves why this problem appears in the monolayer 
-and not in the bulk. Actually, there is a very fundamental reason for this. As it 
+disappear, but obviously, this is not possible. However, we could ask ourselves why this problem appears in the 
+monolayer and not in the bulk. Actually, there is a very fundamental reason for this. As it 
 is shown in appendix \ref{quadratic-dispersion}, the lowest energy acoustic branch in monolayer materials has a 
-quadratic dispersion as a function of momentum within the harmonic approximation, which provides it with very low 
+quadratic dispersion as a function of momentum within the harmonic approximation, which makes it to have very low 
 frequencies compared to the other two linear acoustic branches. The linear dispersion is not kept in the SSCHA phonon
 dispersion, however, still the frequency of the lowest energy acoustic mode is substantially lower. Because of this 
-reason we are not able to calculate the lattice thermal conductivity of monolayer SnSe as we need the phonon 
-frequencies at small momenta in order to calculate the phonon line widths. In chapter \ref{Chapter8} we include a 
+reason we are not able to calculate the lattice thermal conductivity of monolayer SnSe, as we need the phonon 
+frequencies at small momenta in order to calculate the phonon linewidths. In chapter \ref{Chapter8} we include a 
 deep analysis about the anharmonic effects on the lowest energy acoustic branch of monolayer materials.
 
 \section{Conclusions}
 
 In conclusion, we have shown that a ferroelectric transition is possible from the high symmetry (centrosymmetric) 
 $Pnmm$ phase to the low symmetry (no centrosymmetric) $Pnm2_{1}$ phase. We have seen that this phase transition 
-is different to the one that appears in the bulk in which the two phases are centrosymmetric. We have seen that 
-this phase transition actually happens at around $107$ K, result that is in qualitative agreement with previous 
+is different to the one that appears in the bulk, in which the two phases are centrosymmetric. We have seen that 
+this phase transition actually happens at around $107$ K, which is in qualitative agreement with previous 
 theoretical calculations. Quantitative disagreement may be due to exchange correlation or supercell effects, which 
-are very big in these kind of materials. Finally, we have tried to calculate the lattice thermal conductivity of 
-$Pnmm$ monolayer SnSe but we have found problems related to the 2D character of the material, which make the lowest 
+are very big in this kind of materials. Finally, we have tried to calculate the lattice thermal conductivity of 
+$Pnmm$ monolayer SnSe but we have found problems related to the 2D character of the material, which makes the lowest 
 energy acoustic branch very soft. We will see in the next chapter what is the effect of anharmonic effects in this 
 mode and its role on the mechanical stability of 2D materials.
