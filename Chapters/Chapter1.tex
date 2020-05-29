@@ -21,25 +21,27 @@ solid, crystalline solid, plasma... The correct formalism to study any of these 
 \label{schrodinger}
  H|\Psi_{A}\rangle=E_{A}|\Psi_{A}\rangle,
 \end{equation}
-where $H$ is the Hamiltonian of the system, $E_{A}$ the eigenvalue with quantum number $A$ and $|\Psi_{A}\rangle$ its eigenvector. The corresponding eigenfunction is given by
+where $H$ is the Hamiltonian of the system, $E_{A}$ the eigenvalue with quantum number $A$ and, $|\Psi_{A}\rangle$ its eigenvector. The corresponding eigenfunction is given by
 \begin{equation}
  \langle\mathbf{r},\mathbf{R}|\Psi_{A}\rangle=\Psi_{A}(\mathbf{r}_{1},\dots,\mathbf{r}_{N},\mathbf{R}_{1},\dots,\mathbf{R}_{M})=\Psi_{A}(\mathbf{r},\mathbf{R}),
 \end{equation}
-with $N$ electrons at positions $\mathbf{r}\equiv\{\mathbf{r}_{1},\dots,\mathbf{r}_{N}\}$ and $M$ ions at positions $\mathbf{R}\equiv\{\mathbf{R}_{1},\dots,\mathbf{R}_{M}\}$. In the non-relativistic case and in the absence of 
-external forces the Hamiltonian in atomic units can be written as follows\cite{martin2004electronic}
+with $N$ electrons at positions $\mathbf{r}\equiv\{\mathbf{r}_{1},\dots,\mathbf{r}_{N}\}$ and $M$ ions at positions 
+\\ $\mathbf{R}\equiv\{\mathbf{R}_{1},\dots,\mathbf{R}_{M}\}$. In the non-relativistic case and in the 
+absence of external forces, the Hamiltonian in atomic units can be written as follows\cite{martin2004electronic}
 \begin{multline}
  H=\frac{1}{2}\sum_{i}^{N}\mathbf{p}_{i}^{2}+\frac{1}{2}\sum_{j}^{M}\frac{\mathbf{P}_{j}^{2}}{m_{j}}-\sum_{i}^{N}\sum_{j}^{M}\frac{Z_{j}}{|\mathbf{r}_{i}-\mathbf{R}_{j}|}+\frac{1}{2}\sum_{i\ne j}^{N}\frac{1}{|\mathbf{r}_{i}-
  \mathbf{r}_{j}|}\\+\frac{1}{2}\sum_{i\ne j}^{M}\frac{Z_{i}Z_{j}}{|\mathbf{R}_{i}-\mathbf{R}_{j}|}=T_{e}+T_{I}+V_{e,I}+V_{e,e}+V_{I,I},
 \end{multline}
 where $\mathbf{p}_{i}$ and $\mathbf{P}_{j}$ are electronic and ionic momentum operators, $Z_{j}$ is the ionic charge, and $m_{j}$ the ionic mass. $T_{e}$ and $T_{I}$ are the electronic and ionic kinetic energy operators, 
-respectively, and $V_{e,I}$, $V_{e,e}$, and $V_{I,I}$ are the electron-ion, electron-electron and ion-ion Coulomb interaction terms.  \\
+respectively, and $V_{e,I}$, $V_{e,e}$, and $V_{I,I}$ are the electron-ion, electron-electron and ion-ion Coulomb 
+interaction terms. Unless otherwise stated, we will use atomic units in the whole manuscript. \\
 
 The solution of this eigenvalue problem would provide us with the exact non-relativistic structure of matter given by $\Psi_{A}(\mathbf{r},\mathbf{R})$. However, the problem 
 has $3(N+M)$ degrees of freedom ($N$, $M\sim10^{23}$ for macroscopic samples of matter) and the Coulomb interaction makes impossible to separate the many-body Hamiltonian into single-particle ones. This makes the problem 
 unsolvable. Nevertheless, from these equations we can already state that all the properties of a material are a consequence of the Coulomb interaction and the many-body character of the Hamiltonian. \\
 
 If we want to calculate the properties of matter, we need to use approximations right from the beginning. The first approximation we will apply is the Born-Oppenheimer approximation (BOA), which, as we will see in the 
-following paragraphs, will allow us to separate the total Hamiltonian into electronic and ionic parts. The BOA is based on the huge difference of masses between electrons and ions ($m_{j}\sim10^{3}$), what makes the 
+following paragraphs, will allow us to separate the total Hamiltonian into electronic and ionic parts. The BOA is based on the huge difference of masses between electrons and ions ($m_{j}\sim10^{3}$), which makes the 
 electrons move much faster\cite{ashcroft1976solid} and, therefore, adapt instantaneously to the slower motion of the ions. \\
 
 We will start by separating the total Hamiltonian $H$ into electronic $H^{e}$ and ionic $H^{I}$ parts. As we have assumed that ions do not move from the electronic point of view, the electronic Hamiltonian can be 
