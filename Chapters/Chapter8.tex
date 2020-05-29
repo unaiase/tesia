@@ -37,7 +37,8 @@ in graphene as a function of the sample size, or the supercell used for the calc
 \includegraphics[width=0.8\linewidth]{Figures/rms-harmonic.eps}
 \caption[Root mean square atomic displacements of carbon atoms in graphene calculated using the harmonic 
 	dispersion]{Root mean square atomic displacements of carbon atoms in graphene calculated using the harmonic 
-	dispersion as a function of the supercell size for different temperatures.}
+	dispersion as a function of the supercell size for different temperatures. The calculation is done by using 
+	the harmonic formula for $\langle u^{2}\rangle$\cite{ashcroft1976solid}.}
 \label{rms_harmonic}
 \end{figure}
 As the figure clearly shows, the root mean square atomic displacements diverge at finite temperatures as a function 
@@ -56,6 +57,8 @@ graphene is shown in Fig. \ref{harmonic-graphene}.
 	of graphene in logarithmic scale. We include a quadratic line for reference.}
 \label{harmonic-graphene}
 \end{figure}
+The calculation is done following the finite displacement procedure explained in chapter \ref{Chapter3} and using 
+a $6\times6$ supercell. 
 We can see that the LA and TA modes have a linear dispersion close to the point $\Gamma$ as it happens in 3D 
 crystals. However, the ZA mode, with atomic displacements along the out-of-plane direction, has a 
 quadratic dispersion. This is very clear in the logarithmic scale plot, where we have included a quadratic line for 
@@ -77,13 +80,16 @@ in Fig. \ref{lata-harmonic-lw} (a).
 	model in Eq. \ref{membrane-potential}.}
 \label{lata-harmonic-lw}
 \end{figure}
+The calculation is done applying the perturbative procedure explained in chapter \ref{Chapter3} in the potential in 
+Eq. \ref{membrane-potential}.
 The figure clearly shows how the linewidths do not vanish at small momenta. This yields to the conclusion that for 
 small enough momentum phonons do not live long enough for vibrating one period and the quasiparticle picture is lost.
 Consequently, the thermal conductivity calculated with the perturbative phonon 
 lifetimes\cite{fugallo2013ab,fugallo2014thermal} does not converge with the sample size\cite{bonini2012acoustic}. In 
 Fig. \ref{lata-harmonic-lw} (b) we can see the FWHM divided by the phonon frequency. When this number is around 1 the 
-phonon picture is lost. Therefore, the longitudinal and transversal acoustic phonons with a frequency smaller than 
-$\simeq1$ cm$^{-1}$ do not propagate in graphene. The mentioned region is shadowed in the figure. This means that 
+phonon picture is lost because the phonons do not live long enough for vibrating one period. Therefore, the 
+longitudinal and transversal acoustic phonons with a frequency smaller than $\simeq1$ cm$^{-1}$ do not propagate in 
+graphene. The mentioned region is shadowed in the figure. This means that 
 sound does not propagate in graphene because the highest frequency that the human ear can heard is around $10^{-4}$ 
 cm$^{-1}$. The application of strain linearizes the dispersion of the ZA phonons and makes the linewidth of the LA 
 and TA phonon modes vanish together with their frequency at small momenta, keeping the phonon 
@@ -108,9 +114,10 @@ $\sim q^2$ dispersion would be expected for the ZA mode even if anharmonic effec
 of $F$. Actually, measurements done with helium diffraction show a ZA mode with a quadratic 
 dispersion\cite{al2016acoustic,al2015helium,al2018resolving}, though the linearization regime may not be seen and 
 substrate effects may be important. The remaining question is thus, whether the ZA modes really have a quadratic 
-dispersion, and, if it is so, how the mechanical stability and thermal properties of graphene can be explained. \\
+dispersion, and, if it is so, how the mechanical stability, thermal properties, and sound propagation in graphene 
+can be explained. \\
 
-In this work we show that a quadratic dispersion of the ZA mode is actually expected for graphene provided that it 
+In this chapter we show that a quadratic dispersion of the ZA mode is actually expected for graphene provided that it 
 is calculated from the phonon spectral function, and that it is compatible with sound propagation. We estimate $F$ 
 within the self-consistent harmonic approximation (SCHA). We apply the SCHA in its 
 stochastic implementation (SSCHA) making use of a machine learning atomistic potential trained with density 

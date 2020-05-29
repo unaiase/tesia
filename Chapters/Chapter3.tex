@@ -241,12 +241,14 @@ $\mathbf{R}_{s_{1}}(\mathbf{T}_{1})$ is in a different WS cell; it is equal to t
 $\mathbf{R}_{s_{1}}(\mathbf{T}_{1})$ is within the same WS cell; and it is equal to the supercell value divided by 
 an integer $P$ if $\mathbf{R}_{s_{1}}(\mathbf{T}_{1})$ lies on the boundary of the same WS cell, where $P$ 
 is the number of WS cells having $\mathbf{R}_{s_{1}}(\mathbf{T}_{1})$ on their boundary. With this assumption, the 
-2BFC will converge to the correct infinite lattice values as the size of the supercell systematically increases. \\
+2BFC will converge to the correct infinite lattice values as the size of the supercell systematically increases. 
+The procedure explained in this paragraph is important for a proper Fourier interpolation (see 
+Eq. \ref{2bfc-fourier}) of 2BFC. \\
 
 So far we have described a method to properly converge the 2BFC to the infinite lattice 2BFC by calculating the 
 forces in different supercell sizes. For that purpose, we need to move all the atoms one by one in the three Cartesian directions and calculate the resulting forces in all the other atoms. This procedure gives a number of displacements for which, the forces must be computed. The number of displacements can be reduced by using the symmetries of the system. The symmetries include: translations, permutations, and space group symmetry operations. By using these symmetries many elements of the 2BFC matrix can be related, therefore, it is not necessary to calculate all of them explicitly. \\ 
 
-For example, let's take the case of space group symmetries $S$ and imagine we calculate the 2BFC 
+For example, let's take the case of space group $S$ and imagine we calculate the 2BFC 
 $\phi_{s1}(\mathbf{T}, 0)$. Then, if the atom $1$ and $2$ are related by the symmetry 
 operation $S$, we can write 
 \begin{equation}
@@ -296,11 +298,11 @@ the action of the symmetry operation $S$. In Eq. \ref{symm} we have made use of 
 %\end{equation}
 %$N_{W}$ being the number of point group operations. 
 
-The symmetrization of the 2BFC removes all even-order anharmonicities. It must be pointed, that the harmonic 
+It must be pointed, that the harmonic 
 approximation becomes better and better as the displacement are made smaller and smaller. However, this can 
 not be taken to the limit because the smaller are the displacements the smaller are the induced forces and the level 
-of accuracy is always finite. So, one can not make too small displacements but usually a fraction of a percentage of 
-the nearest neighbour distance is a good compromise. \\
+of accuracy is always finite. So, one can not make too small displacements but, usually, a fraction of a percentage 
+of the nearest neighbour distance is a good compromise. \\
 
 \section{Long-wavelength vibrations in polar materials}
 
@@ -396,7 +398,7 @@ to describe more basic properties such as the temperature dependence of phonon f
 
 Anharmonicity can be treated within perturbation theory by calculating higher-order terms of the Taylor expansion of the BOES. This approximation holds when the anharmonic coefficients of the Taylor expansion 
 are much smaller than the harmonic ones. This means that the potential can be described with the second-order term of the Taylor expansion of the BOES in the range defined by the ionic fluctuations and anharmonic 
-terms are just a small correction. It can be the case that ionic displacements cannot be considered small anymore and higher-order terms become as important as, or even more than, the second-order 
+terms are just a small correction. It can be the case that ionic displacements cannot be considered small anymore and higher-order terms become as important as, or even more, than the second-order 
 ones. The origin of such big displacements can be temperature when a solid is close to melting. It can also happen that at low temperatures or even at $0$ K the harmonic and perturbative regimes break down in the 
 presence of very light atoms\cite{borinaga2017anharmonicity} or when the crystal is close to dynamical instabilities, as it happens in 
 ferroelectrics\cite{ribeiro2018strong,zhang2011anomalous} or in materials that show charge density wave transitions\cite{kidd2002electron,leroux2015strong}. \\
@@ -417,8 +419,8 @@ the following sections we will discuss both of them.
 \label{perturbation-theory-third}
 
 In this section we will see what is the correction that the lowest-order perturbation theory makes to the harmonic 
-result. We will see that this approximation not only gives an anharmonic line shift to the harmonic 
-frequencies, but also an anharmonic line width, which makes clear that the phonons do not diagonalize the anharmonic Hamiltonian and they will no longer have an infinite lifetime. Therefore, this 
+result. We will see that this approximation not only gives an anharmonic lineshift to the harmonic 
+frequencies, but also an anharmonic linewidth, which makes clear that the phonons do not diagonalize the anharmonic Hamiltonian and they will no longer have an infinite lifetime. Therefore, this 
 theory will allow us to calculate properties, such as, the lattice thermal conductivity and the phonon spectral function measured in inelastic scattering experiments. \\
 
 We will name the harmonic Hamiltonian $H^{(0)}$ and we will treat the anharmonic part as a small perturbation of $H^{(0)}$. With $G_{s_{1}s_{2}}^{\alpha_{1}\alpha_{2}}(\mathbf{T}_{1},\mathbf{T}_{2};z)$ and 
@@ -546,13 +548,13 @@ where
  \Gamma_{\mu}(\mathbf{q})=-Im\mathcal{Z}_{\mu}(\mathbf{q},\omega_{\mu}(\mathbf{q}))
 \end{equation}
 are the shifted frequency (with respect to the harmonic frequency) and half-width at half-maximum (HWHM) of mode 
-$\mu$, respectively. In this limit, the lifetime of a phonon $\mu\mathbf{q}$ is defined as the inverse line width 
+$\mu$, respectively. In this limit, the lifetime of a phonon $\mu\mathbf{q}$ is defined as the inverse linewidth 
 (full width at half maximum, FWHM)
 \begin{equation}
 \label{lifetime}
  \tau_{\mu}(\mathbf{q})=\frac{1}{2\Gamma_{\mu}(\mathbf{q})}.
 \end{equation}
-These are well defined phonons with their frequencies and line widths. 
+These are well defined phonons with their frequencies and linewidths. 
 In Fig. \ref{instoy} we qualitatively describe the Lorentzian cross section.
 \begin{figure}[h]
 \begin{center}
@@ -561,7 +563,7 @@ In Fig. \ref{instoy} we qualitatively describe the Lorentzian cross section.
 \label{instoy}
 \end{center}
 \end{figure}
-We can see that anharmonicity within perturbation theory provides two anharmonic properties. A line shift with respect to the harmonic value $\Omega_{\mu}(\mathbf{q})-\omega_{\mu}(\mathbf{q})$ and a line width $2\Gamma_{\mu}(\mathbf{q})$ (FWHM), which does not exist within the harmonic theory. \\
+We can see that anharmonicity within perturbation theory provides two anharmonic properties. A lineshift with respect to the harmonic value $\Omega_{\mu}(\mathbf{q})-\omega_{\mu}(\mathbf{q})$ and a linewidth $2\Gamma_{\mu}(\mathbf{q})$ (FWHM), which does not exist within the harmonic theory. \\
 
 As we can see from Eqs. \ref{loop-diagram}, \ref{bubble-diagram}, and \ref{tadpole-diagram} in order to account for the phonon-phonon interactions at the lowest-order in perturbation theory we need to calculate 
 the $\overset{(3)}{D}{}_{s_{1},s_{2},s_{3}}^{\alpha_{1}\alpha_{2}\alpha_{3}}(\mathbf{T}_{1},\mathbf{T}_{2},\mathbf{T}_{3})$ and $\overset{(4)}{D}{}_{s_{1}s_{1},s_{3}s_{4}}^{\alpha_{1}\alpha_{2}\alpha_{3}\alpha_{4}}(\mathbf{T}_{1},\mathbf{T}_{2},\mathbf{T}_{3},\mathbf{T}_{4})$ anharmonic dynamical matrices. The straightforward way of calculating these 
@@ -570,9 +572,9 @@ coefficients is to apply finite differences in the BOES\cite{li2014shengbte} as 
 commensurate with the phonons that interact, therefore, they require calculations in big supercells in order to 
 achieve convergence. Furthermore, the number of elements to be determined is huge, complicating the finite difference 
 approach. An alternative, and more elegant, procedure for the third-order anharmonic coefficients is to apply the 
-$2n+1$ theorem\cite{gonze1989density} which allows to get the $(2n+1)^{th}$ derivatives of the BOES with the 
+$2n+1$ theorem\cite{gonze1989density}, which allows to get the $(2n+1)^{th}$ derivatives of the BOES with the 
 knowledge of the $n^{th}$ derivatives of the electronic density. The latter method is more complicated to 
-implement\cite{paulatto2013anharmonic} but allows to make the calculations in the unit cell independently of the 
+implement\cite{paulatto2013anharmonic}, but allows to make the calculations in the unit cell independently of the 
 modes that are considered.  
 
 \section{The stochastic self-consistent harmonic approximation}
@@ -864,7 +866,7 @@ $\boldsymbol{\phi}$, the following can be obtained\cite{bianco2017second}
  \mathbf{D}^{(S)}\simeq\mathbf{D}+\overset{(T)}{\boldsymbol{\Pi}}{}^{(0)}+\overset{(L)}{\boldsymbol{\Pi}}{}^{(0)},
 \end{equation}
 where $\overset{(T)}{\boldsymbol{\Pi}}{}^{(0)}$ and $\overset{(L)}{\boldsymbol{\Pi}}{}^{(0)}$ are the tadpole and loop contributions to the harmonic self-energy and $\mathbf{D}$ is the harmonic dynamical matrix. From 
-this equation it is clear that, in the perturbative limit, the anharmonic line shift of the auxiliary $\mathbf{D}^{(S)}$ dynamical matrix with respect to the harmonic one is given by the tadpole and loop 
+this equation it is clear that, in the perturbative limit, the anharmonic lineshift of the auxiliary $\mathbf{D}^{(S)}$ dynamical matrix with respect to the harmonic one is given by the tadpole and loop 
 contributions to the self-energy. It is extremely interesting to note that the SSCHA could be used to include the loop and tadpole diagrams to the self-energy in materials where the perturbation theory works but 
 the calculation of the 4BFC is too cumbersome. Then, the remaining bubble self-energy could be added on top of the SSCHA by using perturbation theory\cite{paulatto2015first}. \\
 
@@ -881,7 +883,7 @@ In the next section we describe a possible dynamic extension for the SSCHA studi
 \subsection{Dynamical properties of solids and phonon frequencies within the SSCHA}
 \label{dynamical-sscha}
 
-So far we have seen that the SSCHA is a static theory, which means that we cannot access dynamical properties, such as, the line width of a phonon which makes impossible the calculation of spectral functions or 
+So far we have seen that the SSCHA is a static theory, which means that we cannot access dynamical properties, such as, the linewidth of a phonon which makes impossible the calculation of spectral functions or 
 the thermal conductivity of a solid. \\
 
 Within the SSCHA it is possible to formulate a valid ansatz in order to calculate dynamical properties of crystals. The main idea behind this ansatz is to take the nonperturbative 
@@ -922,7 +924,7 @@ have the auxiliary phonon frequencies $\Omega^{(S)}_{\mu}(\mathbf{q})$ and inste
  phonons are equivalent to the ones defined from the free energy Hessian ($\boldsymbol{D}^{(F)}$) in 
  section \ref{free-energy-section}. \\
 
-At this points we can recalculate the spectral function by using the 3BFC given by the SSCHA. In this case, as we are working with a non-perturbative theory, the Lorentzian approximation is not justified and its validity must be checked in each system. In Fig. \ref{instoy2} we show a cartoon situation where the Lorentzian approximation does not hold.
+At this points we can recalculate the spectral function by using the 3BFC given by the SSCHA. In this case, as we are working with a non-perturbative theory, the Lorentzian approximation is not justified, and its validity must be checked in each system. In Fig. \ref{instoy2} we show a cartoon situation where the Lorentzian approximation does not hold.
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.9\linewidth]{Figures/ins-toy2.eps}

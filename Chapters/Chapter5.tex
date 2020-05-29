@@ -18,12 +18,10 @@
 \section{Introduction}
 
 Thermoelectricity is a technologically interesting material property that allows to transform residual heat into useful electricity\cite{goldsmid2010introduction,behnia2015fundamentals}. The efficiency of this energy 
-transformation is controlled by the dimensionless figure of merit
-\begin{equation}
-ZT=\frac{S^{2}\sigma T}{\kappa},
-\end{equation}
-where $S$ is the Seebeck coefficient, $\sigma$ the electrical conductivity, $T$ the temperature, and $\kappa=\kappa_{e}+\kappa_{l}$ the sum of electronic $\kappa_{e}$ and lattice $\kappa_{l}$ thermal conductivities. Therefore, a 
-good thermoelectric performance requires a high power factor $P_{F}=S^{2}\sigma$ together with a low thermal conductivity. \\
+transformation is controlled by the dimensionless figure of merit defined in Eq. \ref{figureofmerit}.
+The thermal conductivity $\kappa=\kappa_{e}+\kappa_{l}$ is the sum of electronic $\kappa_{e}$ and lattice 
+$\kappa_{l}$ thermal conductivities. Therefore, a good thermoelectric performance requires a high power factor 
+$P_{F}=S^{2}\sigma$ together with a low thermal conductivity. \\
 
 Monochalcogenides have proven to be efficient thermoelectric materials\cite{heremans2008enhancement,zhang2013high,yang2008nanostructures,cho2011thermoelectric} mainly due to their strongly anharmonic lattice that implies a low 
 lattice thermal conductivity\cite{delaire2011giant,li2014phonon,iizumi1975phase,o2017inelastic,ribeiro2018strong}. PbTe is an appropriate example of potential technological relevance of thermoelectric monochalcogenides: it shows 
@@ -115,7 +113,7 @@ centering, this high symmetry position can be 0 or 0.5.
 
 Our calculations are based on DFT using the QUANTUM-ESPRESSO\cite{giannozzi2009quantum} software package. Harmonic phonons were calculated within DFPT and perturbative 3BFC were calculated within DFPT or finite 
 differences\cite{li2014shengbte}. Anharmonic phonons and nonperturbative 3BFC were calculated using the SSCHA. For the exchange-correlation interaction we use the Perdew-Burke-Ernzerhof (PBE) generalized gradient 
-approximation and the local density approximation (LDA) with ultrasoft (US) and Projector Augmented Wave method (PAW) pseudopotentials respectively. Due to limitations in the implementation of perturbative 3BFC 
+approximation and the local density approximation (LDA) with ultrasoft (US) and Projector Augmented Wave (PAW) pseudopotentials, respectively. Due to limitations in the implementation of perturbative 3BFC 
 within DFPT we use norm-conserving (NC) pseudopotentials only for the perturbative 3BFC calculation. We use a cutoff 
 energy of 70 Ry and a grid of $16\times16\times16$ $\boldsymbol{k}$ points to sample the first Brillouin zone. For 
 the harmonic phonon calculations we use a $6\times6\times6$ supercell and a $2\times2\times2$ one for the 3BFC. 
@@ -196,12 +194,12 @@ $\boldsymbol{\mathcal{R}}$ centroids. The SSCHA relaxation is shown in Fig. \ref
 \label{atomic-relaxation}
 \end{center}
 \end{figure}
-As we can see, the $z$ free Wyckoff parameters of the 4c Wyckoff positions of the $Pnma$ phase relaxes to the 
-high symmetry positions $0$ (atoms 5, 6, 7, and 8) and $0.5$ (atoms 1, 2, 3, and 4). The new wyckoff position is the 
+As we can see, the $z$ free Wyckoff parameters of the 4c Wyckoff positions of the $Pnma$ phase relax to the 
+high symmetry positions $0$ (atoms 5, 6, 7, and 8) and $0.5$ (atoms 1, 2, 3, and 4). The new Wyckoff position is the 
 4c wyckoff position of the $Cmcm$ phase. The error in this relaxation is smaller than $0.04$ $a_{0}$. Thus, the 
-$Pnma$ is not a local minimum of the free energy above $T_{c}$, ruling out the first-order transition. Our result 
-disagrees with the conclusions drawn in Ref. \cite{dewandre2016two}. \\
+$Pnma$ is not a local minimum of the free energy above $T_{c}$, ruling out the first-order transition. \\ 
 
+Our result disagrees with the conclusions drawn in Ref. \cite{dewandre2016two}.
 First, because at the $T_{c}$ calculated in the reference above, which is estimated by comparing the free energies 
 of the two structures, the $Y_{1}$ mode of the $Cmcm$ phase is stable, which implies this phase is a local minimum 
 at $T_{c}$, and, thus, the transition is of first-order type. And second, because it is argued that the instability 
@@ -271,7 +269,7 @@ is the full width at half maximum divided by a factor of $1.5$). The calculation
 \label{spectrum-phonon-snse}
 \end{figure}
 The anharmonic line shift is large for most of the modes across the 1BZ. Within the harmonic approximation there are five unstable modes: two ($\Gamma_{1}$, $\Gamma_{2}$) at $\Gamma$, two ($Y_{1}$, $Y_{3}$) at $Y$ and one 
-($R_{1}$) at $R$. These instabilities appear when we do the harmonic calculation in the experimental cell, in the theoretically relaxed cell only appear the instabilities $\Gamma_{1}$ and $Y_{1}$. The instabilities at $\Gamma$ would cause ferroelectric transitions\cite{skelton2016anharmonicity,hong2016electronic}, but they suffer an anharmonic renormalization that prevents it. $Y_{3}$ and $R_{1}$ are also stabilized by anharmonic effects. The $Y_{1}$ mode however remains unstable at $600$ K and it is stabilized after the transition (see Fig. \ref{spectral-snse}). \\
+($R_{1}$) at $R$. These instabilities appear when we do the harmonic calculation in the experimental cell, in the theoretically relaxed cell only appear instabilities $\Gamma_{1}$ and $Y_{1}$. The instabilities at $\Gamma$ would cause ferroelectric transitions\cite{skelton2016anharmonicity,hong2016electronic}, but they suffer an anharmonic renormalization that prevents it. $Y_{3}$ and $R_{1}$ are also stabilized by anharmonic effects. The $Y_{1}$ mode however remains unstable at $600$ K and it is stabilized after the transition (see Fig. \ref{spectral-snse}). \\
 
 In Fig. \ref{phonon-exp} we compare our harmonic and anharmonic phonons with available INS experimental results\cite{chatterji2018soft} at 853 K. 
 \begin{figure}[h]
