@@ -74,10 +74,11 @@ the $\sim q^2$ dispersion of the ZA modes\cite{bonini2012acoustic}. The linewidt
 in Fig. \ref{lata-harmonic-lw} (a). 
 \begin{figure}[h]
 \includegraphics[width=0.8\linewidth]{Figures/lw-graphene-harmonic.eps}
+\includegraphics[width=0.8\linewidth]{Figures/freq-harmonic-membrane.eps}
 	\caption[Graphene linewidths calculated within perturbation theory]{(a) Linewidths (full width at half 
 	maximum, FWHM) of the LA and TA modes calculated using perturbation theory at 300 K. (b) FWHM divided by the 
 	phonon frequency. We shadow the region where $FWHM/\omega>1$. All the calculations are done in the membrane 
-	model in Eq. \ref{membrane-potential}.}
+	model in Eq. \ref{membrane-potential}. (c) LA and TA harmonic frequencies within the membrane model.}
 \label{lata-harmonic-lw}
 \end{figure}
 The calculation is done applying the perturbative procedure explained in chapter \ref{Chapter3} in the potential in 
@@ -139,14 +140,15 @@ where one atom is at the origin and the other in $a(0,1/\sqrt{3})$. Then, the re
 \end{itemize}
 The reciprocal lattice of graphene is equivalent to the direct one but rotated by $60$ degrees. The high symmetry 
 points in the first Brillouin zone of graphene are $K=\frac{2\pi}{a}\left(\frac{1}{3},\frac{1}{\sqrt{3}}\right)$ and 
-$M=\frac{2\pi}{a}\left(0,\frac{1}{\sqrt{3}}\right)$. We can see the Wigner-Seitz cell and the 1BZ of graphene in 
-Fig. \ref{wigner}.
-\begin{figure}[htb]
-\includegraphics[width=0.45\linewidth]{Figures/ws.pdf}
-\includegraphics[width=0.45\linewidth]{Figures/brillouin.pdf}
-\caption{Wigner-Seitz cell and first Brillouin zone of graphene.}
-\label{wigner}
-\end{figure}
+$M=\frac{2\pi}{a}\left(0,\frac{1}{\sqrt{3}}\right)$. 
+%We can see the Wigner-Seitz cell and the 1BZ of graphene in 
+%Fig. \ref{wigner}.
+%\begin{figure}[htb]
+%\includegraphics[width=0.45\linewidth]{Figures/ws.pdf}
+%\includegraphics[width=0.45\linewidth]{Figures/brillouin.pdf}
+%\caption{Wigner-Seitz cell and first Brillouin zone of graphene.}
+%\label{wigner}
+%\end{figure}
 
 \section{Empirical potential benchmark and calculation parameters}
 
@@ -154,10 +156,11 @@ For calculating the forces needed in the SSCHA minimization\cite{errea2014anharm
 potential trained with machine learning and density functional theory (DFT) forces. The details about the machine 
 learning training are explained in Ref. \cite{rowe2018development}. Here we have benchmarked the ability of 
 the potential to account for the anharmonic effects. For that purpose we have applied the SSCHA method by using 
-DFT and empirical forces in a $2\times2$ supercell and we have checked the anharmonic effects in the optical 
+DFT and empirical forces in a $2\times2$ supercell and we have checked the anharmonic lineshifts in the optical 
 modes at the $\Gamma$ point. The machine learning potential is trained with the exchange-correlation in 
-Ref. \cite{dion2004van} and for the DFT calculations we have applied a PBE\cite{perdew1996generalized} 
-ultrasoft pseudopotential\cite{vanderbilt1990soft} with Van der Walls corrections\cite{barone2009role}. The 
+Ref. \cite{dion2004van}, which accounts for Van der Waals corrections. For the DFT calculations we have applied a 
+PBE\cite{perdew1996generalized} ultrasoft pseudopotential\cite{vanderbilt1990soft} with Van der Walls 
+corrections\cite{barone2009role} within the semiempirical Grimme's method. The 
 results are shown in Figs. \ref{benchmark-spectrum} and \ref{benchmark}.
 \begin{figure}[ht]
 \includegraphics[width=0.99\linewidth]{Figures/abinito-vs-empirical.eps}
