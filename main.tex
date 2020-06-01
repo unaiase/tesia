@@ -289,7 +289,8 @@ headsepline, % Uncomment to get a line under the header
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - APPENDICES
 %----------------------------------------------------------------------------------------
-\part{Appendices}
+\part*{Appendices}
+\addcontentsline{toc}{part}{Appendices}
 \appendix % Cue to tell LaTeX that the following "chapters" are Appendices
 
 % Include the appendices of the thesis as separate files from the Appendices folder
@@ -299,11 +300,24 @@ headsepline, % Uncomment to get a line under the header
 \include{Appendices/AppendixB}
 \include{Appendices/AppendixC}
 
+% Publications
+
+\part*{Publications}
+\addcontentsline{toc}{part}{Publications}
+\include{Publications/Publications}
+
+% Acknowledgements
+
+\part*{Acknowledgements}
+\addcontentsline{toc}{part}{Acknowledgements}
+\include{Acknowledgements/Acknowledgements}
+
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
 
-\part{Bibliography}
+\part*{Bibliography}
+\addcontentsline{toc}{part}{Bibliography}
 %\bibliography{example}
 \printbibliography[heading=bibintoc]
 
