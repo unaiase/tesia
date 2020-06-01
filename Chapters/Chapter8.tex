@@ -200,8 +200,8 @@ interpolate the result, which is fitted very accurately with a linear function. 
 Fig. \ref{pressures}.
 \begin{figure}[ht]
 \includegraphics[width=0.99\linewidth]{Figures/pressures-graphene.eps}
-        \caption[Pressure as a function of the lattice parameter in graphene]{Pressure as a function of the lattice
-	parameter calculated with the atomistic potential for different temperatures.}
+        \caption[Pressure as a function of the lattice parameter in graphene]{In-plane pressure as a function of the 
+	lattice parameter calculated with the atomistic potential for different temperatures.}
 \label{pressures}
 \end{figure}
 The lattice parameter calculated in 
@@ -360,8 +360,8 @@ a positive shift at low temperatures.
 Even if the anharmonic correction to the phonon spectra may look small in Fig. \ref{spectrum-graphene}, it has a 
 huge impact on the mechanical and thermal properties of graphene. As shown in Fig. \ref{problems} (a), 
 \begin{figure*}[ht]
-\includegraphics[width=0.49\linewidth]{Figures/rms.eps}
-\includegraphics[width=0.49\linewidth]{Figures/lw-graphene.eps}
+\includegraphics[width=0.8\linewidth]{Figures/rms.eps}
+\includegraphics[width=0.8\linewidth]{Figures/lw-graphene.eps}
 \caption[SSCHA root mean square atomic displacements and linewidths]{(a) Root mean square atomic displacement of 
 	carbon atoms in graphene calculated using the harmonic and the SSCHA density matrices. The harmonic result 
 	is always computed at the lattice parameter that minimizes $U$, while the SSCHA results include thermal 
@@ -532,8 +532,10 @@ neglected, which breaks the rotational symmetry of the potential, the quadratic 
 means that it is very important to keep these terms in the potential to correctly estimate the mechanical properties 
 of membranes even if they are usually neglected\cite{mariani2008flexural,amorim2014thermodynamics,de2012bending}. \\
 
-In Fig. \ref{lw-membrane} we show the linewidths of the LA and TA modes calculated within the membrane model. We 
-also include the atomistic results for comparison.
+In Fig. \ref{lw-membrane} we show the linewidths of the LA and TA modes calculated within the membrane model. The 
+linewidths are calculated with the formalism applied in the atomistic case, as explained in 
+section \ref{dynamical-sscha}. It is a dynamical extension of the physical static phonons for which the 
+equations are given in appendix \ref{appendixA}. We also include the atomistic results for comparison.
 \begin{figure}[ht]
 \includegraphics[width=0.8\linewidth]{Figures/lwmembrane.eps}
 	\caption[Atomistic and membrane linewidths calculated within the SSCHA and within perturbation theory in 
@@ -546,12 +548,14 @@ The results clearly show that the linearization of the SCHA frequencies dramatic
 and TA modes at small momenta by making them smaller as momentum decreases. This result is equivalent in the 
 atomistic case. When the ratio between the FWHM and the frequency of the mode is 1 or bigger, the quasiparticle 
 picture is lost. According to our calculations in Fig. \ref{lw-membrane} (b) this value is reached in the 0.001-0.002 
-\AA$^{-1}$ momentum range when the linewidth is calculated on top of the harmonic dispersion within perturbation 
-theory. We shadow the region where the membrane LA mode is not well defined. However, when the linewidth is 
+\AA$^{-1}$ momentum range when the linewidth is calculated within perturbation theory. We shadow the region where the 
+membrane LA mode is not well defined. However, when the linewidth is 
 calculated within the SCHA, the ratio never gets bigger than 0.05. These results recover the quasiparticle picture 
 for these modes and are in agreement with experiments\cite{wang2008brillouin}, where they clearly see that in this 
 momentum range (0.001-0.002\AA$^{-1}$) the quasiparticle picture is hold. It also means that sound can propagate in 
-graphene, which does not happen within perturbation theory. \\
+graphene, which does not happen within perturbation theory. We can also see that atomistic and membrane results are 
+in very good agreement. This means that the simple input parameters of the membrane model are able to fully capture 
+the anharmonicity of acoustic modes in graphene. \\
 
 In the last part of this section we will prove that neglecting the fourth-order tensor in the SSCHA self-energy and 
 assuming the Lorentzian approximation are good approximations. For studying the effect of the fourth-order tensor 
@@ -567,11 +571,10 @@ Fig. \ref{lw_membrane}.
 \includegraphics[width=0.49\linewidth]{Figures/v4-membrane.eps}
 \includegraphics[width=0.45\linewidth]{Figures/spf-lorentzian-membrane.eps}
 	\caption[Fourth-order term contribution to the linewidth in graphene. Spectral function within the 
-	Lorentzian and non-Lorentzian approximations]{(a) Linewidth (full width at half maximum, FWHM) contribution 
-	of the term containing the fourth-order tensor of the LA mode calculated in the membrane model at 100 K using 
-	the harmonic and SCHA phonons. The value of the smearing is in the legend. (b) Spectral function of the LA 
-	mode with momentum 0.01 \AA$^{-1}$ at 100 K with and without considering the frequency dependence of the 
-	self energy.}
+	Lorentzian and non-Lorentzian approximations]{(a) SCHA Linewidth (full width at half maximum, FWHM) 
+	contribution of the term containing the fourth-order tensor of the LA mode calculated in the membrane model 
+	at 100 K. The value of the smearing is in the legend. (b) Spectral function of the LA mode with momentum 0.01 
+	\AA$^{-1}$ at 100 K with and without considering the frequency dependence of the self energy.}
 \label{lw_membrane}
 \end{figure}
 The figure clearly shows that the contribution of the fourth-order tensor is at least one order of magnitude smaller 
@@ -587,4 +590,9 @@ We estimate anharmonic effects within the self-consistent harmonic approximation
 learning potential and with a membrane model, obtaining consistent results in both cases. Our results show how all 
 the divergences in the atomic displacements reduce and sound can propagate in graphene. These conclusions can 
 be extrapolated to any strictly 2D material and will have a large impact on the understanding if their mechanical 
-and thermal properties.
+and thermal properties. \\
+
+In this chapter we have worked with flat graphene, which mean that all the averages of the atomic positions are not 
+displaced in the out-of-plane direction. However, we have seen that, at high temperature, MD calculations predict a 
+corrugated state. As our calculations suggest that flat graphene is stable at high temperature, there could be a 
+first-order phase transition from the flat to the corrugated state. This is a very interesting future research line.
