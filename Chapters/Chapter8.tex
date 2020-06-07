@@ -101,7 +101,12 @@ modes renormalizes the dispersion of the ZA phonon modes, providing it with a li
 somewhat cures the pathologies. This conclusion has been drawn by Monte Carlo simulations with empirical 
 potentials\cite{wang2016anharmonic,los2009scaling,katsnelson2013graphene,zakharchenko2009finite} and by using a 
 membrane continuum  Hamiltonian that mimics the interaction among acoustic 
-modes\cite{mariani2008flexural,amorim2014thermodynamics,de2012bending}. Anharmonic phonons expected experimentally 
+modes\cite{mariani2008flexural,amorim2014thermodynamics,de2012bending}. 
+The square root of the bending rigidity of membranes is proportional to the ZA mode frequency divided by the 
+squared momentum. See section \ref{membrane-model} for the definition of the bending rigidity within the membrane 
+model. The bending rigidity is momentum independent within the harmonic approximation. A direct consequence of the 
+anharmonic ZA phonon linearization is the divergence of the bending rigidity as momentum decreases. 
+Anharmonic phonons expected experimentally 
 should be calculated from the phonon spectral function. For low energy modes, as it happens for the ZA mode, the 
 phonon peaks of the spectral function coincide with the phonons defined from the
 free energy Hessian, i.e., diagonalizing the  $[\frac{\partial F}{\partial \mathcal{R}_a \partial \mathcal{R}_b}]_{0}/\sqrt{m_am_b}$ matrix, where $F$ is the free energy calculated including anharmonic 
@@ -333,7 +338,9 @@ that the static phonons ($\Omega^{(F)}_{\mu}(\boldsymbol{q})$) agree with those 
 section \ref{dynamical-sscha}) theory ($\Omega_{\mu}(\boldsymbol{q})$) and are thus good representatives of the 
 physical phonons expected experimentally. The calculation at 2000 K deviates a little bit, which we believe it is a 
 numerical issue. Static phonons are calculated from the free energy Hessian, which is 
-rotationally invariant. Therefore, physical phonons are quadratic because of symmetry. \\
+rotationally invariant. Therefore, physical phonons are quadratic because of symmetry. The quadratic dispersion 
+the ZA mode recovers the harmonic result for the bending rigidity, which does not diverge for small momenta 
+anymore. \\
 
 In Fig. \ref{e2g} we make a similar study for the highest energy optical $E2_{g}$ mode at the $\Gamma$ point. This 
 mode is interesting because the theoretical results can be compared to Raman experiments\cite{linas2015interplay}. 
@@ -390,6 +397,7 @@ that there is no need of strain to have physically well-defined phonon linewidth
 it. 
 
 \section{SCHA applied to a continuum membrane Hamiltonian}
+\label{membrane-model}
 
 In order to obtain results at very small momenta and reinforce the conclusions drawn with the atomistic calculations 
 with the machine learning potential, we also solve the SCHA equations in a continuum membrane Hamiltonian. This model 
@@ -586,6 +594,7 @@ the Lorentzian approximation is justified for the acoustic modes in graphene.
 In conclusion, we show that anharmonic effects are crucial to mechanically stabilize graphene and to guarantee its 
 phonon modes make physical sense and propagate sound at small momenta. Moreover, we determine that, despite the 
 relevance of anharmonic effects, the out-of-plane acoustic modes should show a quadratic dispersion experimentally. 
+This recovers the harmonic results for the bending rigidity, which does not diverge as momentum decreases. 
 We estimate anharmonic effects within the self-consistent harmonic approximation both with an atomistic machine 
 learning potential and with a membrane model, obtaining consistent results in both cases. Our results show how all 
 the divergences in the atomic displacements reduce and sound can propagate in graphene. These conclusions can 
